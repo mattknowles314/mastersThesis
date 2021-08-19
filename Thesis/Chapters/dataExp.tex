@@ -7,7 +7,6 @@ this paper. Each match comes in the form of a .JSON file, so must be decoded fir
 can be found in appendix one. \newline
 
 
-
 In order to get the data into a usable form, we wrote several Python programs to comb through and select datapoints that were of interest. Firstly, the data was split 
 into games that were decided on DLS, and those that played out a full innings. This resulted in a CSV file containing information on 190 ODIs that were decided on DLS. 
 The datapoints collected were the home and away team, the ground, the winner of the game, how much they won by, and what their target was. 
@@ -20,7 +19,7 @@ English grounds in their entire ODI playing history.
 
 \begin{center}
     \begin{tabular}{c|c|c}
-    Team & Edgbaston Average & Trent Brdige Average \\
+    Team & Edgbaston Average & Trent Bridge Average \\
     \hline
     Australia & 196.3 & 272.9 \\  
     Bangladesh & 211.5 & 268.7 \\
@@ -33,4 +32,38 @@ English grounds in their entire ODI playing history.
 \end{center}
 
 So one can see that on average, a team playing at Trent Bridge is going to have a high scoring game than a team playing at Edgebaston. But this is something that DLS does
-not take into account when revising the score. It is for this reason the ground has been included in the data.
+not take into account when revising the score. It is for this reason the ground has been included in the data. We also included the runs required to win, and how many overs
+are available. Finally, we have how many runs or wickets the winning team won by. 
+
+\section{Analysis of DLS Match Data}
+
+We first look at the relationship betweem how many overs were available and how many runs required in those overs. The distubution of this can be seen in Figure 2.1.
+
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[scale=0.7]{figures/dlsOversScore.png}
+    \caption{Distribution of Overs to Target, coloured by host nation }
+    \label{figure 2.1}
+\end{figure}
+
+One thing that immediately sticks out is that there is a slight linear upward trend in the target score, but there is a considerable amount of variation in each over range. 
+We have included a linear regression model, calculated in R using the \textit{lm()} function. The model given by this calculation is given as 
+
+$$
+    R = 63.8 + 3.7O \pm 0.45
+$$
+
+Where R is the number of runs required, and O is the overs available. So does that mean instead of going through the DLS process we could put overs into this model and read off the target score?
+Well, no, because there is too much variation in target scores for this linear model to be reliable. To see this, we have a boxplot of the target runs produced by DLS. In the plot, each red cross 
+represents a match.\footnote{Note that the vertical spread of points in this plot is purely a styalistic one}
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.6]{figures/targetRunSpread.png}
+    \caption{Distribution of target run scores calculated by DLS}
+    \label{figure 2.2}
+\end{figure}
+
+If the two maximums were closer together, then this would arguably be a functional alternative to DLS, but the spread of scores is too large for the method to produce reliable results, and would often
+result in a lot of targets that didn't fit with point (2) of the original 5 criteria.
