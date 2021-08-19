@@ -18,7 +18,6 @@ def get_match_data(matchPath, csvPath):
     for f in os.listdir():
         with open(matchPath+f, "r") as file:
             data = json.load(file)
-        
         homeTeam = data["info"]["teams"][0]
         awayTeam = data["info"]["teams"][1]
         ground = data["info"]["venue"]
@@ -33,9 +32,15 @@ def get_match_data(matchPath, csvPath):
                 runsWonBy = 0
         else:
             winner = "tie"
+        
+        targetOvers = data["innings"][1]["target"]["overs"]
+        targetRuns = data["innings"][1]["target"]["runs"]
 
-        row = homeTeam,awayTeam,ground,winner,str(runsWonBy),str(wicksWonBy)
+        row = homeTeam,awayTeam,ground,winner,str(runsWonBy),str(wicksWonBy),str(targetRuns),str(targetOvers)
         csvF = open(csvPath, "a")
         writer = csv.writer(csvF)
         writer.writerow(row)
         csvF.close()
+
+
+get_match_data("/Users/matthew/Documents/Uni/Dissertation/Data/dls/", "/Users/matthew/Documents/Uni/Dissertation/Data/dlsMaster.csv")
