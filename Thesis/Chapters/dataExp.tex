@@ -1,0 +1,36 @@
+\chapter{The Data and Associated Methods}
+
+\section{Data Wrangling Methodology}
+The data that forms the backbone of this project is courtesy of \cite{cricData}, which provides ball-by-ball match data for over 2000 One-Day International matches
+and over 1500 Twenty20 matches. The ball-by-ball aspect of this data isn't immediately very useful, but the extra match information will be used extensively throught
+this paper. Each match comes in the form of a .JSON file, so must be decoded first in order to make use of. All the code that will be discussed throught this section
+can be found in appendix one. \newline
+
+
+
+In order to get the data into a usable form, we wrote several Python programs to comb through and select datapoints that were of interest. Firstly, the data was split 
+into games that were decided on DLS, and those that played out a full innings. This resulted in a CSV file containing information on 190 ODIs that were decided on DLS. 
+The datapoints collected were the home and away team, the ground, the winner of the game, how much they won by, and what their target was. 
+The rationale behind adding the ground is that the ground a game is played at has a considerable influence on how high a score will go. For example, 
+consider the two grounds Edgbaston and Trent Bridge, in Birmingham and Nottingham respectively. The follwing table shows the averages of 6 international teams at the two 
+English grounds in their entire ODI playing history.
+
+%https://stats.espncricinfo.com/ci/engine/ground/56788.html?class=2;orderby=runs;template=results;type=aggregate
+%https://stats.espncricinfo.com/ci/engine/ground/57219.html?class=2;orderby=runs;template=results;type=aggregate
+
+\begin{center}
+    \begin{tabular}{c|c|c}
+    Team & Edgbaston Average & Trent Brdige Average \\
+    \hline
+    Australia & 196.3 & 272.9 \\  
+    Bangladesh & 211.5 & 268.7 \\
+    England & 227.8 & 246.1 \\
+    India & 224.7 & 226.3 \\
+    New Zealand & 202.2 & 241.9 \\
+    Pakistan & 189.6 & 250.4 \\
+    Overall & 208.7 & 251.1    
+    \end{tabular}
+\end{center}
+
+So one can see that on average, a team playing at Trent Bridge is going to have a high scoring game than a team playing at Edgebaston. But this is something that DLS does
+not take into account when revising the score. It is for this reason the ground has been included in the data.

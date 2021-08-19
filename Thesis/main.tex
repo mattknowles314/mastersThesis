@@ -45,7 +45,15 @@ The author would like to thank (INSERT SUPERVISOR HERE) for their invaluable sup
 
 \input{Chapters/Intro}
 
+\input{Chapters/dataExp}
+
 \bibliography{refs}{}
 \bibliographystyle{plain}
+
+%TODO: MAKE SURE APPENDICIES LOOK NICE
+\begin{appendices}
+    \chapter{Python Code for Chapter 2}
+    \lstinputlisting[language=Python, caption=Data Wrangling Code, label={Chapter 2 code}, breaklines=true]{../code/data_handler.py}
+\end{appendices}
 
 \end{document}
