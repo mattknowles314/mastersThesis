@@ -1,0 +1,51 @@
+\documentclass[11pt]{report}
+\usepackage[utf8]{inputenc}
+\usepackage[a4paper, total={6in,8in}, portrait, margin=1in]{geometry}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{float}
+\usepackage{listings}
+\usepackage[misc]{ifsym}
+\usepackage{indentfirst} 
+\usepackage{amsthm}
+\usepackage{appendix}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+
+%Headers and Footers, thanks to Overleaf
+%https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_2):_Page_Layout
+\fancyhead{}
+\fancyhead[RO,LE]{\small Improving Duckworth-Lewis: Statistical Methods for Revising Score Targets in Limited-Overs Cricket}
+\fancyfoot{}
+\fancyfoot[LE,RO]{\thepage}
+\fancyfoot[LO,CE]{Chapter \thechapter}
+\fancyfoot[CO,RE]{Matthew Knowles}
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{remark}[theorem]{Remark}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{lemma}[theorem]{Lemma}
+
+
+\begin{document}
+
+\input{titlepage}
+
+\section*{Abstract}
+Write this last
+
+\section*{Acknowledgements}
+The author would like to thank (INSERT SUPERVISOR HERE) for their invaluable supervision and advice throughout this project. Secondly, my eternal thanks and admiration for my friends in York, who have made my time here so wonderful from the very begining, and for all the support you have given me every step of the way. Finally, to the UYMCC, who have enriched my university experience beyond belief. 
+
+\tableofcontents
+
+\input{Chapters/Intro}
+
+\bibliography{refs}{}
+\bibliographystyle{plain}
+
+\end{document}

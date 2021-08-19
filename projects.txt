@@ -1,0 +1,6 @@
+1. Survival of the fittest in a model of virus assembly
+2. Random Matrices (Chris Hughes)
+3. Algebraic Statistics (Emilie Dunsfree)
+4. Stochastic Volatility Models (Alexei Daletskii)
+5. Random walks and diffusion of proteins in bacterial membranes (Mitya Pushkin)
+6. The Economics of Marx (Jacco Thijssen)
