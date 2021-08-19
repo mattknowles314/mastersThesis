@@ -18,6 +18,7 @@ def get_match_data(matchPath, csvPath):
     for f in os.listdir():
         with open(matchPath+f, "r") as file:
             data = json.load(file)
+
         homeTeam = data["info"]["teams"][0]
         awayTeam = data["info"]["teams"][1]
         ground = data["info"]["venue"]
