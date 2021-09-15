@@ -12,18 +12,21 @@ for f in os.listdir():
         awayTeam = data["info"]["teams"][1]
         ground = data["info"]["venue"]
         inningsFirst = data["innings"][0]["team"]
-        gameDate = data["info"]["dates"]
+        gameDate = data["info"]["dates"][0]
+        
+        row=[gameDate,homeTeam,awayTeam]
 
         if "winner" in data["info"]["outcome"]:
             winner = data["info"]["outcome"]["winner"]
+            row.append(winner)
             if "runs" in data["info"]["outcome"]["by"]:
-                runsWonBy = data["info"]["outcome"]["by"]["runs"]
-                wicksWonBy = 0
+                row.append(data["info"]["outcome"]["by"]["runs"])
+                row.append("WONBYRUNS")
             else:
-                wicksWonBy = data["info"]["outcome"]["by"]["wickets"]
-                runsWonBy = 0
+                row.append(data["info"]["outcome"]["by"]["wickets"])
+                row.append("WONBYWICKETS")
         else:
-            winner = "tie"
+            row.append("tie")
 
         runsInOvers1 = []
         runsInOvers2 = []
@@ -42,7 +45,7 @@ for f in os.listdir():
             RR1 = []
             RR2 = []
             
-            row=[gameDate,homeTeam,awayTeam,winner,runsWonBy,wicksWonBy]
+            
             
             while i <= len(runsInOvers1)-1:
                 row.append(sum(runsInOvers1[0:i])/i)
