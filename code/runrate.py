@@ -41,15 +41,17 @@ for f in os.listdir():
             j=1
             RR1 = []
             RR2 = []
-            while i <= len(runsInOvers1)-1:
-                RR1.append(sum(runsInOvers1[0:i])/i)
-                i+=1
-        
-            while j <= len(runsInOvers2)-1:
-                RR2.append(sum(runsInOvers2[0:j])/j)
-                j+=1
             
-            row=[gameDate,homeTeam,awayTeam,winner,runsWonBy,wicksWonBy,runsInOvers1,runsInOvers2]
+            row=[gameDate,homeTeam,awayTeam,winner,runsWonBy,wicksWonBy]
+            
+            while i <= len(runsInOvers1)-1:
+                row.append(sum(runsInOvers1[0:i])/i)
+                i+=1
+            row.append("EOI")
+            while j <= len(runsInOvers2)-1:
+                row.append(sum(runsInOvers2[0:j])/j)
+                j+=1       
+
             csvF = open("/Volumes/MattData/CricData/rrmaster.csv", "a")
             writer = csv.writer(csvF)
             writer.writerow(row)
