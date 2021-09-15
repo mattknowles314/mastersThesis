@@ -1,15 +1,30 @@
 import json
 import matplotlib.pyplot as plt
 import os
-
+import csv
 dataPath="/Volumes/MattData/CricData/odis_json/"
 
 os.chdir(dataPath)
 for f in os.listdir():
     with open(dataPath+f,"r") as file:
         data=json.load(file)
+        homeTeam = data["info"]["teams"][0]
+        awayTeam = data["info"]["teams"][1]
+        ground = data["info"]["venue"]
         inningsFirst = data["innings"][0]["team"]
         gameDate = data["info"]["dates"]
+
+        if "winner" in data["info"]["outcome"]:
+            winner = data["info"]["outcome"]["winner"]
+            if "runs" in data["info"]["outcome"]["by"]:
+                runsWonBy = data["info"]["outcome"]["by"]["runs"]
+                wicksWonBy = 0
+            else:
+                wicksWonBy = data["info"]["outcome"]["by"]["wickets"]
+                runsWonBy = 0
+        else:
+            winner = "tie"
+
         runsInOvers1 = []
         runsInOvers2 = []
         for i in data["innings"][0]["overs"]:
@@ -33,11 +48,11 @@ for f in os.listdir():
             while j <= len(runsInOvers2)-1:
                 RR2.append(sum(runsInOvers2[0:j])/j)
                 j+=1
-            fig, ax = plt.subplots()
-            ax.plot(RR1, label="First Innings")
-            ax.plot(RR2, label="Second Innings")
-            plt.legend(loc="lower right")
-            plt.title(graphtitle)
-            plt.savefig("/Volumes/MattData/CricData/runrategraphs/"+f.strip(".json")+".png")
+            
+            row=[gameDate,homeTeam,awayTeam,winner,runsWonBy,wicksWonBy,runsInOvers1,runsInOvers2]
+            csvF = open("/Volumes/MattData/CricData/rrmaster.csv", "a")
+            writer = csv.writer(csvF)
+            writer.writerow(row)
+            csvF.close()
         else:
             continue
