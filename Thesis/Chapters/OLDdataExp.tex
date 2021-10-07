@@ -50,9 +50,9 @@ We first look at the relationship betweem how many overs were available and how 
 One thing that immediately sticks out is that there is a slight linear upward trend in the target score, but there is a considerable amount of variation in each over range. 
 We have included a linear regression model, calculated in R using the \textit{lm()} function. The model given by this calculation is given as 
 
-$$
-    R = 63.8 + 3.7O \pm 0.45
-$$
+\begin{equation}
+    R = 63.8 + 3.7O \pm 0.45.
+\end{equation}
 
 Where R is the number of runs required, and O is the overs available. So does that mean instead of going through the DLS process we could put overs into this model and read off the target score?
 Well, no, because there is too much variation in target scores for this linear model to be reliable. To see this, we have a boxplot of the target runs produced by DLS. In the plot, each red cross 
@@ -66,4 +66,23 @@ represents a match.\footnote{Note that the vertical spread of points in this plo
 \end{figure}
 
 If the two maximums were closer together, then this would arguably be a functional alternative to DLS, but the spread of scores is too large for the method to produce reliable results, and would often
-result in a lot of targets that didn't fit with point (2) of the original 5 criteria.
+result in a lot of targets that didn't fit with point (2) of the original 5 criteria. \newline
+
+But how does the target score set by DLS compare with the actual data of successful run chases? We filter the data to include only successful target defences. The below data set shows data for the 112
+games in which the team batting seccond were unable to reach their revised target, and how much the team batting first won by in the end.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.6]{figures/runsWonBy.png}
+    \caption{Distribution of unssuccessful run chases}
+    \label{figure 2.3}
+\end{figure}
+
+The linear regression model for figure 2.3 is give by:
+
+\begin{equation}
+    R = 10.6 + 1.26O \pm 0.52.
+\end{equation}
+
+One interesting thing of note here is that 6 games were won by over 150 runs. Two of these were in Sri Lanka, one in Pakistan and one in Bangladesh. Given the similar meteorological and ground conditions
+in these nations, one could argue that the host nation should be taken into account when revising score targets?
