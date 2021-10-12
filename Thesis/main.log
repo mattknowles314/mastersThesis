@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.30)  19 AUG 2021 22:42
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016) (preloaded format=pdflatex 2017.4.30)  8 OCT 2021 14:43
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -458,23 +458,53 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box28
 \@float@everytoks=\toks25
 \@floatcapt=\box29
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/mathtools/mathtools.sty
+Package: mathtools 2015/11/12 v1.18 mathematical typesetting tools
+ (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
+\calc@Acount=\count105
+\calc@Bcount=\count106
+\calc@Adimen=\dimen122
+\calc@Bdimen=\dimen123
+\calc@Askip=\skip46
+\calc@Bskip=\skip47
+LaTeX Info: Redefining \setlength on input line 80.
+LaTeX Info: Redefining \addtolength on input line 81.
+\calc@Ccount=\count107
+\calc@Cskip=\skip48
+) (/usr/local/texlive/2016/texmf-dist/tex/latex/mathtools/mhsetup.sty
+Package: mhsetup 2010/01/21 v1.2a programming setup (MH)
+)
+LaTeX Info: Thecontrolsequence`\('isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\)'isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\['isalreadyrobust on input line 129.
+LaTeX Info: Thecontrolsequence`\]'isalreadyrobust on input line 129.
+\g_MT_multlinerow_int=\count108
+\l_MT_multwidth_dim=\dimen124
+\origjot=\skip49
+\l_MT_shortvdotswithinadjustabove_dim=\dimen125
+\l_MT_shortvdotswithinadjustbelow_dim=\dimen126
+\l_MT_above_intertext_sep=\dimen127
+\l_MT_below_intertext_sep=\dimen128
+\l_MT_above_shortintertext_sep=\dimen129
+\l_MT_below_shortintertext_sep=\dimen130
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.sty
-\lst@mode=\count105
+\lst@mode=\count109
 \lst@gtempboxa=\box30
 \lst@token=\toks26
-\lst@length=\count106
-\lst@currlwidth=\dimen122
-\lst@column=\count107
-\lst@pos=\count108
-\lst@lostspace=\dimen123
-\lst@width=\dimen124
-\lst@newlines=\count109
-\lst@lineno=\count110
-\lst@maxwidth=\dimen125
+\lst@length=\count110
+\lst@currlwidth=\dimen131
+\lst@column=\count111
+\lst@pos=\count112
+\lst@lostspace=\dimen132
+\lst@width=\dimen133
+\lst@newlines=\count113
+\lst@lineno=\count114
+\lst@maxwidth=\dimen134
  (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstmisc.sty
 File: lstmisc.sty 2015/06/04 1.6 (Carsten Heinz)
-\c@lstnumber=\count111
-\lst@skipnumbers=\count112
+\c@lstnumber=\count115
+\lst@skipnumbers=\count116
 \lst@framebox=\box31
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/listings.cfg
 File: listings.cfg 2015/06/04 1.6 listings configuration
@@ -482,20 +512,7 @@ File: listings.cfg 2015/06/04 1.6 listings configuration
 Package: listings 2015/06/04 1.6 (Carsten Heinz)
  (/usr/local/texlive/2016/texmf-dist/tex/latex/ifsym/ifsym.sty
 Package: ifsym 2000/04/18 I.Kloeckl
- (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/calc.sty
-Package: calc 2014/10/28 v4.3 Infix arithmetic (KKT,FJ)
-\calc@Acount=\count113
-\calc@Bcount=\count114
-\calc@Adimen=\dimen126
-\calc@Bdimen=\dimen127
-\calc@Askip=\skip46
-\calc@Bskip=\skip47
-LaTeX Info: Redefining \setlength on input line 80.
-LaTeX Info: Redefining \addtolength on input line 81.
-\calc@Ccount=\count115
-\calc@Cskip=\skip48
-)
-\c@ifsymcnt=\count116
+\c@ifsymcnt=\count117
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/tools/indentfirst.sty
 Package: indentfirst 1995/11/23 v1.03 Indent first paragraph (DPC)
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/amscls/amsthm.sty
@@ -505,54 +522,54 @@ Package: amsthm 2015/03/04 v2.20.2
 \thm@headfont=\toks29
 \thm@notefont=\toks30
 \thm@headpunct=\toks31
-\thm@preskip=\skip49
-\thm@postskip=\skip50
-\thm@headsep=\skip51
+\thm@preskip=\skip50
+\thm@postskip=\skip51
+\thm@headsep=\skip52
 \dth@everypar=\toks32
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/appendix/appendix.sty
 Package: appendix 2009/09/02 v1.2b extra appendix facilities
-\c@@pps=\count117
-\c@@ppsavesec=\count118
-\c@@ppsaveapp=\count119
+\c@@pps=\count118
+\c@@ppsavesec=\count119
+\c@@ppsaveapp=\count120
 ) (/usr/local/texlive/2016/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty
-\fancy@headwidth=\skip52
-\f@ncyO@elh=\skip53
-\f@ncyO@erh=\skip54
-\f@ncyO@olh=\skip55
-\f@ncyO@orh=\skip56
-\f@ncyO@elf=\skip57
-\f@ncyO@erf=\skip58
-\f@ncyO@olf=\skip59
-\f@ncyO@orf=\skip60
+\fancy@headwidth=\skip53
+\f@ncyO@elh=\skip54
+\f@ncyO@erh=\skip55
+\f@ncyO@olh=\skip56
+\f@ncyO@orh=\skip57
+\f@ncyO@elf=\skip58
+\f@ncyO@erf=\skip59
+\f@ncyO@olf=\skip60
+\f@ncyO@orf=\skip61
 )
 
-Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 20.
-
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 22.
-
-
-Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 23.
+Package Fancyhdr Warning: \fancyhead's `E' option without twoside option is useless on input line 22.
 
 
 Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 24.
 
-\c@theorem=\count120
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 25.
+
+
+Package Fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 26.
+
+\c@theorem=\count121
 (/Users/matthew/Documents/Uni/Dissertation/Thesis/main.aux)
 \openout1 = `main.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 34.
-LaTeX Font Info:    ... okay on input line 34.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 37.
+LaTeX Font Info:    ... okay on input line 37.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -590,16 +607,16 @@ LaTeX Font Info:    ... okay on input line 34.
 
 (/usr/local/texlive/2016/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count121
-\scratchdimen=\dimen128
+\scratchcounter=\count122
+\scratchdimen=\dimen135
 \scratchbox=\box32
-\nofMPsegments=\count122
-\nofMParguments=\count123
+\nofMPsegments=\count123
+\nofMParguments=\count124
 \everyMPshowfont=\toks33
-\MPscratchCnt=\count124
-\MPscratchDim=\dimen129
-\MPnumerator=\count125
-\makeMPintoPDFobject=\count126
+\MPscratchCnt=\count125
+\MPscratchDim=\dimen136
+\MPnumerator=\count126
+\makeMPintoPDFobject=\count127
 \everyMPtoPDFconversion=\toks34
 ) (/usr/local/texlive/2016/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2016/05/10 v0.21 Utility functions of pdfTeX for LuaTeX (HO)
@@ -634,7 +651,7 @@ Package grfext Info: Graphics extension search list:
  (/usr/local/texlive/2016/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 ))
-\c@lstlisting=\count127
+\c@lstlisting=\count128
  (/Users/matthew/Documents/Uni/Dissertation/Thesis/titlepage.tex <figures/uoylogo.png, id=1, 803.0pt x 370.38374pt>
 File: figures/uoylogo.png Graphic file (type png)
  <use figures/uoylogo.png>
@@ -658,59 +675,59 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 Chapter 1.
+) (/Users/matthew/Documents/Uni/Dissertation/Thesis/Chapters/dataChap.tex [3
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--5
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 7--8
-
- []
-
-[3
-
-]) (/Users/matthew/Documents/Uni/Dissertation/Thesis/Chapters/dataExp.tex [4]
+]
 Chapter 2.
+) (/Users/matthew/Documents/Uni/Dissertation/Thesis/Chapters/DLSChap.tex [4
 
-Underfull \hbox (badness 10000) in paragraph at lines 4--8
-
- []
-
-<figures/dlsOversScore.png, id=28, 617.30624pt x 331.2375pt>
-File: figures/dlsOversScore.png Graphic file (type png)
- <use figures/dlsOversScore.png>
-Package pdftex.def Info: figures/dlsOversScore.png used on input line 45.
-(pdftex.def)             Requested size: 432.11142pt x 231.86465pt.
+]
+Chapter 3.
+<figures/z(u).png, id=30, 462.528pt x 346.896pt>
+File: figures/z(u).png Graphic file (type png)
+ <use figures/z(u).png>
+Package pdftex.def Info: figures/z(u).png used on input line 28.
+(pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
  [5
 
-] <figures/targetRunSpread.png, id=32, 617.30624pt x 331.2375pt>
-File: figures/targetRunSpread.png Graphic file (type png)
- <use figures/targetRunSpread.png>
-Package pdftex.def Info: figures/targetRunSpread.png used on input line 63.
-(pdftex.def)             Requested size: 370.3866pt x 198.74402pt.
-) [6 </Users/matthew/Documents/Uni/Dissertation/Thesis/figures/dlsOversScore.png> </Users/matthew/Documents/Uni/Dissertation/Thesis/figures/targetRunSpread.png>] (/Users/matthew/Documents/Uni/Dissertation/Thesis/main.bbl [7]) [8
+ </Users/matthew/Documents/Uni/Dissertation/Thesis/figures/z(u).png>]) (/Users/matthew/Documents/Uni/Dissertation/Thesis/Chapters/SPRChap.tex [6]
+Chapter 4.
+) (/Users/matthew/Documents/Uni/Dissertation/Thesis/Chapters/implementation.tex [7
+
+]
+Chapter 5.
+) (/Users/matthew/Documents/Uni/Dissertation/Thesis/Chapters/analysis.tex [8
+
+]
+Chapter 6.
+) (/Users/matthew/Documents/Uni/Dissertation/Thesis/Chapters/conclusions.tex [9
+
+]
+Chapter 7.
+) (/Users/matthew/Documents/Uni/Dissertation/Thesis/main.bbl [10
+
+]) [11
 
 ]
 Appendix A.
 (/usr/local/texlive/2016/texmf-dist/tex/latex/listings/lstlang1.sty
 File: lstlang1.sty 2015/06/04 1.6 listings language file
-) (/Users/matthew/Documents/Uni/Dissertation/Thesis/../code/data_handler.py [9
+) (/Users/matthew/Documents/Uni/Dissertation/Thesis/../code/data_handler.py [12
 
-]) [10] (/Users/matthew/Documents/Uni/Dissertation/Thesis/main.aux) ) 
+]) [13] (/Users/matthew/Documents/Uni/Dissertation/Thesis/main.aux) ) 
 Here is how much of TeX's memory you used:
- 5660 strings out of 493014
- 74534 string characters out of 6133351
- 251482 words of memory out of 5000000
- 9076 multiletter control sequences out of 15000+600000
+ 6148 strings out of 493014
+ 83684 string characters out of 6133351
+ 262205 words of memory out of 5000000
+ 9543 multiletter control sequences out of 15000+600000
  12949 words of font info for 49 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 38i,10n,43p,1029b,1804s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
-Output written on /Users/matthew/Documents/Uni/Dissertation/Thesis/main.pdf (11 pages, 218377 bytes).
+ 38i,10n,43p,461b,1802s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2016/texmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb>
+Output written on /Users/matthew/Documents/Uni/Dissertation/Thesis/main.pdf (14 pages, 192845 bytes).
 PDF statistics:
- 83 PDF objects out of 1000 (max. 8388607)
- 54 compressed objects within 1 object stream
+ 95 PDF objects out of 1000 (max. 8388607)
+ 64 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 11 words of extra memory for PDF output out of 10000 (max. 10000000)
 

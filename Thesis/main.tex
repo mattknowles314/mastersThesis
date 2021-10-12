@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{float}
+\usepackage{mathtools}
 \usepackage{listings}
 \usepackage[misc]{ifsym}
 \usepackage{indentfirst} 
@@ -13,6 +14,7 @@
 \usepackage{appendix}
 \usepackage{fancyhdr}
 \pagestyle{fancy}
+
 
 %Headers and Footers, thanks to Overleaf
 %https://www.overleaf.com/learn/latex/How_to_Write_a_Thesis_in_LaTeX_(Part_2):_Page_Layout
@@ -23,6 +25,7 @@
 \fancyfoot[LO,CE]{Chapter \thechapter}
 \fancyfoot[CO,RE]{Matthew Knowles}
 
+\DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{remark}[theorem]{Remark}
@@ -38,14 +41,24 @@
 \section*{Abstract}
 Write this last
 
-\section*{Acknowledgements}
-The author would like to thank (INSERT SUPERVISOR HERE) for their invaluable supervision and advice throughout this project. Secondly, my eternal thanks and admiration for my friends in York, who have made my time here so wonderful from the very begining, and for all the support you have given me every step of the way. Finally, to the UYMCC, who have enriched my university experience beyond belief. 
+%\section*{Acknowledgements}
+%The author would like to thank Dr. Jessica Hargreaves for their invaluable supervision and advice throughout this project. Secondly, my eternal thanks and admiration for my friends in York, who have made my time here so wonderful from the very begining, and for all the support you have given me every step of the way. Finally, to the UYMCC, who have enriched my university experience beyond belief. 
 
 \tableofcontents
 
 \input{Chapters/Intro}
 
-\input{Chapters/dataExp}
+\input{Chapters/dataChap}
+
+\input{Chapters/DLSChap}
+
+\input{Chapters/SPRChap}
+
+\input{Chapters/implementation}
+
+\input{Chapters/analysis}
+
+\input{Chapters/conclusions.tex}
 
 \bibliography{refs}{}
 \bibliographystyle{plain}
@@ -55,5 +68,6 @@ The author would like to thank (INSERT SUPERVISOR HERE) for their invaluable sup
     \chapter{Python Code for Chapter 2}
     \lstinputlisting[language=Python, caption=Data Wrangling Code, label={Chapter 2 code}, breaklines=true]{../code/data_handler.py}
 \end{appendices}
+
 
 \end{document}

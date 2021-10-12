@@ -3,7 +3,8 @@ import matplotlib.pyplot as plt
 import os
 import csv
 dataPath="/Volumes/MattData/CricData/odis_json/"
-
+csvF = open("/Volumes/MattData/CricData/rrmaster.csv", "a")
+writer = csv.writer(csvF)
 os.chdir(dataPath)
 for f in os.listdir():
     with open(dataPath+f,"r") as file:
@@ -14,7 +15,7 @@ for f in os.listdir():
         inningsFirst = data["innings"][0]["team"]
         gameDate = data["info"]["dates"][0]
         
-        row=[gameDate,homeTeam,awayTeam]
+        row=[f,gameDate,homeTeam,awayTeam]
 
         if "winner" in data["info"]["outcome"]:
             winner = data["info"]["outcome"]["winner"]
@@ -45,19 +46,16 @@ for f in os.listdir():
             RR1 = []
             RR2 = []
             
-            
-            
-            while i <= len(runsInOvers1)-1:
+            while i <= len(runsInOvers1):
                 row.append(sum(runsInOvers1[0:i])/i)
                 i+=1
             row.append("EOI")
-            while j <= len(runsInOvers2)-1:
+            while j <= len(runsInOvers2):
                 row.append(sum(runsInOvers2[0:j])/j)
                 j+=1       
 
-            csvF = open("/Volumes/MattData/CricData/rrmaster.csv", "a")
-            writer = csv.writer(csvF)
             writer.writerow(row)
-            csvF.close()
         else:
             continue
+
+csvF.close()

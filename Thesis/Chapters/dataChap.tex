@@ -1,10 +1,17 @@
 \chapter{Data}
 
-\section{Source}
-foo
+\section{Data Origin}
+The primary source of data for carrying out this project was downloaded from ``cricsheet''\footnote{https://cricsheet.org/}
+and stored locally on a private server. In total there are 2167 individual mathes of data. Each in a JSON format.
+These cover matches ranging from the $3^{rd}$ of January, 2004. Up to the $20^{th}$ of July, 2021.
 
 \section{Attributes}
-bar
+Each JSON file contains a considerable amount of metadata surrounding the match in question. Along with 
+ball-by-ball data for the entire match. We have access to attributes such as the date, where the match was played,
+the entire teamsheet for both teams, who the officials were, who won- and by what margin, who won the toss; and many others.
+
+We also have the ball-by-ball data. So for every ball bowled, it gives who were the striking and non-striking batsmen, how many runs
+were scored and how. It also details if a wicket was taken that ball, and how.
 
 \section{Pre-Processing}
-foobar
+Many Python scripts were written to get data in an appropriate form for analysis. 
