@@ -84,3 +84,63 @@ practically.
 
 \section{Improvements by Stern}
 foo
+
+
+\section{Extension: Bayesian Modelling}
+This section will look at the work of paper \cite{dlbayes}, which used Bayesian modelling to try and improve the score predictions
+of the D/L method. The authors used the same dataset as we are using for the dissertation, although over a slightly smaller range of games.
+Only games between 2005-2017 are used, whereas our dataset goes up to 2021. Note that to keep consistent with the fact we are talking about a different
+model now, we swich from using $Z(u,w)$, to using $R(u,w)$, as to keep consistency with the different papers being looked at.
+They start by introducing the following nonlinear regression model:
+
+\begin{equation}
+    \label{dlRegress}
+    \bar{R}(u,w) \sim N(m(u,w;\theta),\frac{\sigma^2}{n_{uw}})
+\end{equation}
+
+Where $\bar{R}(u,w)$ is the sample average of runs scored by a team from the total number of matches in the data set. We have $m(u,w;\theta)$
+as the corresponding modeled population average of runs scored by a team when a considerable amount of games are taken into account. $\theta$ denotes 
+a vector of parameters that will be specified later on. Since $R(u,w)$ is not calculated in all games, the average score is taken over all matches where
+scores are present, this is given by $n_{uw}$. The sample mean $\bar{R}(u,w)$ is the calculated over this quantity. This is actually the point which motivates
+using Bayesian statistics to extend the D/L method. The authors report that approximately $26.8\%$ of values for $R(u,w)$ were missing in the dataset, so by 
+using a Bayesian inference model, we can use the posterior predictive distribution to account for missing values. Which in turn should increase the 
+predictive accuracy of this model.
+
+We return now to look at the $m(u,w;\theta)$ parameter that appears in \ref{dlRegress}. This mean function, based on the plots produced in the original D/L
+paper, (see \ref{Z(u)_graph} for an example), the authors adopted an exponential decay. We can see why this choice makes sense from figure \ref{Z(u)_graph}.
+The resources considered by this method, namely runs and wickets, do decrease exponentially as a game progresses. $m(u,w;\theta)$ depends on the parameters
+$a_w = Z_0(w)$ and $b_w = b(w)$, each one depending on the number of wickets fallen at that given time, with u overs remaining. We therefore have:
+
+\begin{align}
+    \label{mdef}
+        m(u,w;\theta) &= a_w(1-exp(-b_wu)) \\
+               \theta &= \{ (a_w,b_w); w \in \mathcal{W}=\{0,1,\ldots,9\} \} 
+\end{align}
+
+Before proceeding with defining the prior specifications on the parameters for this model, we need the following distribution:
+
+\begin{definition}
+    $X \sim Ga(a,b)$ has a \textbf{Gamma Distribution} with mean $\frac{a}{b}$ and variance $\frac{a}{b^2}$ if its probability density function is
+    $$
+        \frac{b^a}{\Gamma(a)} x^{a-1}e^{-bx}.  
+    $$
+\end{definition}
+
+We can now define the prior specifications on the parameters. First, we fix $A_0$ and $B_0$ large enough such that $R(50,0) < A_0$. We initialise  the model with
+$a_0 \sim U(0,A_0)$ and $b_0 \sim U(0,B_0)$. Then given any pair $(a_0,b_0)$ and for $w=0,1,\ldots,8$, we generate:
+
+\begin{align}
+    a_{w+1}|\sigma^2,a_w,b_w &\sim U(0,a_w) \\
+    b_{w+1}|\sigma^2,a_{w+1},b_w,a_w &\sim U\left(0,\frac{a_wb_w}{a_{w+1}}\right) \\
+    \frac{1}{\sigma^2} &\sim Ga(a,b).
+\end{align}
+
+Above, U(a,b) represents a uniform distribution over the open interval $(a,b)$. Now that the prior distribution is obtained, the likelehood function is then 
+given by:
+
+\begin{equation}
+    L(\theta,\sigma^2) = \left( \frac{1}{\sigma / \sqrt{n_{uw}}} \right)^{500} exp \left\{ - \frac{1}{2(\sigma^2 / n_{uw})} \sum_{u=1}^{50} \sum_{w=0}^9 (R(u,w)-m(u,a_w,b_w))^2  \right\}
+\end{equation}
+
+The authors chose their parameters $A_0, \ B_0, \ a \ \text{and} \ b$ such that the prior is not sensitive to the posterior inderence. The values chosen
+were therefore $A_0=200 \ B_0=100 \ \text{and} \ a=b=0.1$.
