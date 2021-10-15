@@ -27,6 +27,7 @@ that resulted in the graph having a similar shape to original figures in the D/L
     \centering
     \includegraphics[scale=0.6]{figures/z(u).png}
     \label{Z(u)_graph}
+    \caption{Graph showing how the rate at which runs are scored decays as a game progresses.}
 \end{figure}
 
 However, we have not yet looked at what happens when wickets are lost. To introduce this metric, equation \ref{Z(u)}
@@ -87,7 +88,7 @@ foo
 
 
 \section{Extension: Bayesian Modelling}
-This section will look at the work of paper \cite{dlbayes}, which used Bayesian modelling to try and improve the score predictions
+This section will look at the work of paper $\cite{dlbayes}$, which used Bayesian modelling to try and improve the score predictions
 of the D/L method. The authors used the same dataset as we are using for the dissertation, although over a slightly smaller range of games.
 Only games between 2005-2017 are used, whereas our dataset goes up to 2021. Note that to keep consistent with the fact we are talking about a different
 model now, we swich from using $Z(u,w)$, to using $R(u,w)$, as to keep consistency with the different papers being looked at.
@@ -144,3 +145,27 @@ given by:
 
 The authors chose their parameters $A_0, \ B_0, \ a \ \text{and} \ b$ such that the prior is not sensitive to the posterior inderence. The values chosen
 were therefore $A_0=200 \ B_0=100 \ \text{and} \ a=b=0.1$.
+
+One thing briefly mentioned in chapter 3 of this paper is the average score at the fall of each wicket. This isn't discussed further, but it's interesting to see how it behaves.
+So we take a brief detour to look at it. This can be seen in figure \ref{avgrunsfow}.
+
+\newpage
+
+\begin{figure}[t]
+    \centering
+    \includegraphics[scale=0.6]{figures/avgrunsfow.png}
+    \caption{Plot of average runs scored at the fall of each wicket. Averages taken over 1437 innings.}
+    \label{avgrunsfow}
+\end{figure}
+
+Initially, one may think that this is normally distributed. It certainly holds a bell curve-like shape. However, a Kolmogorov-Smirnov test $\cite{kolm}$ was
+performed to see if these values were normally distributed, and it turns out they aren't. This test was performed using the R function \textit{ks.test()}, which returned
+a p-value of $2.2\text{x}10^{-16}$ for the two-sided alternative hypothesis parameter. 
+
+Does the shape of this curve make sense? Well yes, because usually batters 3/4 are actually the best in the side, so the fact they put on more runs is not a suprise.
+But what this does do is reinforce the idea behind using an exponential decay for modelling resources. This is because cumulatively, the tail end of batters (the last 4) 
+will not put on as many runs as the higher/middle order. 
+
+Most of the work from this paper went into creating a better resource table for calculating revised scores. Which isn't particularly relevant to this project, but what is 
+is the section on score prediction. The authors split every match at the $35^{th}$ over to try and predict the final score. They found the bayesian model gives a better
+prediction of final match scores. Figure 3 of their paper outlines these results.
