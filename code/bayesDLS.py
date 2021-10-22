@@ -22,7 +22,7 @@ def runsAndWicks(inputPath):
     csvF = open("/Volumes/MattData/CricData/firstinns.csv", "a")
     writer = csv.writer(csvF)
 
-    head = ["Game ID"]
+    head = ["Game ID","Home Team","Away Team","Ground","Winner","Runs Won By","Wickets Won By"]
     for i in range(0,50):
         head.append(("Over "+str(i+1)))
     for i in range(0,10):
@@ -36,7 +36,21 @@ def runsAndWicks(inputPath):
             wickLossScores = []
             gameSum=0
             data = json.load(file)
-            row = [f.strip(".json")]
+            homeTeam = data["info"]["teams"][0]
+            awayTeam = data["info"]["teams"][1]
+            ground = data["info"]["venue"]
+
+            if "winner" in data["info"]["outcome"]:
+                winner = data["info"]["outcome"]["winner"]
+                if "runs" in data["info"]["outcome"]["by"]:
+                    runsWonBy = data["info"]["outcome"]["by"]["runs"]
+                    wicksWonBy = 0
+                else:
+                    wicksWonBy = data["info"]["outcome"]["by"]["wickets"]
+                    runsWonBy = 0
+            else:
+                winner = "tie"
+            row = [f.strip(".json"),homeTeam,awayTeam,ground,winner,runsWonBy,wicksWonBy]
             for o in data["innings"][0]["overs"]:
                 overSum=0
                 for j in o["deliveries"]:
@@ -49,5 +63,5 @@ def runsAndWicks(inputPath):
                 row.append(w)
             writer.writerow(row)
 
-
+#check_first_innings("/Volumes/MattData/CricData/odis_json/", "/Volumes/MattData/CricData/fullFirstInnings/")
 runsAndWicks(inputPath)
