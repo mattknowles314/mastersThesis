@@ -39,6 +39,7 @@ methods here for building our neural network.  In \cite{nnstock}, the authors tw
 is the better choice for predicting how stock values will change. With these motivations in mind, we can begin to construct the networks.
 
 \subsection{Builiding The Network}
+%Rewrite this bit
 Our input layer will have 50 nodes, one for the runrate at the end of each over. We will begin with 5 hidden layers, although this is subject to change. The output layer
 will of course only have one node, the value of which will predict the score of the game. 
 
@@ -57,7 +58,7 @@ The two common choices are:
     f(z) &= tanh(z)
 \end{align}
 
-The comparrison of these two functions can be seen in \red{actfig}.
+The comparrison of these two functions can be seen in \ref{actfig}.
 
 \begin{figure}[h]
     \centering
@@ -66,4 +67,82 @@ The comparrison of these two functions can be seen in \red{actfig}.
     \caption{Graph showing the shape of different activation functions.}
 \end{figure}
 
-We will be using (4.2) as our activation, known as the ``sigmoid function''. 
+We will be using (4.3) as our activation but will return to the activation function shortly. For now, lets look at the network we're going to use.
+The initial neural network that we're building. The code for this activation can be seen in \ref{pyact}.
+
+\begin{figure}
+    \lstinputlisting[language=Python, firstline=12,lastline=13]{../code/net.py}
+    \caption{Python code for the activation function}
+    \label{pyact}
+\end{figure}
+
+%Put a picture of the network here when you make it
+
+We begin with getting from the input layer, denoted $L_0$. Each node in $L_0$ takes a value $a^{(0)_i}$ for $i \in \{1,2,\ldots,50\}$. We use $textbf{a}^(0)$ to denote the vector
+containing these values. For every node in $L_0$, we have 25 connections coming away, one going to each of the nodes in $L_1$. 25 was an arbitraty choice for the size of $L_1$, and is
+subject to change based on results from initial testing. So that means we have $50 \times 25 = 1250$ weights for just the first layer alone. Some linear algebra is to be done here to get 
+values for the vector $\textbf{a}^{(1)}$. We use $w_ij$ to denote the weight from node j in one layer to node i in the prior layer. We can then construct a matrix containing the weights
+between $L_0$ and $L_1$, which we denote $W^{(1)}$. This matrix is given by \ref{weights1}.
+
+\begin{equation}
+    W^{(1)} =
+    \left[ {\begin{array}{cccc}
+      w_{1,1} & w_{1,2} & \cdots & a_{1,50}\\
+      w_{2,1} & w_{2,2} & \cdots & a_{2n}\\
+      \vdots & \vdots & \ddots & \vdots\\
+      w_{25,1} & a_{25,2} & \cdots & a_{25,50}\\
+    \end{array} } \right]
+    \label{weights1}
+\end{equation}
+
+Using \ref{weights1}, and combining with $a^{(0)}$, we can get the following:
+
+\begin{align}
+    A^{(1)} &= \left[ {\begin{array}{cccc}
+        w_{1,1} & w_{1,2} & \cdots & a_{1,50}\\
+        w_{2,1} & w_{2,2} & \cdots & a_{2n}\\
+        \vdots & \vdots & \ddots & \vdots\\
+        w_{25,1} & a_{25,2} & \cdots & a_{25,50}\\
+      \end{array} } \right] \times \left[ \begin{array}{c}
+          a^{(0)}_1 \\
+          a^{(0)}_2 \\
+          \vdots \\
+          a^{(0)}_{50} \\
+      \end{array} \right] + \left[ \begin{array}{c}
+        b^{(0)}_1 \\
+        b^{(0)}_2 \\
+        \vdots \\
+        b^{(0)}_{25} \\
+        \end{array} \right] \\
+      &= W^{(1)}\textbf{a}^{0} + \textbf{b}^1
+\end{align}
+
+Where $\textbf{b}^1$ is the vector containing the biases for each node.  At this point, we are incredibly close to having values for $\textbf{a}^{(1)}$. The last thing to do
+is apply the activation function. The above has resulted in a $25\times 1$ vector, we use the notation $f(A^{(1)})$ to denote applying the activation function to each 
+element in the vector $A^{(1)}$. Putting this all together, we have the following equation:
+
+\begin{equation}
+    \textbf{a}^{(1)} = f(W^{(1)}\textbf{a}^{(0)} + \textbf{b}^{1})
+\end{equation}
+
+Which gives us values for all the nodes in the first hidden layer. This process is then repeated for all the the remaining layers in the network. Implementing this in Python 
+is not too difficult, and the code can be seen in \ref{pyActVals}. The only function that can be seen here with no code is $\textit{is\_Valid()}$, which just checks that all the 
+constituents are of the right dimensions. If this returns false, then it wont let the calculations go ahead. 
+
+\begin{figure}[h]
+    \lstinputlisting[language=Python, firstline=24,lastline=40]{../code/net.py}
+    \caption{Python code for giving activation values to the next layer}
+    \label{pyActVals}
+\end{figure}
+
+When we start the training process for this network, we will only have random variables for the weights and biases. To gain better values that can predict accurate results in the future,
+we need to train the network by feeding it feature vectors and their associated outputs. \\
+
+To allow the netowrk to be trained, we first must define a ``cost function''. The way we do this is to input a vector to the input layer, let the network produce a result, say $y'$, which
+initially will be hooribly wrong, and square the difference between this and the true value $y$ for that particluar training vector. Put more precisely,
+let \textbf{X} be a feature vector containing 50 elements, and $y$ the corresponding output. Then define the cost function, $C(X,y) := (y'-y)^2$. The lower the value of $C(X,y)$, the 
+better the network has done at predicting. The average value of $C(X,y)$ for each X and y in our training set, is then a good measure of the network's performance. \\
+
+The cost function is at the heart of how these networks ``learn''. All we're doing is minimising a cost function, to give matrices of weights and biases that
+produce the best output. The algorithm for minimising this cost function is called ``gradient descent'' \cite{cauchy}. Suppose we take every single weight and bias of our network,
+and turn it into a giant column vector. 

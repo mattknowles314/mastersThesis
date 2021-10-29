@@ -49,7 +49,8 @@ for(i in 1:1436){
   rrMat[i,51] <- sum(df[i,8:57])
 }
 
-write.matrix(rrMat, file="/Users/iikno/Documents/Diss/code/rrmat.csv")
+
+write.matrix(rrMat, file="/Users/iikno/Documents/Diss/code/rrmat.csv", sep = ',')
 
 avgRR <- colMeans(rrMat[,1:50])
 

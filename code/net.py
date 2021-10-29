@@ -1,22 +1,49 @@
 import math
 import csv
+import pandas as pd
 
-n_layers = 5
-m=50
-l = 0
-weights = [[] for x in range(1,n_layers)]
-biases = [1 for x in range(1,n_layers)] #initialse all biases as 1
+#Organising data
 
-class perceptron:
-    def __init__(self, inputVector, bias):
-        self.iV = inputVector
-        self.b = bias
+rrmat = pd.read_csv("rrmat.csv",header=None)
+Y = []
+for i in rrmat[50]:
+    Y.append(i)
 
-def sig(z):
-    return 1/(1+exp(-1*z))
+def act(z):
+    return math.tanh(z)
 
-def J(W,b):
-    A = 0
-    for i in range(1,m+1):
-        A += abs(h(x[i])-y[i])^2
-    
+def is_Valid(M,n,k):
+    if len(M) != k:
+        return False
+    else:
+        for i in M:
+            if len(i) != n:
+                return False
+        return True
+
+def next_layer(W, a, b):
+    '''
+    Takes in a weight matrix W, the current layer of values, a, and the vector of biases. Outputs the vector of 
+    values corresponding to the next layer in the network.
+    '''
+    if not is_Valid(W,len(a),len(b)):
+        return False
+    else:
+        A = []
+        for row in W:
+            sum = 0
+            for element in row:
+                sum += element*a[row.index(element)]
+            A.append(sum)
+        for a in A:
+            A[A.index(a)]= act(a + b[A.index(a)])
+        return A
+
+
+
+
+W = [[1,2,3],[4,2,6]]
+a = [6,7,9]
+b = [1,1]
+
+print(next_layer(W,a,b))
