@@ -31,3 +31,26 @@ ggplot(df, aes(x = Score.at.FOW.4)) +
 
 ggplot(df, aes(x = Score.at.FOW.5)) +
     geom_density(aes(color = Winner))
+
+#Run raaaaaaaaaaaaaaaaates
+
+avgRuns <- colMeans(df[,8:57])
+rr <- c()
+for(j in 1:50){
+  rr[j] <- sum(avgRuns[1:j])/j 
+}
+plot(rr)
+
+rrMat <- matrix(,nrow = 1436, ncol=51)
+for(i in 1:1436){
+  for(j in 1:50){
+    rrMat[i,j] <- sum(df[i,8:7+j])/6
+  }
+  rrMat[i,51] <- sum(df[i,8:57])
+}
+
+write.matrix(rrMat, file="/Users/iikno/Documents/Diss/code/rrmat.csv")
+
+avgRR <- colMeans(rrMat[,1:50])
+
+plot(rrMat[,51], col=as.factor(df$Winner), pch=19)
