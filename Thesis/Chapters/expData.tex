@@ -66,3 +66,21 @@ batting team is having a good day, because we have this much larger peak around 
 Finally, in \ref{ovrdens9fow}, we can see that the earlier bowling advantage peak is much higer, because the lower order batters are traditionally less skilled 
 at batting, and so the bowling team have a distinct advantage in taking wickets against these players. But we also see the second, batting-favoured peak is no much lower.
 This corresponds to the scenario in which the earlier batters have laid a good foundation of the game, and the lower-order batters have not had to contribute much to the score.
+
+\section{Outliers in Runs Data}
+\label{huber}
+In the next chapter, it will be necessary to choose a loss function for improving the neural network that we create. To aid in determining this, we need to look at the
+spread of runs scored in a full innings of data. This can be seen in \ref{runsbox}.
+
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=0.5]{figures/runsbox.png}
+    \caption{Boxplot showing the spread of runs scored}
+    \label{runsbox}
+\end{figure}
+
+
+
+There are 363 data points greater than the third quartile, while 671 are below the first quartile. So $25.3\%$ of our data lies above the third quartile, and
+$46.7\%$ below the first. For that reason, we make the decision to use the ``Huber Loss'' function when building our neural network, since it is less sensitive to outliers.
+%NEED APPENDIX TALKING ABOUT HUBER LOSS

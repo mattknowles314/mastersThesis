@@ -70,8 +70,8 @@ The comparrison of these two functions can be seen in \ref{actfig}.
 We will be using (4.3) as our activation but will return to the activation function shortly. For now, lets look at the network we're going to use.
 The initial neural network that we're building. The code for this activation can be seen in \ref{pyact}.
 
-\begin{figure}
-    \lstinputlisting[language=Python, firstline=12,lastline=13]{../code/net.py}
+\begin{figure} %MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
+    \lstinputlisting[language=Python, firstline=14,lastline=15]{../code/net.py}
     \caption{Python code for the activation function}
     \label{pyact}
 \end{figure}
@@ -129,12 +129,14 @@ Which gives us values for all the nodes in the first hidden layer. This process 
 is not too difficult, and the code can be seen in \ref{pyActVals}. The only function that can be seen here with no code is $\textit{is\_Valid()}$, which just checks that all the 
 constituents are of the right dimensions. If this returns false, then it wont let the calculations go ahead. 
 
-\begin{figure}[h]
-    \lstinputlisting[language=Python, firstline=24,lastline=40]{../code/net.py}
+\begin{figure}[h]%AGAIN, MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
+    \lstinputlisting[language=Python, firstline=32,lastline=48]{../code/net.py}
     \caption{Python code for giving activation values to the next layer}
     \label{pyActVals}
 \end{figure}
 
+
+This process is then repeated for each layer, creating a diffferent weights and bias matrix going between each layer in the network. These matrices are naturally of different sizes, but the principle is exactly the same.
 When we start the training process for this network, we will only have random variables for the weights and biases. To gain better values that can predict accurate results in the future,
 we need to train the network by feeding it feature vectors and their associated outputs. \\
 
@@ -146,3 +148,38 @@ better the network has done at predicting. The average value of $C(X,y)$ for eac
 The cost function is at the heart of how these networks ``learn''. All we're doing is minimising a cost function, to give matrices of weights and biases that
 produce the best output. The algorithm for minimising this cost function is called ``gradient descent'' \cite{cauchy}. Suppose we take every single weight and bias of our network,
 and turn it into a giant column vector. 
+
+\begin{example}
+    In this first example, we initialise four random weights matrices, four bias vectors, and we run through the process outlined above. We know going into this that 
+    the cost is going to be high. Initialising the weights as random values $w_{ij} \in [-1000,1000]$, we get an initial cost function for our full dataset of a huge
+    3098.4. 
+\end{example}
+
+We discussed in section \ref{huber} the need to use a Huber Loss function based on our data. Let us now define this function, as in \cite{huber}.
+
+\begin{definition}
+    Given an estimation procedure $f$, the \textbf{Huber Loss Function} is given by:
+    \begin{equation*}
+        L_{\delta}(a) = \begin{cases}
+            \frac{1}{2}a^2  \quad \, &\lvert a \rvert \leq \delta, \\
+            \delta(\lvert a \rvert -\frac{1}{2}\delta)  \quad\, &\text{otherwise}
+        \end{cases}
+    \end{equation*}
+\end{definition}
+
+Here, $a$ reffers to residuals, which is essentially our cost function. For that, reason, we can rewrite this loss function as 
+
+\begin{equation}
+    L_{\delta}(y,y') = \begin{cases}
+        \frac{1}{2}(y-y')^2 \quad \, &\lvert y-y' \rvert \leq \delta, \\
+        \delta(\lvert y-y' \rvert -\frac{1}{2}\delta) \quad \, &\text{otherwise}
+    \end{cases}
+\end{equation}
+
+Implementing this function is not difficult, we can do it in a few lines of Python code, as in \ref{hubercode}
+
+\begin{figure}[h]%AGAIN, MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
+    \lstinputlisting[language=Python, firstline=26,lastline=30]{../code/net.py}
+    \caption{Python code for giving activation values to the next layer}
+    \label{hubercode}
+\end{figure}

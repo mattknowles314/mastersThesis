@@ -168,7 +168,7 @@ So we take a brief detour to look at it. This can be seen in figure \ref{avgruns
     \caption{Plot of average runs scored at the fall of each wicket. Averages taken over 1437 innings.}
     \label{avgrunsfow}
 \end{figure}
-
+%NEED APPENDIX TALKING ABOUT KOLMOGROV-SMIRNOV
 Initially, one may think that this is normally distributed. It certainly holds a bell curve-like shape. However, a Kolmogorov-Smirnov test $\cite{kolm}$ was
 performed to see if these values were normally distributed, and it turns out they aren't. This test was performed using the R function \textit{ks.test()}, which returned
 a p-value of $2.2\text{x}10^{-16}$ for the two-sided alternative hypothesis parameter. \\
