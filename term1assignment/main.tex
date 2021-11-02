@@ -1,6 +1,6 @@
 \documentclass[11pt]{amsart}
 \usepackage[utf8]{inputenc}
-\usepackage[a4paper, total={6in,8in}, portrait, margin=1in]{geometry}
+\usepackage[a4paper, total={6in,8in}, portrait, margin=0.7in]{geometry}
 \usepackage{amssymb}
 
 %Add any packages you need here
@@ -8,12 +8,12 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{float}
+\usepackage{natbib}
 \usepackage{listings}
 \usepackage[misc]{ifsym}
 \usepackage{indentfirst} 
 \usepackage{amsthm}
 \usepackage{appendix}
-
 
 %Any functions you wanna define, pop 'em here
 \newtheorem{theorem}{Theorem}[section]
@@ -39,7 +39,7 @@ of data available is also helpful in finding patterns in matches. This is the ar
 The specific aim of this project is to use more sophisticated methods for revising score targets in limited overs cricket. For the reader unfarmiliar 
 with the game of cricket. Two teams have 50 'overs' each to score as many 'runs' as possible. However, sometimes, a rain delay, pitch invasion 
 or other interruption leaves the team batting second with less time to complete their overs. For this reason, Duckworth and Lewis, two British 
-statisticians wrote a paper outlining a method for how score targets are reset given the state of play when the interruption happened. (REF)\\
+statisticians wrote a paper outlining a method for how score targets are reset given the state of play when the interruption happened. \citep{duckworth} \\
 
 We begin by looking at the maths behind the Duckworth-Lewis method, and the extension made by Stern (REF) in the early 2000s. We look at problems
 with this method, and how it is vulnerable to certain biases. Further, an investigation is undertaken into a few statistical methods aimed to 
@@ -74,7 +74,22 @@ it is much better to have as much data as possible. We will be training a neural
 isn't much that can be done about this due to the cricketing calender only having a certain number of limited-overs matches each year.
 
 \section{Duckworth-Lewis}
-foo
+We begin by looking at the main equation that is the backbone of the Duckworth-Lewis method.
+
+\begin{equation}
+    \label{dleq}
+    Z(u,w) = Z_0(w)[1-exp(-b(w)u)]
+\end{equation}
+
+In \ref{dleq}, u represents the number of overs the runs are scored in, w is the number of wickets lost, and b(w) is an exponential decay constant.
+Due to commercial reasons, the authors were unble to publish some of the mathematical constants that they used. For that reason, we create a plot of this relationship
+using several rough values based on knowledge of the game. although not perfect, it still gives an idea for how this relationship behaves, which is the important thing.
+
+\begin{figure}
+    \includegraphics[scale=0.6]{../Thesis/figures/z(u).png}
+\end{figure}
+
+We can see how the runs scored drops off towards the end of the innings. 
 
 \section{Neural Networks}
 At the time of writing, the Neural Network is still under construction.
