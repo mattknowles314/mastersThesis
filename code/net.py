@@ -71,4 +71,3 @@ while i <= 1435:
     get_costs(list((rrmat.iloc[i])[0:-1]),Y[i])
     i+=1
 
-print("Cost: ",np.average(costs))

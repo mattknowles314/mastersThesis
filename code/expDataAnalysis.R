@@ -55,3 +55,14 @@ write.matrix(rrMat, file="/Users/iikno/Documents/Diss/code/rrmat.csv", sep = ','
 avgRR <- colMeans(rrMat[,1:50])
 
 plot(rrMat[,51], col=as.factor(df$Winner), pch=19)
+
+boxplot(rrMat[,51], main="Boxplot of total runs scored in a full innings",
+        xlab="Runs scored", col="cyan",  notch=T,horizontal = T, pch=19)
+summary(rrMat[,51])
+count=0
+for(i in rrMat[,51]){
+  if(i <= 263){
+    count=count+1
+  }
+}
+print(count)

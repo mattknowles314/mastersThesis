@@ -176,10 +176,13 @@ Here, $a$ reffers to residuals, which is essentially our cost function. For that
     \end{cases}
 \end{equation}
 
-Implementing this function is not difficult, we can do it in a few lines of Python code, as in \ref{hubercode}
+Implementing this function is not difficult, we can do it in a few lines of Python code, as in \ref{hubercode}.
 
 \begin{figure}[h]%AGAIN, MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
     \lstinputlisting[language=Python, firstline=26,lastline=30]{../code/net.py}
     \caption{Python code for giving activation values to the next layer}
     \label{hubercode}
 \end{figure}
+
+We now need to actually start training the network, instead of just telling it how bad the random guesses it's taking are. We do this with
+something called ``Backpropogation''.
