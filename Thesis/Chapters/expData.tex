@@ -68,7 +68,7 @@ at batting, and so the bowling team have a distinct advantage in taking wickets 
 This corresponds to the scenario in which the earlier batters have laid a good foundation of the game, and the lower-order batters have not had to contribute much to the score.
 
 \section{Outliers in Runs Data}
-\label{huber}
+\label{mse}
 In the next chapter, it will be necessary to choose a loss function for improving the neural network that we create. To aid in determining this, we need to look at the
 spread of runs scored in a full innings of data. This can be seen in \ref{runsbox}.
 
@@ -79,8 +79,5 @@ spread of runs scored in a full innings of data. This can be seen in \ref{runsbo
     \label{runsbox}
 \end{figure}
 
-
-
 There are 363 data points greater than the third quartile, while 671 are below the first quartile. So $25.3\%$ of our data lies above the third quartile, and
-$46.7\%$ below the first. For that reason, we make the decision to use the ``Huber Loss'' function when building our neural network, since it is less sensitive to outliers.
-%NEED APPENDIX TALKING ABOUT HUBER LOSS
+$46.7\%$ below the first. For that reason, we make the decision to use the Mean-Squared-Error (MSE) loss function, which is commonplace in regression problems.
