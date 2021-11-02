@@ -11,8 +11,11 @@ Y = []
 for i in rrmat[50]:
     Y.append(i)
 
-def act(z):
-    return math.tanh(z)
+def act(z,deriv):
+    if deriv:
+        return 1/(math.cosh(z)^2)
+    else:
+        return math.tanh(z)
 
 def is_Valid(M,n,k):
     if len(M) != k:
@@ -22,12 +25,6 @@ def is_Valid(M,n,k):
             if len(i) != n:
                 return False
         return True
-
-def huber(y1,y,delta=1.0):
-    if (np.abs(y-y1)) <= delta:
-        return 0.5*(y-y1)**2
-    else:
-        return delta*(np.abs(y-y1)-0.5*delta)
 
 def next_layer(W, a, b):
     '''
@@ -42,7 +39,7 @@ def next_layer(W, a, b):
                 sum += element*a[row.index(element)]
             A.append(sum)
         for a in A:
-            A[A.index(a)]= act(a + b[A.index(a)])
+            A[A.index(a)]= act(a + b[A.index(a)],deriv=False)
         return A
     else:
         return False
@@ -71,3 +68,9 @@ while i <= 1435:
     get_costs(list((rrmat.iloc[i])[0:-1]),Y[i])
     i+=1
 
+alpha = 0.1 #Learning rate
+n_hidden =  3 #Number of hidden layers
+T = 100 #Number of iterations
+
+for i in range(T):
+    print()

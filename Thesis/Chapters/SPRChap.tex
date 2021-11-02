@@ -68,10 +68,10 @@ The comparrison of these two functions can be seen in \ref{actfig}.
 \end{figure}
 
 We will be using (4.3) as our activation but will return to the activation function shortly. For now, lets look at the network we're going to use.
-The initial neural network that we're building. The code for this activation can be seen in \ref{pyact}.
+The initial neural network that we're building. The code for this activation can be seen in \ref{pyact}, note we have included the derivative of this function too, which will be important later.
 
 \begin{figure} %MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
-    \lstinputlisting[language=Python, firstline=14,lastline=15]{../code/net.py}
+    \lstinputlisting[language=Python, firstline=14,lastline=18]{../code/net.py}
     \caption{Python code for the activation function}
     \label{pyact}
 \end{figure}
@@ -130,7 +130,7 @@ is not too difficult, and the code can be seen in \ref{pyActVals}. The only func
 constituents are of the right dimensions. If this returns false, then it wont let the calculations go ahead. 
 
 \begin{figure}[h]%AGAIN, MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
-    \lstinputlisting[language=Python, firstline=32,lastline=48]{../code/net.py}
+    \lstinputlisting[language=Python, firstline=29,lastline=45]{../code/net.py}
     \caption{Python code for giving activation values to the next layer}
     \label{pyActVals}
 \end{figure}
@@ -155,34 +155,106 @@ and turn it into a giant column vector.
     3098.4. 
 \end{example}
 
-We discussed in section \ref{huber} the need to use a Huber Loss function based on our data. Let us now define this function, as in \cite{huber}.
+\subsection{Gradient-Descent and Backpropogation}
+
+We discussed in section \ref{mse} the need to use a MSE loss function based on our data. Let us now define this function, as in \cite{huber}.
 
 \begin{definition}
-    Given an estimation procedure $f$, the \textbf{Huber Loss Function} is given by:
-    \begin{equation*}
-        L_{\delta}(a) = \begin{cases}
-            \frac{1}{2}a^2  \quad \, &\lvert a \rvert \leq \delta, \\
-            \delta(\lvert a \rvert -\frac{1}{2}\delta)  \quad\, &\text{otherwise}
-        \end{cases}
-    \end{equation*}
+    Let N be the number of datapoints, $y_i'$ be the prediceted value from the $i^{th}$ datapoint, and $y_i$ be the true value. Then for the input vector X, and a parameter $\theta$,
+    define the \textbf{Mean Square Error} by
+    \begin{equation}
+        E(X,\theta) = \frac{1}{2N}\sum^N_{i=1}(y_i'-y_i)^2
+    \end{equation}
 \end{definition}
 
-Here, $a$ reffers to residuals, which is essentially our cost function. For that, reason, we can rewrite this loss function as 
+The method of \textit{Gradient Descent} necessitates calculating the gradient of $E(X,\theta)$ with respect to weights and biases in each layer. The idea is to find a local minimum, as this will
+give a set of weights and biases for which the error is lowest, and such that the network is giving well approximated results. Define a \textit{learning rate} $\alpha$, and incorperate the set of weights
+and biases into the parameter $\theta$. Then we update the weights and biases each iteration t via the relationship \ref{graddesc}
 
 \begin{equation}
-    L_{\delta}(y,y') = \begin{cases}
-        \frac{1}{2}(y-y')^2 \quad \, &\lvert y-y' \rvert \leq \delta, \\
-        \delta(\lvert y-y' \rvert -\frac{1}{2}\delta) \quad \, &\text{otherwise}
-    \end{cases}
+    \label{graddesc}
+    \theta^{t+1} = \theta^t - \alpha\frac{\partial E(X,\theta)}{\partial \theta}.
 \end{equation}
 
-Implementing this function is not difficult, we can do it in a few lines of Python code, as in \ref{hubercode}.
+With this in mind, we can now start to go through the Backpropogation process. Firstly, we need to calculate the partial differential of E with respect to a given weight $w_{ij}$. This calculation is given as follows:
 
-\begin{figure}[h]%AGAIN, MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
-    \lstinputlisting[language=Python, firstline=26,lastline=30]{../code/net.py}
-    \caption{Python code for giving activation values to the next layer}
-    \label{hubercode}
-\end{figure}
+\begin{align}
+    \frac{\partial E(X,\theta)}{\partial w_{ij}^k} &= \frac{1}{2N}\sum_{d=1}^N\frac{\partial (y'_d-y_d)^2}{\partial w_{ij}^k} \\
+                                                   &= \frac{1}{N}\sum^N_{d=1} \frac{\partial E_d(X,\theta)}{\partial w_{ij}^k}
+\end{align}
 
-We now need to actually start training the network, instead of just telling it how bad the random guesses it's taking are. We do this with
-something called ``Backpropogation''.
+In the above, we have $E_d = \frac{1}{2}(y'_d-y_d)^2$.  We must emply the chain rule to calculate the partial derivavtive of $E_d$ with respect to an individual weight. 
+Let $a_j^k$ be the activation value of node j in layer k before it is put through the activation function. Then we have
+
+\begin{equation}
+    \label{errorchain}
+    \frac{\partial E}{\partial w_{ij}^k} = \frac{\partial E}{\partial a_j^k}\frac{\partial a_j^k}{\partial w_{ij}^k}
+\end{equation}
+
+In \ref{errorchain}, the first derivative on the righthand side, is known as the \textit{error}, often denoted as $\delta_j^k$. The second derivative on that side
+is the \textit{output} of node i in layer $k-1$, denoted $o_i^{k-1}$. So we can simplify \ref{errorchain} to be written as
+
+\begin{equation}
+    \frac{\partial E}{\partial w_{ij}^k} = \delta^k_jo_i^{k-1}.
+\end{equation}
+
+The aim of backpropogation is to $\delta^m_1$, where m denotes the final layer. We can express $E_d$ in terms of $a_1^m$ as follows:
+
+\begin{equation}
+    E_d = \frac{1}{2} (f(a_1^m)-y_d)^2.
+\end{equation}
+
+Where $f$ is the activation function. We have:
+
+\begin{equation}
+    \delta_1^m = (y'-y)f'(a_1^m).
+\end{equation}
+
+So in the final layer, we have:
+
+\begin{align}
+    \frac{\partial E_d}{\partial w_{i1}^m} &= \delta_1^mo_i^{m-1} \\
+                                           &= (y_d'-y_d)f'(a_1^m)o_i^{m-1}.
+\end{align}
+
+The above is all well and good for the final layer, but we now must consider the hidden layers. We will consider the general case here, and then plug in the relevant
+numbers for our model when it comes to the implementation later on. For a layer k such that $1 \leq k < m$, the error term $\delta^k_j$ is given by:
+
+\begin{align}
+    \delta_j^k &= \frac{\partial E_d}{\partial a_j^k} \\
+               &= \sum_{l=1}^{r^{k+1}} \frac{\partial E_d}{\partial a_l^{k+1}}\frac{\partial a_l^{k+1}}{\partial a_j^k}.
+\end{align}
+
+In the above, $r^{k+1}$ is the number of nodes in the next layer, and $ l = 1,2,\ldots,r^{k+1}$. Since we can write $\delta_l^{k+1} = \frac{\partial E_d}{\partial a_l^{k+1}}$, the above can be written
+as 
+
+\begin{equation}
+    \label{deltajk}
+    \delta_j^k = \sum_{l=1}^{r^{k+1}}\delta_l^{k+1}\frac{\partial a_l^{k+1}}{\partial a_j^k}.
+\end{equation}
+
+Since the activation of a layer in one node is the sum of weights and avtications in the prior layer, we write:
+
+\begin{equation}
+    a_l^{k+1} = \sum^{r^k}_{j=1} w_{jl}^{k+1}f(a_j^k).
+\end{equation}
+
+Therefore,
+
+\begin{equation}
+    \frac{\partial a_l^{k+1}}{\partial a_j^k} = w_{jl}^{k+1}f'(a_j^k).
+\end{equation}
+
+Plugging the above in \ref{deltajk}, we obtain the following:
+
+\begin{equation}
+    \label{backpropform}
+    \delta_j^k = f'(a_j^k)\sum^{r^{k+1}_{l=1}}w_{jl}^{k+1}\delta_l^{k+1}.
+\end{equation}
+
+The equation \ref{backpropform} is known as the \textit{Backpropogation formula}. The final step is to calculate, $\frac{\partial E_d}{\partial w_{ij}^k}$, which is given by:
+
+\begin{align}
+        \frac{\partial E}{\partial w_{ij}^k} &= \delta^k_jo_i^{k-1} \\
+        &=f'(a_j^k)o^{k-1}_i \sum^{r^{k+1}}_{l=1}w_{jl}^{k+1}\delta_l^{k+1}.
+\end{align}
