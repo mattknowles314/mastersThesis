@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.10.14)  2 NOV 2021 13:24
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.10.14)  4 NOV 2021 19:20
 entering extended mode
 **./main.tex
 (main.tex
@@ -667,8 +667,7 @@ tex.def
 File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count316
 \l__pdf_internal_box=\box78
-)
-No file main.aux.
+) (main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
@@ -685,6 +684,7 @@ LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
 LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
+
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -755,31 +755,32 @@ Package pdftex.def Info: figures/uoylogo.png  used on input line 15.
  [1
 
 {C:/Users/iikno/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./figures/uoylo
-go.png>]) [1]
-No file main.toc.
+go.png>]) [1] (main.toc)
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
-[2
+ [2
 
-]
-No file main.lof.
+] (main.lof
+LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
+
+(C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
+
+(C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+))
 \tf@lof=\write5
 \openout5 = `main.lof'.
+
 
 (Chapters/Intro.tex [3
 
 ]
 Chapter 1.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 6.
-(C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 6.
 
-(C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
 Underfull \hbox (badness 10000) in paragraph at lines 11--15
 
  []
@@ -790,85 +791,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--20
  []
 
 
-LaTeX Warning: Citation `phanse' on page 4 undefined on input line 28.
-
-
-LaTeX Warning: Citation `duckworth' on page 4 undefined on input line 36.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 36--41
 
  []
 
 [4
 
-]
-
-LaTeX Warning: Citation `duckworth2' on page 5 undefined on input line 42.
-
-) (Chapters/dataChap.tex [5]
+]) (Chapters/dataChap.tex [5]
 Chapter 2.
 ) (Chapters/DLSChap.tex [6
 
 ]
 Chapter 3.
-
-LaTeX Warning: Citation `duckworth' on page 7 undefined on input line 6.
-
-
-LaTeX Warning: Reference `Z(u)' on page 7 undefined on input line 22.
-
 <figures/z(u).png, id=39, 462.528pt x 346.896pt>
 File: figures/z(u).png Graphic file (type png)
 <use figures/z(u).png>
 Package pdftex.def Info: figures/z(u).png  used on input line 28.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
-
-LaTeX Warning: Reference `Z(u)' on page 7 undefined on input line 33.
-
 [7
 
  <./figures/z(u).png>]
-
-LaTeX Warning: Reference `zuw' on page 8 undefined on input line 45.
-
-
-LaTeX Warning: Reference `prat' on page 8 undefined on input line 60.
-
-
-LaTeX Warning: Citation `stern' on page 8 undefined on input line 84.
-
-
-LaTeX Warning: Citation `dlbayes' on page 8 undefined on input line 104.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 115--122
 
  []
 
 [8]
-
-LaTeX Warning: Reference `dlRegress' on page 9 undefined on input line 123.
-
-
-LaTeX Warning: Reference `Z(u)_graph' on page 9 undefined on input line 124.
-
-
-LaTeX Warning: Reference `Z(u)_graph' on page 9 undefined on input line 124.
-
-
-LaTeX Warning: Reference `avgrunsfow' on page 9 undefined on input line 163.
-
 <figures/avgrunsfow.png, id=51, 473.77pt x 501.875pt>
 File: figures/avgrunsfow.png Graphic file (type png)
 <use figures/avgrunsfow.png>
 Package pdftex.def Info: figures/avgrunsfow.png  used on input line 167.
 (pdftex.def)             Requested size: 284.26419pt x 301.12732pt.
 
+
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-LaTeX Warning: Citation `kolm' on page 9 undefined on input line 172.
 
 
 Underfull \hbox (badness 10000) in paragraph at lines 172--175
@@ -886,12 +841,6 @@ Chapter 4.
 Underfull \hbox (badness 10000) in paragraph at lines 5--7
 
  []
-
-
-LaTeX Warning: Reference `ovrdens1fow' on page 11 undefined on input line 9.
-
-
-LaTeX Warning: Reference `ovrdens9fow' on page 11 undefined on input line 9.
 
 <figures/fow1density.png, id=60, 778.91pt x 501.875pt>
 File: figures/fow1density.png Graphic file (type png)
@@ -956,12 +905,6 @@ Overfull \hbox (35.1457pt too wide) in paragraph at lines 53--54
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-LaTeX Warning: Reference `ovrdens1fow' on page 11 undefined on input line 59.
-
-
-LaTeX Warning: Reference `ovrdens5fow' on page 11 undefined on input line 60.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 59--65
 
  []
@@ -970,12 +913,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 59--65
 
  <./figures/fow1density.png> <./figures/fow1densFull.png> <./figures/fow5densFu
 ll.png>]
-
-LaTeX Warning: Reference `ovrdens9fow' on page 12 undefined on input line 66.
-
-
-LaTeX Warning: Reference `runsbox' on page 12 undefined on input line 73.
-
 <figures/runsbox.png, id=71, 432.11438pt x 430.60875pt>
 File: figures/runsbox.png Graphic file (type png)
 <use figures/runsbox.png>
@@ -990,9 +927,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 3--9
  []
 
 
-LaTeX Warning: Reference `nnexample1' on page 14 undefined on input line 19.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 16--21
 
  []
@@ -1003,50 +937,25 @@ File: figures/nn.png Graphic file (type png)
 Package pdftex.def Info: figures/nn.png  used on input line 26.
 (pdftex.def)             Requested size: 213.42181pt x 185.56783pt.
 
-LaTeX Warning: Citation `sprbk' on page 14 undefined on input line 27.
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 31--35
 
  []
 
-
-LaTeX Warning: Citation `nnstock' on page 14 undefined on input line 38.
-
 [14
 
 ]
-
-LaTeX Warning: Reference `percepout' on page 15 undefined on input line 46.
-
-
-LaTeX Warning: Reference `actfig' on page 15 undefined on input line 61.
-
 <figures/actfuncs.png, id=86, 421.575pt x 289.08pt>
 File: figures/actfuncs.png Graphic file (type png)
 <use figures/actfuncs.png>
 Package pdftex.def Info: figures/actfuncs.png  used on input line 66.
 (pdftex.def)             Requested size: 210.78697pt x 144.53964pt.
 
-LaTeX Warning: Reference `pyact' on page 15 undefined on input line 71.
-
 (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 )
 (../code/net.py
 consecutive:
-)
-
-LaTeX Warning: Reference `weights1' on page 15 undefined on input line 85.
-
-[15 <./figures/nn.png> <./figures/actfuncs.png (PNG copy)>]
-
-LaTeX Warning: Reference `weights1' on page 16 undefined on input line 98.
-
-
-LaTeX Warning: Reference `pyActVals' on page 16 undefined on input line 129.
-
-(../code/net.py
+) [15 <./figures/nn.png> <./figures/actfuncs.png (PNG copy)>] (../code/net.py
 consecutive:
 )
 
@@ -1062,81 +971,46 @@ Underfull \hbox (badness 10000) in paragraph at lines 143--147
 
  []
 
-[16]
-
-LaTeX Warning: Citation `cauchy' on page 17 undefined on input line 149.
-
-
-LaTeX Warning: Reference `mse' on page 17 undefined on input line 160.
-
-
-LaTeX Warning: Citation `huber' on page 17 undefined on input line 160.
-
-
-LaTeX Warning: Reference `graddesc' on page 17 undefined on input line 172.
-
-[17]
-
-LaTeX Warning: Reference `errorchain' on page 18 undefined on input line 194.
-
-
-LaTeX Warning: Reference `errorchain' on page 18 undefined on input line 195.
-
-[18]
-
-LaTeX Warning: Reference `deltajk' on page 19 undefined on input line 248.
-
-
-LaTeX Warning: Reference `backpropform' on page 19 undefined on input line 255.
-
-
-) (Chapters/analysis.tex [19]
+[16] [17] [18]) (Chapters/analysis.tex [19]
 Chapter 6.
 ) (Chapters/conclusions.tex [20
 
 ]
 Chapter 7.
-)
-No file main.bbl.
-[21
+) (main.bbl [21
 
-] (main.aux)
+]) [22
 
-LaTeX Warning: There were undefined references.
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
- ) 
+] (main.aux) ) 
 Here is how much of TeX's memory you used:
- 17577 strings out of 478927
- 328919 string characters out of 2852534
- 958038 words of memory out of 3000000
- 35077 multiletter control sequences out of 15000+600000
+ 17596 strings out of 478927
+ 329223 string characters out of 2852534
+ 958347 words of memory out of 3000000
+ 35088 multiletter control sequences out of 15000+600000
  415360 words of font info for 71 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,83p,416b,1438s stack positions out of 5000i,500n,10000p,200000b,80000s
-<C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
-cmbx10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
-fonts/cm/cmbx12.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/p
-ublic/amsfonts/cm/cmbxti10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fo
-nts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/iikno/AppData/Local/Programs/
-MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/iikno/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/iikno/AppDat
-a/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/iikn
-o/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Us
-ers/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb
-><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/c
-mr8.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfon
-ts/cm/cmr9.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public
-/amsfonts/cm/cmsy10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/typ
-e1/public/amsfonts/cm/cmsy8.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/f
-onts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/iikno/AppData/Local/Programs
-/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/iikno/AppData/Local/
-Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (22 pages, 629490 bytes).
+<C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/
+amsfonts/cm/cmbx10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type
+1/public/amsfonts/cm/cmbx12.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/f
+onts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/iikno/AppData/Local/Progra
+ms/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/iikno/AppData/Loc
+al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/iikno/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/
+iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C
+:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr1
+0.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
+/cm/cmr6.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/a
+msfonts/cm/cmr8.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/amsfonts/cm/cmr9.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/
+type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKT
+eX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/iikno/AppData/Local/Progr
+ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/iikno/AppData/Lo
+cal/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/iikno/Ap
+pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
+Output written on main.pdf (23 pages, 638827 bytes).
 PDF statistics:
- 178 PDF objects out of 1000 (max. 8388607)
+ 181 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  68 words of extra memory for PDF output out of 10000 (max. 10000000)
 

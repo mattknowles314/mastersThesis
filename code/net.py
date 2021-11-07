@@ -54,23 +54,16 @@ b3 = [1 for x in range(0,3)]
 W4 = [random.randint(-1000,1000) for y in range(0,3)]
 b4 = [1 for x in range(0,3)]
 
-costs = []
-def get_costs(X,y):
-    a0 = list((rrmat.iloc[0])[0:-1])
-    a1 = next_layer(W1,a0,b1)
-    a2 = next_layer(W2,a1,b2)
-    a3 = next_layer(W3,a2,b3)
-    a4 = np.dot(W4,a3)
-    costs.append((a4-y)**2)
-
-i = 0
-while i <= 1435:
-    get_costs(list((rrmat.iloc[i])[0:-1]),Y[i])
-    i+=1
-
 alpha = 0.1 #Learning rate
 n_hidden =  3 #Number of hidden layers
 T = 100 #Number of iterations
 
-for i in range(T):
-    print()
+def back_prop(alpha,T):
+    for i in range(T):
+        for j in range(1436):
+            a0 = list((rrmat.iloc[j])[0:-1])
+            a1 = next_layer(W1,a0,b1)
+            a2 = next_layer(W2,a1,b2)
+            a3 = next_layer(W3,a2,b3)
+            a4 = np.dot(W4,a3)
+            outError = a4-Y[j]

@@ -67,7 +67,7 @@ The comparrison of these two functions can be seen in \ref{actfig}.
     \caption{Graph showing the shape of different activation functions.}
 \end{figure}
 
-We will be using (4.3) as our activation but will return to the activation function shortly. For now, lets look at the network we're going to use.
+We will be using (5.3) as our activation but will return to the activation function shortly. For now, lets look at the network we're going to use.
 The initial neural network that we're building. The code for this activation can be seen in \ref{pyact}, note we have included the derivative of this function too, which will be important later.
 
 \begin{figure} %MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
@@ -78,7 +78,7 @@ The initial neural network that we're building. The code for this activation can
 
 %Put a picture of the network here when you make it
 
-We begin with getting from the input layer, denoted $L_0$. Each node in $L_0$ takes a value $a^{(0)_i}$ for $i \in \{1,2,\ldots,50\}$. We use $textbf{a}^(0)$ to denote the vector
+We begin with getting from the input layer, denoted $L_0$. Each node in $L_0$ takes a value $a^{(0)_i}$ for $i \in \{1,2,\ldots,50\}$. We use $\textbf{a}^{(0)}$ to denote the vector
 containing these values. For every node in $L_0$, we have 25 connections coming away, one going to each of the nodes in $L_1$. 25 was an arbitraty choice for the size of $L_1$, and is
 subject to change based on results from initial testing. So that means we have $50 \times 25 = 1250$ weights for just the first layer alone. Some linear algebra is to be done here to get 
 values for the vector $\textbf{a}^{(1)}$. We use $w_ij$ to denote the weight from node j in one layer to node i in the prior layer. We can then construct a matrix containing the weights
