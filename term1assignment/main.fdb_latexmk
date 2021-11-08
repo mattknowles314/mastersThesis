@@ -1,16 +1,16 @@
 # Fdb version 3
-["bibtex main"] 1635870400 "main.aux" "main.bbl" "main" 1635873160
+["bibtex main"] 1636328179 "main.aux" "main.bbl" "main" 1636329899
   "../Thesis/refs.bib" 1635866769 2910 814dbab43a8e42efc539fb033129c96e ""
   "/usr/local/texlive/2016/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1635871904 1086 2fb45790c442d3d153bc943ff8718472 ""
+  "main.aux" 1636329898 1291 996136797962e3116071192cef88cfd7 ""
   "main.bcf" 0 -1 0 ""
   (generated)
   "main.blg"
   "main.bbl"
-["pdflatex"] 1635871903 "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.tex" "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.pdf" "main" 1635873160
+["pdflatex"] 1636329897 "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.tex" "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.pdf" "main" 1636329899
   "../Thesis/figures/z(u).png" 1633604655 34691 0f78491e4ed6d0e36c5871a8d7e3020c ""
-  "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.aux" 1635871904 1086 2fb45790c442d3d153bc943ff8718472 ""
-  "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.tex" 1635873159 5744 53bcf0fff8f2f1d80ba3deae731d4c77 ""
+  "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.aux" 1636329898 1291 996136797962e3116071192cef88cfd7 ""
+  "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.tex" 1636329897 7590 4ed4ab1780b2309420db7bd294699e64 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1246382020 1004 54797486969f23fa377b128694d548df ""
   "/usr/local/texlive/2016/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1246382020 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
@@ -99,12 +99,12 @@
   "/usr/local/texlive/2016/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1493565033 1888048 f2c5faed5981a516f406b2ccc20bff71 ""
   "/usr/local/texlive/2016/texmf-var/web2c/pdftex/pdflatex.fmt" 1493565103 3873397 2f3da59cd185d969dc250996ed36184d ""
   "/usr/local/texlive/2016/texmf.cnf" 1463979140 577 2938757e76f31531e65cc647e3507693 ""
-  "main.aux" 1635871904 1086 2fb45790c442d3d153bc943ff8718472 ""
-  "main.bbl" 1635870401 286 559ab0f754be551990dcdf5ef751ff4f "bibtex main"
-  "main.tex" 1635873159 5744 53bcf0fff8f2f1d80ba3deae731d4c77 ""
+  "main.aux" 1636329898 1291 996136797962e3116071192cef88cfd7 ""
+  "main.bbl" 1636328180 286 559ab0f754be551990dcdf5ef751ff4f "bibtex main"
+  "main.tex" 1636329897 7590 4ed4ab1780b2309420db7bd294699e64 ""
   (generated)
-  "main.aux"
-  "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.pdf"
-  "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.log"
-  "main.pdf"
   "main.log"
+  "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.pdf"
+  "main.pdf"
+  "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.log"
+  "main.aux"

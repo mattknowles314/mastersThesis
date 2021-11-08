@@ -1,6 +1,6 @@
 \documentclass[11pt]{amsart}
 \usepackage[utf8]{inputenc}
-\usepackage[a4paper, total={6in,8in}, portrait, margin=0.7in]{geometry}
+\usepackage[a4paper, total={6in,8in}, portrait, margin=1in]{geometry}
 \usepackage{amssymb}
 
 %Add any packages you need here
@@ -91,8 +91,28 @@ using several rough values based on knowledge of the game. although not perfect,
 
 We can see how the runs scored drops off towards the end of the innings. 
 
-\section{Neural Networks}
-At the time of writing, the Neural Network is still under construction.
+\section{Improving DLS - Statistical Pattern Recognition}
+
+The main aim of this project, as previously mentioned, is to investigate ways of producing more realistic score targets for interruption. The main way we look to 
+achieve this is through statistical pattern recognition methods. Below we discuss each of the methods that will be investigated in the main dissertation.
+
+\subsection{Neural Networks}
+At the time of writing, the Neural Network is still under construction.The idea behind using a neural network is that by using a backpropogation algorithm,
+the network can be trained to identify patterns in how the run-rate affects the final score. In order to achieve this, the network has been built from scratch
+to allow for as much control over it as possible, and fed runrae data from 1436 games of cricket. \\
+
+We use a feed-forward multi-layer neural network. What this means is that we have a network with 50 ``perceptrons'' in the input layer,
+and then 3 hidden layers consiting of 25,10 and 3 perceptrons respectively. Finally, the output layer consists of a single perceptron giving a target score.
+Each node in one layer connects to each node in the proceeding layer. Each connection has a weight value and a bias value. Although randomly initialised,
+these wights and biases are updated using the backpropogation algorithm, to minimise an error function. \\
+
+The only issue at this stage, given that we currently have no results to present in this report, is that 1436 datapoints isn't many in the grand scheme of things,
+so there is a possibility that this model will fall victim to overfitting- meaning that it will be really good at predicting datapoints from the set we train and test it on,
+but may not be as accurate when given future data. 
+
+\subsection{Clustering}
+The next method we plan to look at is that of clustering. We can cluster games based on certain metrics in order to prpedict how as a score will evolve.
+
 
 \bibliography{../Thesis/refs}{}
 \bibliographystyle{plain}
