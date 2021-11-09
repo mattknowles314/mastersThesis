@@ -22,7 +22,7 @@
 \newtheorem{example}[theorem]{Example}
 \newtheorem{lemma}[theorem]{Lemma}
 
-\title{Improving Duckworth-Lewis: Statistical Methods for Revising Score Targets in Limited Overs Cricket}
+\title[Improving DLS]{Improving Duckworth-Lewis: Statistical Methods for Revising Score Targets in Limited Overs Cricket}
 \author{Matthew Knowles}
 \date{Autumn Term 2021}
 
@@ -51,7 +51,7 @@ that need to be made in building the models that are the central aspect of the p
 \section{Data}
 \subsection{Data Origin}
 The primary source of data for carrying out this project was downloaded from ``cricsheet''\footnote{https://cricsheet.org/}
-and stored locally on a private server. In total there are 2167 individual matches of data. Each in a JSON format.
+and stored locally on a private server. In total there are 2167 individual matches of data, each in a JSON format.
 These cover matches ranging from the $3^{rd}$ of January, 2004. Up to the $20^{th}$ of July, 2021.
 
 \subsection{Attributes}
@@ -82,14 +82,9 @@ We begin by looking at the main equation that is the backbone of the Duckworth-L
 \end{equation}
 
 In \ref{dleq}, u represents the number of overs the runs are scored in, w is the number of wickets lost, and b(w) is an exponential decay constant.
-Due to commercial reasons, the authors were unble to publish some of the mathematical constants that they used. For that reason, we create a plot of this relationship
-using several rough values based on knowledge of the game. although not perfect, it still gives an idea for how this relationship behaves, which is the important thing.
+Due to commercial reasons, the authors were unble to publish some of the mathematical constants that they used. The fact this model follows an exponential decay 
+pattern is the key thing. Infact, this is consistent with how runs per wicket evolves.
 
-\begin{figure}
-    \includegraphics[scale=0.6]{../Thesis/figures/z(u).png}
-\end{figure}
-
-We can see how the runs scored drops off towards the end of the innings. 
 
 \section{Improving DLS - Statistical Pattern Recognition}
 
@@ -99,7 +94,7 @@ achieve this is through statistical pattern recognition methods. Below we discus
 \subsection{Neural Networks}
 At the time of writing, the Neural Network is still under construction.The idea behind using a neural network is that by using a backpropogation algorithm,
 the network can be trained to identify patterns in how the run-rate affects the final score. In order to achieve this, the network has been built from scratch
-to allow for as much control over it as possible, and fed runrae data from 1436 games of cricket. \\
+to allow for as much control over it as possible, and fed runrate data from 1436 games of cricket. \\
 
 We use a feed-forward multi-layer neural network. What this means is that we have a network with 50 ``perceptrons'' in the input layer,
 and then 3 hidden layers consiting of 25,10 and 3 perceptrons respectively. Finally, the output layer consists of a single perceptron giving a target score.
@@ -109,6 +104,9 @@ these wights and biases are updated using the backpropogation algorithm, to mini
 The only issue at this stage, given that we currently have no results to present in this report, is that 1436 datapoints isn't many in the grand scheme of things,
 so there is a possibility that this model will fall victim to overfitting- meaning that it will be really good at predicting datapoints from the set we train and test it on,
 but may not be as accurate when given future data. 
+
+In the dissertation itself, we use this as motivation for taking a look at some of the maths behind neural netwroks, rather than just mindlessley applying them
+using an R function. The ``backpropogation'' algorithm is derived step by step, supplememnted by Python code to show how the network is being built and trained from the ground up.
 
 \subsection{Clustering}
 The next method we plan to look at is that of clustering. We can cluster games based on certain metrics in order to prpedict how as a score will evolve.
