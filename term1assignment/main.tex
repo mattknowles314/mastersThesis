@@ -30,31 +30,47 @@
 
 \maketitle
 
+\section{Prelude: The Game of Cricket}
+Before we can discuss any maths, it is important to discuss the motivating playground for this exploration in data science: the game of cricket.
+Cricket takes a few forms, but the version that we care most about in this project is ``One Day International (ODI)'' cricket. ODIs are a form of 
+\textit{limited overs cricket}. Meaning each team gets a set number of \textit{overs}\footnote{An over consits of 6 individual balls, bowled by the same person from one end of the pitch.} in which to bat. We have two teams of 11, one team fields
+while the other bats. The batting team bat in pairs, but if one of the pair gets ``out" (which can be achieved in many ways), then the next batter takes their place.
+This goes on until all 50 overs are completed, or the batting team run out of batters. \\
+
+Sometimes however, the game is interrupted due to a adverse weather, a medical emergency or another form interrupted. If this happens when the first team is batting,
+known as the first innings, then the second innings is reduced to the same number of overs that the first innings had. But if this interruption occurs in the second 
+innings, then we have a problem on our hand. Because it is unfair to expect the second team to achieve the same as the first team in less time. 
+This is a problem that English statisticians Frank Duckworth and Tony Lewis decided to tackle. Their paper, \cite{duckworth} outlined a method which became 
+adopted by cricket's governing body, the International Cricket Council (ICC) in 1999. \\
+
+Duckowrth and Lewis later retired, and the method was updated by Professor Steven Stern in his 2016 paper \cite{stern}. The method needed
+updating to account for a new form of limited overs cricket: the T20 format. In T20, each team has an innings lasting 20 overs, rather than 50. The Duckworth-Lewis method as it was known,
+was not designed with such a format in mind, and so the updates by Stern aimed to adress this. The method is known today as the Duckworth-Lewis Stern method, or ``DLS'' for short.
+
 \section{Introduction and Aims}
-In recent years, the use of data science in sport has become far more common place. In cricket in particular, questions are asked about metrics such 
-as run-rates or bowling economy (average of how many runs conceeded for every ball bowled) in order to select a starting XI with the best lineup. 
-Data can give a great insight into a team's performance, and if used correctly can aid a team greatly in their performance in competitions.  The vast amount
-of data available is also helpful in finding patterns in matches. This is the area of focus for this project. \\
+The cricket community has had problems with the DLS for many years, especially in T20 cricket, due to the massively increased scoring rates that the method 
+wasn't initially designed to deal with. Nowadays, the use of data in sport in general, and in particular, cricket, has become commonplace. Teams use data in varying
+ways to try and give themselves an advantage going into games. The aim of this project is to use match data and train pattern recognition models on it, 
+in order to see if using more sophisticated methods leads to more accurate score prediction in ODI cricket. \\
 
-The specific aim of this project is to use more sophisticated methods for revising score targets in limited overs cricket. For the reader unfarmiliar 
-with the game of cricket. Two teams have 50 'overs' each to score as many 'runs' as possible. However, sometimes, a rain delay, pitch invasion 
-or other interruption leaves the team batting second with less time to complete their overs. For this reason, Duckworth and Lewis, two British 
-statisticians wrote a paper outlining a method for how score targets are reset given the state of play when the interruption happened. \citep{duckworth} \\
+The pattern recognition methods chosen are neural networks, and clustering. Neural Networks were chosen to their reputation for predictions. They're being employed
+all over modern society, from predicting stock prices \cite{nnstock}, to diagnosing cancer \cite{nncancer}. This flexibility and power makes neural networks 
+a great choice of method for predicting cricket scores. The second method is clustering. The idea behind clustering is that simmilar games will appear close together 
+when clustered based on a couple of factors. We can then look at how a game is behaving, and which cluster it is likely to end up in. Clustering is often used 
+by online shopping websites, for reccomending customers products based on purchase history \cite{retailClus}. The motivation for using it is similar, except the history
+comes in the form of a metric in a cricket game, rather than what products may have been purchased by someone online. \\
 
-We begin by looking at the maths behind the Duckworth-Lewis method, and the extension made by Stern (REF) in the early 2000s. We look at problems
-with this method, and how it is vulnerable to certain biases. Further, an investigation is undertaken into a few statistical methods aimed to 
-reduce the exposure of the method to certain biases, the main method we look at here uses techniques from Bayesian Statistcs (REF).\\
+The problems with DLS itself will be discussed in slightly more detail later on, but another reason it would be better to find a pattern recognition method for resetting score targets
+is that DLS is cumbersome. It produces a big table of values that must be input into an equation depending on the scenario a game is in. If the Nueral Network method 
+is found to be more accurate, we just have to feed the current match state into a computer program and we're done. No need for messing around with resource tables and ratios. 
 
-Following on from this, we undertake some exploratory data analysis to look for immediate patterns in the match data we have, and to influence decisions
-that need to be made in building the models that are the central aspect of the project. 
 
 \section{Data}
-\subsection{Data Origin}
+\subsection{Data Origin and Structure}
 The primary source of data for carrying out this project was downloaded from ``cricsheet''\footnote{https://cricsheet.org/}
 and stored locally on a private server. In total there are 2167 individual matches of data, each in a JSON format.
-These cover matches ranging from the $3^{rd}$ of January, 2004. Up to the $20^{th}$ of July, 2021.
+These cover matches ranging from the $3^{rd}$ of January, 2004. Up to the $20^{th}$ of July, 2021. \\ 
 
-\subsection{Attributes}
 Each JSON file contains a considerable amount of metadata surrounding the match in question. Along with 
 ball-by-ball data for the entire match. We have access to attributes such as the date, where the match was played,
 the entire teamsheet for both teams, who the officials were, who won- and by what margin, who won the toss; and many others.
@@ -68,10 +84,6 @@ These Python scripts output CSV files that can be fed into R for easier statisti
 a Python script was built to extract the runs scored in each over for over 1400 games. The labelled CSV data was then used by an R script to 
 output a matrix of runrates and corresponding final runs, which was used to train the Neural Network.
 
-\subsection{Problems with the Data}
-When it comes to machine learning, the more data the better is a general rule. Now this can sometimes lead to sub-problems, such as overfitting. But on the whole.
-it is much better to have as much data as possible. We will be training a neural network on 1435 data points. Stictly speaking, this isn't a lot of data, but there
-isn't much that can be done about this due to the cricketing calender only having a certain number of limited-overs matches each year.
 
 \section{Duckworth-Lewis}
 We begin by looking at the main equation that is the backbone of the Duckworth-Lewis method.
@@ -83,7 +95,11 @@ We begin by looking at the main equation that is the backbone of the Duckworth-L
 
 In \ref{dleq}, u represents the number of overs the runs are scored in, w is the number of wickets lost, and b(w) is an exponential decay constant.
 Due to commercial reasons, the authors were unble to publish some of the mathematical constants that they used. The fact this model follows an exponential decay 
-pattern is the key thing. Infact, this is consistent with how runs per wicket evolves.
+pattern is the key thing. Infact, this is consistent with how runs per wicket evolves. \\
+
+The exponential model we see here gives rise to the first issue. The values for the constants were derived from ODI matches only, which is why this method 
+isn't immediately applicable to T20 cricket. But it does capture the idea that as a team looses out on batters and overs, the amount of runs they can realistically score
+begins to dwindle. In \cite{dlbayes}, the authors find that a Bayesian approach to this method does a better job of capturing this idea of exponential decay. 
 
 
 \section{Improving DLS - Statistical Pattern Recognition}
@@ -92,21 +108,25 @@ The main aim of this project, as previously mentioned, is to investigate ways of
 achieve this is through statistical pattern recognition methods. Below we discuss each of the methods that will be investigated in the main dissertation.
 
 \subsection{Neural Networks}
-At the time of writing, the Neural Network is still under construction.The idea behind using a neural network is that by using a backpropogation algorithm,
-the network can be trained to identify patterns in how the run-rate affects the final score. In order to achieve this, the network has been built from scratch
-to allow for as much control over it as possible, and fed runrate data from 1436 games of cricket. \\
+Neural Networks are a a mathematical object that aims to immitate how neurons work in a brain. We have several layers of nodes. This takes the form of an input layer,
+several \textit{hidden} layers, and an ouput layer (which in our case is just a single node). Each node holds a value. In the input layer this is just the input data, and the value of the output layer is the prediction.
+Each node in one layer connects to each node in the next layer via a connection, which is characterised by a weight value and a bias value. \\
 
-We use a feed-forward multi-layer neural network. What this means is that we have a network with 50 ``perceptrons'' in the input layer,
-and then 3 hidden layers consiting of 25,10 and 3 perceptrons respectively. Finally, the output layer consists of a single perceptron giving a target score.
-Each node in one layer connects to each node in the proceeding layer. Each connection has a weight value and a bias value. Although randomly initialised,
-these wights and biases are updated using the backpropogation algorithm, to minimise an error function. \\
+we store the value of the weights as a matrix, and the biases as a column vector. Let $W^{(1)}$ be the matrix containing the weights of connections from the input layer to the first hidden layer. Further, let
+$\textbf{a}^0$ be the column vector of values in the input layer, and $\textbf{b}^1$ the biases between the input layer and first hidden layer. Then the values of the nodes in the second 
+layer are given by the matrix equation \ref{act}.
 
-The only issue at this stage, given that we currently have no results to present in this report, is that 1436 datapoints isn't many in the grand scheme of things,
-so there is a possibility that this model will fall victim to overfitting- meaning that it will be really good at predicting datapoints from the set we train and test it on,
-but may not be as accurate when given future data. 
+\begin{equation}
+    \label{act}
+    A^{(1)} = W^{(1)}\textbf{a}^0 + \textbf{b}^1
+\end{equation}
 
-In the dissertation itself, we use this as motivation for taking a look at some of the maths behind neural netwroks, rather than just mindlessley applying them
-using an R function. The ``backpropogation'' algorithm is derived step by step, supplememnted by Python code to show how the network is being built and trained from the ground up.
+The same process is then repeated for the other layers. The actual \textit{learning} of the network comes from an algorithm called ``backpropogation''.
+The idea is to minimise an error function that gets its values by comparing the network's output for a sample set of data to the actual value for that data. By changing 
+the weights and biases to minimise this function, we obtain a set of weights and biases that give accurate predictions for future datasets. \\
+
+The only issue to be wary of at this point, is that we don't actually have that much data. these models are often trained on millions of data points, but in our case we are naturally 
+limited by the number of ODI matches that actually get played. In total we have 1436 datapoints to use in training, which isn't ideal, but it should still work with enough itterations of backpropogation.
 
 \subsection{Clustering}
 The next method we plan to look at is that of clustering. We can cluster games based on certain metrics in order to prpedict how as a score will evolve.
