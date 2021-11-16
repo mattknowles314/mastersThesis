@@ -9,6 +9,7 @@
 \usepackage{amsfonts}
 \usepackage{float}
 \usepackage{natbib}
+\usepackage{algpseudocode}
 \usepackage{listings}
 \usepackage[misc]{ifsym}
 \usepackage{indentfirst} 
@@ -32,8 +33,8 @@
 
 \section{Prelude: The Game of Cricket}
 Before we can discuss any maths, it is important to discuss the motivating playground for this exploration in data science: the game of cricket.
-Cricket takes a few forms, but the version that we care most about in this project is ``One Day International (ODI)'' cricket. ODIs are a form of 
-\textit{limited overs cricket}. Meaning each team gets a set number of \textit{overs}\footnote{An over consits of 6 individual balls, bowled by the same person from one end of the pitch.} in which to bat. We have two teams of 11, one team fields
+Cricket takes a few forms, but the version that we care most about in this project is ``One Day International'' (ODI) cricket. ODIs are a form of 
+\textit{limited overs cricket}. Meaning each team gets a set number of \textit{overs}\footnote{An over consits of 6 individual balls, bowled by the same person from one end of the pitch.} in which to bat. We have two teams of 11 players, one team ``fields''
 while the other bats. The batting team bat in pairs, but if one of the pair gets ``out" (which can be achieved in many ways), then the next batter takes their place.
 This goes on until all 50 overs are completed, or the batting team run out of batters. \\
 
@@ -43,7 +44,7 @@ innings, then we have a problem on our hand. Because it is unfair to expect the 
 This is a problem that English statisticians Frank Duckworth and Tony Lewis decided to tackle. Their paper, \cite{duckworth} outlined a method which became 
 adopted by cricket's governing body, the International Cricket Council (ICC) in 1999. \\
 
-Duckowrth and Lewis later retired, and the method was updated by Professor Steven Stern in his 2016 paper \cite{stern}. The method needed
+Duckworth and Lewis later retired, and the method was updated by Professor Steven Stern in his 2016 paper \cite{stern}. The method needed
 updating to account for a new form of limited overs cricket: the T20 format. In T20, each team has an innings lasting 20 overs, rather than 50. The Duckworth-Lewis method as it was known,
 was not designed with such a format in mind, and so the updates by Stern aimed to adress this. The method is known today as the Duckworth-Lewis Stern method, or ``DLS'' for short.
 
@@ -128,8 +129,47 @@ the weights and biases to minimise this function, we obtain a set of weights and
 The only issue to be wary of at this point, is that we don't actually have that much data. these models are often trained on millions of data points, but in our case we are naturally 
 limited by the number of ODI matches that actually get played. In total we have 1436 datapoints to use in training, which isn't ideal, but it should still work with enough itterations of backpropogation.
 
+Backpropogation is the algorithm used for training neural networks. The idea is to tell the network how badly the guess it has made is by using an error function,
+
+\begin{equation}
+    E(X,\theta) = \frac{1}{2N}\sum^N_{i=1}(y_i'-y_i)^2
+\end{equation}
+
+where $\theta$ denotes a parameter incorperating the weights and biases, and X is the input vector. The error function makes a comparrison of the predicted value $y'$, and the actual
+valye for the X input vector, $y$. The aim of backpropogation is to find the parameter $\theta$ which minimises this function, and as a result
+giving the set of weights and biases that provide the best prodictions for an unseen dataset $X'$. 
+
+The ``learning rule'' for updating the weights linking node j in one layer to node i in the previous is given by \ref{learnrule}.
+
+\begin{equation}
+    \label{learnrule}
+    \Delta w_{ji} = \alpha x_i \delta_j
+\end{equation}
+
+Where $\delta_j$ is the sensitivity for a node. Based on the sum of the weights and activations of the connections going into it. The formal definition is
+outlined in chapter 6 of \cite{Duda}. In \ref{learnrule}, $\alpha$ is the ``learning rate''. 
+
 \subsection{Clustering}
 The next method we plan to look at is that of clustering. We can cluster games based on certain metrics in order to prpedict how as a score will evolve.
+The idea is to cluster our samples using the k-means clustering algorithm \cite{Duda} (chapter 10.4.3). This clusters the results 
+based on means of the sample data. The $k$ refers to the number of clusters we break the data into. This process works as in the following algorithm. \\
+
+\begin{algorithmic}[1]
+    \State $\text{Initialise} \ n,c,\mu_1,\ldots,\mu_c$
+    \Repeat
+        \State $\text{Classify n samples according to nearest} \ \mu_i$
+        \State $\text{Recalculate} \ \mu_i$
+    \Until{$\text{No change in} \ \mu_i$}
+\end{algorithmic}
+
+\section{Discussion}
+After discussing with performance analysysts at Yorkshire, Kent and Somerset county cricket clubs, most of the data used in cricket 
+matches for informing performance decision tends to be qualitative rather than qualitative. The field is looking to explore using deeper
+mathematical modelling techniques, but the issue comes when presenting the results of these to cricket players, who are naturally not 
+familiar with higher level maths, which can make communicating the results and what that means for the team difficult. \\
+
+The main result of the report will come from the comparrison between the two pattern recognition techniques outlined above, and how 
+the method which performs better fairs against the current DLS method being used by the International Cricket Council today.  
 
 
 \bibliography{../Thesis/refs}{}
