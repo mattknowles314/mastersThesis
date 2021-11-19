@@ -1,13 +1,13 @@
 # Fdb version 3
-["bibtex main"] 1637068645 "main.aux" "main.bbl" "main" 1637069048
+["bibtex main"] 1637068645 "main.aux" "main.bbl" "main" 1637069166
   "../Thesis/refs.bib" 1637065181 3928 b5a29a82bc33581f2ffcca634455244e ""
   "/usr/local/texlive/2016/texmf-dist/bibtex/bst/base/plain.bst" 1292289607 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
   "main.aux" 1637069047 1673 21da806d114b1ceba0fc376a0b7cae30 ""
   "main.bcf" 0 -1 0 ""
   (generated)
-  "main.blg"
   "main.bbl"
-["pdflatex"] 1637069046 "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.tex" "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.pdf" "main" 1637069048
+  "main.blg"
+["pdflatex"] 1637069046 "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.tex" "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.pdf" "main" 1637069166
   "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.aux" 1637069047 1673 21da806d114b1ceba0fc376a0b7cae30 ""
   "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.tex" 1637069046 12756 d0632d426325ea571d029a7ec0a2fcff ""
   "/usr/local/texlive/2016/texmf-dist/fonts/map/fontname/texfonts.map" 1272929888 3287 e6b82fe08f5336d4d5ebc73fb1152e87 ""
@@ -111,6 +111,6 @@
   (generated)
   "main.log"
   "main.pdf"
-  "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.log"
-  "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.pdf"
   "main.aux"
+  "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.pdf"
+  "/Users/matthew/Documents/Uni/Dissertation/term1assignment/main.log"
