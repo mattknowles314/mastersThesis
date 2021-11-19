@@ -8,12 +8,13 @@ import matplotlib.pyplot as plt
 #Organising data
 
 rrmat = pd.read_csv("rrmat.csv",header=None)
-Y = []
-for i in rrmat[50]:
-    Y.append(i)
+
+y = np.array([rrmat[50]]).T
+del rrmat[50]
+X = np.array(rrmat)
 
 def act(z):
-    return 1/(math.exp(-1*z)+1)
+    return 1/(np.exp(-1*z)+1)
 
 def is_Valid(M,n,k):
     if len(M) != k:
@@ -42,46 +43,34 @@ def next_layer(W, a, b):
     else:
         return False
 
-#Initialse random weights and biases
 
-W = []
+errorVals = []
+alpha = 0.2
+K = 3 #Number of hidden layers
+hW = 2*np.random.random((X.shape[1]+1,K))-1 #Hidden weights
+oW = 2*np.random.random((K+1,y.shape[1]))-1 #Output weights
 
-W.append([[random.uniform(-1,1) for x in range(0,50)] for y in range(0,25)])
-b1 = [1 for x in range(0,25)]
-W.append([[random.uniform(-1,1) for x in range(0,25)] for y in range(0,10)])
-b2 = [1 for x in range(0,10)]
-W.append([[random.uniform(-1,1) for x in range(0,10)] for y in range(0,3)])
-b3 = [1 for x in range(0,3)]
-W.append([random.uniform(-1,1) for y in range(0,3)])
-b4 = [1 for x in range(0,3)]
+#Backpropogation
+for i in range(1000):
+    #Feedforward phase
+    inputLayerOutputs = np.hstack((np.ones((X.shape[0],1)), X))
+    hiddenLayerOutputs = np.hstack((np.ones((X.shape[0], 1)), act(np.dot(inputLayerOutputs, hW))))
+    output = np.dot(hiddenLayerOutputs,oW)
 
-def initialise():
-    Errors = []
-    for j in range(1436):
-        a1 = next_layer(W[0],list((rrmat.iloc[j])[0:-1]),b1)
-        a2 = next_layer(W[1],a1,b2)
-        a3 = next_layer(W[2],a2,b3)
-        a4 = np.dot(W[3],a3)
-        Errors.append( 0.5*((a4-Y[j])**2))
-    return Errors
+    #Error calculations
+    error = output - y
+    hError = hiddenLayerOutputs[:,1:]*(1-hiddenLayerOutputs[:,1:])*np.dot(error,oW.T[:,1:]) #errors in the hidden layer
+    errorVals.append(np.average(error**2)/(2*len(y)))
+    #Partial derivatives
+    hiddenPD = inputLayerOutputs[:,:,np.newaxis]*hError[:,np.newaxis,:]
+    outputPD = hiddenLayerOutputs[:,:,np.newaxis]*output[:,np.newaxis,:]
 
-def single_backprop():
-    '''
-    To test my own understanding of this, we perform backpropogation on ONE training example. 
-    '''
-    Errors = []
-    Outputs = []
-    Outputs.append(next_layer(W[0],list((rrmat.iloc[6])[0:-1]),b1))
-    Outputs.append(next_layer(W[1],Outputs[0],b2))
-    Outputs.append(next_layer(W[2],Outputs[1],b3))
-    Outputs.append([np.dot(W[3],Outputs[2])])
-    delta1m = 0.5*((Outputs[-1][0]-Y[6])**2)
-    Errors.append([delta1m])
-    for k in reversed(range(1,3)):
-        errs = []
-        for j in range(0,len(W[k])):
-            o = Outputs[k][j]
-            errs.append(o*(1-o)*np.dot(Outputs[k+1],Errors[(k+1)-3]))
-        Errors.append(errs)
-    
-    #need to do the partial differentiations next.
+    totHidGrad = np.average(hiddenPD,axis=0)
+    totOutGrad = np.average(outputPD,axis=0)
+
+    #Updated weights
+    hW += -alpha*totHidGrad
+    oW += -alpha*totOutGrad
+
+plt.plot(errorVals)
+plt.show()
