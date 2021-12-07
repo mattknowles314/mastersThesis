@@ -49,8 +49,12 @@ for(i in 1:1436){
   rrMat[i,51] <- sum(df[i,8:57])
 }
 
+index = sample(1:nrow(rrMat), size=round(0.7*nrow(rrMat)), replace = F)
+rrMatTrain = rrMat[index,]
+rrMatTest = rrMat[-index,]
 
-write.matrix(rrMat, file="/Users/iikno/Documents/Diss/code/rrmat.csv", sep = ',')
+write.matrix(rrMatTrain, file="/Users/iikno/Documents/Diss/code/rrmatTrain.csv", sep = ',')
+write.matrix(rrMatTest, file="/Users/iikno/Documents/Diss/code/rrmatTest.csv", sep = ',')
 
 avgRR <- colMeans(rrMat[,1:50])
 

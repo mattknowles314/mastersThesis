@@ -7,11 +7,12 @@ import matplotlib.pyplot as plt
 
 #Organising data
 
-rrmat = pd.read_csv("rrmat.csv",header=None)
+rrmatTrain = pd.read_csv("rrmatTrain.csv",header=None)
+rrmatTest = pd.read_csv("rrmatTest.csv",header=None)
 
-y = np.array([rrmat[50]]).T
-del rrmat[50]
-X = np.array(rrmat)
+y = np.array([rrmatTrain[50]]).T
+del rrmatTrain[50]
+X = np.array(rrmatTrain)
 
 def act(z):
     return 1/(np.exp(-1*z)+1)
@@ -44,14 +45,13 @@ def next_layer(W, a, b):
         return False
 
 
-errorVals = []
 alpha = 0.2
 K = 3 #Number of hidden layers
-hW = 2*np.random.random((X.shape[1]+1,K))-1 #Hidden weights
-oW = 2*np.random.random((K+1,y.shape[1]))-1 #Output weights
+hW = 300*np.random.random((X.shape[1]+1,K)) #Hidden weights
+oW = 300*np.random.random((K+1,y.shape[1])) #Output weights
 
 #Backpropogation
-for i in range(1000):
+for i in range(10000):
     #Feedforward phase
     inputLayerOutputs = np.hstack((np.ones((X.shape[0],1)), X))
     hiddenLayerOutputs = np.hstack((np.ones((X.shape[0], 1)), act(np.dot(inputLayerOutputs, hW))))
@@ -59,8 +59,9 @@ for i in range(1000):
 
     #Error calculations
     error = output - y
+
     hError = hiddenLayerOutputs[:,1:]*(1-hiddenLayerOutputs[:,1:])*np.dot(error,oW.T[:,1:]) #errors in the hidden layer
-    errorVals.append(np.average(error**2)/(2*len(y)))
+
     #Partial derivatives
     hiddenPD = inputLayerOutputs[:,:,np.newaxis]*hError[:,np.newaxis,:]
     outputPD = hiddenLayerOutputs[:,:,np.newaxis]*output[:,np.newaxis,:]
@@ -72,5 +73,18 @@ for i in range(1000):
     hW += -alpha*totHidGrad
     oW += -alpha*totOutGrad
 
-plt.plot(errorVals)
+z = np.array([rrmatTest[50]]).T
+del rrmatTest[50]
+D = np.array(rrmatTest)
+
+predVals = []
+
+for j in range(len(z)):
+    inputLayerOutputs = np.hstack((np.ones((D.shape[0],1)), D))
+    hiddenLayerOutputs = np.hstack((np.ones((D.shape[0], 1)), act(np.dot(inputLayerOutputs, hW))))
+    output = np.dot(hiddenLayerOutputs,oW)
+    predVals.append(np.average(output))
+
+plt.scatter([x for x in range(len(z))],z,alpha=0.5)
+plt.scatter([x for x in range(len(predVals))],predVals,alpha=0.5)
 plt.show()
