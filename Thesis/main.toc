@@ -16,11 +16,12 @@
 \contentsline {chapter}{\numberline {4}Exploratory Data Analysis}{11}
 \contentsline {section}{\numberline {4.1}Fall of Wicket Densities}{11}
 \contentsline {section}{\numberline {4.2}Outliers in Runs Data}{12}
-\contentsline {chapter}{\numberline {5}Overview of Pattern Recognition Techniques}{14}
-\contentsline {section}{\numberline {5.1}Neural Networks}{14}
-\contentsline {subsection}{\numberline {5.1.1}A Brief Introduction to Neural Networks}{14}
-\contentsline {subsection}{\numberline {5.1.2}Builiding The Network}{15}
-\contentsline {subsection}{\numberline {5.1.3}Gradient-Descent and Backpropogation}{17}
-\contentsline {chapter}{\numberline {6}Analysis and Results}{20}
-\contentsline {section}{\numberline {6.1}Method 1}{20}
-\contentsline {chapter}{\numberline {7}Conclusion}{21}
+\contentsline {section}{\numberline {4.3}On the Normality of Run Totals}{13}
+\contentsline {chapter}{\numberline {5}Overview of Pattern Recognition Techniques}{15}
+\contentsline {section}{\numberline {5.1}Neural Networks}{15}
+\contentsline {subsection}{\numberline {5.1.1}A Brief Introduction to Neural Networks}{15}
+\contentsline {subsection}{\numberline {5.1.2}Builiding The Network}{16}
+\contentsline {subsection}{\numberline {5.1.3}Gradient-Descent and Backpropogation}{18}
+\contentsline {chapter}{\numberline {6}Analysis and Results}{21}
+\contentsline {section}{\numberline {6.1}Method 1}{21}
+\contentsline {chapter}{\numberline {7}Conclusion}{22}

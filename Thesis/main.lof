@@ -11,10 +11,13 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Density of all teams for ninth wicket falling}}{12}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Overall density plot for FOW 9}}{12}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces Boxplot showing the spread of runs scored}}{12}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Q-Q plot for runs scored after 50 overs.}}{13}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Sample plot created from the derived distribution of $S_{50}$}}{14}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Actual density for the runs scored}}{14}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of a single hidden layer neural network, as in \cite {sprbk}}}{15}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Graph showing the shape of different activation functions.}}{15}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Python code for the activation function}}{16}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Python code for giving activation values to the next layer}}{17}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of a single hidden layer neural network, as in \cite {sprbk}}}{16}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Graph showing the shape of different activation functions.}}{16}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Python code for the activation function}}{17}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Python code for giving activation values to the next layer}}{18}
 \addvspace {10\p@ }
 \addvspace {10\p@ }

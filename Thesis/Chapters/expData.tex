@@ -81,3 +81,40 @@ spread of runs scored in a full innings of data. This can be seen in \ref{runsbo
 
 There are 363 data points greater than the third quartile, while 671 are below the first quartile. So $25.3\%$ of our data lies above the third quartile, and
 $46.7\%$ below the first. For that reason, we make the decision to use the Mean-Squared-Error (MSE) loss function, which is commonplace in regression problems.
+
+\section{On the Normality of Run Totals}
+It will be useful in later parts of this dissertation to know whether or not scores are normally distributed. To test whether or not 
+they are, we use a Q-Q plot to check. This is a graphical way for checking normality, by comparing the quantiles of a dataset (in this case, scores) to quantiles
+drawn from a theoretical distribution. If the resulting points follow a straight line, it is likely that the data came from the distribution.
+In this case, we use the R function \textit{qqnorm()} to test if the runs from the 1436 games of a full 50 overs follow a normal distribution.
+
+\begin{figure}[h]
+    \label{qqplot}
+    \centering
+    \includegraphics[scale=0.55]{figures/qqnormplot.png}
+    \caption{Q-Q plot for runs scored after 50 overs.}
+\end{figure}
+
+We can see from the above figure that the plot follows along the straight line and so we can conclude that the scores are infact normally distributed. 
+Further, we can calculate the parameters of this distribution using the R functions \textit{mean()} and \textit{var()}. Doing so gives that the distribution
+of scores in 50 overs, $S_{50}$, can be given as $S_{50} \sim \mathcal{N}(270.56,51.34^2)$. \\ 
+
+To further test that this is indeed the case, we can create a sample plot based on this distribution, which can be seen in figure \ref{samplenorm}
+
+\begin{figure}
+    \label{samplenorm}
+    \centering
+    \includegraphics[scale=0.5]{figures/samplenorm.png}
+    \caption{Sample plot created from the derived distribution of $S_{50}$}
+\end{figure}
+
+With this in mind, we can now look at a density plot for the actual data. This is giving in figure \ref{runsdens}.
+
+\begin{figure}
+    \label{runsdens}
+    \centering
+    \includegraphics[scale=0.45]{figures/runsdensity.png}
+    \caption{Actual density for the runs scored}
+\end{figure}
+
+It is unsuprising that runs are normally distributed, but to be able to draw a mean and variance from this will be very helpful in future aspects of the project.
