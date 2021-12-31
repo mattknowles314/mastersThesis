@@ -47,11 +47,12 @@ def next_layer(W, a, b):
 
 alpha = 0.2
 K = 3 #Number of hidden layers
-hW = 300*np.random.random((X.shape[1]+1,K)) #Hidden weights
-oW = 300*np.random.random((K+1,y.shape[1])) #Output weights
+hW = 1000*np.random.random((X.shape[1]+1,K)) #Hidden weights
+oW = 1000*np.random.random((K+1,y.shape[1])) #Output weights
 
+print("Performing Backpropogation...")
 #Backpropogation
-for i in range(10000):
+for i in range(100):
     #Feedforward phase
     inputLayerOutputs = np.hstack((np.ones((X.shape[0],1)), X))
     hiddenLayerOutputs = np.hstack((np.ones((X.shape[0], 1)), act(np.dot(inputLayerOutputs, hW))))
@@ -59,7 +60,6 @@ for i in range(10000):
 
     #Error calculations
     error = output - y
-
     hError = hiddenLayerOutputs[:,1:]*(1-hiddenLayerOutputs[:,1:])*np.dot(error,oW.T[:,1:]) #errors in the hidden layer
 
     #Partial derivatives
@@ -73,18 +73,24 @@ for i in range(10000):
     hW += -alpha*totHidGrad
     oW += -alpha*totOutGrad
 
+
 z = np.array([rrmatTest[50]]).T
 del rrmatTest[50]
 D = np.array(rrmatTest)
 
 predVals = []
 
+print("Predicting...")
+
 for j in range(len(z)):
-    inputLayerOutputs = np.hstack((np.ones((D.shape[0],1)), D))
+    inputLayerOutputs = D[1]
     hiddenLayerOutputs = np.hstack((np.ones((D.shape[0], 1)), act(np.dot(inputLayerOutputs, hW))))
     output = np.dot(hiddenLayerOutputs,oW)
     predVals.append(np.average(output))
 
-plt.scatter([x for x in range(len(z))],z,alpha=0.5)
-plt.scatter([x for x in range(len(predVals))],predVals,alpha=0.5)
-plt.show()
+#plt.scatter([x for x in range(len(z))],z,alpha=0.5)
+#plt.scatter([x for x in range(len(predVals))],predVals,alpha=0.5)
+#plt.savefig("netplot.png")  
+
+print("Output After Training: \n{}".format(output))
+print("Process Complete")
