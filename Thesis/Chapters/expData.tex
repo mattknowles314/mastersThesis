@@ -118,3 +118,15 @@ With this in mind, we can now look at a density plot for the actual data. This i
 \end{figure}
 
 It is unsuprising that runs are normally distributed, but to be able to draw a mean and variance from this will be very helpful in future aspects of the project.
+
+We have seen that first innings scores in a full 50 overs are normally distributed. We can check, using the same methods if runs in a first innings that 
+doesn't necessarily go for the full allowance of overs is normally distributed. 
+
+\begin{figure}[h]
+    \label{firstInnsQQ}
+    \centering
+    \includegraphics[scale=0.6]{figures/firstInnsQQ.png}
+    \caption{Q-Q plt for first innings of varying length}
+\end{figure}
+
+We find that $S_{FI} \sim \mathcal{N}(213.49,56.91^2)$. 

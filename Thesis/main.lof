@@ -1,23 +1,24 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Graph showing how the rate at which runs are scored decays as a game progresses.}}{7}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Plot of average runs scored at the fall of each wicket. Averages taken over 1437 innings.}}{10}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Graph showing how the rate at which runs are scored decays as a game progresses.}}{7}{}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Plot of average runs scored at the fall of each wicket. Averages taken over 1437 innings.}}{10}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Density of all teams for first wicket falling}}{11}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Overall density plot for FOW 1}}{11}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Density of all teams for fith wicket falling}}{11}
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Overall density plot for FOW 5}}{11}
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Density of all teams for ninth wicket falling}}{12}
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Overall density plot for FOW 9}}{12}
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Boxplot showing the spread of runs scored}}{12}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Q-Q plot for runs scored after 50 overs.}}{13}
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Sample plot created from the derived distribution of $S_{50}$}}{14}
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Actual density for the runs scored}}{14}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Density of all teams for first wicket falling}}{11}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Overall density plot for FOW 1}}{11}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Density of all teams for fith wicket falling}}{11}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Overall density plot for FOW 5}}{11}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Density of all teams for ninth wicket falling}}{12}{}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Overall density plot for FOW 9}}{12}{}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Boxplot showing the spread of runs scored}}{12}{}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Q-Q plot for runs scored after 50 overs.}}{13}{}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Sample plot created from the derived distribution of $S_{50}$}}{14}{}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Actual density for the runs scored}}{14}{}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Q-Q plt for first innings of varying length}}{15}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of a single hidden layer neural network, as in \cite {sprbk}}}{16}
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Graph showing the shape of different activation functions.}}{16}
-\contentsline {figure}{\numberline {5.3}{\ignorespaces Python code for the activation function}}{17}
-\contentsline {figure}{\numberline {5.4}{\ignorespaces Python code for giving activation values to the next layer}}{18}
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of a single hidden layer neural network, as in \cite {sprbk}}}{17}{}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Graph showing the shape of different activation functions.}}{17}{}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Python code for the activation function}}{18}{}%
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Python code for giving activation values to the next layer}}{19}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

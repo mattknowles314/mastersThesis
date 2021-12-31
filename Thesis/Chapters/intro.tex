@@ -30,7 +30,11 @@ The winner of the toss chooses whether their side will bat or bowl in the first 
 these biases, but we won't cover that in this project. 
 
 \section{Project Aims}
-bar
+The main aim of this project is to look at methods for \textit{predicting} cricket scores. It is important to make the distinction between this 
+and \textit{projecting} the scores, which is what goes on in the game at the minute. Projecting scores assumes a constant runrate, which it will be seen 
+in later chapters is not really the case. However, we can make use of the patterns in run rates to try and extract a predictable score. 
+%should probably try and phrase this a little bit better?
+
 
 \section{Review of current Literature}
 We begin the look at literature on this topic with the paper published by F. Duckworth himself in 1998 $\cite{duckworth}$. In this paper, 
@@ -41,3 +45,26 @@ designed with T20 in mind, and so the functions derived from experementation and
 
 In 2004, a year after the first T20 matches were played, Duckworth and Lewis published another paper $\cite{duckworth2}$, in which they report
 that the table used for calculating the method can be employed by 
+
+Another paper that is worth noting is by Saqlain et. al. \cite{saqlain}, looking at predicting scores from the 2019 Cricket World Cup, an ODI
+tournament held across England. They used data after the previous world cup, held in Australia and New Zealand in 2015; all the way to $10^{th}$ November
+2018. The interesting thing about this paper, is they do not use data from individual matches, but instead on 10 meta-statics, including 
+``Number of series victories'', ``total wickets'', ``centuries'' and ``all out'', among others. They apply the TOPSIS method to this specific problem, using the 
+following algorithm. \\
+
+\begin{algorithmic}[1]
+    \State $\text{Calculate normalised matrix} \ X_{ij} = \frac{x_{ij}}{\sqrt{\sum_{i=1}^mx_{ij}^2}}$
+    \State $\text{Calculate weighted normalised matrix} \ V_{ij}=X_{ij}W_j$
+    \State $\text{Calculate Euclidean distance from the best outcome } \ S_i^+ = \sqrt{\sum_{j=1}^n(V_{ij}-V_j^+)^2} \ \text{for} \ i \in \{1,2,...,m\}$
+    \State $\text{Calculate Euclidean distance from the worst outcome } \ S_i^- = \sqrt{\sum_{j=1}^n(V_{ij}-V_j^-)^2} \ \text{for} \ i \in \{1,2,...,m\}$
+    \State $\text{Calculate performance score} \ C_i^* = \frac{S_i^-}{S_i^+  + S_i^-}$
+\end{algorithmic}
+
+They used the results of this process to predict how the 2019 world cup would look, rather than games for individual scores. However, they were largely unsuccessful. 
+Not only did the authors leave Sri Lanka out of their calculations entirely, they only succesffuly predicted India would finish top of the points table, and Afghanistan 
+at the bottom. 
+
+However, a paper by Kumar and Roy, \cite{kumar} takes an approach along the same lines of the aim of this project. It is not necessary to discuss the individual aspects
+of their paper here, as it will be discussed when we dive into the methods themselves. However it is worth noting the results of this paper now to see how
+ours differ. They found their limited dataset to be a problem in classifying. This is something we have been aware of, but there isn't much that can be done
+given the nature of how mmany cricket games are played year on year. 
