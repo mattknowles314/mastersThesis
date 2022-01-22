@@ -17,7 +17,7 @@ b=10
 c=10
 d=3
 hidden = c(a,b,c,d)
-reps=5
+reps=3
 
 #Normalise data
 trainNorm <- as.data.frame(scale(rrMatTrain))
@@ -42,4 +42,3 @@ results <- data.frame(actual=testNorm$V51, predicted = predictVals$net.result)
 results$error <- (results$actual-results$predicted)
 ggplot(results, aes(x = error)) +
   geom_density()
-
