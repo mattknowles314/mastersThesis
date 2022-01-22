@@ -1,4 +1,4 @@
-\chapter{Overview of Pattern Recognition Techniques}
+\chapter{Pattern Recognition: Background and Implementation}
 
 In this chapter, we will discuss the mathematical foundations of the patern recognition methods that will be used to predict 
 scores. There are two approaches to this. The first is to use already built packages for both a given programming language and simply
@@ -155,7 +155,7 @@ and turn it into a giant column vector.
     3098.4. 
 \end{example}
 
-\subsection{Gradient-Descent and Backpropogation}
+\subsection{Training the Network: Gradient-Descent and Backpropogation}
 
 We discussed in section \ref{mse} the need to use a MSE loss function based on our data. Let us now define this function, as in \cite{huber}.
 
@@ -258,3 +258,16 @@ The equation \ref{backpropform} is known as the \textit{Backpropogation formula}
         \frac{\partial E}{\partial w_{ij}^k} &= \delta^k_jo_i^{k-1} \\
         &=f'(a_j^k)o^{k-1}_i \sum^{r^{k+1}}_{l=1}w_{jl}^{k+1}\delta_l^{k+1}.
 \end{align}
+
+
+\subsection{Implementing the Neural Netowk}
+It was decided to implement the neural network using the R programming language, and more specifically, the \textit{neuralnet} package \cite{gunther}. This package 
+allows us to specify all the parameters we wish for, and automatically performs the Backpropogation algorithm to train a network. The whole process is therefore summarised in one line of R code:
+
+\begin{figure}[h] %MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
+    \lstinputlisting[language=R, firstline=11,lastline=12]{../code/scoreNet.R}
+    \caption{R code to implement the neural network}
+\end{figure}
+
+The plot of this network can be found in the next chapter [INCLUDE FIGURE REFERENCE]. Implementing the network this way is fairly efficient, and does not cause any issues with time-complexity. Infact, Backpropogation 
+was found to have a median time complexity of $\mathcal{O}(N^4)$ in \cite{lister}. So given that we have a relatively small dataset, we can definatively

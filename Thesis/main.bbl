@@ -36,6 +36,20 @@ Peter~J Huber.
 \newblock Robust estimation of a location parameter.
 \newblock In {\em Breakthroughs in statistics}, pages 492--518. Springer, 1992.
 
+\bibitem{kumar}
+Sonu Kumar and Sneha Roy.
+\newblock Score prediction and player classification model in the game of
+  cricket using machine learning.
+\newblock {\em International Journal of Scientific \& Engineering Research
+  IJSER}, 9(8), 2018.
+
+\bibitem{lister}
+Raymond Lister and James~V Stone.
+\newblock An empirical study of the time complexity of various error functions
+  with conjugate gradient backpropagation.
+\newblock In {\em Proceedings of ICNN'95-International Conference on Neural
+  Networks}, volume~1, pages 237--241. IEEE, 1995.
+
 \bibitem{kolm}
 Frank~J Massey~Jr.
 \newblock The kolmogorov-smirnov test for goodness of fit.
