@@ -17,7 +17,7 @@ b=10
 c=10
 d=3
 hidden = c(a,b,c,d)
-reps=3
+reps=1000
 
 #Normalise data
 trainNorm <- as.data.frame(scale(rrMatTrain))
@@ -37,8 +37,14 @@ runNet <- function(hiddenLayer, reps,alpha){
 #Run the Network
 scoreNet <- runNet(hidden,reps,0.02)
 
-predictVals <- compute(scoreNet, scale(rrMatTest[,1:50]))
+#Get best neural network from all reps
+best_rep = which.min(scoreNet$result.matrix[1,])
+
+#Predict the values and calculate errors
+predictVals <- compute(scoreNet, scale(rrMatTest[,1:50]),rep=best_rep)
 results <- data.frame(actual=testNorm$V51, predicted = predictVals$net.result)
 results$error <- (results$actual-results$predicted)
+
+#Plot erros
 ggplot(results, aes(x = error)) +
   geom_density()

@@ -1,4 +1,4 @@
 pdflatex main.tex
 ECHO First Compile
-pdlatex main.tex
+pdflatex main.tex
 ECHO Done

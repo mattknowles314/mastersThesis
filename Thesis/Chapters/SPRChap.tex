@@ -70,13 +70,6 @@ The comparrison of these two functions can be seen in \ref{actfig}.
 We will be using (5.2) as our activation but will return to the activation function shortly. For now, lets look at the network we're going to use.
 The initial neural network that we're building. The code for this activation can be seen in \ref{pyact}, note we have included the derivative of this function too, which will be important later.
 
-\begin{figure} %MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
-    \lstinputlisting[language=Python, firstline=14,lastline=18]{../code/net.py}
-    \caption{Python code for the activation function}
-    \label{pyact}
-\end{figure}
-
-%Put a picture of the network here when you make it
 
 We begin with getting from the input layer, denoted $L_0$. Each node in $L_0$ takes a value $a^{(0)_i}$ for $i \in \{1,2,\ldots,50\}$. We use $\textbf{a}^{(0)}$ to denote the vector
 containing these values. For every node in $L_0$, we have 25 connections coming away, one going to each of the nodes in $L_1$. 25 was an arbitraty choice for the size of $L_1$, and is
@@ -125,16 +118,7 @@ element in the vector $A^{(1)}$. Putting this all together, we have the followin
     \textbf{a}^{(1)} = f(W^{(1)}\textbf{a}^{(0)} + \textbf{b}^{1})
 \end{equation}
 
-Which gives us values for all the nodes in the first hidden layer. This process is then repeated for all the the remaining layers in the network. Implementing this in Python 
-is not too difficult, and the code can be seen in \ref{pyActVals}. The only function that can be seen here with no code is $\textit{is\_Valid()}$, which just checks that all the 
-constituents are of the right dimensions. If this returns false, then it wont let the calculations go ahead. 
-
-\begin{figure}[h]%AGAIN, MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
-    \lstinputlisting[language=Python, firstline=29,lastline=45]{../code/net.py}
-    \caption{Python code for giving activation values to the next layer}
-    \label{pyActVals}
-\end{figure}
-
+Which gives us values for all the nodes in the first hidden layer. This process is then repeated for all the the remaining layers in the network. 
 
 This process is then repeated for each layer, creating a diffferent weights and bias matrix going between each layer in the network. These matrices are naturally of different sizes, but the principle is exactly the same.
 When we start the training process for this network, we will only have random variables for the weights and biases. To gain better values that can predict accurate results in the future,
@@ -264,10 +248,27 @@ The equation \ref{backpropform} is known as the \textit{Backpropogation formula}
 It was decided to implement the neural network using the R programming language, and more specifically, the \textit{neuralnet} package \cite{gunther}. This package 
 allows us to specify all the parameters we wish for, and automatically performs the Backpropogation algorithm to train a network. The whole process is therefore summarised in one line of R code:
 
+Recall the logistic function, $\sigma(x) = \frac{1}{1+exp(-x)}$. Seen as for large values of x, this function treats them all the same, we must normalise the data before training the neural 
+network. Several versions of the network were ran with varying parameters. The final parameters decided were a learning rate, $\alpha$ of 0.02, and a hidden network of layers consitsting of 
+25 neurons, two layers of 10 neurons, and a final hidden layer of 3 neurons. In total, 1000 iterations were ran, each randomly initialising neuron values by drawing from the $N(0,1)$ distribution. 
+The code for this can be seen below.
+
 \begin{figure}[h] %MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
-    \lstinputlisting[language=R, firstline=11,lastline=12]{../code/scoreNet.R}
+    \lstinputlisting[language=R, firstline=29,lastline=35]{../code/Rscripts/scoreNet.R}
     \caption{R code to implement the neural network}
 \end{figure}
 
 The plot of this network can be found in the next chapter [INCLUDE FIGURE REFERENCE]. Implementing the network this way is fairly efficient, and does not cause any issues with time-complexity. Infact, Backpropogation 
-was found to have a median time complexity of $\mathcal{O}(N^4)$ in \cite{lister}. So given that we have a relatively small dataset, we can definatively
+was found to have a median time complexity of $\mathcal{O}(N^4)$ in \cite{lister}. In fact, running 1000 training iterations took ~10 hours on an \textit{AMD-Ryzen 5 1600 Six-Core Processer @ 3.20Ghz} and 16GB of available RAM.
+
+More details on the results of the network will be available in the next chapter, although to outline how we obtained the data there, it is first a case of selecting the training repitition 
+with the lowest error on the training data. This is done using the \textit{which.min()} in R. We then use the \textit{neuralnet} package's function 
+\textit{compute()} to use the neural network for predicting the (normalised) values in the training data. These predicted values are stored in a dataframe next to 
+the original values. We then perform a simple error calculation of $\sqrt{(x_{original}-x_{predicted})^2}$, and use this as the third column in the dataframe. This completes the implementation of the neural 
+network. The final net can be seen here, although due to the nature it is hard to see the specific weights and biases- although this is less important than the results that are discussed in the 
+next chapter. 
+
+\begin{figure}[h] 
+    \includegraphics[scale=0.5]{figures/bestnet.png}
+    \caption{Final trained network. }
+\end{figure}
