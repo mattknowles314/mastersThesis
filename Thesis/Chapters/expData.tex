@@ -101,7 +101,7 @@ of scores in 50 overs, $S_{50}$, can be given as $S_{50} \sim \mathcal{N}(270.56
 
 To further test that this is indeed the case, we can create a sample plot based on this distribution, which can be seen in figure \ref{samplenorm}
 
-\begin{figure}
+\begin{figure}[h]
     \label{samplenorm}
     \centering
     \includegraphics[scale=0.5]{figures/samplenorm.png}
@@ -110,7 +110,7 @@ To further test that this is indeed the case, we can create a sample plot based 
 
 With this in mind, we can now look at a density plot for the actual data. This is giving in figure \ref{runsdens}.
 
-\begin{figure}
+\begin{figure}[h]
     \label{runsdens}
     \centering
     \includegraphics[scale=0.45]{figures/runsdensity.png}
@@ -130,3 +130,23 @@ doesn't necessarily go for the full allowance of overs is normally distributed.
 \end{figure}
 
 We find that $S_{FI} \sim \mathcal{N}(213.49,56.91^2)$. 
+
+\section{Runrates}
+The work that follows in this section is essential to allowing the Neural Network constructed in Chapter 5 to predict the scores of games. The aim of this section is 
+to see if we can draw the runrates at specific overs from a statistical distribution. This will in turn enable us to fill the gaps in the missing overs of a game. In turn, 
+with the gaps filled, we can pass the simmulated runrates to the neural network, and allow for a score to be predicted. 
+
+\begin{figure}[h]
+    \centering
+    \subfloat[\centering Average runnrate per over]{{\includegraphics[width=.4\linewidth]{figures/avgRR.png} }}
+    \qquad
+    \subfloat[\centering Runrate Standard deviation per over]{{\includegraphics[width=.4\linewidth]{figures/sdrr.png} }}
+    \caption{Error distribution with Q-Q plot}
+    \label{MeanAndSDRR}
+\end{figure}
+
+We can see from this figure, that average runrate seems to stay consistent in the middle overs, before rapidly increasing as the risk associated with losing 
+a wicket falls off due to the end of the innings coming closer. If we break the game into five ten-over segments, as these are generally different periods of the game
+from a tactical perspective\footnote{This is to do with different bowling options being used to be more effective as the pitch conditions change}, we can model the segments.
+
+%Monte-Carlo?? - Need a distribution.

@@ -1,5 +1,6 @@
 library(neuralnet)
 library(caret)
+library(ggplot2)
 
 rrMat <- read.csv("/Users/iikno/Documents/Diss/code/rrmat.csv", head=F)
 
@@ -48,3 +49,11 @@ results$error <- (results$actual-results$predicted)
 #Plot erros
 ggplot(results, aes(x = error)) +
   geom_density()
+
+#QQ-Plot for errors
+ggplot(results, aes(sample=error))+
+  stat_qq(fill="cyan",pch=21, size=3) +
+  geom_qq_line(color="red", lty="dashed")
+
+#Corrolation 
+cor(results$actual,results$predicted)

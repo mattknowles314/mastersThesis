@@ -264,7 +264,7 @@ was found to have a median time complexity of $\mathcal{O}(N^4)$ in \cite{lister
 More details on the results of the network will be available in the next chapter, although to outline how we obtained the data there, it is first a case of selecting the training repitition 
 with the lowest error on the training data. This is done using the \textit{which.min()} in R. We then use the \textit{neuralnet} package's function 
 \textit{compute()} to use the neural network for predicting the (normalised) values in the training data. These predicted values are stored in a dataframe next to 
-the original values. We then perform a simple error calculation of $\sqrt{(x_{original}-x_{predicted})^2}$, and use this as the third column in the dataframe. This completes the implementation of the neural 
+the original values. We then perform a simple ``Root Mean Squared Error'' calculation by $\sqrt{(x_{original}-x_{predicted})^2}$, and use this as the third column in the dataframe. This completes the implementation of the neural 
 network. The final net can be seen here, although due to the nature it is hard to see the specific weights and biases- although this is less important than the results that are discussed in the 
 next chapter. 
 
