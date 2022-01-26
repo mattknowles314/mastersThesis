@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1643029101 "main.aux" "main.bbl" "main" 1643029685
+["bibtex main"] 1643029101 "main.aux" "main.bbl" "main" 1643030530
   "C:/Users/iikno/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
   "main.aux" 1643029584 9243 3d0b3af7c1f7a006c4f3cc1dd0958af5 "pdflatex"
   "refs.bib" 1642671539 5100 93952e87e3891f98c530185964e09515 ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1643029581 "c:/Users/iikno/Documents/Diss/Thesis/main.tex" "main.pdf" "main" 1643029685
+["pdflatex"] 1643029581 "c:/Users/iikno/Documents/Diss/Thesis/main.tex" "main.pdf" "main" 1643030530
   "../code/Rscripts/scoreNet.R" 1643028587 2007 80927d3d78b85319bf2477bce79aac55 ""
   "C:/Users/iikno/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1634195332 9715385 211c81815fd6d290e12bcf6f272cd2c1 ""
   "C:/Users/iikno/AppData/Local/MiKTeX/pdftex/config/pdftex.map" 1643019200 81116 dbcbff3cc11849e73194397f26e54a77 ""
@@ -184,7 +184,7 @@
   "Chapters/analysis.tex" 1643021377 1973 7fd607d186bb54c44d44b7c151404382 ""
   "Chapters/conclusions.tex" 1634022689 25 30b1af9c1bed16b103b857a1025b4f01 ""
   "Chapters/dataChap.tex" 1635585447 1547 7923501b957b4e730016d6d2a1ea7b84 ""
-  "Chapters/expData.tex" 1643029684 8083 4b25b7c0bdd939984a00ad66003fe32d ""
+  "Chapters/expData.tex" 1643030529 8083 4b25b7c0bdd939984a00ad66003fe32d ""
   "c:/Users/iikno/Documents/Diss/Thesis/main.tex" 1643020321 3303 3f4f858649d9a54c13487a064f7de270 ""
   "figures/actfuncs.png" 1635335161 15875 02974cc7e68332188168a48f5e1add80 ""
   "figures/avgRR.png" 1643028690 3826 b3d4e3cbb46af88e0aef9abc90c3db01 ""
@@ -215,6 +215,6 @@
   (generated)
   "main.log"
   "main.pdf"
-  "main.lof"
-  "main.toc"
   "main.aux"
+  "main.toc"
+  "main.lof"

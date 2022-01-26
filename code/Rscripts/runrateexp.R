@@ -12,3 +12,4 @@ rrSdOver <- c(as.numeric(sqrt(rrMat[1438,1:50])))
 plot(rrMeansOver, pch=19, col="red", xlab = "Over", ylab = "Mean runrate")
 plot(rrSdOver, pch=19, col="red", xlab = "Over", ylab = "Standard deviation")
 
+
