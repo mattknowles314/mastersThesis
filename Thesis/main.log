@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.10.14)  24 JAN 2022 13:06
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.10.14)  27 JAN 2022 16:03
 entering extended mode
 **c:/Users/iikno/Documents/Diss/Thesis/main.tex
 (c:/Users/iikno/Documents/Diss/Thesis/main.tex
@@ -538,7 +538,11 @@ Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is usel
 File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count327
 \l__pdf_internal_box=\box78
-) (main.aux)
+) (main.aux
+
+LaTeX Warning: Label `errDistAndQQ' multiply defined.
+
+)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 70.
@@ -824,25 +828,18 @@ Package pdftex.def Info: figures/samplenorm.png  used on input line 107.
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
-Package caption Warning: \label without proper reference on input line 114.
-See the caption package documentation for explanation.
-
-
 LaTeX Warning: Reference `runsdens' on page 13 undefined on input line 111.
 
 <figures/runsdensity.png, id=83, 526.96875pt x 479.7925pt>
 File: figures/runsdensity.png Graphic file (type png)
 <use figures/runsdensity.png>
-Package pdftex.def Info: figures/runsdensity.png  used on input line 116.
-(pdftex.def)             Requested size: 237.13374pt x 215.90462pt.
-
-LaTeX Warning: `h' float specifier changed to `ht'.
-
+Package pdftex.def Info: figures/runsdensity.png  used on input line 115.
+(pdftex.def)             Requested size: 198.5291pt x 180.75633pt.
 <figures/firstInnsQQ.png, id=84, 383.93437pt x 430.60875pt>
 File: figures/firstInnsQQ.png Graphic file (type png)
 <use figures/firstInnsQQ.png>
-Package pdftex.def Info: figures/firstInnsQQ.png  used on input line 128.
-(pdftex.def)             Requested size: 230.3624pt x 258.36723pt.
+Package pdftex.def Info: figures/firstInnsQQ.png  used on input line 117.
+(pdftex.def)             Requested size: 198.5291pt x 222.66942pt.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -850,18 +847,41 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 <figures/avgRR.png, id=89, 418.56375pt x 417.05812pt>
 File: figures/avgRR.png Graphic file (type png)
 <use figures/avgRR.png>
-Package pdftex.def Info: figures/avgRR.png  used on input line 141.
+Package pdftex.def Info: figures/avgRR.png  used on input line 135.
 (pdftex.def)             Requested size: 198.5291pt x 197.81192pt.
 <figures/sdrr.png, id=90, 418.56375pt x 417.05812pt>
 File: figures/sdrr.png Graphic file (type png)
 <use figures/sdrr.png>
-Package pdftex.def Info: figures/sdrr.png  used on input line 143.
+Package pdftex.def Info: figures/sdrr.png  used on input line 137.
 (pdftex.def)             Requested size: 198.5291pt x 197.81192pt.
 
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-) (Chapters/SPRChap.tex [14 <./figures/samplenorm.png>] [15 <./figures/runsdensity.png> <./figures/firstInnsQQ.png>] [16 <./figures/avgRR.png> <./figures/sdrr.png>]
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--149
+
+ []
+
+<figures/powerplaydens.png, id=91, 381.67593pt x 417.05812pt>
+File: figures/powerplaydens.png Graphic file (type png)
+<use figures/powerplaydens.png>
+Package pdftex.def Info: figures/powerplaydens.png  used on input line 154.
+(pdftex.def)             Requested size: 158.82933pt x 173.55318pt.
+<figures/middleoversdens.png, id=92, 381.67593pt x 417.05812pt>
+File: figures/middleoversdens.png Graphic file (type png)
+<use figures/middleoversdens.png>
+Package pdftex.def Info: figures/middleoversdens.png  used on input line 158.
+(pdftex.def)             Requested size: 158.82933pt x 173.55318pt.
+<figures/finaloversdens.png, id=93, 381.67593pt x 417.05812pt>
+File: figures/finaloversdens.png Graphic file (type png)
+<use figures/finaloversdens.png>
+Package pdftex.def Info: figures/finaloversdens.png  used on input line 162.
+(pdftex.def)             Requested size: 158.82933pt x 173.55318pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+) (Chapters/SPRChap.tex [14 <./figures/samplenorm.png>] [15 <./figures/runsdensity.png> <./figures/firstInnsQQ.png> <./figures/avgRR.png> <./figures/sdrr.png> <./figures/powerplaydens.png> <./figures/middleoversdens.png> <./figures/finaloversdens.png>]
 Chapter 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 3--9
@@ -873,7 +893,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--21
 
  []
 
-<figures/nn.png, id=105, 426.84468pt x 371.13657pt>
+<figures/nn.png, id=108, 426.84468pt x 371.13657pt>
 File: figures/nn.png Graphic file (type png)
 <use figures/nn.png>
 Package pdftex.def Info: figures/nn.png  used on input line 26.
@@ -883,7 +903,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 31--35
 
  []
 
-[17
+[16
 
 ]
 
@@ -891,17 +911,17 @@ Package caption Warning: \label without proper reference on input line 65.
 See the caption package documentation for explanation.
 
 
-LaTeX Warning: Reference `actfig' on page 18 undefined on input line 61.
+LaTeX Warning: Reference `actfig' on page 17 undefined on input line 61.
 
-<figures/actfuncs.png, id=109, 421.575pt x 289.08pt>
+<figures/actfuncs.png, id=112, 421.575pt x 289.08pt>
 File: figures/actfuncs.png Graphic file (type png)
 <use figures/actfuncs.png>
 Package pdftex.def Info: figures/actfuncs.png  used on input line 66.
 (pdftex.def)             Requested size: 210.78697pt x 144.53964pt.
 
-LaTeX Warning: Reference `pyact' on page 18 undefined on input line 71.
+LaTeX Warning: Reference `pyact' on page 17 undefined on input line 71.
 
-[18 <./figures/nn.png> <./figures/actfuncs.png (PNG copy)>]
+[17 <./figures/nn.png> <./figures/actfuncs.png (PNG copy)>]
 Underfull \hbox (badness 10000) in paragraph at lines 123--126
 
  []
@@ -911,7 +931,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 127--131
 
  []
 
-[19] [20] (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+[18] [19] (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
 File: lstlang2.sty 2020/03/24 1.8d listings language file
@@ -923,20 +943,20 @@ consecutive:
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-[21]
-<figures/bestnet.png, id=125, 982.42032pt x 618.05907pt>
+[20]
+<figures/bestnet.png, id=128, 982.42032pt x 618.05907pt>
 File: figures/bestnet.png Graphic file (type png)
 <use figures/bestnet.png>
 Package pdftex.def Info: figures/bestnet.png  used on input line 272.
 (pdftex.def)             Requested size: 491.20897pt x 309.02878pt.
-) (Chapters/analysis.tex [22 <./figures/bestnet.png (PNG copy)>]
+) (Chapters/analysis.tex [21 <./figures/bestnet.png (PNG copy)>]
 Chapter 6.
-<figures/errDist.png, id=130, 361.35pt x 347.04657pt>
+<figures/errDist.png, id=133, 361.35pt x 347.04657pt>
 File: figures/errDist.png Graphic file (type png)
 <use figures/errDist.png>
 Package pdftex.def Info: figures/errDist.png  used on input line 9.
 (pdftex.def)             Requested size: 198.5291pt x 190.66968pt.
-<figures/errorqq.png, id=131, 361.35pt x 347.04657pt>
+<figures/errorqq.png, id=134, 361.35pt x 347.04657pt>
 File: figures/errorqq.png Graphic file (type png)
 <use figures/errorqq.png>
 Package pdftex.def Info: figures/errorqq.png  used on input line 11.
@@ -946,10 +966,14 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--22
 
  []
 
-) (Chapters/conclusions.tex [23
+) (Chapters/SA.tex [22
 
  <./figures/errDist.png> <./figures/errorqq.png>]
 Chapter 7.
+) (Chapters/conclusions.tex [23
+
+]
+Chapter 8.
 ) (main.bbl [24
 
 ]) [25
@@ -958,19 +982,22 @@ Chapter 7.
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  ) 
 Here is how much of TeX's memory you used:
- 19984 strings out of 478927
- 369378 string characters out of 2852534
- 903612 words of memory out of 3000000
- 37448 multiletter control sequences out of 15000+600000
+ 20010 strings out of 478927
+ 370114 string characters out of 2852534
+ 903745 words of memory out of 3000000
+ 37468 multiletter control sequences out of 15000+600000
  414659 words of font info for 69 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,83p,462b,2033s stack positions out of 5000i,500n,10000p,200000b,80000s
 <C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (26 pages, 921761 bytes).
+Output written on main.pdf (26 pages, 939517 bytes).
 PDF statistics:
- 218 PDF objects out of 1000 (max. 8388607)
+ 224 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
- 113 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 128 words of extra memory for PDF output out of 10000 (max. 10000000)
 

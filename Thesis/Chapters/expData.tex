@@ -111,23 +111,17 @@ To further test that this is indeed the case, we can create a sample plot based 
 With this in mind, we can now look at a density plot for the actual data. This is giving in figure \ref{runsdens}.
 
 \begin{figure}[h]
-    \label{runsdens}
     \centering
-    \includegraphics[scale=0.45]{figures/runsdensity.png}
-    \caption{Actual density for the runs scored}
+    \subfloat[\centering Density for Runs Scored]{{\includegraphics[width=.4\linewidth]{figures/runsdensity.png} }}
+    \qquad
+    \subfloat[\centering Q-Q Plot for First Innings]{{\includegraphics[width=.4\linewidth]{figures/firstInnsQQ.png} }}
+    \label{errDistAndQQ}
 \end{figure}
 
 It is unsuprising that runs are normally distributed, but to be able to draw a mean and variance from this will be very helpful in future aspects of the project.
 
 We have seen that first innings scores in a full 50 overs are normally distributed. We can check, using the same methods if runs in a first innings that 
 doesn't necessarily go for the full allowance of overs is normally distributed. 
-
-\begin{figure}[h]
-    \label{firstInnsQQ}
-    \centering
-    \includegraphics[scale=0.6]{figures/firstInnsQQ.png}
-    \caption{Q-Q plt for first innings of varying length}
-\end{figure}
 
 We find that $S_{FI} \sim \mathcal{N}(213.49,56.91^2)$. 
 
@@ -148,5 +142,27 @@ with the gaps filled, we can pass the simmulated runrates to the neural network,
 We can see from this figure, that average runrate seems to stay consistent in the middle overs, before rapidly increasing as the risk associated with losing 
 a wicket falls off due to the end of the innings coming closer. If we break the game into five ten-over segments, as these are generally different periods of the game
 from a tactical perspective\footnote{This is to do with different bowling options being used to be more effective as the pitch conditions change}, we can model the segments.
+A game of ODI-cricket can roughly be broken up to three segments, the first 10 overs, known as the ``powerplay'', where teams are slightly more conservative and look to build a 
+foundation on which the rest of the game is built. The middle overs are 11-35. The idea of this game is to continue building on the foundation, and save wickets. The last 
+15 overs are where more risks are taken, as the value of a wicket decreases. The mentality is to double your score from the first 35 in the last 15, that is why we see the massive 
+increase in runrate in these last overs. \\
 
-%Monte-Carlo?? - Need a distribution.
+Using this information, we can create density plots of the average runrate in these overs, as in figures 4.13-4.15. 
+
+\begin{figure}[h]
+    \minipage{0.32\textwidth}
+      \includegraphics[width=\linewidth]{figures/powerplaydens.png}
+      \caption{Powerplay runrate density}
+    \endminipage\hfill
+    \minipage{0.32\textwidth}
+      \includegraphics[width=\linewidth]{figures/middleoversdens.png}
+      \caption{Middle Overs runrate density}
+    \endminipage\hfill
+    \minipage{0.32\textwidth}%
+      \includegraphics[width=\linewidth]{figures/finaloversdens.png}
+      \caption{Final Overs density}
+    \endminipage
+\end{figure}
+
+The runrates are roughly normally distributed. It is reasonable that due to the Central Limit Theorem, with more observations, these distribiutions would be smoothed out and 
+appear more normally distributed than it does at present. This is imporant, because it allows us to use our 

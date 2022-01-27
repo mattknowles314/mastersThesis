@@ -13,3 +13,9 @@ plot(rrMeansOver, pch=19, col="red", xlab = "Over", ylab = "Mean runrate")
 plot(rrSdOver, pch=19, col="red", xlab = "Over", ylab = "Standard deviation")
 
 
+powerplay <- rowMeans(rrMat[1:1436,1:10])
+middleOvers <- rowMeans(rrMat[1:1436,11:40])
+finalOvers <- rowMeans(rrMat[1:1436,41:50])
+densityPlot(first10, xlab = "Powerplay")
+densityPlot(middleOvers, xlab = "Middle Overs")
+densityPlot(finalOvers, xlab = "Final Overs")
