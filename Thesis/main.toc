@@ -12,24 +12,22 @@
 \contentsline {chapter}{\numberline {3}The DLS Method in Detail}{7}{}%
 \contentsline {section}{\numberline {3.1}Origins: Duckworth and Lewis}{7}{}%
 \contentsline {section}{\numberline {3.2}Improvements by Stern}{8}{}%
-\contentsline {section}{\numberline {3.3}Extension: Bayesian Modelling}{8}{}%
+\contentsline {section}{\numberline {3.3}Extension: Bayesian Modelling}{9}{}%
 \contentsline {chapter}{\numberline {4}Exploratory Data Analysis}{11}{}%
 \contentsline {section}{\numberline {4.1}Fall of Wicket Densities}{11}{}%
 \contentsline {section}{\numberline {4.2}Outliers in Runs Data}{12}{}%
-\contentsline {section}{\numberline {4.3}On the Normality of Run Totals}{13}{}%
-\contentsline {section}{\numberline {4.4}Runrates}{15}{}%
+\contentsline {section}{\numberline {4.3}On the Normality of Run Totals}{12}{}%
+\contentsline {section}{\numberline {4.4}Runrates}{13}{}%
 \contentsline {chapter}{\numberline {5}Pattern Recognition: Background and Implementation}{17}{}%
 \contentsline {section}{\numberline {5.1}Neural Networks}{17}{}%
 \contentsline {subsection}{\numberline {5.1.1}A Brief Introduction to Neural Networks}{17}{}%
 \contentsline {subsection}{\numberline {5.1.2}Builiding The Network}{18}{}%
 \contentsline {subsection}{\numberline {5.1.3}Training the Network: Gradient-Descent and Backpropogation}{20}{}%
 \contentsline {subsection}{\numberline {5.1.4}Implementing the Neural Netowk}{21}{}%
-\contentsline {chapter}{\numberline {6}Analysis and Simmulation}{23}{}%
-\contentsline {section}{\numberline {6.1}Analysis}{23}{}%
-\contentsline {subsection}{\numberline {6.1.1}Neural Networks}{23}{}%
-\contentsline {subsection}{\numberline {6.1.2}Interlude: Monte-Carlo Simmulation}{24}{}%
-\contentsline {subsection}{\numberline {6.1.3}Match Simulation}{24}{}%
-\contentsline {chapter}{\numberline {7}Application to the England VS South Africa World Cup Game}{26}{}%
-\contentsline {section}{\numberline {7.1}Example Background}{26}{}%
-\contentsline {section}{\numberline {7.2}Neural Network}{26}{}%
-\contentsline {chapter}{\numberline {8}Conclusion}{27}{}%
+\contentsline {chapter}{\numberline {6}Analysis and Simmulation}{24}{}%
+\contentsline {section}{\numberline {6.1}Analysis}{24}{}%
+\contentsline {subsection}{\numberline {6.1.1}Neural Networks}{24}{}%
+\contentsline {subsection}{\numberline {6.1.2}Interlude: Monte-Carlo Simmulation}{25}{}%
+\contentsline {subsection}{\numberline {6.1.3}Match Simulation}{25}{}%
+\contentsline {section}{\numberline {6.2}England VS South Africa, 1992 World Cup}{27}{}%
+\contentsline {chapter}{\numberline {7}Conclusion}{28}{}%

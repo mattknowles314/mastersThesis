@@ -1,5 +1,7 @@
 \chapter{Analysis and Simmulation}
 
+\epigraph{The more we play cricket, the more players will learn from it}{Inzamam-ul-Haq}
+
 \section{Analysis}
 \subsection{Neural Networks}
 The first thing to look for is the normality of the errors in the predicted values. If the errors are normally distrubted (and ideally around 0),
@@ -104,3 +106,20 @@ To give an idea of how the value of $n$ affects the resulting simmulation, we ra
 
 If we compare these figues with (a) in Figure \ref{MeanAndSDRR}, we see that with large $n$, we have fallen victim to the ``Central-Limit Theorem'', and it looks as if the three 
 sections of the game are unrelated. In the end, $n=20$ was the chosen value as it provided an appropriate middleground. 
+
+\section{England VS South Africa, 1992 World Cup}
+In this section, we take the models that were produced in the prior chapter and apply them to the controversial game at the 1992 Australian Cricket World Cup. In the second semi-final,
+played between England and South Africa at the Sydney Cricket Ground. England had not completed their 50 overs by 18:10pm, and so the number of overs was reduced to 45 overs. In South Africa's
+innings, rain stopped play 5 balls into over 43. At this point in the game, South Africa were 231/6 with 13 balls left, chasing 253. The game was reduced to 43 overs, and using the \textit{most 
+productive overs method}, South Africa were set a target of 252 off 43 overs, leading to the impossible requirement of 21 off 1 ball.\footnote{At the time, the electronic scoreboard at the ground,
+and the TV coverage incorrectly displayed 22 to win off 1 ball.}
+
+Note the afforementioned \textit{Most Productive Overs Method} is given by the equation:
+
+\begin{equation}
+    \text{Target in X overs} = \text{Runs scored by Team 1 in their highest-scoring X overs} + 1.
+\end{equation}
+
+A Duckworth-Lewis calculation was done retrospectively, and would have first set South Africa a target of 273 fron 45 overs, then 257 from the 43 overs.
+
+
