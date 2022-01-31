@@ -1,5 +1,17 @@
 \chapter{Exploratory Data Analysis}
 
+The purpose of this chapter is to explore the obtained dataset in more detail. This is necessary for carrying out the work in later chapters. In general, and no less
+in the world of statistics, making assumptions is dangerous, and so in order to make the assumptions we do in later chapters, we must have the evidence to back it up.
+This chapter not only provides that evidence, but allows us to become more familiar with our dataset, and see how modern data fits in with the previous work done in this 
+field. \\
+We begin by looking at the probability densities in the Fall of Wicket variables. F.o.W is key in the DLS method, so we do this to get an idea of what lies underneath the
+surface. We are able to explain the way F.o.W distributions are shaped based onthe way cricket games unfold. This consistency allows us to make an assumption about Runrates
+later in the chapter too. 
+As with any dataset, there are outliers, and the number of such will have influence on the error function that we use in later models. For that reason, we give brief discussion 
+to this, before going on to look at whether or not scores in games of cricket are normally distributed around some mean. \\
+Runrates are the discussed in more detail, looking at whether or not the runrates in certain periods of the game also follow a normal distribution. Finding this out is imperative
+for using Monte-Carlo simmulation later on in the paper.
+
 \section{Fall of Wicket Densities}
 
 In this chapter, we are looking only at the first innings of the games, and only those games in which the full 50 overs were played. The 
@@ -126,6 +138,7 @@ doesn't necessarily go for the full allowance of overs is normally distributed.
 We find that $S_{FI} \sim \mathcal{N}(213.49,56.91^2)$. 
 
 \section{Runrates}
+\label{exprr}
 The work that follows in this section is essential to allowing the Neural Network constructed in Chapter 5 to predict the scores of games. The aim of this section is 
 to see if we can draw the runrates at specific overs from a statistical distribution. This will in turn enable us to fill the gaps in the missing overs of a game. In turn, 
 with the gaps filled, we can pass the simmulated runrates to the neural network, and allow for a score to be predicted. 

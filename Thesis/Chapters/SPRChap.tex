@@ -248,7 +248,7 @@ The equation \ref{backpropform} is known as the \textit{Backpropogation formula}
 It was decided to implement the neural network using the R programming language, and more specifically, the \textit{neuralnet} package \cite{gunther}. This package 
 allows us to specify all the parameters we wish for, and automatically performs the Backpropogation algorithm to train a network. The whole process is therefore summarised in one line of R code:
 
-Recall the logistic function, $\sigma(x) = \frac{1}{1+exp(-x)}$. Seen as for large values of x, this function treats them all the same, we must normalise the data before training the neural 
+Recall the logistic function, $$\sigma(x) = \frac{1}{1+exp(-x)}.$$ For large values of x, this function treats them all the same, we must normalise the data before training the neural 
 network. Several versions of the network were ran with varying parameters. The final parameters decided were a learning rate, $\alpha$ of 0.02, and a hidden network of layers consitsting of 
 25 neurons, two layers of 10 neurons, and a final hidden layer of 3 neurons. In total, 1000 iterations were ran, each randomly initialising neuron values by drawing from the $N(0,1)$ distribution. 
 The code for this can be seen below.
