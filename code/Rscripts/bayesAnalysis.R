@@ -19,6 +19,3 @@ mu <- mean(fowAvgs)
 sigma2 <- var(fowAvgs)
 
 ks.test(fowAvgs, pnorm)
-
-
-

@@ -1,6 +1,9 @@
 import random
 import numpy as np
 import matplotlib.pyplot as plt
+import pandas as pd
+
+datafile = open("../mcRR.csv", "w+").readlines()
 
 #Define mean and standard deviation parameters
 means = [1.5298,1.6541,3.1493]
@@ -29,3 +32,6 @@ plt.xlabel("Over")
 plt.ylabel("Runrate")
 plt.title(str("Monte-Carlo Runrate Simmulation with n="+str(n)))
 plt.show()
+
+df = pd.DataFrame(runrates)
+df.to_csv(r"C:\Users\iikno\Documents\Diss\code\mcRR.csv")

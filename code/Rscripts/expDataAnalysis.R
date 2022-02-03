@@ -41,7 +41,7 @@ for(j in 1:50){
 }
 plot(rr)
 
-rrMat <- matrix(,nrow = 1436, ncol=51)
+rrMat <- matrix(nrow = 1436, ncol=51)
 for(i in 1:1436){
   for(j in 1:50){
     rrMat[i,j] <- sum(df[i,8:7+j])/6
