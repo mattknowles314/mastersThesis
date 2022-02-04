@@ -105,7 +105,21 @@ To give an idea of how the value of $n$ affects the resulting simmulation, we ra
 \end{figure}
 
 If we compare these figues with (a) in Figure \ref{MeanAndSDRR}, we see that with large $n$, we have fallen victim to the ``Central-Limit Theorem'', and it looks as if the three 
-sections of the game are unrelated. In the end, $n=20$ was the chosen value as it provided an appropriate middleground. 
+sections of the game are unrelated. In the end, $n=20$ was the chosen value as it provided an appropriate middleground. \\
+
+Testing if Monte-Carlo simmulation works was done in R by first cutting off each game in the original test set and random points, filling the rest in using the Monte-Carlo algorithm 
+as previously described, and then feeding this into the neural network we built in the prior chapters. 
+
+\begin{figure}[h]
+    \centering
+    \subfloat[\centering Error in Predictions from Monte-Carlo Simmulation]{{\includegraphics[width=.4\linewidth]{figures/monteCarloSimError.png} }}
+    \qquad
+    \subfloat[\centering Q-Q Plot of Monte-Carlo Prediction Errors]{{\includegraphics[width=.4\linewidth]{figures/monteCarloErrorQQ.png} }}
+    \caption{Monte-Carlo Simmulation Error Density}
+    \label{mcerror}
+\end{figure}
+
+Up until an error of around 2, we see this was more normally distributed than the original predictions. This is promising, but the imporant thing is how far 
 
 \section{England VS South Africa, 1992 World Cup}
 In this section, we take the models that were produced in the prior chapter and apply them to the controversial game at the 1992 Australian Cricket World Cup. In the second semi-final,

@@ -12,7 +12,7 @@ for(i in 1:907){
   }
   overs=(1/6)*(endpoint-startpoint)
   for(j in 1:floor(overs)){
-    rrMat_forTest[i,j] = sum(wonByRuns[i,startpo])
+    rrMat_forTest[i,j] = sum(startpoint:startpoint+((j-1)*6))/overs
   }
 }
 
