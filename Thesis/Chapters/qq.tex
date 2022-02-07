@@ -1,0 +1,67 @@
+\chapter{Q-Q Plots and the Normal Distribution}
+
+Q-Q plots have been used extensively throughout this project, due to their utility in testing if a sample is normally distributed.
+For that reason, delving into the maths behind them a bit more helps with interpreting their results. 
+
+At its core, a Q-Q plot shows the quantiles of two distributions against one another. This can either be drawn from two exact datasets,
+or, as is common in our case, one dataset against samples from a particular probability distribution. This is the case this appendix will focus on. 
+The Q in Q-Q plot refers to ``Quantile''. Quantile functions rely on the distribution function of a particular distribution.
+
+\begin{definition}
+    Suppose X is a random variable. The \textbf{Cumulative Distribution Function} (CDF) of X is $F:\mathbb{R} \to [0,1] $ given by
+    \[
+        F(x) = P(X \leq x)  
+    \]
+\end{definition}
+
+In the case of the normal distribution, we have the following lemma.
+
+\begin{lemma}
+    Let X be normally distributed with mean $\mu$ and variance $\sigma^2$. Then the cumulative distribution function of X is 
+    \[
+        F(x) = \Phi\left(\frac{x-\mu}{\sigma}\right) = \frac{1}{\sigma \sqrt{2 \pi}}\int_{\infty}^{x}exp\left( -\frac{(t-\mu)^2}{2\sigma^2} \right) dt
+    \]
+\end{lemma}
+
+In almost every application throught this project, we have been looking to see if data follows a standard normal distribution. In which case, the
+CDF is 
+
+\[
+    F(x) = \Phi(x) = \frac{1}{\sqrt{2\pi}}\int_{\infty}^{x}exp\left( -\frac{t^2}{2}\right).  
+\]
+
+The following lemma will allow us to use a useful result in building Q-Q plots.
+
+\begin{lemma}
+    $\Phi(x)$ is monotonically strictly increasing
+\end{lemma}
+
+\begin{proof}
+    We have the standard result $\frac{d}{dx}\left(exp(-x)\right)$ = $-exp(-x)$. Now since $exp(x)$ is by definition strictly increasing, exp(-x) is strictly decreasing. It 
+    therefore follows that $-exp(-x)$ is strictly increasing. From the fact $\frac{1}{\sqrt{2\pi}}$, and the prior argument, it follows that $\Phi(x)$ is strictly increasing.
+    The fact that this is the case on the entire domain of $exp(x)$, means that $\Phi(x)$ is also monotonic. 
+\end{proof}
+
+The reason we need to show $\Phi(x)$ fits this in particular property is that if for some distribution with CDF F, F is continuous and strictly monotonically increasing, then 
+the \textit{Quantile Function} Q is given by $Q = F^{-1}$. Infact, the standard normal distribution's quantile function, $\Phi^{-1}(p)$ $p \in (0,1)$, is called the \textit{Probit}
+function. The Probit function is defined in terms of the relative error function. Formally, this is given by the following:
+
+\begin{definition}
+    The \textbf{Relative Error Function}, $erf(x)$, gives the probability that the random variable $X \sim N(0,\frac{1}{2})$ takes a value between $-x$ and $x$ inclusive. 
+    \[
+        \text{erf}(x) = \frac{2}{\sqrt{\pi}}\int_0^x exp(-t^2)dt.    
+    \]
+\end{definition}
+
+With that, we can formally define the quantile function of the standard normal distribution.
+
+\begin{definition}
+    The \textbf{Probit} function, $probit(x)$ is given by:
+    \[
+        probit(x) = \sqrt{2}\text{erf}^{-1}(2p-1).  
+    \]
+\end{definition}
+
+It is this probit function that forms the x-axis in our Q-Q plots. The y-axis contains the sample quantiles. Consider the case where we sampled the same (theoretical) distribution twice,
+putting one on the y-axis and one on the x-axis. Clearly, the plot would form a straight line equivalent to $f(x)=x$ on the 2D cartesian grid. This is the rationale behind the utility of the plot, since 
+if the line is as close to $f(x)=x$ as possible, then we can say with a fairly high confidence that the sample distibution follows the theoretical one we are testing against. If, however, the line formed is curved or differs in another way, then it is safe to say the sample distribution doesn't follow that distribution. 
