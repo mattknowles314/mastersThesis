@@ -46,3 +46,10 @@ ggplot(results, aes(x=error_MC)) +
 ggplot(results, aes(sample=error_MC))+
   stat_qq(fill="cyan",pch=21, size=3) +
   geom_qq_line(color="red", lty="dashed")
+
+boxplot(results$diff, main="Boxplot of Difference in Monte-Carlo VS Full-Data Predictions",
+        xlab="Difference", col="cyan",  notch=T,horizontal = T, pch=19)
+
+#Unscaling Data
+
+results$predictedUS <- unscale(results$predicted, rrMatTest[,1:50], 1:50)

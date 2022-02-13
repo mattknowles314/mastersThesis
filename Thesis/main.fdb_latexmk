@@ -1,12 +1,12 @@
 # Fdb version 3
-["bibtex main"] 1644245459 "main.aux" "main.bbl" "main" 1644247163
+["bibtex main"] 1644748832 "main.aux" "main.bbl" "main" 1644750911
   "C:/Users/iikno/AppData/Local/Programs/MiKTeX/bibtex/bst/bibtex/plain.bst" 1291864736 20613 bd3fbfa9f64872b81ac57a0dd2ed855f ""
-  "main.aux" 1644247147 10947 4f20afb06637f5897116c079ad6d387f "pdflatex"
+  "main.aux" 1644750910 11123 7c8d5e30a631cf2cc9b8d1bf40326136 "pdflatex"
   "refs.bib" 1642671539 5100 93952e87e3891f98c530185964e09515 ""
   (generated)
   "main.bbl"
   "main.blg"
-["pdflatex"] 1644247140 "c:/Users/iikno/Documents/Diss/Thesis/main.tex" "main.pdf" "main" 1644247163
+["pdflatex"] 1644750908 "c:/Users/iikno/Documents/Diss/Thesis/main.tex" "main.pdf" "main" 1644750911
   "../code/PyScripts/monteCarlo.py" 1643879844 900 a34be290cbd3ef895b4e149124bfa735 ""
   "../code/Rscripts/scoreNet.R" 1643627545 2009 9e80e1c10889874c802e5bd2abe5a991 ""
   "C:/Users/iikno/AppData/Local/MiKTeX/miktex/data/le/pdftex/pdflatex.fmt" 1634195332 9715385 211c81815fd6d290e12bcf6f272cd2c1 ""
@@ -186,7 +186,7 @@
   "Chapters/DLSChap.tex" 1643650475 10452 50d0a65ad580597fbeed0fa071fada28 ""
   "Chapters/Intro.tex" 1644245866 6513 055daf14904df8fa25ab623423482bb2 ""
   "Chapters/SPRChap.tex" 1643650735 17033 0879994f3c2fc8a70a1fa73c294bfaad ""
-  "Chapters/analysis.tex" 1643990582 9139 24251cce379a0c496a605b69c55089c0 ""
+  "Chapters/analysis.tex" 1644750907 10243 1bc4ae6d9e688937c52b2f95ed3864d3 ""
   "Chapters/conclusions.tex" 1643650925 163 fff42ecb9a3b24fb7f8aeeb144683013 ""
   "Chapters/dataChap.tex" 1643974518 1930 90c4e34e222b9d4c03777aed9335b39c ""
   "Chapters/expData.tex" 1643904236 11006 f07296fae8fa57f51851fa6873b0a864 ""
@@ -196,6 +196,7 @@
   "figures/avgRR.png" 1643028690 3826 b3d4e3cbb46af88e0aef9abc90c3db01 ""
   "figures/avgrunsfow.png" 1634301188 30508 d8d0c97fab9c2fe0e216a09115fd96fd ""
   "figures/bestnet.png" 1642966177 173644 45c11063759368c37bdd86f65525c448 ""
+  "figures/diffbox.png" 1644748777 5119 550c31d8b019906024bfa78d42351be1 ""
   "figures/errDist.png" 1643017658 4256 0b52e64a28f17924cf8291f131ddb98a ""
   "figures/errorqq.png" 1643019061 5122 dca84759840438aa5de98483fd389b80 ""
   "figures/finaloversdens.png" 1643297940 5315 3549b823fe402dc004b8c95e6880543b ""
@@ -219,11 +220,11 @@
   "figures/sdrr.png" 1643028702 4269 177f56d4a4053dabca399347df9a8a79 ""
   "figures/uoylogo.png" 1634022689 29261 080d5e9942298ec284ca908f12890307 ""
   "figures/z(u).png" 1634301188 34691 30291c22d206608ff6de59ef0dcd9ca1 ""
-  "main.aux" 1644247147 10947 4f20afb06637f5897116c079ad6d387f "pdflatex"
-  "main.bbl" 1644245459 3353 dae3440304c784892acb34aa1820f0d1 "bibtex main"
-  "main.lof" 1644247147 2811 5a82f5d49932bd50f47814aa5526647f "pdflatex"
+  "main.aux" 1644750910 11123 7c8d5e30a631cf2cc9b8d1bf40326136 "pdflatex"
+  "main.bbl" 1644748832 3353 dae3440304c784892acb34aa1820f0d1 "bibtex main"
+  "main.lof" 1644750910 2916 91a4bd01ad4707f99a0cdfefde499d20 "pdflatex"
   "main.tex" 1644247162 3380 05b4fcb494a917955c6c6d387a0a0dca ""
-  "main.toc" 1644247147 2502 b3b6a0709befaf254fbed7e7c1595bae "pdflatex"
+  "main.toc" 1644750910 2502 dc7ea1076fe6aaf8e671eca4ff653183 "pdflatex"
   "titlepage.tex" 1634022689 674 20da6c9be6bc71ef449c6fba3e38d316 ""
   (generated)
   "main.log"

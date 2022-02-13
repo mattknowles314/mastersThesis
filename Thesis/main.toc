@@ -29,6 +29,6 @@
 \contentsline {subsection}{\numberline {6.1.1}Neural Networks}{24}{}%
 \contentsline {subsection}{\numberline {6.1.2}Interlude: Monte-Carlo Simmulation}{25}{}%
 \contentsline {subsection}{\numberline {6.1.3}Match Simulation}{25}{}%
-\contentsline {section}{\numberline {6.2}England VS South Africa, 1992 World Cup}{27}{}%
-\contentsline {chapter}{\numberline {7}Conclusion}{28}{}%
-\contentsline {chapter}{\numberline {A}Q-Q Plots and the Normal Distribution}{29}{}%
+\contentsline {section}{\numberline {6.2}England VS South Africa, 1992 World Cup}{28}{}%
+\contentsline {chapter}{\numberline {7}Conclusion}{29}{}%
+\contentsline {chapter}{\numberline {A}Q-Q Plots and the Normal Distribution}{30}{}%

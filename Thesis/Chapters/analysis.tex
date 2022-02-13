@@ -119,7 +119,19 @@ as previously described, and then feeding this into the neural network we built 
     \label{mcerror}
 \end{figure}
 
-Up until an error of around 2, we see this was more normally distributed than the original predictions. This is promising, but the imporant thing is how far 
+Up until an error of around 2, we see this was more normally distributed than the original predictions. It is worth noting that this could be a side-effect of the fact that during the monte-carlo 
+simmulation, all the games are being drawn directly from a normal distribution. To see definatively how the model compares to the neural network with full data, we take the corrolation of the actual results with those of the predicted values. 
+We find that $\rho_{Network} = 0.9382$ and $\rho_{Monte-Carlo} = -0.0636$. So we see that when filling in the gaps with monte-carlo methods, the performance drops significantly. To further see this difference in performance, 
+we calculate the difference of the monte-carlo method predictions and the original predictions, and take a boxplot.
+
+\begin{figure}[h]
+    \includegraphics[scale=0.6]{figures/diffbox.png}
+    \caption{Boxplot of prediction differences}
+    \label{diffbox}
+\end{figure}
+
+We can see in Figure~\ref{diffbox}, that the difference is mostly centered around 0, which is promising, but clearly the corrolations are all off. At present, the scores are all values between 
+-3 and 3, which is due to scalling. So to get a true intuitive idea of how these models have performed, we must unscale the data. 
 
 \section{England VS South Africa, 1992 World Cup}
 In this section, we take the models that were produced in the prior chapter and apply them to the controversial game at the 1992 Australian Cricket World Cup. In the second semi-final,
