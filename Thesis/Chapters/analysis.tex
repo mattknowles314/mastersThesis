@@ -30,6 +30,7 @@ the runrates can be drawn from one of three normal distributions. So for the ove
 into. 
 
 \subsection{Interlude: Monte-Carlo Simmulation}
+\label{mcsim}
 Before simmulating cricket games to test our network on, we first find it necessary to delve into the mathematics of the methods used to for doing the simmulating. This is where
 ``Monte-Carlo'' simmulating comes in. \\
 Let H be some random variable. At this stage, the distribution of H is irrelevant, but we note that $\mu = E(H)$. Formally, we have the following definition.
@@ -131,8 +132,9 @@ we calculate the difference of the monte-carlo method predictions and the origin
     \label{diffbox}
 \end{figure}
 
-We can see in Figure~\ref{diffbox}, that the difference is mostly centered around 0, which is promising, but clearly the corrolations are all off. At present, the scores are all values between 
--3 and 3, which is due to scalling. So to get a true intuitive idea of how these models have performed, we must unscale the data. 
+We can see in Figure~\ref{diffbox}, that the difference is mostly centered around 0, which is promising, but the fact the corrolations are close to 0 means this is not a reliable method for predicting 
+cricket scores. This is clearly an issue, because when it comes to resetting scores, the game obviously wont have a full 50 overs played, and so we need to fill in the gaps. We can then decrease the target score in proportion 
+with the number of overs lost.
 
 \section{England VS South Africa, 1992 World Cup}
 In this section, we take the models that were produced in the prior chapter and apply them to the controversial game at the 1992 Australian Cricket World Cup. In the second semi-final,
