@@ -23,7 +23,6 @@ finalOversVAR <- var(finalOvers)
 expPowerPlay <- c(rnorm(10,powerPlayMean,sqrt(powerplayVAR)))
 expMid <- c(rnorm(25,middleOversMean,sqrt(middleOversVAR)))
 expFin <- c(rnorm(15,finalOversMean,sqrt(finalOversVAR)))
-  
 
 #Simmulate remaining overs in a game
 rrMatTestCase <- data.frame(matrix(ncol = 51, nrow = 431))
@@ -52,4 +51,11 @@ boxplot(results$diff, main="Boxplot of Difference in Monte-Carlo VS Full-Data Pr
 
 #Unscaling Data
 
-results$predictedUS <- unscale(results$predicted, rrMatTest[,1:50], 1:50)
+unscale <- function(oldMu, oldVar, newData){
+  Y <- c()
+  count = 0
+  for(i in newData){
+    Y[count] <- i*oldMu + oldVar
+  }
+  
+}
