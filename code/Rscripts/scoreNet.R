@@ -21,8 +21,8 @@ hidden = c(a,b,c,d)
 reps=1000
 
 #Normalise data
-trainNorm <- as.data.frame(scale(rrMatTrain))
-testNorm <- as.data.frame(scale(rrMatTest))
+trainNorm <- scale(rrMatTrain)
+testNorm <- scale(rrMatTest)
 
 #Train the Neural Network
 

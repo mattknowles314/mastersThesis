@@ -10,3 +10,4 @@ as well as at using Neural Networks to try and predict cricket scores in games.
 - Unscale runs so that meaningful predictions can be made
 - Investigate the Monte-Carlo Issue
 - Extension on the Bayes work?
+- Put results table in an appendix

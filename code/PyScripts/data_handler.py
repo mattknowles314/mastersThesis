@@ -10,7 +10,7 @@ def get_dls_results(inputPath, outputPath):
             data = json.load(file)
         if("method" in data["info"]["outcome"]):
             if(data["info"]["outcome"]["method"] == "D/L"):
-                os.system("mv "+f+" "+outputPath)
+                os.system("move "+f+" "+outputPath)
         
 
 def get_match_data(matchPath, csvPath):
@@ -42,6 +42,3 @@ def get_match_data(matchPath, csvPath):
         writer = csv.writer(csvF)
         writer.writerow(row)
         csvF.close()
-
-
-get_match_data("/Users/matthew/Documents/Uni/Dissertation/Data/dls/", "/Users/matthew/Documents/Uni/Dissertation/Data/dlsMaster.csv")

@@ -136,6 +136,40 @@ We can see in Figure~\ref{diffbox}, that the difference is mostly centered aroun
 cricket scores. This is clearly an issue, because when it comes to resetting scores, the game obviously wont have a full 50 overs played, and so we need to fill in the gaps. We can then decrease the target score in proportion 
 with the number of overs lost.
 
+To put these results in more context, the data must be unscaled. The data was originally scaled using the base-R function \textit{scale()}. This applies the function
+
+\[
+    x_{\text{scaled}} = \frac{x_{\text{original}}-\mu}{\sigma}.    
+\]
+
+The parameters in the scaling can be re-obtained in R using the \textit{attr()} function. So implementing a function that 
+performs unscaling on a new dataset is not too difficult, and can be achieved in afew lines of code. Note that the value of 51 has been hardcoded 
+here as this is the column in which the runs scored are stored, but to make this more general, that value could be assigned dynamically.
+
+\begin{figure}[h]
+    \lstinputlisting[language=R, firstline=56,lastline=64]{../Code/Rscripts/monteCarlo.R}
+    \caption{R function for unscaling data}
+    \label{unscale}
+\end{figure}
+
+The function allows us to then see the actual predicted runs from both the complete neural network, and the neural network with 
+gaps filled in via the Monte-Carlo method. Once this is done, for each game in the test set we plot the actual score, the score predicted by the full neural network and 
+the score as predicted via the monte-carlo method. 
+
+\begin{figure}[h]
+    \label{fullPredDist}
+    \caption{Plot of predictions for all methods}
+    \includegraphics[scale=0.6]{figures/fullPredDist.png}
+\end{figure}
+
+This plot is naturally very busy, and it wont be used for detailed analysis of the accuracy, but what it does do well is give an overarching picture of the predictions. 
+We can see that while the spread of red (actual scores) and blue (full network predictions) aren't too dissimilar, the spread of green points (monte-carlo predictions) is small and centered mainly 
+around average game scores. This explains the poor performance of the model, it doesn't fair well with games that deviate far from the average. It is natural to ask how we can fix this. The one way that 
+could lead to higher performance is to shrink the game into smaller chunks. Rather than looking at the three meta-stages of the game as we did originally, what about drawing from distributions of every 5 or 10 overs.
+
+
+
+
 \section{England VS South Africa, 1992 World Cup}
 In this section, we take the models that were produced in the prior chapter and apply them to the controversial game at the 1992 Australian Cricket World Cup. In the second semi-final,
 played between England and South Africa at the Sydney Cricket Ground. England had not completed their 50 overs by 18:10pm, and so the number of overs was reduced to 45 overs. In South Africa's

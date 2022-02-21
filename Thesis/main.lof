@@ -28,5 +28,7 @@
 \contentsline {figure}{\numberline {6.3}{\ignorespaces 50-Over simmulation of $n=5$ and $n=100$\relax }}{26}{}%
 \contentsline {figure}{\numberline {6.4}{\ignorespaces Monte-Carlo Simmulation Error Density\relax }}{27}{}%
 \contentsline {figure}{\numberline {6.5}{\ignorespaces Boxplot of prediction differences\relax }}{27}{}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces R function for unscaling data\relax }}{28}{}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Plot of predictions for all methods\relax }}{28}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }

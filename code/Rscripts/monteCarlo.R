@@ -1,17 +1,16 @@
 mcfill <- function(state,row){
   if(state<=10){
-    row[state:10] <- c(rnorm(11-state,mean=1.5298,sd=0.4486))
-    row[11:35] <- c(rnorm(25,mean=1.6541,sd=0.3355))
-    row[36:50] <- c(rnorm(15,mean=3.1493,sd=1.1349))
+    row[state:10] <- c(rnorm(11-state,mean=1.5298,sd=(0.4486)))
+    row[11:35] <- c(rnorm(25,mean=1.6541,sd=(0.3355)))
+    row[36:50] <- c(rnorm(15,mean=3.1493,sd=(1.1349)))
   } else if(state>10 && state<35){
-    row[state:35] <- c(rnorm(36-state,mean=1.6541,sd=0.3355))
-    row[36:50] <- c(rnorm(15,mean=3.1493,sd=1.1349))
+    row[state:35] <- c(rnorm(36-state,mean=1.6541,sd=(0.3355)))
+    row[36:50] <- c(rnorm(15,mean=3.1493,sd=(1.1349)))
   } else{
-    row[state:50] <- c(rnorm(51-state,mean=3.1493,sd=1.1349))
+    row[state:50] <- c(rnorm(51-state,mean=3.1493,sd=(1.1349)))
   }
   return(row)
 }
-
 
 powerPlayMean <- mean(powerplay)
 middleOversMean <- mean(middleOvers)
@@ -35,8 +34,8 @@ for(i in 1:431){
 }
 rrMatTestCase[,51] <- rrMatTest[,51] #Original score
 
-predictValsMC <- compute(scoreNet, scale(rrMatTestCase[,1:50]),rep=best_rep)
-results$predicted_mc <- predictValsMC$net.result
+predictValsMC <- neuralnet::compute(scoreNet, scale(rrMatTestCase[,1:50]),rep=best_rep)
+results$predicted_mc <- c(predictValsMC$net.result)
 results$error_MC <- (results$actual-results$predicted_mc)
 
 ggplot(results, aes(x=error_MC)) +
@@ -51,11 +50,19 @@ boxplot(results$diff, main="Boxplot of Difference in Monte-Carlo VS Full-Data Pr
 
 #Unscaling Data
 
-unscale <- function(oldMu, oldVar, newData){
-  Y <- c()
-  count = 0
-  for(i in newData){
-    Y[count] <- i*oldMu + oldVar
+target1 <- results$predicted
+target2 <- results$predicted_mc_2
+
+unscale <- function(target, original){
+  scale_val = attr(original,"scaled:scale")[51]
+  cent = attr(original, "scaled:center")[51]
+  UNSCData <- c()
+  for(i in 1:length(target)){
+    UNSCData[i] <- target[i] * scale_val + cent
   }
-  
+  return(UNSCData)
 }
+
+results$actualUNSC <- rrMatTest[,51]
+results$predUNSC <- unscale(target1,testNorm) #Original Predicted, Unscaled
+results$MCpredUNSC <- unscale(target2,testNorm) #Predicted with MC
