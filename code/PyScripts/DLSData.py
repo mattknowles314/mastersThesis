@@ -12,25 +12,23 @@ for f in os.listdir():
         data = json.load(file)
 
         row = [f,data["innings"][1]["target"]["runs"]]
-
         runsInOvers2 = []
 
         if len(data["innings"])==2:
-            inningsSecond = data["innings"][1]["team"]
             for k in data["innings"][1]["overs"]:
+                overSum = 0
                 for p in k["deliveries"]:
-                    runsInOvers2.append(p["runs"]["total"])
+                    overSum += p["runs"]["total"]
+                runsInOvers2.append(overSum)
         
             j=1
-            RR2 = []
-            
+            RR2 = [runsInOvers2[0]]
             while j <= len(runsInOvers2):
-                row.append(sum(runsInOvers2[0:j])/j)
-                j+=1      
-
-            fullOvers = math.floor(j/6)
-            print(fullOvers)
-
+                RR2.append(sum(runsInOvers2[0:j])/j)
+                j+=1
+            
+            for i in RR2:
+                row.append(i)
             writer.writerow(row)
         else:
             continue

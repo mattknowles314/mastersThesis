@@ -51,7 +51,7 @@ boxplot(results$diff, main="Boxplot of Difference in Monte-Carlo VS Full-Data Pr
 #Unscaling Data
 
 target1 <- results$predicted
-target2 <- results$predicted_mc_2
+target2 <- results$predicted_mc
 
 unscale <- function(target, original){
   scale_val = attr(original,"scaled:scale")[51]

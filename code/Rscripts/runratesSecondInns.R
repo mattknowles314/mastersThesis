@@ -17,9 +17,9 @@ for(i in 1:907){
 }
 
 
-for(i in 1:58){
+for(i in 1:1436){
   for(j in 1:50){
-    dlsRRMat[i,j] <- sum(dlsRR[i,3:2+j])/6
+    rrMat[i,j] <- sum(df[i,8:7+j])/6
   }
-  dlsRRMat[i,51] <- dlsRR[i,2]
+  rrMat[i,51] <- sum(df[i,8:57])
 }

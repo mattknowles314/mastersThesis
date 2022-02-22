@@ -1,9 +1,26 @@
-#This doesnt work yet but i need to go to training
+#replace NA values with 0
+dlsRR <- data.frame(dlsRR)
 
-dlsRRMat <- data.frame(matrix(ncol = 51, nrow = 58))
-for(i in 1:58){
-  for(j in 1:50){
-    dlsRRMat[i,j] <- sum(dlsRR[i,3:2+j])/6
-  }
-  dlsRRMat[i,51] <- dlsRR[i,2]
-}
+dlsRRMat <- dlsRR[,3:44]
+dlsRRMat <- replace(dlsRRMat,is.na(dlsRRMat),0)
+
+
+dlsrrSc <- data.frame(scale(dlsRRMat))
+dlsrrSc[,43:51] = 0
+
+colnames(dlsrrSc)<-colnames(rrMatTest)
+
+#WE can now feed these matrices into the neural network
+dlsResults<-as.
+predictValsNoFill <- neuralnet::compute(scoreNet, dlsrrSc,rep=best_rep)
+dlsResults$predictedNoFill <- c(predictValsNoFill$net.result)
+dlsResults <- data.frame(actual=dlsRR$V2, predicted = predictValsNoFill$net.result)
+
+target1 <- dlsResults$predictedNoFill
+dlsResults$predUNSC <- unscale(target1,testNorm) 
+
+dlsResults$errorNoFill <- (dlsResults$actual-dlsResults$predUNSC)
+
+#Check error distribution
+ggplot(dlsResults, aes(x=errorNoFill)) +
+  geom_density()
