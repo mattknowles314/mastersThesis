@@ -12,3 +12,4 @@ ggplot(Analysisdf, aes(x=id,y=value)) +
   geom_point(aes(color=key,shape=key),size=1.5) +
   xlab("Game") + ylab("Runs")
 
+
