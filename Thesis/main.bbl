@@ -31,6 +31,13 @@ Jerome~H Friedman.
   and prediction}.
 \newblock springer open, 2017.
 
+\bibitem{nncancer}
+N~Ganesan, K~Venkatesh, MA~Rama, and A~Malathi Palani.
+\newblock Application of neural networks in diagnosing cancer disease using
+  demographic data.
+\newblock {\em International Journal of Computer Applications}, 1(26):76--85,
+  2010.
+
 \bibitem{gunther}
 Frauke G{\"u}nther and Stefan Fritsch.
 \newblock Neuralnet: training of neural networks.

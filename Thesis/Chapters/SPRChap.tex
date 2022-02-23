@@ -1,22 +1,17 @@
-\chapter{Pattern Recognition: Background and Implementation}
+\chapter{Pattern Recognition with Neural Networks: Background and Implementation}
 
 \epigraph{Nowadays, with technology coming into cricket, people start to analyse, and if you only have one or two tricks, people will start to line you up}{Jasprit Bumrah}
 
-In this chapter, we will discuss the mathematical foundations of the patern recognition methods that will be used to predict 
-scores. There are two approaches to this. The first is to use already built packages for both a given programming language and simply
-feed data into it and present the results. The second method is to build them from scratch. The disadvantage to doing this is naturally 
-that it is more time consuming. However, it does allow for more control over how our models work, and will allow us to understand our results
-better, than if we had used a proprietary model. This isn't to say that the code written for these models won't utilise packages for doing things
-like linear algebra calculations, but we wont simply import a neural network package and have results within 5 lines of code. \\
+We begin this chapter by looking at the mathematical background of neural networks. More specifically, the construction of them using Linear Algebra, and then algorithms 
+for training them. By ``training'', we mean updating the parameters associated with the network in order to improve their predictive accuracy. After this mathematical discussion, 
+we look at using the \verb|neuralnet| package in R to implement a network, although the resulting network is dicussed in the next chapter. The chapter finishes with a discussion of 
+time complexity of the algorithms used.
 
 %Explain which langauges were chosen for each method and why
 
-
-\section{Neural Networks}
-
-\subsection{A Brief Introduction to Neural Networks}
+\section{A Brief Introduction to Neural Networks}
 Neural networks (NNs) have been the subject to a lot of hype in recent years. They are a machine learning method that is being applied to many problems
-in all sorts of fields.  %some references here please 
+in all sorts of fields, such as finance \cite{nnstock} and medicine \cite{nncancer}.  
 The network will be trained on runrate data, so for each game we have calculated the evolution of the runrate,
 and then we have the overall score for that game in the final column of the matrix. An example of a network can be seen in \ref{nnexample1}. The first layer is the 
 input layer, and the last layer gives the predictions. The middle layers are hidden and where the work of the network is done. \\
@@ -40,7 +35,7 @@ will change over some time period, then one can protect themself from a bad inve
 methods here for building our neural network.  In \cite{nnstock}, the authors twest two different Neural Netowrks, and find that using a ``Multi-Layer Feed Forward Nerual Network''
 is the better choice for predicting how stock values will change. With these motivations in mind, we can begin to construct the networks.
 
-\subsection{Builiding The Network}
+\section{Builiding The Network}
 %Rewrite this bit
 Our input layer will have 50 nodes, one for the runrate at the end of each over. We will begin with 5 hidden layers, although this is subject to change. The output layer
 will of course only have one node, the value of which will predict the score of the game. 
@@ -246,7 +241,7 @@ The equation \ref{backpropform} is known as the \textit{Backpropogation formula}
 \end{align}
 
 
-\subsection{Implementing the Neural Netowk}
+\section{Implementing the Neural Netowk}
 It was decided to implement the neural network using the R programming language, and more specifically, the \textit{neuralnet} package \cite{gunther}. This package 
 allows us to specify all the parameters we wish for, and automatically performs the Backpropogation algorithm to train a network. The whole process is therefore summarised in one line of R code:
 
@@ -260,17 +255,17 @@ The code for this can be seen below.
     \caption{R code to implement the neural network}
 \end{figure}
 
-The plot of this network can be found in the next chapter [INCLUDE FIGURE REFERENCE]. Implementing the network this way is fairly efficient, and does not cause any issues with time-complexity. Infact, Backpropogation 
-was found to have a median time complexity of $\mathcal{O}(N^4)$ in \cite{lister}. In fact, running 1000 training iterations took ~10 hours on an \textit{AMD-Ryzen 5 1600 Six-Core Processer @ 3.20Ghz} and 16GB of available RAM.
+A plot of this network can be seen in Figure~\ref{bestnet}. Implementing the network this way is fairly efficient, and does not cause any issues with time-complexity. Infact, Backpropogation 
+was found to have a median time complexity of $\mathcal{O}(N^4)$ in \cite{lister}. Running 1000 training iterations took ~10 hours on an \textit{AMD-Ryzen 5 1600 Six-Core Processer @ 3.20Ghz} with 16GB of available RAM.
 
 More details on the results of the network will be available in the next chapter, although to outline how we obtained the data there, it is first a case of selecting the training repitition 
-with the lowest error on the training data. This is done using the \textit{which.min()} in R. We then use the \textit{neuralnet} package's function 
-\textit{compute()} to use the neural network for predicting the (normalised) values in the training data. These predicted values are stored in a dataframe next to 
-the original values. We then perform a simple ``Root Mean Squared Error'' calculation by $\sqrt{(x_{original}-x_{predicted})^2}$, and use this as the third column in the dataframe. This completes the implementation of the neural 
-network. The final net can be seen here, although due to the nature it is hard to see the specific weights and biases- although this is less important than the results that are discussed in the 
-next chapter. 
+with the lowest error on the training data. This is done using the \textit{which.min()} in R. We then use the function \textit{compute()} to use the neural network for predicting the (normalised) 
+values in the training data. These predicted values are stored in a dataframe next to the original values. We then perform a simple ``Root Mean Squared Error'' calculation by $\sqrt{(x_{original}-x_{predicted})^2}$, 
+and use this as the third column in the dataframe. This completes the implementation of the neural network. The final net can be seen here, although due to the nature it is hard to see the specific weights and biases- although 
+this is less important than the results that are discussed in the next chapter. 
 
 \begin{figure}[h] 
+    \label{bestnet}
     \includegraphics[scale=0.5]{figures/bestnet.png}
     \caption{Final trained network. }
 \end{figure}

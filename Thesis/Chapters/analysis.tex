@@ -1,9 +1,13 @@
-\chapter{Analysis and Simmulation}
+\chapter{Model Analysis}
 
 \epigraph{The more we play cricket, the more players will learn from it}{Inzamam-ul-Haq}
 
-\section{Analysis}
-\subsection{Neural Networks}
+This chapter is dedicated to analysing the results of the neural network model implemented in the prior chapter. We first look at how the model did on predicting the test dataset 
+that is in exactly the same form as the training data. We then give a brief mathematical interlude on Monte-Carlo simmulation before using this to create a simmulated dataset 
+to test the model on. Finally, we give the network actual DLS game data to see how it does. In each of the cases, we perform similar analysis to compare the performance of the model.
+The main metric is the corrolation between actual results and those predicted by the network.
+
+\section{Fully trained Neural Network}
 The first thing to look for is the normality of the errors in the predicted values. If the errors are normally distrubted (and ideally around 0),
 then it means that our predictions are sufficiently accurate. We produce a density plot of the errors using the \textit{ggplot2} library in R.
 
@@ -29,7 +33,7 @@ we must come up with a way to 'fill in' the missing overs. The idea for this is 
 the runrates can be drawn from one of three normal distributions. So for the overs that are missed, we can simply fill in the gaps by drawing a value from the distribution that the missing over falls 
 into. 
 
-\subsection{Interlude: Monte-Carlo Simmulation}
+\section{Interlude: Monte-Carlo Simmulation}
 \label{mcsim}
 Before simmulating cricket games to test our network on, we first find it necessary to delve into the mathematics of the methods used to for doing the simmulating. This is where
 ``Monte-Carlo'' simmulating comes in. \\
@@ -58,7 +62,7 @@ It follows from Theorem \ref{slln} that
                               &= \mu.
 \end{align}
 
-\subsection{Match Simulation}
+\section{Match Simulation}
 With the theoretical framework for Monte-Carlo simmulation established, we can now look to build an algorithm for simmulating cricket matches. Based on our own work in Chapter 4, 
 we begin by defining three random variables, $R_{\text{powerplay}} \sim N(\mu_{\text{powerplay}},\sigma_\text{powerplay})$, $R_{\text{middle}} \sim N(\mu_{\text{middle}},\sigma_{\text{middle}})$
 and $R_{\text{final}} \sim N(\mu_{\text{final}},\sigma_{\text{final}})$.
@@ -168,7 +172,7 @@ We can see that while the spread of red (actual scores) and blue (full network p
 around average game scores. This explains the poor performance of the model, it doesn't fair well with games that deviate far from the average. It is natural to ask how we can fix this. The one way that 
 could lead to higher performance is to shrink the game into smaller chunks. Rather than looking at the three meta-stages of the game as we did originally, what about drawing from distributions of every 5 or 10 overs.
 
-\subsubsection{DLS Game Data}
+\section{Unseen DLS Game Data}
 Since using Monte-Carlo methods didn't work too well, the next step is to look at seeing if something simpler will work. To do this, we take games that were decided through DLS, and 
 feed them into the network to see how well it does. Rather than filling in the blanks of overs not played, we just set the runrate to 0 in these overs, and feed the resulting games into the neural network. 
 We took 51 games which were decided by DLS, and looked at what the target set by DLS was. 

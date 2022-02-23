@@ -2,6 +2,8 @@
 
 \epigraph{One person's data is another person's noise}{K.C. Cole}
 
+The purpose of this small chapter is to give an overview of the data that is used for this project.
+
 \section{Data Origin}
 The primary source of data for carrying out this project was downloaded from ``cricsheet''\footnote{https://cricsheet.org/}
 and stored locally on a private server. In total there are 2167 individual matches of data. Each in a JSON format, 
@@ -16,9 +18,8 @@ We also have the ball-by-ball data. So for every ball bowled, it gives who were 
 were scored and how. It also details if a wicket was taken that ball, and how.
 
 \section{Pre-Processing}
-Many Python scripts were written to get data in an appropriate form for analysis. Using standard libraries, we were able to turn the JSON data 
-into CSV files that could be used for analysis. Data cleaning is always the hardest part of any data-science based probject, and this was certainly the case 
-here. Cricket games are very different and no two are the same, so applying general rules is hard to do.
+In order to clean data and make it usable, the Python programming language was used to take the original JSON files and turn them into CSV files on which analysis could 
+be performed in R. These scripts made heavy use of the base-Python packages \verb|JSON| and \verb|CSV|.
 
 \section{Problems}
 When it comes to machine learning, the more data the better is a general rule. Now this can sometimes lead to sub-problems, such as overfitting. But on the whole.
