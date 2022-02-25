@@ -131,7 +131,7 @@ we calculate the difference of the monte-carlo method predictions and the origin
 
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=0.6]{figures/diffbox.png}
+    \includegraphics[width=0.4\linewidth]{figures/diffbox.png}
     \caption{Boxplot of prediction differences}
     \label{diffbox}
 \end{figure}
@@ -178,23 +178,17 @@ feed them into the network to see how well it does. Rather than filling in the b
 We took 51 games which were decided by DLS, and looked at what the target set by DLS was. 
 
 The results for this were actually better than for the monte carlo gap filling method. We achieved a corrolation in the results of 0.4983. Which is naturally lower than we would like, but a large improvement 
-on the prior method. We can see in Figure~\ref{dlspreds} how the spread of points isn't in a narrow band as it was with monte carlo predictions. 
+on the prior method. We can see in Figure~\ref{DLSError} how the spread of points isn't in a narrow band as it was with monte carlo predictions. We can also see the errors that came along with the predictions.
 
 \begin{figure}[h]
-    \label{dlspreds}
     \centering
-    \caption{Network predictions for DLS games}
-    \includegraphics[scale=0.6]{figures/dlsPreds.png}
+    \subfloat[\centering Network predictions for DLS games]{{\includegraphics[width=.4\linewidth]{figures/dlsPreds.png} }}
+    \qquad
+    \subfloat[\centering DLS Prediction Errors]{{\includegraphics[width=.4\linewidth]{figures/dlsErrorDist.png} }}
+    \caption{Monte-Carlo Simmulation Error Density}
+    \label{DLSError}
 \end{figure}
 
-We can also, as is standard practice, look at the errors of the predictions made by this model.
-
-\begin{figure}[h]
-    \label{dlsErrors}
-    \centering
-    \caption{DLS Prediction Errors}
-    \includegraphics[scale=0.6]{figures/dlsErrorDist.png}
-\end{figure}
 
 These errors are follow a rough bell-curve shape, however we must remember that there aren't many datapoints here, so it may well be that with more datapoints, we would see more of a normal distribution. The downside however is 
 that this curve is not centered around an error of 0, but around -58.22. This means that on average, the model sets teams a target of a much higher score. 
