@@ -193,19 +193,3 @@ on the prior method. We can see in Figure~\ref{DLSError} how the spread of point
 These errors are follow a rough bell-curve shape, however we must remember that there aren't many datapoints here, so it may well be that with more datapoints, we would see more of a normal distribution. The downside however is 
 that this curve is not centered around an error of 0, but around -58.22. This means that on average, the model sets teams a target of a much higher score. 
 
-\section{England VS South Africa, 1992 World Cup}
-In this section, we take the models that were produced in the prior chapter and apply them to the controversial game at the 1992 Australian Cricket World Cup. In the second semi-final,
-played between England and South Africa at the Sydney Cricket Ground. England had not completed their 50 overs by 18:10pm, and so the number of overs was reduced to 45 overs. In South Africa's
-innings, rain stopped play 5 balls into over 43. At this point in the game, South Africa were 231/6 with 13 balls left, chasing 253. The game was reduced to 43 overs, and using the \textit{most 
-productive overs method}, South Africa were set a target of 252 off 43 overs, leading to the impossible requirement of 21 off 1 ball.\footnote{At the time, the electronic scoreboard at the ground,
-and the TV coverage incorrectly displayed 22 to win off 1 ball.}
-
-Note the afforementioned \textit{Most Productive Overs Method} is given by the equation:
-
-\begin{equation}
-    \text{Target in X overs} = \text{Runs scored by Team 1 in their highest-scoring X overs} + 1.
-\end{equation}
-
-A Duckworth-Lewis calculation was done retrospectively, and would have first set South Africa a target of 273 fron 45 overs, then 257 from the 43 overs.
-
-

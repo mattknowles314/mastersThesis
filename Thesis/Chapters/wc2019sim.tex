@@ -1,0 +1,47 @@
+\chapter{Simmulating the ICC 2019 Cricket World Cup}
+In this chapter, we use the model we have built and apply it to games decided by DLS in the 2019 cricket world cup. The objective is to see if our model 
+gives a similar outcome to the tournament as DLS did, or to see how the tournament would have differed using our model. WE give a sceheme for how score targets will
+be reset, and use this to simmulate the games in question. 
+
+\section{DLS in the 2019 World Cup}
+Only three games were decided by DLS in the 2019 Worlc Cup, two of which involved Afghanistan. The other was a game between India and Pakistan. The ball-by-ball data for 
+each of these games was collected and tidied in the previous ways. There are three different ways in which we can apply the neural network depending on how much of the first innings gets played.
+
+\begin{itemize}
+    \item If the full first innings isn't played, predict a score using the network, and give the target as the proportional score to the number of overs available. 
+    \item If the full first innings is played, and some of the second innings is played, apply the network to the equivalent overs in the first innings, and use that to set the score. 
+\end{itemize}
+
+
+\section{Applying the Neural Network Model}
+\subsection{Sri Lanka vs Afghanistan}
+Batting first, Sri-Lanka ended their rain-affected innings on 201 after 36.5\footnote{NOte that in cricketing notation, this means 36 overs and 5 balls, not 36 overs and 3 balls, which would be the case if .5 meant half an over.} overs.
+Under DLS, Afghanistan were set a target of 187 from 41 overs. However, Afghanistan were bowled out for 152 from 32.4 overs, coming up 34 runs short of the required target from just 79.7\% of their alloted innings. 
+Using the data from the first Innings, our model predicted that Sri Lanka would have gone on to score 338 runs had they have had a full innings. Since Sri Lanka only played $61.3\%$ of their innings, under this method, Afghanistan 
+would have been set a target of $0.613 \times 338 = 207 \text{ runs}$. However, that is if Afghanistan were given a full 50 overs, which they didn't have in this game due to light. For that reason, we need 
+to again reduce this by the ration of available overs, 41 in this case. Therefore we reduce this by $\frac{41}{50}=0.94$, giving a reduced target score of $195$ runs from 41 overs. This is considerably higher than the 
+score set by DLS, and given how Afghanistan batted, quite far out of reach. This means our method has had no affect on the standings of the World Cup from this game.
+
+\subsection{Afghanistan vs South Africa}
+This time batting first, Afghanistan were bowled out for 125 from 34.1 overs. Midway through the first innings, the game was reduced to 48 overs per side. After the first innings, South Africa were set 
+a target of 127 from their 48 overs. Interestingly, our model predicted that Afghanistan would reach a score of 125 had they have had a full 50 overs. Strictly speaking, in this scenario that's a perfect prediction 
+as they had no batters left so couldn't go any higher than the 125 they actually did achieve! Since South Africa had 48 overs available to them, that's an increase of 1.4, so the score target set under our scheme
+is $1.4 \times 125 = 175$ runs from 48 overs. Using our model on the South Africa innings, a predicted score of 151 is obtained. From 48 overs instead of 50 this gives a predicted score of $0.96 \times 151 = 145$. 
+This naturally falls up short of the 175 target, so actually Afghanistan win this game, and would give them their only win of the tournament. They stay bottom of the points table, South Africa however would have 
+dropped two points and fallen to eight place, allowing Bangladesh to move up into position seven. 
+
+\subsection{India VS Pakistan}
+After a stellar innings from Indian batsman Rohit Sharma, hitting 140 off 113 deliveries, India finished their 50 overs with a score of 336- losing only 5 wickets in the process. Pakistan stepped up to the plate, reaching 
+166 from 35 overs, chasing 337. But then the rain came down over Manchester and the score was revised by DLS to them needing 136 more runs from just 5 overs. This requires a mammouth effort of 27.20 runs per over. Needless to say,
+Pakistan fell short, going on to hit a total of 212 from their 40 overs. Our model predicted that after the $35^{th}$ over, India would go on to score 284 in their 50. Reducing this by 0.2 to give a predicted score after 40 overs, 
+we get a target score of 227. Paksitan reached 212 off their 40, so fall short and still lose, meaning nothing changes in the table. Given that Pakistan were on 166, this new target of 61 from 5 overs is far more realistic, and would have 
+meant for a far more enjoyable game for the spectators, as it would have at least given Pakistan a fighting chance, and not essentially killed the game by setting such a high target from a short number 
+of overs. 
+
+\section{Summary of Model affect on the Tournament}
+There is only one change to the final table, and that change has no impact on the overall impact of the tournament, since India still won against Pakistan. Afghanistan and South Africa both finished in the bottom 
+half of the table, and even with our method, South Africa would have only dropped one place, while Afghanistan's position wouldn't change. \\
+
+While our model gave similar outcomes to DLS, the score targets set were arguably more realistic in some cases, especially the India-Pakistan game, and certainly from an entertainment perspective, this 
+has great value in maintaining the competaive aspect of the game. Naturally, using proportions as a way to decrease or increase something that is inherently random isn't ideal, but this leaves room for future work 
+on the topic. 

@@ -11,7 +11,6 @@ dlsrrSc[,43:51] = 0
 colnames(dlsrrSc)<-colnames(rrMatTest)
 
 #WE can now feed these matrices into the neural network
-dlsResults<-as.
 predictValsNoFill <- neuralnet::compute(scoreNet, dlsrrSc,rep=best_rep)
 dlsResults$predictedNoFill <- c(predictValsNoFill$net.result)
 dlsResults <- data.frame(actual=dlsRR$V2, predicted = predictValsNoFill$net.result)

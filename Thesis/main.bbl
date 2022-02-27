@@ -25,6 +25,14 @@ Frank~C Duckworth and Anthony~J Lewis.
 \newblock {\em Journal of the Operational Research Society}, 49(3):220--227,
   1998.
 
+\bibitem{foysal}
+Md~Foysal, Ferdouse Ahmed, Mohammad~Shakirul Islam, Asif Karim, and Nafis
+  Neehal.
+\newblock Shot-net: a convolutional neural network for classifying different
+  cricket shots.
+\newblock In {\em International Conference on Recent Trends in Image Processing
+  and Pattern Recognition}, pages 111--120. Springer, 2018.
+
 \bibitem{sprbk}
 Jerome~H Friedman.
 \newblock {\em The elements of statistical learning: Data mining, inference,
@@ -47,6 +55,12 @@ Frauke G{\"u}nther and Stefan Fritsch.
 Peter~J Huber.
 \newblock Robust estimation of a location parameter.
 \newblock In {\em Breakthroughs in statistics}, pages 492--518. Springer, 1992.
+
+\bibitem{kumar2}
+Rohit Kumar, D~Santhadevi, and Janet Barnabas.
+\newblock Outcome classification in cricket using deep learning.
+\newblock In {\em 2019 IEEE international conference on cloud computing in
+  emerging markets (CCEM)}, pages 55--58. IEEE, 2019.
 
 \bibitem{kumar}
 Sonu Kumar and Sneha Roy.

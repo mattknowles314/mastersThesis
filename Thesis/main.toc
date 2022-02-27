@@ -28,8 +28,14 @@
 \contentsline {section}{\numberline {6.2}Interlude: Monte-Carlo Simmulation}{24}{}%
 \contentsline {section}{\numberline {6.3}Match Simulation}{24}{}%
 \contentsline {section}{\numberline {6.4}Unseen DLS Game Data}{28}{}%
-\contentsline {section}{\numberline {6.5}England VS South Africa, 1992 World Cup}{28}{}%
-\contentsline {chapter}{\numberline {7}Conclusions and Future Work}{29}{}%
-\contentsline {section}{\numberline {7.1}Conclusions}{29}{}%
-\contentsline {section}{\numberline {7.2}Discussion and Future Work}{29}{}%
-\contentsline {chapter}{\numberline {A}Q-Q Plots and the Normal Distribution}{30}{}%
+\contentsline {chapter}{\numberline {7}Simmulating the ICC 2019 Cricket World Cup}{29}{}%
+\contentsline {section}{\numberline {7.1}DLS in the 2019 World Cup}{29}{}%
+\contentsline {section}{\numberline {7.2}Applying the Neural Network Model}{29}{}%
+\contentsline {subsection}{\numberline {7.2.1}Sri Lanka vs Afghanistan}{29}{}%
+\contentsline {subsection}{\numberline {7.2.2}Afghanistan vs South Africa}{29}{}%
+\contentsline {subsection}{\numberline {7.2.3}India VS Pakistan}{30}{}%
+\contentsline {section}{\numberline {7.3}Summary of Model affect on the Tournament}{30}{}%
+\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{31}{}%
+\contentsline {section}{\numberline {8.1}Conclusions}{31}{}%
+\contentsline {section}{\numberline {8.2}Future Work}{31}{}%
+\contentsline {chapter}{\numberline {A}Q-Q Plots and the Normal Distribution}{32}{}%

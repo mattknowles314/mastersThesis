@@ -3,13 +3,18 @@
 \epigraph{I'm completely cricketed out. If I never have to write another word about cricket again, I'll be a happy man.}{Joseph O'Neill}
 
 \section{Conclusions}
+We presented a Neural Network model for predicting cricket scores based on patterns in the runrate of a game. Neural Networks have been used in cricket for things such as 
+generating commentary \cite{kumar2} or classifting shots based on footage \cite{foysal}, but we couldn't find a paper using them in this way before. 
+The Neural Network model we built for predicting cricket scores did fairly well when given a full dataset, a $94\%$ corrolation with actual values is certainly not 
+something to be glossed over. However, the aim of this project was for predicting results when the full data is not available due to an innings being cut short. 
+In this domain, the network did considerably worse- correlating poorly with test data when monte-carlo methods were used to fill in the missing games, and only achieving only $50\%$ 
+corrolation when the gaps were left as 0s. Despite this, applying the network to an actual tournament gave similar results to the standard method used for achieving the same task, and had 
+marginal affect on the tournament's outcome. 
 
 
+\section{Future Work}
+Rather than decrasing/increasing scores via a proportion, it would be benificial to incorperate the fall of wicket densities looked at earlier in the paper in some way. This is one 
+area our model doesn't incorperate at all, let alone well. Yet, it is a key aspect of cricket, and so in the future it could be highly effective if taken into account. 
 
-
-\section{Discussion and Future Work}
-Following on from what was mentioned in Section~\ref{mcsim}, rather than simply decreasing scores in proportion with the number of overs loft, 
-it would be worth investigating decreasing the score depending on the fall of wicket distribution, as we looked at earlier in the paper. This could be 
-done using Bayesian Techniques. \\
-
-It's worth looking at expanding on the monte-carlo method; more specifically, breaking the game up into smaller stages to see how the accuracy of the model changes.
+Using team specific data rather than an average of all games could be interesting thing to look into, but the computational cost of this would be high, and the accessability of the 
+method would be poor as a result, defeating the point of making this a system easily employable across cricket. 
