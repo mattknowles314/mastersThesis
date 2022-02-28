@@ -40,7 +40,7 @@ is the better choice for predicting how stock values will change. With these mot
 Our input layer will have 50 nodes, one for the runrate at the end of each over. We will begin with 5 hidden layers, although this is subject to change. The output layer
 will of course only have one node, the value of which will predict the score of the game. 
 
-We begin by looking at a single node. The proper name for each node is ``perceptron''. Each perceptron takes in the values of a vector, and an extra ``+1'' intercept term. The perceptron then outputs a valye h given by \ref{percepout}:
+We begin by looking at a single node. The proper name for each node is ``perceptron''. Each perceptron takes in the values of a vector, and an extra ``+1'' intercept term. The perceptron then outputs a value $h$ given by \ref{percepout}:
 
 \begin{equation}
     \label{percepout}
@@ -51,6 +51,7 @@ Here, $K \in \mathbb{N}$ is the number of elements in the vector, and $f:\mathbb
 The two common choices are:
 
 \begin{align}
+    \label{sigmoid_func}
     f(z) &= \frac{1}{1+exp(-z)} \\
     f(z) &= tanh(z)
 \end{align}
@@ -59,19 +60,18 @@ The comparrison of these two functions can be seen in \ref{actfig}.
 
 \begin{figure}[h]
     \centering
-    \label{actfig}
     \includegraphics[scale=0.5]{figures/actfuncs.png}
     \caption{Graph showing the shape of different activation functions.}
+    \label{actfig}
 \end{figure}
 
-We will be using (5.2) as our activation but will return to the activation function shortly. For now, lets look at the network we're going to use.
-The initial neural network that we're building. The code for this activation can be seen in \ref{pyact}, note we have included the derivative of this function too, which will be important later.
-
+We will be using \ref{sigmoid_func} as our activation function. There is some leniancy over which activation function is used. The paper \cite{sibi} found that actually the more important aspect of 
+the network is the choice of training algorithm, along with other parameters such as learning rate $\alpha$. For now, lets look at the network we're going to use. The initial neural network that we're building. 
 
 We begin with getting from the input layer, denoted $L_0$. Each node in $L_0$ takes a value $a^{(0)_i}$ for $i \in \{1,2,\ldots,50\}$. We use $\textbf{a}^{(0)}$ to denote the vector
 containing these values. For every node in $L_0$, we have 25 connections coming away, one going to each of the nodes in $L_1$. 25 was an arbitraty choice for the size of $L_1$, and is
 subject to change based on results from initial testing. So that means we have $50 \times 25 = 1250$ weights for just the first layer alone. Some linear algebra is to be done here to get 
-values for the vector $\textbf{a}^{(1)}$. We use $w_ij$ to denote the weight from node j in one layer to node i in the prior layer. We can then construct a matrix containing the weights
+values for the vector $\textbf{a}^{(1)}$. We use $w_{ij}$ to denote the weight from node j in one layer to node i in the prior layer. We can then construct a matrix containing the weights
 between $L_0$ and $L_1$, which we denote $W^{(1)}$. This matrix is given by \ref{weights1}.
 
 \begin{equation}
@@ -115,14 +115,12 @@ element in the vector $A^{(1)}$. Putting this all together, we have the followin
     \textbf{a}^{(1)} = f(W^{(1)}\textbf{a}^{(0)} + \textbf{b}^{1})
 \end{equation}
 
-Which gives us values for all the nodes in the first hidden layer. This process is then repeated for all the the remaining layers in the network. 
-
-This process is then repeated for each layer, creating a diffferent weights and bias matrix going between each layer in the network. These matrices are naturally of different sizes, but the principle is exactly the same.
-When we start the training process for this network, we will only have random variables for the weights and biases. To gain better values that can predict accurate results in the future,
-we need to train the network by feeding it feature vectors and their associated outputs. \\
+Which gives us values for all the nodes in the first hidden layer. This process is then repeated for each layer, creating a diffferent weights and bias matrix going between each layer in the network. 
+These matrices are naturally of different sizes, but the principle is exactly the same. When we start the training process for this network, we will only have random variables for the weights and biases. 
+To gain better values that can predict accurate results in the future, we need to train the network by feeding it feature vectors and their associated outputs. \\
 
 To allow the netowrk to be trained, we first must define a ``cost function''. The way we do this is to input a vector to the input layer, let the network produce a result, say $y'$, which
-initially will be hooribly wrong, and square the difference between this and the true value $y$ for that particluar training vector. Put more precisely,
+initially is likely to be quite wrong, and square the difference between this and the true value $y$ for that particluar training vector. Put more precisely,
 let \textbf{X} be a feature vector containing 50 elements, and $y$ the corresponding output. Then define the cost function, $C(X,y) := (y'-y)^2$. The lower the value of $C(X,y)$, the 
 better the network has done at predicting. The average value of $C(X,y)$ for each X and y in our training set, is then a good measure of the network's performance. \\
 
@@ -179,7 +177,7 @@ is the \textit{output} of node i in layer $k-1$, denoted $o_i^{k-1}$. So we can 
     \frac{\partial E}{\partial w_{ij}^k} = \delta^k_jo_i^{k-1}.
 \end{equation}
 
-The aim of backpropogation is to $\delta^m_1$, where m denotes the final layer. We can express $E_d$ in terms of $a_1^m$ as follows:
+The aim of backpropogation is to minimise the error $\delta^m_1$, where m denotes the final layer. We can express $E_d$ in terms of $a_1^m$ as follows:
 
 \begin{equation}
     E_d = \frac{1}{2} (f(a_1^m)-y_d)^2.
@@ -242,8 +240,9 @@ The equation \ref{backpropform} is known as the \textit{Backpropogation formula}
 
 
 \section{Implementing the Neural Netowk}
-It was decided to implement the neural network using the R programming language, and more specifically, the \textit{neuralnet} package \cite{gunther}. This package 
-allows us to specify all the parameters we wish for, and automatically performs the Backpropogation algorithm to train a network. The whole process is therefore summarised in one line of R code:
+It was decided to implement the neural network using the R programming language, and more specifically, the \verb|neuralnet| package \cite{gunther}. This package 
+allows us to specify all the parameters we wish for, and automatically performs the Backpropogation algorithm to train a network. The whole aspect of this process is the encapsulated in line 4
+of Figure~\ref{nnRcode}
 
 Recall the logistic function, $$\sigma(x) = \frac{1}{1+exp(-x)}.$$ For large values of x, this function treats them all the same, we must normalise the data before training the neural 
 network. Several versions of the network were ran with varying parameters. The final parameters decided were a learning rate, $\alpha$ of 0.02, and a hidden network of layers consitsting of 
@@ -253,19 +252,21 @@ The code for this can be seen below.
 \begin{figure}[h] %MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
     \lstinputlisting[language=R, firstline=29,lastline=35]{../code/Rscripts/scoreNet.R}
     \caption{R code to implement the neural network}
+    \label{nnRcode}
 \end{figure}
 
 A plot of this network can be seen in Figure~\ref{bestnet}. Implementing the network this way is fairly efficient, and does not cause any issues with time-complexity. Infact, Backpropogation 
 was found to have a median time complexity of $\mathcal{O}(N^4)$ in \cite{lister}. Running 1000 training iterations took ~10 hours on an \textit{AMD-Ryzen 5 1600 Six-Core Processer @ 3.20Ghz} with 16GB of available RAM.
 
 More details on the results of the network will be available in the next chapter, although to outline how we obtained the data there, it is first a case of selecting the training repitition 
-with the lowest error on the training data. This is done using the \textit{which.min()} in R. We then use the function \textit{compute()} to use the neural network for predicting the (normalised) 
-values in the training data. These predicted values are stored in a dataframe next to the original values. We then perform a simple ``Root Mean Squared Error'' calculation by $\sqrt{(x_{original}-x_{predicted})^2}$, 
-and use this as the third column in the dataframe. This completes the implementation of the neural network. The final net can be seen here, although due to the nature it is hard to see the specific weights and biases- although 
-this is less important than the results that are discussed in the next chapter. 
+with the lowest error on the training data. This is done using the \textit{which.min()} function in R, which looks through all the data in the vector we give it, and returns the index of the minimum value.
+We then use the function \textit{neuralnet::compute()} to use the neural network for predicting the (normalised) values in the training data. These predicted values are stored in a dataframe next to the original values. 
+We then perform a simple ``Root Mean Squared Error'' calculation by $\sqrt{(x_{original}-x_{predicted})^2}$, and use this as the third column in the dataframe. This completes the implementation of the neural network.
+The final net can be seen here, although due to the nature it is hard to see the specific weights and biases- although this is less important than the results that are discussed in the next chapter. 
 
 \begin{figure}[h] 
-    \label{bestnet}
-    \includegraphics[scale=0.5]{figures/bestnet.png}
+    \centering
+    \includegraphics[width=0.9\linewidth]{figures/bestnet.png}
     \caption{Final trained network. }
+    \label{bestnet}
 \end{figure}
