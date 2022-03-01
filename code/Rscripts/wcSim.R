@@ -23,6 +23,8 @@ pakistanGame <- neuralnet::compute(scoreNet,pakGame,rep=best_rep)
 pakistanGamePredict <- c(unscale(pakistanGame$net.result,testNorm))
 pakistanGamePredict
 
-IndGame <- wcMat[3,3:35]
+IndGame <- wcMat[3,3:37]
 IndGame[36:50] <- 0
 indGamePred <- neuralnet::compute(scoreNet,IndGame,rep=best_rep)
+indGamePred <- c(unscale(indGamePred$net.result,testNorm))
+indGamePred

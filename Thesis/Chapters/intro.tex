@@ -2,23 +2,28 @@
 
 \epigraph{I don't like discussing cricket off the field.}{MS Dhoni}
 
-In this chapter, we outline the background behind this project. Looking into why the topic is one of relevancy, and why it is worth looking at. This comes after an introduction to cricket itself,
-the sports-inclined reader may still find this of use, as it talks about the specific aspects of the game that will be most important in the remainder of the project. The issues raised by the current methods 
+In this chapter, we outline the background behind this project. The discussion centres around why this a topic of relevancy in cricket, and how we can employ more modern mathematics to it. This comes after an introduction to cricket itself,
+which the sports-inclined reader may still find of use, as it talks about the specific aspects of the game that will be most important in the remainder of the project. The issues raised by the current methods 
 which we are trying to improve upon are explained. This leads to a review of some of the important literature on the topic to give more context behind the work done in this project.
 
 \section{Data in Cricket}
-The use of data in sport has become a massive part of how teams prepare for games and competitions in recent years. In cricket particularly, one thing is the use
-of metrics such as strike-rate for selecting bowlers for the starting XI. In limited overs cricket, asking questions about how scoring boundaries will affect
-the score at different grounds. Or how wicket-taking in the ``powerplay''\footnote{In T20 cricket, this refers to the first 6 overs of the game, where certain fielding restrictions are in place}
-vs in the ``middle overs'' will change the outcome of the game. Data visualisation is key in putting across this information to playing staff to highlight key areas for
-imprtovement. For this reason, this project has taken an approach of using extensive data-visualisation to tell the story of the work being done. 
+The use of data in sport has become a massive part of how teams prepare for games and competitions in recent years. In cricket particularly, one way data has changed the game is the use
+of metrics such as strike-rate for selecting bowlers in the starting XI. In previous eras, less substantive things such as cloud cover or how much grass covers the playing field would have taken precedance.
+That's not to say such things don't still have a part to play, but the introduction of quantitiave methods has become much more commonplace in the modern game.
+Similiarly, a coach may look at how wicket-taking in the ``powerplay''\footnote{In T20 cricket, this refers to the first 6 overs of the game, where certain fielding restrictions are in place}
+vs in the ``middle overs'' will change the outcome of the game. Data visualisation is key in putting across this information to playing staff in order tp highlight key areas for
+improvement. For this reason, we have taken an approach of using extensive data-visualisation to convey how the maths being done translates onto the cricket field. 
 
 \section{Limited-Overs Cricket and the need for Duckworth-Lewis}
-Cricket is a game played by two teams, each with 11 players. The objective for the batting team is to score as many ``runs'' as possible
-without losing 10 of their batsmen\footnote{There have to be two batters on the pitch, so if 10 wickets are lost, it leaves one batter stranded.}, 
-who can be ``out'' in a variety of ways. Cricket is played in ``overs'', each over lasting 6 deliveries. Traditionally, the game lasted for 4 days
-and there was no limit to the number of overs the bowling team could bowl. \\
+Cricket is a game played by two teams of eleven players. A coin toss decideds which team will ``bat'' first, and which will ``field'' fist. Unlike other sports, the scores in cricket are counted in ``runs''. Runs are achieved
+in many ways, such as the two batters physically running to change sides of the pitch they are on, or by hitting the ball over a pre-defined boundary. The game of cricket itself has two main forms. In this project we will 
+only look at ``limited-overs cricket''. Cricket is played in ``overs'', each one consisting of 6 individual bowls consecutively by the same bowler from one end of the pitch. Traditionally, there is no upper limit on the 
+amount of overs a team may bowl- they keep going until the batting team ``declares'', meaning they've had enough and dont want to bat anymore, or preferably for the bowling team, are all bowled out. 
+Batters can be given ``out'' in quite a few different ways, but once a batter is out- that's it for them. Once ten of the eleven players on the batting team have been given out, the innings comes to end and the team bowling 
+gets their turn to bat. If they hit more runs before losing all their ten wickets or before the innings comes to an end, then they win. Cricket is an immensely complex game with countless intricacies and neuances, but at 
+it's core, applying mathematics to it is not an absurd proposition. 
 
+The traditional format of cricket, called ``first class'' lasts up to 4 days. This obviously has disadvantages from a spectator point of view. On
 In 1963, the cricketing calender in the UK had for the first time a different format of the game ammended to it.
 The ``Gillette Cup'' introduced a form of cricket wherein each team has 1 innings, lasting 50 overs. The idea was 
 that this competition, coming to a conclusion within the space of a day, would increase spectator numbers and by extension,
