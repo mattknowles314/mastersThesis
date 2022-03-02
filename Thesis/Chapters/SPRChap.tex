@@ -238,6 +238,22 @@ The equation \ref{backpropform} is known as the \textit{Backpropogation formula}
         &=f'(a_j^k)o^{k-1}_i \sum^{r^{k+1}}_{l=1}w_{jl}^{k+1}\delta_l^{k+1}.
 \end{align}
 
+\subsection{RPROP+}
+Backpropogation is a solid algorithm, and is often used to refer as a blanket term for all the variations of it. In implementing the neural network in this project, we used 
+the ``RPROP+'' algorithm \cite{rprop}, short for Resiliant backPROPogation. The $+$ is notation for showing we include backtracking in the algorithm.
+
+\begin{definition}{Backtracking}
+    Suppose the partial derivative $\frac{\partial E}{\partial w_{ij}}$ changes sign. This means the prior step was too large, meaning the minimum is missed. For that reason, 
+    we \textbf{backtrack} to the previous weight update. I.e,
+    \[
+        \Delta w_{ij}^k = -\Delta w_{ij}^{(k-1)} \  \text{if} \  \frac{\partial E^{(k-1)}}{\partial w_{ij}} \times \frac{\partial E^k}{\partial w_{ij}} < 0 
+    \]
+\end{definition}
+
+To outline this algorithm, we give the algorithm as it is given in the paper \cite{rprop}
+\begin{algorithm}
+
+\end{algorithm}
 
 \section{Implementing the Neural Netowk}
 It was decided to implement the neural network using the R programming language, and more specifically, the \verb|neuralnet| package \cite{gunther}. This package 
@@ -263,6 +279,8 @@ with the lowest error on the training data. This is done using the \textit{which
 We then use the function \textit{neuralnet::compute()} to use the neural network for predicting the (normalised) values in the training data. These predicted values are stored in a dataframe next to the original values. 
 We then perform a simple ``Root Mean Squared Error'' calculation by $\sqrt{(x_{original}-x_{predicted})^2}$, and use this as the third column in the dataframe. This completes the implementation of the neural network.
 The final net can be seen here, although due to the nature it is hard to see the specific weights and biases- although this is less important than the results that are discussed in the next chapter. 
+
+
 
 \begin{figure}[h] 
     \centering
