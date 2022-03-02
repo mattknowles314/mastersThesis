@@ -3,11 +3,9 @@
 \epigraph{In an ideal world, you knock the runs off and win the game.}{Moeen Ali}
 
 We now look at the mathematics behind the D/L, and DLS methods. D/L being the original
-method, and DLS the method that Stern helped to revise. In the original paper, the authors
-state ``Commercial confidentiality prevents the disclosure of the mathematical definitions
-of these functions.'' $\cite{duckworth}$. Which is naturally a slight problem for this, but what
-we can do is instead use sample values based on data we have to look at how these functions behave,
-so all is certainly not lost.
+method, and DLS the method that Stern helped to revise. Although not much is taken from this method 
+for our model, it is important to look at how DLS works in order to see what our model does differently 
+and visa-versa. DLS uses much more traditional statistics than the deep learning we employ.
 
 \section{Origins: Duckworth and Lewis}
 We begin by looking at the original paper. The first thing to establish is how many runs are scored,
@@ -18,12 +16,15 @@ on average, in a given number of overs. This is given by the equation:
     \label{Z(u)}  
 \end{equation}
 
-Where u is the number of overs, b is the exponential decay constant, and $Z_0$ is the
+Where u is the number of overs, b is an exponential decay constant, and $Z_0$ is the
 average total score in first class cricket, but with one-day rules imposed.  
 
-Now because we don't have access to actual values for $Z_0$ or b, a plot to see what equation \ref{Z(u)} looks 
+Because we don't have access to actual values for $Z_0$ or b, a plot to see what equation \ref{Z(u)} looks 
 like was created by using 3 sample values for $Z_0$. For b, it was a process of trial and error to find a value
-that resulted in the graph having a similar shape to original figures in the D/L paper. 
+that resulted in the graph having a similar shape to original figures in the D/L paper. Some intuition was required here 
+based on our own experience in cricket to find a reasonable starting value. In future, it may be worth taking the time to 
+mine through all available data and obtain an estimate in a similar way to their method. The value will almost certainly 
+be more accurate now due to having more datapoints to estimate from.
 
 \begin{figure}[h]
     \centering
@@ -33,7 +34,7 @@ that resulted in the graph having a similar shape to original figures in the D/L
 \end{figure}
 
 However, we have not yet looked at what happens when wickets are lost. To introduce this metric, equation \ref{Z(u)}
-is revised to incorperate the scenario that w wickets have been lost, and that there are u overs remaining
+is revised to incorperate the scenario that $w$ wickets have been lost, and that there are u overs remaining
 The revised equation is given as follows:
 
 \begin{equation}
@@ -99,7 +100,14 @@ This equation assumes u overs remaining, w wickets down in an M-over match with 
     g(u,\lambda) = \left (\frac{u}{50} \right)^{-(1+\alpha_\lambda+\beta_\lambda u)}
 \end{equation}
 
-In the above, we define $a_\lambda = -1/\{1+c_1(\lambda-1)e^{-c_2(\lambda-1)}\}$ and $\beta_\lambda = -c_3(\lambda-1)e^{-c_4(\lambda-1)}$. The constants $c_1,\ldots,c_4$ are based on
+In the above, we define 
+
+\begin{align*}
+    a_\lambda &= -\frac{1}{1+c_1(\lambda-1)e^{-c_2(\lambda-1)}}\\
+    \beta_\lambda &= -c_3(\lambda-1)e^{-c_4(\lambda-1)}
+\end{align*}
+
+The constants $c_1,\ldots,c_4$ are based on
 what Stern describes as a ``detailed examination'' of high scoring cricket matches.
 
 \section{Extension: Bayesian Modelling}

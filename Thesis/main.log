@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.10.14)  1 MAR 2022 17:44
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.10.14)  2 MAR 2022 11:36
 entering extended mode
 **c:/Users/iikno/Documents/Diss/Thesis/main.tex
 (c:/Users/iikno/Documents/Diss/Thesis/main.tex
@@ -272,80 +272,37 @@ Package: fancyhdr 2021/01/28 v4.0.1 Extensive control of page headers and footer
 \f@nch@O@erf=\skip67
 \f@nch@O@olf=\skip68
 \f@nch@O@orf=\skip69
-) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/algorithm2e\algorithm2e.sty
-Package: algorithm2e 2017/07/18 v5.2 algorithms environments
-\c@AlgoLine=\count293
+) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/algorithms\algorithm.sty
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating environment
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2020/11/24 v1.1c Standard LaTeX ifthen package (DPC)
 )
-\algocf@hangindent=\skip70
- (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/ifoddpage\ifoddpage.sty
-Package: ifoddpage 2016/04/23 v1.1 Conditionals for odd/even page detection
-\c@checkoddpage=\count294
-) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
-Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
-) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/relsize\relsize.sty
-Package: relsize 2013/03/29 ver 4.1
-)
-\skiptotal=\skip71
-\skiplinenumber=\skip72
-\skiprule=\skip73
-\skiphlne=\skip74
-\skiptext=\skip75
-\skiplength=\skip76
-\algomargin=\skip77
-\skipalgocfslide=\skip78
-\algowidth=\dimen181
-\inoutsize=\dimen182
-\inoutindent=\dimen183
-\interspacetitleruled=\dimen184
-\interspacealgoruled=\dimen185
-\interspacetitleboxruled=\dimen186
-\algocf@ruledwidth=\skip79
-\algocf@inoutbox=\box59
-\algocf@inputbox=\box60
-\AlCapSkip=\skip80
-\AlCapHSkip=\skip81
-\algoskipindent=\skip82
-\algocf@nlbox=\box61
-\algocf@hangingbox=\box62
-\algocf@untilbox=\box63
-\algocf@skipuntil=\skip83
-\algocf@capbox=\box64
-\algocf@lcaptionbox=\skip84
-\algoheightruledefault=\skip85
-\algoheightrule=\skip86
-\algotitleheightruledefault=\skip87
-\algotitleheightrule=\skip88
-\c@algocfline=\count295
-\c@algocfproc=\count296
-\c@algocf=\count297
-\algocf@algoframe=\box65
-\algocf@algobox=\box66
+\@float@every@algorithm=\toks36
+\c@algorithm=\count293
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algpseudocode.sty
 Package: algpseudocode 
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/algorithmicx\algorithmicx.sty
 Package: algorithmicx 2005/04/27 v1.2 Algorithmicx
 
 Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
-\c@ALG@line=\count298
-\c@ALG@rem=\count299
-\c@ALG@nested=\count300
-\ALG@tlm=\skip89
-\ALG@thistlm=\skip90
-\c@ALG@Lnr=\count301
-\c@ALG@blocknr=\count302
-\c@ALG@storecount=\count303
-\c@ALG@tmpcounter=\count304
-\ALG@tmplength=\skip91
+\c@ALG@line=\count294
+\c@ALG@rem=\count295
+\c@ALG@nested=\count296
+\ALG@tlm=\skip70
+\ALG@thistlm=\skip71
+\c@ALG@Lnr=\count297
+\c@ALG@blocknr=\count298
+\c@ALG@storecount=\count299
+\c@ALG@tmpcounter=\count300
+\ALG@tmplength=\skip72
 )
 Document Style - pseudocode environments for use with the `algorithmicx' style
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
-\pgfutil@everybye=\toks36
-\pgfutil@tempdima=\dimen187
-\pgfutil@tempdimb=\dimen188
+\pgfutil@everybye=\toks37
+\pgfutil@tempdima=\dimen181
+\pgfutil@tempdimb=\dimen182
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common-lists.tex)) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
-\pgfutil@abb=\box67
+\pgfutil@abb=\box59
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
 Package: pgfrcs 2021/05/15 v3.1.9a (3.1.9a)
 ))
@@ -353,31 +310,31 @@ Package: pgf 2021/05/15 v3.1.9a (3.1.9a)
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
 Package: pgfsys 2021/05/15 v3.1.9a (3.1.9a)
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
-\pgfkeys@pathtoks=\toks37
-\pgfkeys@temptoks=\toks38
+\pgfkeys@pathtoks=\toks38
+\pgfkeys@temptoks=\toks39
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeysfiltered.code.tex
-\pgfkeys@tmptoks=\toks39
+\pgfkeys@tmptoks=\toks40
 ))
-\pgf@x=\dimen189
-\pgf@y=\dimen190
-\pgf@xa=\dimen191
-\pgf@ya=\dimen192
-\pgf@xb=\dimen193
-\pgf@yb=\dimen194
-\pgf@xc=\dimen195
-\pgf@yc=\dimen196
-\pgf@xd=\dimen197
-\pgf@yd=\dimen198
+\pgf@x=\dimen183
+\pgf@y=\dimen184
+\pgf@xa=\dimen185
+\pgf@ya=\dimen186
+\pgf@xb=\dimen187
+\pgf@yb=\dimen188
+\pgf@xc=\dimen189
+\pgf@yc=\dimen190
+\pgf@xd=\dimen191
+\pgf@yd=\dimen192
 \w@pgf@writea=\write3
 \r@pgf@reada=\read2
-\c@pgf@counta=\count305
-\c@pgf@countb=\count306
-\c@pgf@countc=\count307
-\c@pgf@countd=\count308
-\t@pgf@toka=\toks40
-\t@pgf@tokb=\toks41
-\t@pgf@tokc=\toks42
-\pgf@sys@id@count=\count309
+\c@pgf@counta=\count301
+\c@pgf@countb=\count302
+\c@pgf@countc=\count303
+\c@pgf@countd=\count304
+\t@pgf@toka=\toks41
+\t@pgf@tokb=\toks42
+\t@pgf@tokc=\toks43
+\pgf@sys@id@count=\count305
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
 File: pgf.cfg 2021/05/15 v3.1.9a (3.1.9a)
 )
@@ -388,59 +345,59 @@ File: pgfsys-pdftex.def 2021/05/15 v3.1.9a (3.1.9a)
 File: pgfsys-common-pdf.def 2021/05/15 v3.1.9a (3.1.9a)
 ))) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
 File: pgfsyssoftpath.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfsyssoftpath@smallbuffer@items=\count310
-\pgfsyssoftpath@bigbuffer@items=\count311
+\pgfsyssoftpath@smallbuffer@items=\count306
+\pgfsyssoftpath@bigbuffer@items=\count307
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
 File: pgfsysprotocol.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
 Package: pgfcore 2021/05/15 v3.1.9a (3.1.9a)
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
-\pgfmath@dimen=\dimen199
-\pgfmath@count=\count312
-\pgfmath@box=\box68
-\pgfmath@toks=\toks43
-\pgfmath@stack@operand=\toks44
-\pgfmath@stack@operation=\toks45
+\pgfmath@dimen=\dimen193
+\pgfmath@count=\count308
+\pgfmath@box=\box60
+\pgfmath@toks=\toks44
+\pgfmath@stack@operand=\toks45
+\pgfmath@stack@operation=\toks46
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex))) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
-\c@pgfmathroundto@lastzeros=\count313
+\c@pgfmathroundto@lastzeros=\count309
 )) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
 File: pgfcorepoints.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@picminx=\dimen256
-\pgf@picmaxx=\dimen257
-\pgf@picminy=\dimen258
-\pgf@picmaxy=\dimen259
-\pgf@pathminx=\dimen260
-\pgf@pathmaxx=\dimen261
-\pgf@pathminy=\dimen262
-\pgf@pathmaxy=\dimen263
-\pgf@xx=\dimen264
-\pgf@xy=\dimen265
-\pgf@yx=\dimen266
-\pgf@yy=\dimen267
-\pgf@zx=\dimen268
-\pgf@zy=\dimen269
+\pgf@picminx=\dimen194
+\pgf@picmaxx=\dimen195
+\pgf@picminy=\dimen196
+\pgf@picmaxy=\dimen197
+\pgf@pathminx=\dimen198
+\pgf@pathmaxx=\dimen199
+\pgf@pathminy=\dimen256
+\pgf@pathmaxy=\dimen257
+\pgf@xx=\dimen258
+\pgf@xy=\dimen259
+\pgf@yx=\dimen260
+\pgf@yy=\dimen261
+\pgf@zx=\dimen262
+\pgf@zy=\dimen263
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
 File: pgfcorepathconstruct.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@path@lastx=\dimen270
-\pgf@path@lasty=\dimen271
+\pgf@path@lastx=\dimen264
+\pgf@path@lasty=\dimen265
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
 File: pgfcorepathusage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@shorten@end@additional=\dimen272
-\pgf@shorten@start@additional=\dimen273
+\pgf@shorten@end@additional=\dimen266
+\pgf@shorten@start@additional=\dimen267
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
 File: pgfcorescopes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfpic=\box69
-\pgf@hbox=\box70
-\pgf@layerbox@main=\box71
-\pgf@picture@serial@count=\count314
+\pgfpic=\box61
+\pgf@hbox=\box62
+\pgf@layerbox@main=\box63
+\pgf@picture@serial@count=\count310
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
 File: pgfcoregraphicstate.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgflinewidth=\dimen274
+\pgflinewidth=\dimen268
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
 File: pgfcoretransformations.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@pt@x=\dimen275
-\pgf@pt@y=\dimen276
-\pgf@pt@temp=\dimen277
+\pgf@pt@x=\dimen269
+\pgf@pt@y=\dimen270
+\pgf@pt@temp=\dimen271
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
 File: pgfcorequick.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
@@ -449,17 +406,17 @@ File: pgfcoreobjects.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 File: pgfcorepathprocessing.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
 File: pgfcorearrows.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfarrowsep=\dimen278
+\pgfarrowsep=\dimen272
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
 File: pgfcoreshade.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@max=\dimen279
-\pgf@sys@shading@range@num=\count315
-\pgf@shadingcount=\count316
+\pgf@max=\dimen273
+\pgf@sys@shading@range@num=\count311
+\pgf@shadingcount=\count312
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
 File: pgfcoreimage.code.tex 2021/05/15 v3.1.9a (3.1.9a)
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
 File: pgfcoreexternal.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfexternal@startupbox=\box72
+\pgfexternal@startupbox=\box64
 )) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
 File: pgfcorelayers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
@@ -470,52 +427,52 @@ File: pgfcorepatterns.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 File: pgfcorerdf.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
 File: pgfmoduleshapes.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfnodeparttextbox=\box73
+\pgfnodeparttextbox=\box65
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
 File: pgfmoduleplot.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
 Package: pgfcomp-version-0-65 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@nodesepstart=\dimen280
-\pgf@nodesepend=\dimen281
+\pgf@nodesepstart=\dimen274
+\pgf@nodesepend=\dimen275
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
 Package: pgfcomp-version-1-18 2021/05/15 v3.1.9a (3.1.9a)
 )) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
 Package: pgffor 2021/05/15 v3.1.9a (3.1.9a)
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)
-\pgffor@iter=\dimen282
-\pgffor@skip=\dimen283
-\pgffor@stack=\toks46
-\pgffor@toks=\toks47
+\pgffor@iter=\dimen276
+\pgffor@skip=\dimen277
+\pgffor@stack=\toks47
+\pgffor@toks=\toks48
 )) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
 Package: tikz 2021/05/15 v3.1.9a (3.1.9a)
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
 File: pgflibraryplothandlers.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgf@plot@mark@count=\count317
-\pgfplotmarksize=\dimen284
+\pgf@plot@mark@count=\count313
+\pgfplotmarksize=\dimen278
 )
-\tikz@lastx=\dimen285
-\tikz@lasty=\dimen286
-\tikz@lastxsaved=\dimen287
-\tikz@lastysaved=\dimen288
-\tikz@lastmovetox=\dimen289
-\tikz@lastmovetoy=\dimen290
-\tikzleveldistance=\dimen291
-\tikzsiblingdistance=\dimen292
-\tikz@figbox=\box74
-\tikz@figbox@bg=\box75
-\tikz@tempbox=\box76
-\tikz@tempbox@bg=\box77
-\tikztreelevel=\count318
-\tikznumberofchildren=\count319
-\tikznumberofcurrentchild=\count320
-\tikz@fig@count=\count321
+\tikz@lastx=\dimen279
+\tikz@lasty=\dimen280
+\tikz@lastxsaved=\dimen281
+\tikz@lastysaved=\dimen282
+\tikz@lastmovetox=\dimen283
+\tikz@lastmovetoy=\dimen284
+\tikzleveldistance=\dimen285
+\tikzsiblingdistance=\dimen286
+\tikz@figbox=\box66
+\tikz@figbox@bg=\box67
+\tikz@tempbox=\box68
+\tikz@tempbox@bg=\box69
+\tikztreelevel=\count314
+\tikznumberofchildren=\count315
+\tikznumberofcurrentchild=\count316
+\tikz@fig@count=\count317
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
 File: pgfmodulematrix.code.tex 2021/05/15 v3.1.9a (3.1.9a)
-\pgfmatrixcurrentrow=\count322
-\pgfmatrixcurrentcolumn=\count323
-\pgf@matrix@numberofcolumns=\count324
+\pgfmatrixcurrentrow=\count318
+\pgfmatrixcurrentcolumn=\count319
+\pgf@matrix@numberofcolumns=\count320
 )
-\tikz@expandcount=\count325
+\tikz@expandcount=\count321
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
 File: tikzlibrarytopaths.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 ))) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/epigraph\epigraph.sty
@@ -523,10 +480,10 @@ Package: epigraph 2020/01/02 v1.5e typesetting epigraphs
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/nextpage\nextpage.sty
 Package: nextpage 2009/09/03 v1.1a additional page commands
 )
-\beforeepigraphskip=\skip92
-\afterepigraphskip=\skip93
-\epigraphwidth=\skip94
-\epigraphrule=\skip95
+\beforeepigraphskip=\skip73
+\afterepigraphskip=\skip74
+\epigraphwidth=\skip75
+\epigraphrule=\skip76
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2021/05/15 v3.1.9a (3.1.9a)
 )
@@ -542,11 +499,11 @@ Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is usel
 
 Package fancyhdr Warning: \fancyfoot's `E' option without twoside option is useless on input line 35.
 
-\c@theorem=\count326
+\c@theorem=\count322
 (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2021-08-04 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count327
-\l__pdf_internal_box=\box78
+\l__color_backend_stack_int=\count323
+\l__pdf_internal_box=\box70
 ) (main.aux)
 \openout1 = `main.aux'.
 
@@ -601,24 +558,24 @@ LaTeX Font Info:    ... okay on input line 71.
 
 (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count328
-\scratchdimen=\dimen293
-\scratchbox=\box79
-\nofMPsegments=\count329
-\nofMParguments=\count330
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count331
-\MPscratchDim=\dimen294
-\MPnumerator=\count332
-\makeMPintoPDFobject=\count333
-\everyMPtoPDFconversion=\toks49
+\scratchcounter=\count324
+\scratchdimen=\dimen287
+\scratchbox=\box71
+\nofMPsegments=\count325
+\nofMParguments=\count326
+\everyMPshowfont=\toks49
+\MPscratchCnt=\count327
+\MPscratchDim=\dimen288
+\MPnumerator=\count328
+\makeMPintoPDFobject=\count329
+\everyMPtoPDFconversion=\toks50
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
  (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
-\c@lstlisting=\count334
+\c@lstlisting=\count330
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
  (titlepage.tex
@@ -629,29 +586,30 @@ Package pdftex.def Info: figures/uoylogo.png  used on input line 15.
 (pdftex.def)             Requested size: 401.49902pt x 185.1914pt.
  [1
 
-{C:/Users/iikno/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./figures/uoylogo.png>]) [1] (main.toc)
+{C:/Users/iikno/AppData/Local/MiKTeX/pdftex/config/pdftex.map} <./figures/uoylogo.png>]) [1]
+No file main.toc.
 \tf@toc=\write4
 \openout4 = `main.toc'.
 
- [2
+[2
 
-] (main.lof
-LaTeX Font Info:    Trying to load font information for U+msa on input line 4.
- (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 4.
- (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-))
+]
+No file main.lof.
 \tf@lof=\write5
 \openout5 = `main.lof'.
 
- (Chapters/Intro.tex [3
+(Chapters/Intro.tex [3
 
 ]
 Chapter 1.
-[4
+LaTeX Font Info:    Trying to load font information for U+msa on input line 3.
+(C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 3.
+ (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [4
 
 ]
 Underfull \hbox (badness 10000) in paragraph at lines 26--31
@@ -659,52 +617,101 @@ Underfull \hbox (badness 10000) in paragraph at lines 26--31
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 51--56
+LaTeX Warning: Citation `duckworth' on page 5 undefined on input line 37.
+
+
+LaTeX Warning: Citation `Stern' on page 5 undefined on input line 39.
+
+
+LaTeX Warning: Citation `phanse' on page 5 undefined on input line 43.
+
+
+LaTeX Warning: Citation `duckworth' on page 5 undefined on input line 55.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 55--61
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--65
+LaTeX Warning: Citation `duckworth2' on page 5 undefined on input line 62.
 
- []
 
-[5]) (Chapters/dataChap.tex [6]
+LaTeX Warning: Citation `saqlain' on page 5 undefined on input line 66.
+
+[5]
+
+LaTeX Warning: Citation `kumar' on page 6 undefined on input line 89.
+
+) (Chapters/dataChap.tex [6]
 Chapter 2.
 ) (Chapters/DLSChap.tex [7
 
 ]
 Chapter 3.
+
+LaTeX Warning: Reference `Z(u)' on page 8 undefined on input line 22.
+
 <figures/z(u).png, id=49, 462.528pt x 346.896pt>
 File: figures/z(u).png Graphic file (type png)
 <use figures/z(u).png>
-Package pdftex.def Info: figures/z(u).png  used on input line 30.
+Package pdftex.def Info: figures/z(u).png  used on input line 31.
 (pdftex.def)             Requested size: 277.51894pt x 208.13919pt.
+
+LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `Z(u)' on page 8 undefined on input line 36.
+
+
+LaTeX Warning: Reference `zuw' on page 8 undefined on input line 48.
+
+
+LaTeX Warning: Reference `prat' on page 8 undefined on input line 63.
+
 [8
 
- <./figures/z(u).png>] [9]
-Underfull \hbox (badness 10000) in paragraph at lines 117--124
+]
+
+LaTeX Warning: Citation `stern' on page 9 undefined on input line 87.
+
+[9 <./figures/z(u).png>]
+
+LaTeX Warning: Citation `dlbayes' on page 10 undefined on input line 114.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 125--132
 
  []
 
 
-LaTeX Warning: Reference `Z(u)_graph' on page 10 undefined on input line 126.
+LaTeX Warning: Reference `dlRegress' on page 10 undefined on input line 133.
 
 
-LaTeX Warning: Reference `Z(u)_graph' on page 10 undefined on input line 126.
+LaTeX Warning: Reference `Z(u)_graph' on page 10 undefined on input line 134.
+
+
+LaTeX Warning: Reference `Z(u)_graph' on page 10 undefined on input line 134.
 
 [10]
+
+LaTeX Warning: Reference `avgrunsfow' on page 11 undefined on input line 173.
+
 <figures/avgrunsfow.png, id=61, 473.77pt x 501.875pt>
 File: figures/avgrunsfow.png Graphic file (type png)
 <use figures/avgrunsfow.png>
-Package pdftex.def Info: figures/avgrunsfow.png  used on input line 169.
+Package pdftex.def Info: figures/avgrunsfow.png  used on input line 177.
 (pdftex.def)             Requested size: 284.26419pt x 301.12732pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 174--177
+LaTeX Warning: Citation `kolm' on page 11 undefined on input line 182.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 182--185
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 178--181
+Underfull \hbox (badness 10000) in paragraph at lines 186--189
 
  []
 
@@ -714,6 +721,12 @@ Chapter 4.
 Underfull \hbox (badness 10000) in paragraph at lines 19--21
 
  []
+
+
+LaTeX Warning: Reference `ovrdens1fow' on page 12 undefined on input line 23.
+
+
+LaTeX Warning: Reference `ovrdens9fow' on page 12 undefined on input line 23.
 
 <figures/fow1density.png, id=66, 778.91pt x 501.875pt>
 File: figures/fow1density.png Graphic file (type png)
@@ -784,19 +797,30 @@ Overfull \hbox (35.1457pt too wide) in paragraph at lines 67--68
 LaTeX Warning: `h' float specifier changed to `ht'.
 
 
+LaTeX Warning: Reference `ovrdens1fow' on page 12 undefined on input line 73.
+
+
+LaTeX Warning: Reference `ovrdens5fow' on page 12 undefined on input line 74.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 73--79
 
  []
 
+
+LaTeX Warning: Reference `ovrdens9fow' on page 12 undefined on input line 80.
+
 [12
 
 ]
+
+LaTeX Warning: Reference `runsbox' on page 13 undefined on input line 87.
+
 <figures/runsbox.png, id=75, 432.11438pt x 430.60875pt>
 File: figures/runsbox.png Graphic file (type png)
 <use figures/runsbox.png>
 Package pdftex.def Info: figures/runsbox.png  used on input line 91.
 (pdftex.def)             Requested size: 198.5291pt x 197.83273pt.
-
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
@@ -814,10 +838,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 112--115
  []
 
 [13 <./figures/fow1density.png> <./figures/fow1densFull.png> <./figures/fow5densFull.png>]
-
-Package caption Warning: \label without proper reference on input line 119.
-See the caption package documentation for explanation.
-
 
 LaTeX Warning: Reference `samplenorm' on page 14 undefined on input line 116.
 
@@ -886,6 +906,15 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ) (Chapters/SPRChap.tex [15 <./figures/qqnormplot.png> <./figures/samplenorm.png>] [16 <./figures/runsdensity.png> <./figures/firstInnsQQ.png> <./figures/avgRR.png> <./figures/sdrr.png> <./figures/powerplaydens.png> <./figures/middleoversdens.png> <./figures/finaloversdens.png>]
 Chapter 5.
 
+LaTeX Warning: Citation `nnstock' on page 17 undefined on input line 14.
+
+
+LaTeX Warning: Citation `nncancer' on page 17 undefined on input line 14.
+
+
+LaTeX Warning: Reference `nnexample1' on page 17 undefined on input line 16.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 13--18
 
  []
@@ -896,19 +925,47 @@ File: figures/nn.png Graphic file (type png)
 Package pdftex.def Info: figures/nn.png  used on input line 23.
 (pdftex.def)             Requested size: 213.42181pt x 185.56783pt.
 
+LaTeX Warning: Citation `sprbk' on page 17 undefined on input line 24.
+
+
+LaTeX Warning: Citation `sprbk' on page 17 undefined on input line 24.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 28--32
 
  []
 
+
+LaTeX Warning: Citation `nnstock' on page 17 undefined on input line 35.
+
 [17
 
 ]
+
+LaTeX Warning: Reference `percepout' on page 18 undefined on input line 43.
+
+
+LaTeX Warning: Reference `actfig' on page 18 undefined on input line 59.
+
 <figures/actfuncs.png, id=116, 421.575pt x 289.08pt>
 File: figures/actfuncs.png Graphic file (type png)
 <use figures/actfuncs.png>
 Package pdftex.def Info: figures/actfuncs.png  used on input line 63.
 (pdftex.def)             Requested size: 210.78697pt x 144.53964pt.
- [18 <./figures/nn.png> <./figures/actfuncs.png (PNG copy)>]
+
+LaTeX Warning: Reference `sigmoid_func' on page 18 undefined on input line 68.
+
+
+LaTeX Warning: Citation `sibi' on page 18 undefined on input line 68.
+
+[18 <./figures/nn.png> <./figures/actfuncs.png (PNG copy)>]
+
+LaTeX Warning: Reference `weights1' on page 19 undefined on input line 75.
+
+
+LaTeX Warning: Reference `weights1' on page 19 undefined on input line 88.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 118--121
 
  []
@@ -918,7 +975,39 @@ Underfull \hbox (badness 10000) in paragraph at lines 122--126
 
  []
 
-[19] [20] (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+
+LaTeX Warning: Citation `cauchy' on page 19 undefined on input line 128.
+
+
+LaTeX Warning: Reference `mse' on page 19 undefined on input line 139.
+
+
+LaTeX Warning: Citation `huber' on page 19 undefined on input line 139.
+
+[19]
+
+LaTeX Warning: Reference `graddesc' on page 20 undefined on input line 151.
+
+
+LaTeX Warning: Reference `errorchain' on page 20 undefined on input line 173.
+
+
+LaTeX Warning: Reference `errorchain' on page 20 undefined on input line 174.
+
+[20]
+
+LaTeX Warning: Reference `deltajk' on page 21 undefined on input line 227.
+
+
+LaTeX Warning: Reference `backpropform' on page 21 undefined on input line 234.
+
+
+LaTeX Warning: Citation `gunther' on page 21 undefined on input line 243.
+
+
+LaTeX Warning: Reference `nnRcode' on page 21 undefined on input line 245.
+
+(C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
 File: lstlang1.sty 2020/03/24 1.8d listings language file
 ) (C:\Users\iikno\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
 File: lstlang2.sty 2020/03/24 1.8d listings language file
@@ -929,6 +1018,12 @@ consecutive:
 )
 
 LaTeX Warning: `h' float specifier changed to `ht'.
+
+
+LaTeX Warning: Reference `bestnet' on page 21 undefined on input line 258.
+
+
+LaTeX Warning: Citation `lister' on page 21 undefined on input line 259.
 
 [21]
 <figures/bestnet.png, id=132, 982.42032pt x 618.05907pt>
@@ -957,11 +1052,13 @@ Underfull \hbox (badness 10000) in paragraph at lines 23--29
 
  <./figures/errDist.png> <./figures/errorqq.png>]
 
+LaTeX Warning: Reference `exprr' on page 24 undefined on input line 32.
+
+
+LaTeX Warning: Reference `slln' on page 24 undefined on input line 57.
+
+
 LaTeX Warning: `h' float specifier changed to `ht'.
-
-
-Package caption Warning: \label without proper reference on input line 87.
-See the caption package documentation for explanation.
 
 
 LaTeX Warning: Reference `mcecode' on page 24 undefined on input line 84.
@@ -994,6 +1091,10 @@ File: figures/mcen100.png Graphic file (type png)
 Package pdftex.def Info: figures/mcen100.png  used on input line 107.
 (pdftex.def)             Requested size: 198.5291pt x 148.8977pt.
 
+
+LaTeX Warning: Reference `MeanAndSDRR' on page 25 undefined on input line 112.
+
+
 Underfull \hbox (badness 10000) in paragraph at lines 112--114
 
  []
@@ -1014,7 +1115,11 @@ File: figures/diffbox.png Graphic file (type png)
 <use figures/diffbox.png>
 Package pdftex.def Info: figures/diffbox.png  used on input line 134.
 (pdftex.def)             Requested size: 198.5291pt x 160.79378pt.
- [26 <./figures/monteCarloSimError.png> <./figures/monteCarloErrorQQ.png> <./figures/diffbox.png>] (../Code/Rscripts/monteCarlo.R
+
+
+LaTeX Warning: Reference `diffbox' on page 26 undefined on input line 139.
+
+[26 <./figures/monteCarloSimError.png> <./figures/monteCarloErrorQQ.png> <./figures/diffbox.png>] (../Code/Rscripts/monteCarlo.R
 consecutive:
 )
 <figures/fullPredDist.png, id=164, 477.28313pt x 417.05812pt>
@@ -1023,6 +1128,9 @@ File: figures/fullPredDist.png Graphic file (type png)
 Package pdftex.def Info: figures/fullPredDist.png  used on input line 167.
 (pdftex.def)             Requested size: 286.37207pt x 250.2368pt.
  [27 <./figures/fullPredDist.png>]
+
+LaTeX Warning: Reference `DLSError' on page 28 undefined on input line 181.
+
 <figures/dlsPreds.png, id=169, 478.03593pt x 417.05812pt>
 File: figures/dlsPreds.png Graphic file (type png)
 <use figures/dlsPreds.png>
@@ -1044,31 +1152,40 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--44
 
 ) (Chapters/conclusions.tex [30]
 Chapter 8.
+
+LaTeX Warning: Citation `kumar2' on page 31 undefined on input line 7.
+
+
+LaTeX Warning: Citation `foysal' on page 31 undefined on input line 7.
+
 ) (Chapters/qq.tex [31
 
 ]
 Appendix A.
 [32
 
-]) (main.bbl [33] [34
-
-]) [35] (main.aux)
+])
+No file main.bbl.
+[33] (main.aux)
 
 LaTeX Warning: There were undefined references.
 
+
+LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
+
  ) 
 Here is how much of TeX's memory you used:
- 20216 strings out of 478927
- 374173 string characters out of 2852534
- 918625 words of memory out of 3000000
- 37642 multiletter control sequences out of 15000+600000
+ 19282 strings out of 478927
+ 358766 string characters out of 2852534
+ 893438 words of memory out of 3000000
+ 36724 multiletter control sequences out of 15000+600000
  416755 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,83p,462b,2032s stack positions out of 5000i,500n,10000p,200000b,80000s
  <C:\Users\iikno\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm1095.pk><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbx12.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmbxti10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi6.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmmi8.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr6.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr8.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmr9.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy6.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy8.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt9.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.pfb>
-Output written on main.pdf (36 pages, 1096743 bytes).
+Output written on main.pdf (34 pages, 1088332 bytes).
 PDF statistics:
- 281 PDF objects out of 1000 (max. 8388607)
+ 275 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  168 words of extra memory for PDF output out of 10000 (max. 10000000)
 

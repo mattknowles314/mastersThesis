@@ -24,20 +24,24 @@ gets their turn to bat. If they hit more runs before losing all their ten wicket
 it's core, applying mathematics to it is not an absurd proposition. 
 
 The traditional format of cricket, called ``first class'' lasts up to 4 days. This obviously has disadvantages from a spectator point of view. On
-In 1963, the cricketing calender in the UK had for the first time a different format of the game ammended to it.
-The ``Gillette Cup'' introduced a form of cricket wherein each team has 1 innings, lasting 50 overs. The idea was 
+In 1963, the cricketing calender in the UK had a different format of the game ammended to it, alongside the usual first class fixtures.
+The ``Gillette Cup'' introduced a form of cricket wherein each team only has 1 innings, lasting 50 overs isntead of the prior method of no limit. The idea was 
 that this competition, coming to a conclusion within the space of a day, would increase spectator numbers and by extension,
 ticket sales.\\
 
 However, given the tournament-based nature of this new competition, we have the natural need for a definitive result.
-This is something that is not always guarenteed in "first class" cricket, where draws are common. \footnote{Note that 
-``draw'' and ``tie'' are not interchangable terminology in cricketing terms.}. As such, in order to allow for a result to be
+This is something that is not always guarenteed in first class cricket, where draws are common.\footnote{Note that 
+``draw'' and ``tie'' are not interchangable terminology in cricketing terms.} As such, in order to allow for a result to be
 determined when a game is cut short, the idea of target-revision was introduced. This meant that a team could be set a
 roughly equivalent run target off of a reducded number of overs that would still classify them as the winners.
+This is where Duckworth and Lewis came in, proposing their D/L method \cite{duckworth}. As will be discussed in Chapter 3, the D/L method 
+has been slighlty improved upon since it was published in the late 1990s, but the overarching philosophy of the method has stayed the same. 
+One extension was that of Stern in 2004, \cite{Stern}, now  known as the DLS method. This allowed for better score resetting in Twenty-20 (T20) cricket- an even shorter 
+form of the game introduced to last only over the course of an afternoon instead of a day. 
 
 \section{Problems raised with DLS}
 In $\cite{phanse}$, the authors found that DLS has a bias towards not only the team batting first, but whoever won the coin toss at the start of the game.
-The winner of the toss chooses whether their side will bat or bowl in the first innings. They go onto to propose a simple extension for reducing
+The winner of the toss chooses whether their side will bat or bowl in the first innings. They go onto to propose a simple extension to DLS for reducing
 these biases, but we won't cover that in this project. 
 
 \section{Project Aims}
@@ -49,31 +53,38 @@ in later chapters is not really the case. However, we can make use of the patter
 
 \section{Review of current Literature}
 We begin the look at literature on this topic with the paper published by F. Duckworth himself in 1998 $\cite{duckworth}$. In this paper, 
-Duckworth proposes the ``D/L'' method based on 5 principles. Hwever, the issue with the sentence that appears after defining the function $Z(u,w)$.
-``Comercial confidentiality prevents the disclosure of the mathematical definitions of these functions''. The claim is that these functions have been 
-defined via experimentation. This however gives rise to the first issue: the first T20 game of cricket was not played until 2003. So clearly, D/L was not
-designed with T20 in mind, and so the functions derived from experementation and research will not be accurate for T20 cricket. \\
+Duckworth proposes the`D/L method based on 5 principles. However, there is an issue with the sentence that appears after defining the function $Z(u,w)$.
+``Comercial confidentiality prevents the disclosure of the mathematical definitions of these functions'' This means we can't access the actual parameters. 
+that they use for defining the model. This won't affect the development of our model, but it is unfortunate as it means getting a clear picture of DLS is slightly harder.
+The claim is that these functions have been defined via experimentation. This however gives rise to the first issue: the first T20 game of cricket was not played until 2003. 
+So clearly, D/L was not designed with T20 in mind, and so the functions derived from experementation and research will not be accurate for T20 cricket. \\
 
 In 2004, a year after the first T20 matches were played, Duckworth and Lewis published another paper $\cite{duckworth2}$, in which they report
-that the table used for calculating the method can be employed by 
+that the table used for calculating the method can be employed by anyone at all levels of the game- from grass-roots cricket up to the highest standard of 
+the professional game. 
 
 Another paper that is worth noting is by Saqlain et. al. \cite{saqlain}, looking at predicting scores from the 2019 Cricket World Cup, an ODI
 tournament held across England. They used data after the previous world cup, held in Australia and New Zealand in 2015; all the way to $10^{th}$ November
 2018. The interesting thing about this paper, is they do not use data from individual matches, but instead on 10 meta-statics, including 
 ``Number of series victories'', ``total wickets'', ``centuries'' and ``all out'', among others. They apply the TOPSIS method to this specific problem, using the 
 following algorithm. \\
-
+\begin{algorithm}
+\caption{Modified TOPSIS Algorithm}\label{TOPSIS}
 \begin{algorithmic}[1]
+    \Require $m,n \geq 0$
     \State $\text{Calculate normalised matrix} \ X_{ij} = \frac{x_{ij}}{\sqrt{\sum_{i=1}^mx_{ij}^2}}$
     \State $\text{Calculate weighted normalised matrix} \ V_{ij}=X_{ij}W_j$
     \State $\text{Calculate Euclidean distance from the best outcome } \ S_i^+ = \sqrt{\sum_{j=1}^n(V_{ij}-V_j^+)^2} \ \text{for} \ i \in \{1,2,...,m\}$
     \State $\text{Calculate Euclidean distance from the worst outcome } \ S_i^- = \sqrt{\sum_{j=1}^n(V_{ij}-V_j^-)^2} \ \text{for} \ i \in \{1,2,...,m\}$
     \State $\text{Calculate performance score} \ C_i^* = \frac{S_i^-}{S_i^+  + S_i^-}$
 \end{algorithmic}
+\end{algorithm}
 
-They used the results of this process to predict how the 2019 world cup would look, rather than games for individual scores. However, they were largely unsuccessful. 
+They used the results of this process to predict how the 2019 World Cup would look, rather than games for individual scores. However, they were largely unsuccessful. 
 Not only did the authors leave Sri Lanka out of their calculations entirely, they only succesffuly predicted India would finish top of the points table, and Afghanistan 
-at the bottom. 
+at the bottom. It's worth mentioning that this may not be an issue with the mathematical model iteself, but the imbalance of data. Teams like Afghanistan play far less games 
+than a team like England or Inida. This introduces a bias favouring teams who have played more games not only from a statistical point of view, but from a cricketing one too 
+since the teams that play less will have less match practice going into a big tournament like the World Cup.
 
 However, a paper by Kumar and Roy, \cite{kumar} takes an approach along the same lines of the aim of this project. It is not necessary to discuss the individual aspects
 of their paper here, as it will be discussed when we dive into the methods themselves. However it is worth noting the results of this paper now to see how
