@@ -10,13 +10,11 @@ time complexity of the algorithms used.
 %Explain which langauges were chosen for each method and why
 
 \section{A Brief Introduction to Neural Networks}
-Neural networks (NNs) have been the subject to a lot of hype in recent years. They are a machine learning method that is being applied to many problems
+Neural networks (NNs) have been the subject to a lot of discussion and exploration in recent years. They are a machine learning method that is being applied to many problems
 in all sorts of fields, such as finance \cite{nnstock} and medicine \cite{nncancer}.  
 The network will be trained on runrate data, so for each game we have calculated the evolution of the runrate,
-and then we have the overall score for that game in the final column of the matrix. An example of a network can be seen in \ref{nnexample1}. The first layer is the 
+and then we have the overall score for that game in the final column of the matrix. An example of a network can be seen in Figure~\ref{nnexample1}. The first layer is the 
 input layer, and the last layer gives the predictions. The middle layers are hidden and where the work of the network is done. \\
-
-Let's look at what a NN actually looks like. The below is an example of a network with just one hidden layer.
 
 \begin{figure}
     \centering
@@ -26,13 +24,15 @@ Let's look at what a NN actually looks like. The below is an example of a networ
 \end{figure}
 
 We see there are $p$ input nodes at the bottom, M nodes in the hidden layer, and K output layers. The lines between the layers are given a ``weight''
-and a ``bias''. These properties will be discussed in more detail shortly. The number of hidden layers to be used will be the subject of experimentation. In order to find try this out, we will have to randomly
-split the matrix into a training matrix and a testing matrix. We can then evaluate the network by trying to predict values from the testing set and seeing
-how well it does. This will then lead to us refining the number of hidden layers as appropriate. \\
+and a ``bias''. These properties will be discussed in more detail shortly. The number of hidden layers to be used will be the subject of experimentation. 
+It's important to note how we will measure the success of the model. The main dataset, consisting of 1438 games of 50 overs is split into two subsets, one 
+containing 70\% of the games, and one containing 30\%. We use the larger of the two to ``train'' the model, and the smaller one as a test set. Not doing this could 
+lead to a phenomenom known as ``overfitting''; where the network learns how to predict patterns in the dataset it was trained on really well, but then isn't so good 
+at predicting unseen values. We use corrolation as the main metric of success in this model, which will be discussed later on.
 
-One area of the world where neural networks are being applied to value prediction is in the stock market. Naturally if one can predict how the value of a stock
+As mentioned, NNs have been used extensivelly in finance- more specifically, in predicting future stock price behaviour. Naturally if one can predict how the value of a stock
 will change over some time period, then one can protect themself from a bad investment, or profit heavily from a good one. We will use similar
-methods here for building our neural network.  In \cite{nnstock}, the authors twest two different Neural Netowrks, and find that using a ``Multi-Layer Feed Forward Nerual Network''
+methods here for building our neural network.  In \cite{nnstock}, the authors test two different Neural Netowrks, and find that using a ``Multi-Layer Feed Forward Nerual Network''
 is the better choice for predicting how stock values will change. With these motivations in mind, we can begin to construct the networks.
 
 \section{Builiding The Network}
@@ -65,7 +65,7 @@ The comparrison of these two functions can be seen in \ref{actfig}.
     \label{actfig}
 \end{figure}
 
-We will be using \ref{sigmoid_func} as our activation function. There is some leniancy over which activation function is used. The paper \cite{sibi} found that actually the more important aspect of 
+We will be using Equation~\ref{sigmoid_func} as our activation function. There is some leniancy over which activation function is used. The paper \cite{sibi} found that actually the more important aspect of 
 the network is the choice of training algorithm, along with other parameters such as learning rate $\alpha$. For now, lets look at the network we're going to use. The initial neural network that we're building. 
 
 We begin with getting from the input layer, denoted $L_0$. Each node in $L_0$ takes a value $a^{(0)_i}$ for $i \in \{1,2,\ldots,50\}$. We use $\textbf{a}^{(0)}$ to denote the vector
@@ -239,8 +239,43 @@ The equation \ref{backpropform} is known as the \textit{Backpropogation formula}
 \end{align}
 
 \subsection{RPROP+}
-Backpropogation is a solid algorithm, and is often used to refer as a blanket term for all the variations of it. In implementing the neural network in this project, we used 
-the ``RPROP+'' algorithm \cite{rprop}, short for Resiliant backPROPogation. The $+$ is notation for showing we include backtracking in the algorithm.
+Backpropogation is a solid algorithm, and is often used to refer as a blanket term for all the variations of itself. In implementing the neural network in this project, we used 
+the ``RPROP+'' algorithm \cite{rprop}, short for Resiliant backPROPogation. The $+$ is notation for showing we include backtracking in the algorithm. In \ref{RPROPC}, 
+we give the algorithm in detail. 
+
+\begin{algorithm}[h]
+    \caption{RPROP+}\label{RPROPC}
+\begin{algorithmic}[1]
+\ForAll{eights and biases}
+\If{$\frac{\partial E}{\partial w_{ij}}(t-1)\times\frac{\partial E}{\partial w_{ij}}(t) > 0$}
+    \State $\Delta_{ij} = \text{min} (\Delta_{ij}(t-1)\times \eta^{+},\Delta_{\text{max}})$ 
+    \State $\Delta w_{ij}(t) = -\text{sign}\left(\frac{\partial E}{\partial w_{ij}}(t) \times \Delta_{ij}(t)\right)$
+    \State $w_{ij}(t+1) = w_{ij}(t) + \Delta w_{ij}(t)$
+\ElsIf{$\frac{\partial E}{\partial w_{ij}}(t-1)\times\frac{\partial E}{\partial w_{ij}}(t) < 0$}
+    \State $\Delta_{ij} = \text{min} (\Delta_{ij}(t-1)\times \eta^{-},\Delta_{\text{min}})$ 
+    \State $w_{ij}(t+1) = w_{ij}(t) - \Delta w_{ij}(t-1)$
+    \State $\frac{\partial E}{\partial w_{ij}}(t) = 0 $
+\ElsIf{$\frac{\partial E}{\partial w_{ij}}(t-1)\times\frac{\partial E}{\partial w_{ij}}(t) = 0$}
+    \State $\Delta w_{ij}(t) = -\text{sign}\left(\frac{\partial E}{\partial w_{ij}}(t) \times \Delta_{ij}(t)\right)$
+    \State $w_{ij}(t+1) = w_{ij}(t) + \Delta w_{ij}(t)$
+\EndIf
+\EndFor
+\end{algorithmic}   
+\end{algorithm}
+
+What makes RPROP ``resiliant'' is the intrduction of an invividual update value $\Delta_{ij}$ for each weight $w_{ij}$. It is this quantity alone that determines 
+how much the weight will be updated by. The learning rule is given by 
+
+\begin{equation}
+    \Delta_{ij}^{(t)} = 
+    \begin{cases}
+        \eta^{+}\times \Delta_{ij}^{(t-1)} & \text{if} \  \frac{\partial E}{\partial w_{ij}}(t-1)\times\frac{\partial E}{\partial w_{ij}}(t) > 0 \\
+        \eta^{-}\times \Delta_{ij}^{(t-1)} & \text{if} \  \frac{\partial E}{\partial w_{ij}}(t-1)\times\frac{\partial E}{\partial w_{ij}}(t) < 0 \\
+        \Delta_{ij}^{(t-1)} & \text{otherwise}
+    \end{cases}
+\end{equation}
+
+As mentioned previously, the $+$ refers to having backtracking in the algorithm. It is helpful to formally define this.
 
 \begin{definition}{Backtracking}
     Suppose the partial derivative $\frac{\partial E}{\partial w_{ij}}$ changes sign. This means the prior step was too large, meaning the minimum is missed. For that reason, 
@@ -249,11 +284,6 @@ the ``RPROP+'' algorithm \cite{rprop}, short for Resiliant backPROPogation. The 
         \Delta w_{ij}^k = -\Delta w_{ij}^{(k-1)} \  \text{if} \  \frac{\partial E^{(k-1)}}{\partial w_{ij}} \times \frac{\partial E^k}{\partial w_{ij}} < 0 
     \]
 \end{definition}
-
-To outline this algorithm, we give the algorithm as it is given in the paper \cite{rprop}
-\begin{algorithm}
-
-\end{algorithm}
 
 \section{Implementing the Neural Netowk}
 It was decided to implement the neural network using the R programming language, and more specifically, the \verb|neuralnet| package \cite{gunther}. This package 

@@ -15,7 +15,7 @@ each of these games was collected and tidied in the previous ways. There are thr
 
 \section{Applying the Neural Network Model}
 \subsection{Sri Lanka vs Afghanistan}
-Batting first, Sri-Lanka ended their rain-affected innings on 201 after 36.5\footnote{NOte that in cricketing notation, this means 36 overs and 5 balls, not 36 overs and 3 balls, which would be the case if .5 meant half an over.} overs.
+Batting first, Sri-Lanka ended their rain-affected innings on 201 after 36.5\footnote{In cricketing notation, this means 36 overs and 5 balls, not 36 overs and 3 balls, which would be the case if .5 meant half an over.} overs.
 Under DLS, Afghanistan were set a target of 187 from 41 overs. However, Afghanistan were bowled out for 152 from 32.4 overs, coming up 34 runs short of the required target from just 79.7\% of their alloted innings. 
 Using the data from the first Innings, our model predicted that Sri Lanka would have gone on to score 338 runs had they have had a full innings. Since Sri Lanka only played $61.3\%$ of their innings, under this method, Afghanistan 
 would have been set a target of $0.613 \times 338 = 207 \text{ runs}$. However, that is if Afghanistan were given a full 50 overs, which they didn't have in this game due to light. For that reason, we need 
@@ -44,4 +44,7 @@ half of the table, and even with our method, South Africa would have only droppe
 
 While our model gave similar outcomes to DLS, the score targets set were arguably more realistic in some cases, especially the India-Pakistan game, and certainly from an entertainment perspective, this 
 has great value in maintaining the competaive aspect of the game. Naturally, using proportions as a way to decrease or increase something that is inherently random isn't ideal, but this leaves room for future work 
-on the topic. 
+on the topic.  \\
+
+It is worth mentioning that on average, this model had a tendancy to predict a higher score by an average of 58.22 runs. This could perhaps be taken into account by reducing the target set by this or a similar 
+ammount. 

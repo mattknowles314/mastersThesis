@@ -95,6 +95,13 @@ Viraj Phanse and Sourabh Deorah.
 \newblock In {\em 2011 IEEE 11th International Conference on Data Mining
   Workshops}, pages 763--770. IEEE, 2011.
 
+\bibitem{rprop}
+Martin Riedmiller and Heinrich Braun.
+\newblock A direct adaptive method for faster backpropagation learning: The
+  rprop algorithm.
+\newblock In {\em IEEE international conference on neural networks}, pages
+  586--591. IEEE, 1993.
+
 \bibitem{saqlain}
 Muhammad Saqlain, Naveed Jafar, Rashid Hamid, and Amir Shahzad.
 \newblock Prediction of cricket world cup 2019 by topsis technique of mcdm-a
@@ -109,7 +116,7 @@ P~Sibi, S~Allwyn Jones, and P~Siddarth.
 \newblock {\em Journal of theoretical and applied information technology},
   47(3):1264--1268, 2013.
 
-\bibitem{Stern}
+\bibitem{stern}
 Steven~E Stern.
 \newblock The duckworth-lewis-stern method: extending the duckworth-lewis
   methodology to deal with modern scoring rates.

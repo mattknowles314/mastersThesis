@@ -166,10 +166,10 @@ given by:
     L(\theta,\sigma^2) = \left( \frac{1}{\sigma / \sqrt{n_{uw}}} \right)^{500} exp \left\{ - \frac{1}{2(\sigma^2 / n_{uw})} \sum_{u=1}^{50} \sum_{w=0}^9 (R(u,w)-m(u,a_w,b_w))^2  \right\}
 \end{equation}
 
-The authors chose their parameters $A_0, \ B_0, \ a \ \text{and} \ b$ such that the prior is not sensitive to the posterior inderence. The values chosen
+The authors chose their parameters $A_0, \ B_0, \ a \ \text{and} \ b$ such that the prior is not sensitive to the posterior inference. The values chosen
 were therefore $A_0=200 \ B_0=100 \ \text{and} \ a=b=0.1$.
 
-One thing briefly mentioned in chapter 3 of this paper is the average score at the fall of each wicket. This isn't discussed further, but it's interesting to see how it behaves.
+One thing briefly mentioned in chapter 3 of their paper is the average score at the fall of each wicket. This isn't discussed further, but it's interesting to see how it behaves.
 So we take a brief detour to look at it. This can be seen in figure \ref{avgrunsfow}.
 
 \begin{figure}[h]
@@ -183,7 +183,7 @@ Initially, one may think that this is normally distributed. It certainly holds a
 performed to see if these values were normally distributed, and it turns out they aren't. This test was performed using the R function \textit{ks.test()}, which returned
 a p-value of $2.2\text{x}10^{-16}$ for the two-sided alternative hypothesis parameter. \\
 
-Does the shape of this curve make sense? From a cricket standpoint it does, because usually batters 3 and 4 are actually the best in the side, so the fact they put on more runs is not a suprise.
+The shape of this curve makes sense from a cricket standpoint because usually batters 3 and 4 are actually the best in the side, so the fact they put on more runs is not a suprise.
 But what this does do is reinforce the idea behind using an exponential decay for modelling resources. This is because cumulatively, the ``tail end'' (last 4) of batters 
 will not put on as many runs as the higher/middle order. \\
 

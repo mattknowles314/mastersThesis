@@ -28,7 +28,7 @@ the corrolation between the actual results and the predicted results. Using the 
 $0.9382$. Given how close this is to 1, which would be perfect corrolation, it is fair to say that this method has done well to predict scores. \\
 
 The issue that one may point out here is that this network has been trained on a full-over dataset, and then been tested on a full-over dataset. But the purpose of this 
-investigation has been to look at the scenario in which a full game has been completed. So the method is currently ineffective at doing the task it set out to solve. For this reason,
+investigation has been to look at the scenario in which a full game hasn't been completed. So the method is currently ineffective at doing the task it set out to solve. For this reason,
 we must come up with a way to 'fill in' the missing overs. The idea for this is to use Monte-Carlo simmulation. We discussed in \ref{exprr} how depending on the stage of the game,
 the runrates can be drawn from one of three normal distributions. So for the overs that are missed, we can simply fill in the gaps by drawing a value from the distribution that the missing over falls 
 into. 
@@ -67,7 +67,7 @@ With the theoretical framework for Monte-Carlo simmulation established, we can n
 we begin by defining three random variables, $R_{\text{powerplay}} \sim N(\mu_{\text{powerplay}},\sigma_\text{powerplay})$, $R_{\text{middle}} \sim N(\mu_{\text{middle}},\sigma_{\text{middle}})$
 and $R_{\text{final}} \sim N(\mu_{\text{final}},\sigma_{\text{final}})$.
 
-The numerical values for these are given in the following table.
+The numerical values for these are given in the Table~\ref{valTable}.
 
 \begin{table}[h]
     \centering
@@ -79,6 +79,7 @@ The numerical values for these are given in the following table.
         $R_{final}$ & 3.1493 & 1.1349 
     \end{tabular}
     \caption{Numerical values of the parameters used for Monte-Carlo simmulation}
+    \label{valTable}
 \end{table}
 
 The code for doing this simmulation was not hard to write, and after a few small performance enhancements ran almost instantaneously. The code can be seen in figure \ref{mcecode}.
@@ -89,7 +90,7 @@ The code for doing this simmulation was not hard to write, and after a few small
     \caption{Implementing a Monte-Carlo Simmulation fo Cricket Matches}
 \end{figure}
 
-It is best to think of n as a sort of fine-tuning parameter. If we have n too large, we would simply be simmulating the average cricket game, while have n too low and 
+It is best to think of n as a sort of fine-tuning parameter. If we have $n$ too large, we would simply be simmulating the average cricket game. But if we have $n$ too low and 
 we are open to having an outlier. As for the other parameters, we have \textit{overs} being the number of overs in the game, and \textit{state} determines the over to start 
 simmulating from. So if we want to simmulate the whole game, set $state=1$ and $overs=50$. The array \textit{runrates} just holds the data.\\
 
@@ -171,6 +172,8 @@ This plot is naturally very busy, and it wont be used for detailed analysis of t
 We can see that while the spread of red (actual scores) and blue (full network predictions) aren't too dissimilar, the spread of green points (monte-carlo predictions) is small and centered mainly 
 around average game scores. This explains the poor performance of the model, it doesn't fair well with games that deviate far from the average. It is natural to ask how we can fix this. The one way that 
 could lead to higher performance is to shrink the game into smaller chunks. Rather than looking at the three meta-stages of the game as we did originally, what about drawing from distributions of every 5 or 10 overs.
+While this may be more beneficial, the primary problem with this is it would be very computationally expensive, and as a result could lead to issues with the accessability if this model is deployed 
+by means of a website or mobile application. 
 
 \section{Unseen DLS Game Data}
 Since using Monte-Carlo methods didn't work too well, the next step is to look at seeing if something simpler will work. To do this, we take games that were decided through DLS, and 
