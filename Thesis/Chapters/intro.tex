@@ -74,8 +74,10 @@ following algorithm. \\
     \Require $m,n \geq 0$
     \State $\text{Calculate normalised matrix} \ X_{ij} = \frac{x_{ij}}{\sqrt{\sum_{i=1}^mx_{ij}^2}}$
     \State $\text{Calculate weighted normalised matrix} \ V_{ij}=X_{ij}W_j$
-    \State $\text{Calculate Euclidean distance from the best outcome } \ S_i^+ = \sqrt{\sum_{j=1}^n(V_{ij}-V_j^+)^2} \ \text{for} \ i \in \{1,2,...,m\}$
-    \State $\text{Calculate Euclidean distance from the worst outcome } \ S_i^- = \sqrt{\sum_{j=1}^n(V_{ij}-V_j^-)^2} \ \text{for} \ i \in \{1,2,...,m\}$
+    \For{$i \in \{1,\ldots,m\}$}
+        \State $\text{Calculate Euclidean distance from the best outcome } \ S_i^+ = \sqrt{\sum_{j=1}^n(V_{ij}-V_j^+)^2} \ $
+        \State $\text{Calculate Euclidean distance from the worst outcome } \ S_i^- = \sqrt{\sum_{j=1}^n(V_{ij}-V_j^-)^2} \ $
+    \EndFor
     \State $\text{Calculate performance score} \ C_i^* = \frac{S_i^-}{S_i^+  + S_i^-}$
 \end{algorithmic}
 \end{algorithm}

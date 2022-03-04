@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.10.14)  4 MAR 2022 11:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.23 (MiKTeX 21.8) (preloaded format=pdflatex 2021.10.14)  4 MAR 2022 12:14
 entering extended mode
 **./main.tex
 (main.tex
@@ -807,7 +807,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 55--61
  []
 
 [5]
-Underfull \hbox (badness 10000) in paragraph at lines 83--88
+Underfull \hbox (badness 10000) in paragraph at lines 85--90
 
  []
 
@@ -981,6 +981,11 @@ Package pdftex.def Info: figures/firstInnsQQ.png  used on input line 130.
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
+
+Underfull \hbox (badness 10000) in paragraph at lines 143--146
+
+ []
+
 [14 <./figures/runsbox.png>]
 <figures/avgRR.png, id=92, 418.56375pt x 417.05812pt>
 File: figures/avgRR.png Graphic file (type png)
@@ -1016,13 +1021,18 @@ File: figures/finaloversdens.png Graphic file (type png)
 <use figures/finaloversdens.png>
 Package pdftex.def Info: figures/finaloversdens.png  used on input line 176.
 (pdftex.def)             Requested size: 158.82933pt x 173.55318pt.
+[15 <./figures/qqnormplot.png> <./figures/samplenorm.png>]
 
-LaTeX Warning: `h' float specifier changed to `ht'.
+Package caption Warning: \label without proper reference on input line 179.
+See the caption package documentation for explanation.
 
-) [15 <./figures/qqnormplot.png> <./figures/samplenorm.png>]
-(Chapters/SPRChap.tex [16 <./figures/runsdensity.png> <./figures/firstInnsQQ.pn
-g> <./figures/avgRR.png> <./figures/sdrr.png>] [17 <./figures/powerplaydens.png
-> <./figures/middleoversdens.png> <./figures/finaloversdens.png>]
+
+LaTeX Warning: Reference `rrDensitities' on page 16 undefined on input line 182
+.
+
+) (Chapters/SPRChap.tex [16 <./figures/runsdensity.png> <./figures/firstInnsQQ.
+png> <./figures/avgRR.png> <./figures/sdrr.png>] [17 <./figures/powerplaydens.p
+ng> <./figures/middleoversdens.png> <./figures/finaloversdens.png>]
 Chapter 5.
 
 Underfull \hbox (badness 10000) in paragraph at lines 13--18
@@ -1215,10 +1225,10 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 19322 strings out of 478927
- 359205 string characters out of 2852534
- 894331 words of memory out of 3000000
- 36760 multiletter control sequences out of 15000+600000
+ 19327 strings out of 478927
+ 359276 string characters out of 2852534
+ 894386 words of memory out of 3000000
+ 36765 multiletter control sequences out of 15000+600000
  416755 words of font info for 77 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  84i,17n,83p,427b,2032s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -1245,7 +1255,7 @@ ikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt10.pfb><C
 :/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmtt
 9.pfb><C:/Users/iikno/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts
 /symbols/msbm10.pfb>
-Output written on main.pdf (38 pages, 1106267 bytes).
+Output written on main.pdf (38 pages, 1106362 bytes).
 PDF statistics:
  290 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

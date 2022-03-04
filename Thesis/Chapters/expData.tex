@@ -142,7 +142,7 @@ We find that $S_{FI} \sim \mathcal{N}(213.49,56.91^2)$.
 \label{exprr}
 The work that follows in this section is essential to allowing the Neural Network constructed in Chapter 5 to predict the scores of games. The aim of this section is 
 to see if we can draw the runrates at specific overs from a statistical distribution. This will in turn enable us to fill the gaps in the missing overs of a game. In turn, 
-with the gaps filled, we can pass the simmulated runrates to the neural network, and allow for a score to be predicted. 
+with the gaps filled, we can pass the simmulated runrates to the neural network, and allow for a score to be predicted. \\
 
 \begin{figure}[h]
     \centering
@@ -150,10 +150,10 @@ with the gaps filled, we can pass the simmulated runrates to the neural network,
     \qquad
     \subfloat[\centering Runrate Standard deviation per over]{{\includegraphics[width=.4\linewidth]{figures/sdrr.png} }}
     \caption{Error distribution with Q-Q plot}
-    \label{errdistqq3}
+    \label{errDistQQ3}
 \end{figure}
-
-We can see from this figure, that average runrate seems to stay consistent in the middle overs, before rapidly increasing as the risk associated with losing 
+\label{errdistqq3}
+We can see from Figure~\ref{errDistQQ3}, that average runrate seems to stay consistent in the middle overs, before rapidly increasing as the risk associated with losing 
 a wicket falls off due to the end of the innings coming closer. If we break the game into five ten-over segments, as these are generally different periods of the game
 from a tactical perspective\footnote{This is to do with different bowling options being used to be more effective as the pitch conditions change}, we can model the segments.
 A game of ODI-cricket can roughly be broken up to three segments, the first 10 overs, known as the ``powerplay'', where teams are slightly more conservative and look to build a 
@@ -163,7 +163,7 @@ increase in runrate in these last overs. \\
 
 Using this information, we can create density plots of the average runrate in these overs, as in figures 4.13-4.15. 
 
-\begin{figure}[h]
+\begin{figure}
     \minipage{0.32\textwidth}
       \includegraphics[width=\linewidth]{figures/powerplaydens.png}
       \caption{Powerplay runrate density}
@@ -176,8 +176,9 @@ Using this information, we can create density plots of the average runrate in th
       \includegraphics[width=\linewidth]{figures/finaloversdens.png}
       \caption{Final Overs density}
     \endminipage
+    \label{rrDensitities}
 \end{figure}
 
-The runrates are roughly normally distributed. It is reasonable that due to the Central Limit Theorem, with more observations, these distribiutions would be smoothed out and 
+The runrates are  in different stages of the game roughly normally distributed, which can be seen in Figure~\ref{rrDensitities}. It is reasonable that due to the Central Limit Theorem, with more observations, these distribiutions would be smoothed out and 
 appear more normally distributed than it does at present. This is imporant, because it allows us to investigate using a monte-carlo method to fill in gaps 
 later on in the project. 
