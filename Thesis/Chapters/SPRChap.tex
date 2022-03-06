@@ -239,7 +239,7 @@ The equation \ref{backpropform} is known as the \textit{Backpropogation formula}
 \end{align}
 
 \subsection{RPROP+}
-Backpropogation is a solid algorithm, and is often used to refer as a blanket term for all the variations of itself. In implementing the neural network in this project, we used 
+Backpropogation is a powerful and widely used algorithm, In implementing the neural network in this project, we used a variation of it, known as 
 the ``RPROP+'' algorithm \cite{rprop}, short for Resiliant backPROPogation. The $+$ is notation for showing we include backtracking in the algorithm. In \ref{RPROPC}, 
 we give the algorithm in detail. 
 
@@ -288,7 +288,7 @@ As mentioned previously, the $+$ refers to having backtracking in the algorithm.
 \section{Implementing the Neural Netowk}
 It was decided to implement the neural network using the R programming language, and more specifically, the \verb|neuralnet| package \cite{gunther}. This package 
 allows us to specify all the parameters we wish for, and automatically performs the Backpropogation algorithm to train a network. The whole aspect of this process is the encapsulated in line 4
-of Figure~\ref{nnRcode}
+of Figure~\ref{nnRcode}. It was decided to use a prebuilt package for this rather than building it ourself for optimisation reasons. 
 
 Recall the logistic function, $$\sigma(x) = \frac{1}{1+exp(-x)}.$$ For large values of x, this function treats them all the same, we must normalise the data before training the neural 
 network. Several versions of the network were ran with varying parameters. The final parameters decided were a learning rate, $\alpha$ of 0.02, and a hidden network of layers consitsting of 

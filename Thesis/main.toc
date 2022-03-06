@@ -1,42 +1,42 @@
-\contentsline {chapter}{\numberline {1}Introduction}{4}{}%
-\contentsline {section}{\numberline {1.1}Data in Cricket}{4}{}%
-\contentsline {section}{\numberline {1.2}Limited-Overs Cricket and the need for Duckworth-Lewis}{4}{}%
-\contentsline {section}{\numberline {1.3}Problems raised with DLS}{5}{}%
-\contentsline {section}{\numberline {1.4}Project Aims}{5}{}%
-\contentsline {section}{\numberline {1.5}Review of current Literature}{5}{}%
-\contentsline {chapter}{\numberline {2}Data}{7}{}%
-\contentsline {section}{\numberline {2.1}Data Origin}{7}{}%
-\contentsline {section}{\numberline {2.2}Attributes}{7}{}%
-\contentsline {section}{\numberline {2.3}Pre-Processing}{7}{}%
-\contentsline {section}{\numberline {2.4}Problems}{7}{}%
-\contentsline {chapter}{\numberline {3}The DLS Method in Detail}{8}{}%
-\contentsline {section}{\numberline {3.1}Origins: Duckworth and Lewis}{8}{}%
-\contentsline {section}{\numberline {3.2}Improvements by Stern}{9}{}%
-\contentsline {section}{\numberline {3.3}Extension: Bayesian Modelling}{10}{}%
-\contentsline {chapter}{\numberline {4}Exploratory Data Analysis}{12}{}%
-\contentsline {section}{\numberline {4.1}Fall of Wicket Densities}{12}{}%
-\contentsline {section}{\numberline {4.2}Outliers in Runs Data}{14}{}%
-\contentsline {section}{\numberline {4.3}On the Normality of Run Totals}{14}{}%
-\contentsline {section}{\numberline {4.4}Runrates}{15}{}%
-\contentsline {chapter}{\numberline {5}Pattern Recognition with Neural Networks: Background and Implementation}{18}{}%
-\contentsline {section}{\numberline {5.1}A Brief Introduction to Neural Networks}{18}{}%
-\contentsline {section}{\numberline {5.2}Builiding The Network}{19}{}%
-\contentsline {subsection}{\numberline {5.2.1}Training the Network: Gradient-Descent and Backpropogation}{21}{}%
-\contentsline {subsection}{\numberline {5.2.2}RPROP+}{22}{}%
-\contentsline {section}{\numberline {5.3}Implementing the Neural Netowk}{23}{}%
-\contentsline {chapter}{\numberline {6}Model Analysis}{25}{}%
-\contentsline {section}{\numberline {6.1}Fully trained Neural Network}{25}{}%
-\contentsline {section}{\numberline {6.2}Interlude: Monte-Carlo Simmulation}{26}{}%
-\contentsline {section}{\numberline {6.3}Match Simulation}{26}{}%
-\contentsline {section}{\numberline {6.4}Unseen DLS Game Data}{30}{}%
-\contentsline {chapter}{\numberline {7}Simmulating the ICC 2019 Cricket World Cup}{31}{}%
-\contentsline {section}{\numberline {7.1}DLS in the 2019 World Cup}{31}{}%
-\contentsline {section}{\numberline {7.2}Applying the Neural Network Model}{31}{}%
-\contentsline {subsection}{\numberline {7.2.1}Sri Lanka vs Afghanistan}{31}{}%
-\contentsline {subsection}{\numberline {7.2.2}Afghanistan vs South Africa}{31}{}%
-\contentsline {subsection}{\numberline {7.2.3}India VS Pakistan}{32}{}%
-\contentsline {section}{\numberline {7.3}Summary of Model affect on the Tournament}{32}{}%
-\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{33}{}%
-\contentsline {section}{\numberline {8.1}Conclusions}{33}{}%
-\contentsline {section}{\numberline {8.2}Future Work}{33}{}%
-\contentsline {chapter}{\numberline {A}Q-Q Plots and the Normal Distribution}{34}{}%
+\contentsline {chapter}{\numberline {1}Introduction}{4}
+\contentsline {section}{\numberline {1.1}Data in Cricket}{4}
+\contentsline {section}{\numberline {1.2}Limited-Overs Cricket and the need for Duckworth-Lewis}{4}
+\contentsline {section}{\numberline {1.3}Problems raised with DLS}{5}
+\contentsline {section}{\numberline {1.4}Project Aims}{5}
+\contentsline {section}{\numberline {1.5}Review of current Literature}{5}
+\contentsline {chapter}{\numberline {2}Data}{7}
+\contentsline {section}{\numberline {2.1}Data Origin}{7}
+\contentsline {section}{\numberline {2.2}Attributes}{7}
+\contentsline {section}{\numberline {2.3}Pre-Processing}{7}
+\contentsline {section}{\numberline {2.4}Problems}{7}
+\contentsline {chapter}{\numberline {3}The DLS Method in Detail}{8}
+\contentsline {section}{\numberline {3.1}Origins: Duckworth and Lewis}{8}
+\contentsline {section}{\numberline {3.2}Improvements by Stern}{9}
+\contentsline {section}{\numberline {3.3}Extension: Bayesian Modelling}{10}
+\contentsline {chapter}{\numberline {4}Exploratory Data Analysis}{12}
+\contentsline {section}{\numberline {4.1}Fall of Wicket Densities}{12}
+\contentsline {section}{\numberline {4.2}Outliers in Runs Data}{14}
+\contentsline {section}{\numberline {4.3}On the Normality of Run Totals}{14}
+\contentsline {section}{\numberline {4.4}Runrates}{15}
+\contentsline {chapter}{\numberline {5}Pattern Recognition with Neural Networks: Background and Implementation}{18}
+\contentsline {section}{\numberline {5.1}A Brief Introduction to Neural Networks}{18}
+\contentsline {section}{\numberline {5.2}Builiding The Network}{19}
+\contentsline {subsection}{\numberline {5.2.1}Training the Network: Gradient-Descent and Backpropogation}{21}
+\contentsline {subsection}{\numberline {5.2.2}RPROP+}{22}
+\contentsline {section}{\numberline {5.3}Implementing the Neural Netowk}{23}
+\contentsline {chapter}{\numberline {6}Model Analysis}{25}
+\contentsline {section}{\numberline {6.1}Fully trained Neural Network}{25}
+\contentsline {section}{\numberline {6.2}Interlude: Monte-Carlo Simmulation}{25}
+\contentsline {section}{\numberline {6.3}Match Simulation}{27}
+\contentsline {section}{\numberline {6.4}Unseen DLS Game Data}{29}
+\contentsline {chapter}{\numberline {7}Simmulating the ICC 2019 Cricket World Cup}{32}
+\contentsline {section}{\numberline {7.1}DLS in the 2019 World Cup}{32}
+\contentsline {section}{\numberline {7.2}Applying the Neural Network Model}{32}
+\contentsline {subsection}{\numberline {7.2.1}Sri Lanka vs Afghanistan}{32}
+\contentsline {subsection}{\numberline {7.2.2}Afghanistan vs South Africa}{32}
+\contentsline {subsection}{\numberline {7.2.3}India VS Pakistan}{33}
+\contentsline {section}{\numberline {7.3}Summary of Model affect on the Tournament}{33}
+\contentsline {chapter}{\numberline {8}Conclusions and Future Work}{34}
+\contentsline {section}{\numberline {8.1}Conclusions}{34}
+\contentsline {section}{\numberline {8.2}Future Work}{34}
+\contentsline {chapter}{\numberline {A}Q-Q Plots and the Normal Distribution}{35}
