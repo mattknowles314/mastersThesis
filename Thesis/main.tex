@@ -73,12 +73,10 @@
 \input{titlepage}
 
 \section*{Abstract}
-A Neural Network model to predict cricket scores is presented. These novel results follow on from a look into the current methods used by the International 
-Cricket Council for solving the problem of reducing score targets. We present the mathematical background of building and training neural networks, which is an imperative prerequisite to the section devoted
-to building the network itself. To aid with this task, all the theory is accompanied by code snippets showing how it is employed in practice. A detailed analysis of the models results is given through three different
-datasets. We find that in trying to predict scores, using monte-carlo simmulation to simmulate a match performs significantly worse than not filling in the gaps. We then apply the model to simmulate the 2019 Cricket 
-World Cup and see how the tournament would have changed in using the Neural Network model. The comparrison of the model to the current industry standard is naturally important for measuring the success of the model, 
-and to test whether or not it would be viable to use instead. 
+We present a Neural Network model for predicting scores in the game of cricket. This follows from a discussion the current method employed by the International Cricket Council for resetting score targets when a match is cut short, known as the DLS system \cite{stern}.
+Some exploratory data analysis is performed prior to building the model, this is done in order to aid with making model deployment 
+decisions later on in the paper. When building the network, we present the mathematical theory accompanied by code snippets detailing the construction. The theory concerns both the actual structure of a neural network, but the algorithms used for training it.
+Following on from this, we analyse the model on three test sets of data to measure the performance. Finally, we deploy our model in place of the current DLS method on the games from the 2019 Cricket World Cup to see if the outcome of the tournament differs. 
 
 \section*{Acknowledgements}
 The author would like to thank Dr. Jessica Hargreaves for their invaluable supervision, encouragement and advice throughout this project. In addition,
