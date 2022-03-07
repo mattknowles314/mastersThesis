@@ -12,7 +12,7 @@ of metrics such as strike-rate for selecting bowlers in the starting XI. In prev
 That's not to say such things don't still have a part to play, but the introduction of quantitiave methods has become much more commonplace in the modern game.
 Similiarly, a coach may look at how wicket-taking in the ``powerplay''\footnote{In T20 cricket, this refers to the first 6 overs of the game, where certain fielding restrictions are in place}
 vs in the ``middle overs'' will change the outcome of the game. Data visualisation is key in putting across this information to playing staff in order tp highlight key areas for
-improvement. For this reason, we have taken an approach of using extensive data-visualisation to convey how the maths being done translates onto the cricket field. 
+improvement. For this reason, we have taken an approach of using extensive data-visualisation to convey how the maths being done translates onto the cricket field. \\ 
 
 \section{Limited-Overs Cricket and the need for Duckworth-Lewis}
 Cricket is a game played by two teams of eleven players. A coin toss decideds which team will ``bat'' first, and which will ``field'' fist. Unlike other sports, the scores in cricket are counted in ``runs''. Runs are achieved
@@ -39,27 +39,27 @@ has been slighlty improved upon since it was published in the late 1990s, but th
 One extension was that of Stern in 2004, \cite{stern}, now  known as the DLS method. This allowed for better score resetting in Twenty-20 (T20) cricket- an even shorter 
 form of the game introduced to last only over the course of an afternoon instead of a day. 
 
-\section{Problems raised with DLS}
+\section{Problems with DLS}
 In $\cite{phanse}$, the authors found that DLS has a bias towards not only the team batting first, but whoever won the coin toss at the start of the game.
 The winner of the toss chooses whether their side will bat or bowl in the first innings. They go onto to propose a simple extension to DLS for reducing
 these biases, but we won't cover that in this project. 
 
 \section{Project Aims}
 The main aim of this project is to look at methods for \textit{predicting} cricket scores. It is important to make the distinction between this 
-and \textit{projecting} the scores, which is what goes on in the game at the minute. Projecting scores assumes a constant runrate, which it will be seen 
-in later chapters is not really the case. However, we can make use of the patterns in run rates to try and extract a predictable score. 
-%should probably try and phrase this a little bit better?
-
+and \textit{projecting} the scores, which is commonplace in the game at the minute. Projecting scores assumes a constant runrate, which it will be seen 
+in later chapters is not really the case. However, we can make use of the patterns in run rates to try and extract a predictable score. At the lowest level,
+we are going to train a neural network with inputs being runrates and an output being scores. We can then pass the runrates of a game that gets cut short 
+to this network, and it will try to predict a score based on the patterns in the runrates of that game.
 
 \section{Review of current Literature}
-We begin the look at literature on this topic with the paper published by F. Duckworth himself in 1998 $\cite{duckworth}$. In this paper, 
-Duckworth proposes the`D/L method based on 5 principles. However, there is an issue with the sentence that appears after defining the function $Z(u,w)$.
+We begin the look at literature on this topic with the paper published by F. Duckworth himself in 1998 \cite{duckworth}. In this paper, 
+Duckworth proposes the ``D/L'' method. However, there is an issue with the sentence that appears after defining the function $Z(u,w)$;
 ``Comercial confidentiality prevents the disclosure of the mathematical definitions of these functions'' This means we can't access the actual parameters. 
 that they use for defining the model. This won't affect the development of our model, but it is unfortunate as it means getting a clear picture of DLS is slightly harder.
 The claim is that these functions have been defined via experimentation. This however gives rise to the first issue: the first T20 game of cricket was not played until 2003. 
 So clearly, D/L was not designed with T20 in mind, and so the functions derived from experementation and research will not be accurate for T20 cricket. \\
 
-In 2004, a year after the first T20 matches were played, Duckworth and Lewis published another paper $\cite{duckworth2}$, in which they report
+In 2004, a year after the first T20 matches were played, Duckworth and Lewis published another paper \cite{duckworth2}, in which they report
 that the table used for calculating the method can be employed by anyone at all levels of the game- from grass-roots cricket up to the highest standard of 
 the professional game. 
 
@@ -68,6 +68,7 @@ tournament held across England. They used data after the previous world cup, hel
 2018. The interesting thing about this paper, is they do not use data from individual matches, but instead on 10 meta-statics, including 
 ``Number of series victories'', ``total wickets'', ``centuries'' and ``all out'', among others. They apply the TOPSIS method to this specific problem, using the 
 following algorithm. \\
+
 \begin{algorithm}
 \caption{Modified TOPSIS Algorithm}\label{TOPSIS}
 \begin{algorithmic}[1]

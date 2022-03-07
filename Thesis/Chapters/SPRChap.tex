@@ -19,7 +19,8 @@ input layer, and the last layer gives the predictions. The middle layers are hid
 \begin{figure}
     \centering
     \includegraphics[scale=0.5]{figures/nn.png}
-    \caption{Example of a single hidden layer neural network, as in \cite{sprbk}}
+    \caption{Example of a single hidden layer neural network, as in \cite{sprbk}. Inputs are inputted through the bottom layer, the final activity value in the top
+    layers are taken as the prediction.}
     \label{nnexample1}
 \end{figure}
 
@@ -240,7 +241,7 @@ The equation \ref{backpropform} is known as the \textit{Backpropogation formula}
 
 \subsection{RPROP+}
 Backpropogation is a powerful and widely used algorithm, In implementing the neural network in this project, we used a variation of it, known as 
-the ``RPROP+'' algorithm \cite{rprop}, short for Resiliant backPROPogation. The $+$ is notation for showing we include backtracking in the algorithm. In \ref{RPROPC}, 
+the ``RPROP+'' algorithm \cite{rprop}, short for \textbf{R}esiliant back\textbf{PROP}ogation. The $+$ is notation for showing we include backtracking in the algorithm. In Algorithm~\ref{RPROPC}, 
 we give the algorithm in detail. 
 
 \begin{algorithm}[h]

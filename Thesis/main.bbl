@@ -1,0 +1,121 @@
+\begin{thebibliography}{}
+
+\bibitem[Bhattacharya et~al., 2018]{dlbayes}
+Bhattacharya, I., Ghosal, R., and Ghosh, S. (2018).
+\newblock A statistical exploration of duckworth-lewis method using bayesian
+  inference.
+\newblock {\em arXiv preprint arXiv:1810.00908}.
+
+\bibitem[Cauchy et~al., 1847]{cauchy}
+Cauchy, A. et~al. (1847).
+\newblock M{\'e}thode g{\'e}n{\'e}rale pour la r{\'e}solution des systemes
+  d’{\'e}quations simultan{\'e}es.
+\newblock {\em Comp. Rend. Sci. Paris}, 25(1847):536--538.
+
+\bibitem[Duckworth and Lewis, 2004]{duckworth2}
+Duckworth, F. and Lewis, A. (2004).
+\newblock A successful operational research intervention in one-day cricket.
+\newblock {\em Journal of the Operational Research Society}, 55(7):749--759.
+
+\bibitem[Duckworth and Lewis, 1998]{duckworth}
+Duckworth, F.~C. and Lewis, A.~J. (1998).
+\newblock A fair method for resetting the target in interrupted one-day cricket
+  matches.
+\newblock {\em Journal of the Operational Research Society}, 49(3):220--227.
+
+\bibitem[Foysal et~al., 2018]{foysal}
+Foysal, M., Ahmed, F., Islam, M.~S., Karim, A., and Neehal, N. (2018).
+\newblock Shot-net: a convolutional neural network for classifying different
+  cricket shots.
+\newblock In {\em International Conference on Recent Trends in Image Processing
+  and Pattern Recognition}, pages 111--120. Springer.
+
+\bibitem[Friedman, 2017]{sprbk}
+Friedman, J.~H. (2017).
+\newblock {\em The elements of statistical learning: Data mining, inference,
+  and prediction}.
+\newblock springer open.
+
+\bibitem[Ganesan et~al., 2010]{nncancer}
+Ganesan, N., Venkatesh, K., Rama, M., and Palani, A.~M. (2010).
+\newblock Application of neural networks in diagnosing cancer disease using
+  demographic data.
+\newblock {\em International Journal of Computer Applications}, 1(26):76--85.
+
+\bibitem[G{\"u}nther and Fritsch, 2010]{gunther}
+G{\"u}nther, F. and Fritsch, S. (2010).
+\newblock Neuralnet: training of neural networks.
+\newblock {\em R J.}, 2(1):30.
+
+\bibitem[Huber, 1992]{huber}
+Huber, P.~J. (1992).
+\newblock Robust estimation of a location parameter.
+\newblock In {\em Breakthroughs in statistics}, pages 492--518. Springer.
+
+\bibitem[Kumar et~al., 2019]{kumar2}
+Kumar, R., Santhadevi, D., and Barnabas, J. (2019).
+\newblock Outcome classification in cricket using deep learning.
+\newblock In {\em 2019 IEEE international conference on cloud computing in
+  emerging markets (CCEM)}, pages 55--58. IEEE.
+
+\bibitem[Kumar and Roy, 2018]{kumar}
+Kumar, S. and Roy, S. (2018).
+\newblock Score prediction and player classification model in the game of
+  cricket using machine learning.
+\newblock {\em International Journal of Scientific \& Engineering Research
+  IJSER}, 9(8).
+
+\bibitem[Lister and Stone, 1995]{lister}
+Lister, R. and Stone, J.~V. (1995).
+\newblock An empirical study of the time complexity of various error functions
+  with conjugate gradient backpropagation.
+\newblock In {\em Proceedings of ICNN'95-International Conference on Neural
+  Networks}, volume~1, pages 237--241. IEEE.
+
+\bibitem[Massey~Jr, 1951]{kolm}
+Massey~Jr, F.~J. (1951).
+\newblock The kolmogorov-smirnov test for goodness of fit.
+\newblock {\em Journal of the American statistical Association},
+  46(253):68--78.
+
+\bibitem[Naeini et~al., 2010]{nnstock}
+Naeini, M.~P., Taremian, H., and Hashemi, H.~B. (2010).
+\newblock Stock market value prediction using neural networks.
+\newblock In {\em 2010 international conference on computer information systems
+  and industrial management applications (CISIM)}, pages 132--136. IEEE.
+
+\bibitem[Phanse and Deorah, 2011]{phanse}
+Phanse, V. and Deorah, S. (2011).
+\newblock Evaluation and extension to the duckworth lewis method: A dual
+  application of data mining techniques.
+\newblock In {\em 2011 IEEE 11th International Conference on Data Mining
+  Workshops}, pages 763--770. IEEE.
+
+\bibitem[Riedmiller and Braun, 1993]{rprop}
+Riedmiller, M. and Braun, H. (1993).
+\newblock A direct adaptive method for faster backpropagation learning: The
+  rprop algorithm.
+\newblock In {\em IEEE international conference on neural networks}, pages
+  586--591. IEEE.
+
+\bibitem[Saqlain et~al., 2019]{saqlain}
+Saqlain, M., Jafar, N., Hamid, R., and Shahzad, A. (2019).
+\newblock Prediction of cricket world cup 2019 by topsis technique of mcdm-a
+  mathematical analysis.
+\newblock {\em International Journal of Scientific \& Engineering Research},
+  10(2):789--792.
+
+\bibitem[Sibi et~al., 2013]{sibi}
+Sibi, P., Jones, S.~A., and Siddarth, P. (2013).
+\newblock Analysis of different activation functions using back propagation
+  neural networks.
+\newblock {\em Journal of theoretical and applied information technology},
+  47(3):1264--1268.
+
+\bibitem[Stern, 2016]{stern}
+Stern, S.~E. (2016).
+\newblock The duckworth-lewis-stern method: extending the duckworth-lewis
+  methodology to deal with modern scoring rates.
+\newblock {\em Journal of the Operational Research Society}, 67(12):1469--1480.
+
+\end{thebibliography}
