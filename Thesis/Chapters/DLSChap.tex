@@ -13,13 +13,13 @@ on average, in a given number of overs. This is given by the equation:
 
 \begin{equation}
     Z(u) = Z_0[1-exp(-bu)]
-    \label{Z(u)}  
+    \label{Zueq}  
 \end{equation}
 
 Where u is the number of overs, b is an exponential decay constant, and $Z_0$ is the
 average total score in first class cricket, but with one-day rules imposed.  
 
-Because we don't have access to actual values for $Z_0$ or b, a plot to see what equation \ref{Z(u)} looks 
+Because we don't have access to actual values for $Z_0$ or b, a plot to see what Equation~\ref{Zueq} looks 
 like was created by using 3 sample values for $Z_0$. For b, it was a process of trial and error to find a value
 that resulted in the graph having a similar shape to original figures in the D/L paper. Some intuition was required here 
 based on our own experience in cricket to find a reasonable starting value. In future, it may be worth taking the time to 
@@ -29,11 +29,11 @@ be more accurate now due to having more datapoints to estimate from.
 \begin{figure}[h]
     \centering
     \includegraphics[scale=0.6]{figures/z(u).png}
-    \label{Zugraph}
     \caption{Graph showing how the rate at which runs are scored decays as a game progresses.}
+    \label{Zugraph}
 \end{figure}
 
-However, we have not yet looked at what happens when wickets are lost. To introduce this metric, equation \ref{Z(u)}
+However, we have not yet looked at what happens when wickets are lost. To introduce this metric, Equation~\ref{Zueq}
 is revised to incorperate the scenario that $w$ wickets have been lost, and that there are u overs remaining
 The revised equation is given as follows:
 
@@ -45,7 +45,7 @@ The revised equation is given as follows:
 Where now, we have $Z_0(w)$ giving the average total score from the last $10-w$ wickets in first class cricket.
 We now also have $b(w)$ as the exponential decay constant, which now changes depending on wickets lost.
 
-With this in mind, we now look at the specific case of equation \ref{zuw} with $u=N$ and $w=0$, namely, the conditions
+With this in mind, we now look at the specific case of Equation~\ref{zuw} with $u=N$ and $w=0$, namely, the conditions
 at the start of an N-over innings. We have:
 
 \begin{equation}
@@ -131,7 +131,7 @@ using a Bayesian inference model, we can use the posterior predictive distributi
 predictive accuracy of this model. \\
 
 We return now to look at the $m(u,w;\theta)$ parameter that appears in \ref{dlRegress}. This mean function, based on the plots produced in the original D/L
-paper, (see \ref{Z(u)_graph} for an example), the authors adopted an exponential decay. We can see why this choice makes sense from figure \ref{Z(u)_graph}.
+paper, (see Figure~\ref{Zugraph} for an example), the authors adopted an exponential decay. We can see why this choice makes sense from Figure~\ref{Zugraph}.
 The resources considered by this method, namely runs and wickets, do decrease exponentially as a game progresses. $m(u,w;\theta)$ depends on the parameters
 $a_w = Z_0(w)$ and $b_w = b(w)$, each one depending on the number of wickets fallen at that given time, with u overs remaining. We therefore have:
 

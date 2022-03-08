@@ -102,26 +102,26 @@ In this case, we use the R function \textit{qqnorm()} to test if the runs from t
 a more detailed discussion of this method.
 
 \begin{figure}[h]
-    \label{qqplot50}
     \centering
     \includegraphics[width=0.4\linewidth]{figures/qqnormplot.png}
     \caption{Q-Q plot for runs scored after 50 overs.}
+    \label{qqplot50}
 \end{figure}
 
 We can see from Figure~\ref{qqplot50} that the plot follows along the straight line and so we can conclude that the scores are infact normally distributed. 
 Further, we can calculate the parameters of this distribution using the R functions \textit{mean()} and \textit{var()}. Doing so gives that the distribution
 of scores in 50 overs, $S_{50}$, can be given as $S_{50} \sim \mathcal{N}(270.56,51.34^2)$. \\ 
 
-To further test that this is indeed the case, we can create a sample plot based on this distribution, which can be seen in figure \ref{samplenorm}
+To further test that this is indeed the case, we can create a sample plot based on this distribution, which can be seen in Figure~\ref{samplenorm}
 
 \begin{figure}[h]
-    \label{samplenorm}
     \centering
     \includegraphics[width=0.4\linewidth]{figures/samplenorm.png}
     \caption{Sample plot created from the derived distribution of $S_{50}$}
+    \label{samplenorm}
 \end{figure}
 
-With this in mind, we can now look at a density plot for the actual data. This is giving in figure \ref{runsdens}.
+With this in mind, we can now look at a density plot for the actual data. This is given in Figure~\ref{errDistAndQQRunsScored}.
 
 \begin{figure}[h]
     \centering
@@ -176,9 +176,9 @@ Using this information, we can create density plots of the average runrate in th
       \includegraphics[width=\linewidth]{figures/finaloversdens.png}
       \caption{Final Overs density}
     \endminipage
-    \label{rrDensitities}
+    \label{rrDensities}
 \end{figure}
 
-The runrates are  in different stages of the game roughly normally distributed, which can be seen in Figure~\ref{rrDensitities}. It is reasonable that due to the Central Limit Theorem, with more observations, these distribiutions would be smoothed out and 
+The runrates are  in different stages of the game roughly normally distributed, which can be seen in Figure~\ref{rrDensities}. It is reasonable that due to the Central Limit Theorem, with more observations, these distribiutions would be smoothed out and 
 appear more normally distributed than it does at present. This is imporant, because it allows us to investigate using a monte-carlo method to fill in gaps 
 later on in the project. 
