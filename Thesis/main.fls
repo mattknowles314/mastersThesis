@@ -703,8 +703,6 @@ INPUT titlepage.tex
 INPUT .\titlepage.tex
 INPUT .\titlepage.tex
 INPUT titlepage.tex
-OUTPUT main.pdf
-INPUT C:\Users\iikno\AppData\Local\MiKTeX\pdftex\config\pdftex.map
 INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmti10.tfm
@@ -712,9 +710,11 @@ INPUT .\figures\uoylogo.png
 INPUT .\figures\uoylogo.png
 INPUT figures\uoylogo.png
 INPUT .\figures\uoylogo.png
+OUTPUT main.pdf
 INPUT .\figures\uoylogo.png
 INPUT .\figures\uoylogo.png
 INPUT .\figures\uoylogo.png
+INPUT C:\Users\iikno\AppData\Local\MiKTeX\pdftex\config\pdftex.map
 INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
