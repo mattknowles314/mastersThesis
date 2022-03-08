@@ -309,11 +309,4 @@ More details on the results of the network will be available in the next chapter
 with the lowest error on the training data. This is done using the \textit{which.min()} function in R, which looks through all the data in the vector we give it, and returns the index of the minimum value.
 We then use the function \textit{neuralnet::compute()} to use the neural network for predicting the (normalised) values in the training data. These predicted values are stored in a dataframe next to the original values. 
 We then perform a simple ``Root Mean Squared Error'' calculation by $\sqrt{(x_{original}-x_{predicted})^2}$, and use this as the third column in the dataframe. This completes the implementation of the neural network.
-The final net can be seen here, although due to the nature it is hard to see the specific weights and biases- although this is less important than the results that are discussed in the next chapter. 
-
-\begin{figure}[h] 
-    \centering
-    \includegraphics[width=0.9\linewidth]{figures/bestnet.png}
-    \caption{Final trained network. }
-    \label{bestnet}
-\end{figure}
+A plot of the final network can be seen in Appendix B. 

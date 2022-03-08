@@ -73,10 +73,10 @@
 \input{titlepage}
 
 \section*{Abstract}
-We present a Neural Network model for predicting scores in the game of cricket. This follows from a discussion the current method employed by the International Cricket Council for resetting score targets when a match is cut short, known as the DLS system \cite{stern}.
+We present a Neural Network model for predicting scores in the game of cricket. This follows on from a discussion the current method employed by the International Cricket Council for resetting score targets when a match is cut short, known as the DLS system \cite{stern}.
 Some exploratory data analysis is performed prior to building the model, this is done in order to aid with making model deployment 
-decisions later on in the paper. When building the network, we present the mathematical theory accompanied by code snippets detailing the construction. The theory concerns both the actual structure of a neural network, but the algorithms used for training it.
-Following on from this, we analyse the model on three test sets of data to measure the performance. Finally, we deploy our model in place of the current DLS method on the games from the 2019 Cricket World Cup to see if the outcome of the tournament differs. 
+decisions later on in the paper. When building the network, we present the mathematical theory accompanied by code snippets detailing the construction. The theory concerns not only the actual structure of a neural network, but the algorithms used for training it.
+We then analyse the model on three test sets of data to measure the performance of it in three scenarios. Finally, we deploy our model in place of the current DLS method on the games from the 2019 Cricket World Cup to see if the outcome of the tournament differs. 
 
 \section*{Acknowledgements}
 The author would like to thank Dr. Jessica Hargreaves for their invaluable supervision, encouragement and advice throughout this project. In addition,
@@ -113,6 +113,8 @@ All code written in support of this project can be found on GitHub at: \\
 \appendix
 
 \input{Chapters/qq.tex}
+
+\input{Chapters/net.tex}
 
 
 \bibliographystyle{apalike}

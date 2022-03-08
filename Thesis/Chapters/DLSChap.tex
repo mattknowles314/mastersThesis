@@ -1,14 +1,15 @@
-\chapter{The DLS Method in Detail}
+\chapter{DL, DLS, and Beyond}
 
 \epigraph{In an ideal world, you knock the runs off and win the game.}{Moeen Ali}
 
-We now look at the mathematics behind the D/L, and DLS methods. D/L being the original
-method, and DLS the method that Stern helped to revise. Although not much is taken from this method 
-for our model, it is important to look at how DLS works in order to see what our model does differently 
-and visa-versa. DLS uses much more traditional statistics than the deep learning we employ.
+We now look at the mathematics behind both the D/L, and DLS methods. Whereas D/L was the original
+method, the DLS method was a modified and modernised version developed by Prof. Steven Stern. Although not much is taken from this method 
+in the development of our model, it is important to look at how DLS works in order to see what our model does differently 
+and visa-versa. DLS uses much more traditional statistics than the deep learning we employ. At their core, both models are trying to accomplish 
+the same task, just in two very different ways.
 
 \section{Origins: Duckworth and Lewis}
-We begin by looking at the original paper. The first thing to establish is how many runs are scored,
+We begin by looking at the original paper \cite{duckworth}. The first thing to establish is how many runs are scored,
 on average, in a given number of overs. This is given by the equation:
 
 \begin{equation}
@@ -16,15 +17,14 @@ on average, in a given number of overs. This is given by the equation:
     \label{Zueq}  
 \end{equation}
 
-Where u is the number of overs, b is an exponential decay constant, and $Z_0$ is the
+Where $u$ is the number of overs, $b$ is an exponential decay constant, and $Z_0$ is the
 average total score in first class cricket, but with one-day rules imposed.  
 
-Because we don't have access to actual values for $Z_0$ or b, a plot to see what Equation~\ref{Zueq} looks 
-like was created by using 3 sample values for $Z_0$. For b, it was a process of trial and error to find a value
+Because we don't have access to actual values for $Z_0$ or $b$, a plot to see what Equation~\ref{Zueq} looks 
+like was created by using 3 sample values for $Z_0$. For $b$, it was a process of trial and error to find a value
 that resulted in the graph having a similar shape to original figures in the D/L paper. Some intuition was required here 
 based on our own experience in cricket to find a reasonable starting value. In future, it may be worth taking the time to 
-mine through all available data and obtain an estimate in a similar way to their method. The value will almost certainly 
-be more accurate now due to having more datapoints to estimate from.
+mine through all available data and obtain a (possibly more accurate) estimate in a similar way to their method. 
 
 \begin{figure}[h]
     \centering
@@ -34,7 +34,7 @@ be more accurate now due to having more datapoints to estimate from.
 \end{figure}
 
 However, we have not yet looked at what happens when wickets are lost. To introduce this metric, Equation~\ref{Zueq}
-is revised to incorperate the scenario that $w$ wickets have been lost, and that there are u overs remaining
+is revised to incorperate the scenario that $w$ wickets have been lost, and that there are $u$ overs remaining
 The revised equation is given as follows:
 
 \begin{equation}
@@ -43,9 +43,9 @@ The revised equation is given as follows:
 \end{equation}
 
 Where now, we have $Z_0(w)$ giving the average total score from the last $10-w$ wickets in first class cricket.
-We now also have $b(w)$ as the exponential decay constant, which now changes depending on wickets lost.
+We now also have $b(w)$ as the exponential decay constant, which changes depending on wickets lost.
 
-With this in mind, we now look at the specific case of Equation~\ref{zuw} with $u=N$ and $w=0$, namely, the conditions
+With this in mind, we can look at the specific case of Equation~\ref{zuw} with $u=N$ and $w=0$, namely, the conditions
 at the start of an N-over innings. We have:
 
 \begin{equation}
@@ -60,16 +60,17 @@ Which we then incorperate into the ratio
     \label{prat}
 \end{equation}
 
-The ratio \ref{prat} gives, keeping in mind there are u overs still to be bowled, with w wickets
+This ratio gives, keeping in mind there are $u$ overs still to be bowled, with $w$ wickets
 lost, the average proportion of the runs that still need to be scored in the innings. 
-It is this ratio that is where the revised scores come from. Let us now look a bit more at how that works
+It is this ratio that is where the revised scores come from. A huge table is constructed from these 
+ratios, and can be used to reset the target based on the state of a game. Let us now look at how that works
 practically.
 
 \begin{example}
     \label{dlExMain}
     Assume there is a break in the second innings (due to rain or similar), which results in the second team missing some overs.
-    Let $u_1, u_2$ be the number of overs played before the break, and available after it respectively. We impose the condition
-    that $u_2 < u_1$. At the time of the break, the second team had lost $w$ wickets. The aim is to adjst the required score to account
+    Let $u_1, u_2$ be the number of overs played before the break and available after it respectively. We impose the condition
+    that $u_2 < u_1$. Further assume that at the time of the break, the second team had lost $w$ wickets. The aim is to adjust the required score to account
     for the $u_1 - u_2$ overs they have lost. The winning ``resources'' available are given by
 
     \[
@@ -84,7 +85,7 @@ practically.
 \end{example}
 
 \section{Improvements by Stern}
-We now look at the DLS method, introduced by Stern in $\cite{stern}$ to extend the original D/L method. The motivation for DLS was that very high scoring
+We now look at the DLS method, introduced in $\cite{stern}$ to extend the original D/L method. The motivation for DLS was that very high scoring
 cricket matches presented a pattern of straightening towards average run rate which is not uniform across the innings considered (around 500). To account for 
 this, Stern introduces an additional damping factor to the equation for D/L. The updated equation is now given by:
 
@@ -93,7 +94,7 @@ this, Stern introduces an additional damping factor to the equation for D/L. The
     Z_{dls}(u,w,\lambda) = Z_0F_w\lambda^{n_w+1} \left\{ 1-e^{-ubg(u,\lambda)/F_w\lambda^n_w} \right\}.
 \end{equation}
 
-This equation assumes u overs remaining, w wickets down in an M-over match with a final total of $S$. Here, we have:
+This equation assumes ther are $u$ overs remaining, with $w$ wickets lost by the batting team in an $M$-over match with a final run total of $S$. Here, we have:
 
 \begin{equation}
     \label{gfunc}
@@ -104,22 +105,21 @@ In the above, we define
 
 \begin{align*}
     a_\lambda &= -\frac{1}{1+c_1(\lambda-1)e^{-c_2(\lambda-1)}}\\
-    \beta_\lambda &= -c_3(\lambda-1)e^{-c_4(\lambda-1)}
+    \beta_\lambda &= -c_3(\lambda-1)e^{-c_4(\lambda-1)}.
 \end{align*}
 
-The constants $c_1,\ldots,c_4$ are based on
-what Stern describes as a ``detailed examination'' of high scoring cricket matches.
+The constants $c_1,\ldots,c_4$ are based on what Stern describes as a ``detailed examination'' of high scoring cricket matches.
 
 \section{Extension: Bayesian Modelling}
-This section will look at the work of paper $\cite{dlbayes}$, which used Bayesian modelling to try and improve the score predictions
-of the D/L method. The authors used the same dataset as we are using for the dissertation, although over a slightly smaller range of games.
+This section will look at the work of $\cite{dlbayes}$. Bayesian modelling was used to try and improve the score predictions
+of the D/L method. The authors used the same dataset as we are using for this dissertation, although over a slightly smaller range of games.
 Only games between 2005-2017 are used, whereas our dataset goes up to 2021. Note that to keep consistent with the fact we are talking about a different
 model now, we swich from using $Z(u,w)$, to using $R(u,w)$, as to keep consistency with the different papers being looked at.
 They start by introducing the following nonlinear regression model:
 
 \begin{equation}
     \label{dlRegress}
-    \bar{R}(u,w) \sim N(m(u,w;\theta),\frac{\sigma^2}{n_{uw}})
+    \bar{R}(u,w) \sim N(m(u,w;\theta),\frac{\sigma^2}{n_{uw}}).
 \end{equation}
 
 Where $\bar{R}(u,w)$ is the sample average of runs scored by a team from the total number of matches in the data set. We have $m(u,w;\theta)$
@@ -159,7 +159,7 @@ $a_0 \sim U(0,A_0)$ and $b_0 \sim U(0,B_0)$. Then given any pair $(a_0,b_0)$ and
     \frac{1}{\sigma^2} &\sim Ga(a,b).
 \end{align}
 
-Above, U(a,b) represents a uniform distribution over the open interval $(a,b)$. Now that the prior distribution is obtained, the likelehood function is then 
+Above, $U(a,b)$ represents a uniform distribution over the open interval $(a,b)$. Now that the prior distribution is obtained, the likelehood function is then 
 given by:
 
 \begin{equation}
@@ -178,7 +178,7 @@ So we take a brief detour to look at it. This can be seen in figure \ref{avgruns
     \caption{Plot of average runs scored at the fall of each wicket. Averages taken over 1437 innings.}
     \label{avgrunsfow}
 \end{figure}
-%NEED APPENDIX TALKING ABOUT KOLMOGROV-SMIRNOV
+
 Initially, one may think that this is normally distributed. It certainly holds a bell curve-like shape. However, a Kolmogorov-Smirnov test $\cite{kolm}$ was
 performed to see if these values were normally distributed, and it turns out they aren't. This test was performed using the R function \textit{ks.test()}, which returned
 a p-value of $2.2\text{x}10^{-16}$ for the two-sided alternative hypothesis parameter. \\

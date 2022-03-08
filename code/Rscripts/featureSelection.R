@@ -7,3 +7,4 @@ for(i in 1:2145){
     append(badVals,i)
   }
 }
+ 

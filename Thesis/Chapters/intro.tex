@@ -2,36 +2,37 @@
 
 \epigraph{I don't like discussing cricket off the field.}{MS Dhoni}
 
-In this chapter, we outline the background behind this project. The discussion centres around why this a topic of relevancy in cricket, and how we can employ more modern mathematics to it. This comes after an introduction to cricket itself,
-which the sports-inclined reader may still find of use, as it talks about the specific aspects of the game that will be most important in the remainder of the project. The issues raised by the current methods 
-which we are trying to improve upon are explained. This leads to a review of some of the important literature on the topic to give more context behind the work done in this project.
+This chapter provides the background for the area of research we explore in this dissertation. Data has become widely employed in both professional and amateur sport in the past few years, and 
+in this chapter we will look at where data comes into play in the game of cricket. We go on to give a brief description of the game of cricket, which the sports-inclined reader may 
+still find useful as it helps with understanding where the metrics used in the remainder of the project come from. That disscusion leads into explaining the need for 
+the DLS system used in the modern game, and the problems thereof. The aims of the project are outlined and we take a look at current literature on the topic of data in cricket. 
 
 \section{Data in Cricket}
 The use of data in sport has become a massive part of how teams prepare for games and competitions in recent years. In cricket particularly, one way data has changed the game is the use
-of metrics such as strike-rate for selecting bowlers in the starting XI. In previous eras, less substantive things such as cloud cover or how much grass covers the playing field would have taken precedance.
-That's not to say such things don't still have a part to play, but the introduction of quantitiave methods has become much more commonplace in the modern game.
-Similiarly, a coach may look at how wicket-taking in the ``powerplay''\footnote{In T20 cricket, this refers to the first 6 overs of the game, where certain fielding restrictions are in place}
-vs in the ``middle overs'' will change the outcome of the game. Data visualisation is key in putting across this information to playing staff in order tp highlight key areas for
-improvement. For this reason, we have taken an approach of using extensive data-visualisation to convey how the maths being done translates onto the cricket field. \\ 
+of metrics such as strike-rate for selecting bowlers in the starting XI. In previous eras, more qualitative methods such as cloud cover or how ``green'' the pitch is would have taken precedance.
+That's not to say such things don't still have a part to play, but the introduction of quantitative methods has become much more commonplace in the modern game.
+Similarly, a coach may look at how wicket-taking in the ``powerplay''\footnote{In ODI cricket, this refers to the first 10 overs of the game, where certain fielding restrictions are in place}
+vs in the ``middle overs'' will change the outcome of the game. Data visualisation is key to putting this information across to playing staff in order to highlight key areas for
+improvement. It is for this reason, we have taken an approach of using extensive data-visualisation to convey how the maths being done translates onto the cricket field. \\ 
 
 \section{Limited-Overs Cricket and the need for Duckworth-Lewis}
 Cricket is a game played by two teams of eleven players. A coin toss decideds which team will ``bat'' first, and which will ``field'' fist. Unlike other sports, the scores in cricket are counted in ``runs''. Runs are achieved
 in many ways, such as the two batters physically running to change sides of the pitch they are on, or by hitting the ball over a pre-defined boundary. The game of cricket itself has two main forms. In this project we will 
-only look at ``limited-overs cricket''. Cricket is played in ``overs'', each one consisting of 6 individual bowls consecutively by the same bowler from one end of the pitch. Traditionally, there is no upper limit on the 
-amount of overs a team may bowl- they keep going until the batting team ``declares'', meaning they've had enough and dont want to bat anymore, or preferably for the bowling team, are all bowled out. 
+only look at ``limited-overs cricket''. Cricket is played in ``overs'', each one consisting of 6 individual bowls delivered consecutively by the same bowler from one end of the pitch. Traditionally, there is no upper limit on the 
+amount of overs a team may bowl- they keep going until the batting team ``declares'', meaning they believe they have a tactical advantage if they bowl now instead of later, and don't want to bat anymore, or preferably for the bowling team, are all bowled out. 
 Batters can be given ``out'' in quite a few different ways, but once a batter is out- that's it for them. Once ten of the eleven players on the batting team have been given out, the innings comes to end and the team bowling 
 gets their turn to bat. If they hit more runs before losing all their ten wickets or before the innings comes to an end, then they win. Cricket is an immensely complex game with countless intricacies and neuances, but at 
-it's core, applying mathematics to it is not an absurd proposition. 
+it's core, applying mathematics to it is not an absurd proposition. \\
 
-The traditional format of cricket, called ``first class'' lasts up to 4 days. This obviously has disadvantages from a spectator point of view. On
-In 1963, the cricketing calender in the UK had a different format of the game ammended to it, alongside the usual first class fixtures.
+The traditional format of cricket, called ``first-class cricket'' lasts up to 4 days. This obviously has disadvantages from a spectator's point of view. 
+In 1963, the cricketing calender in the UK had a different format of the game ammended to it, alongside the usual first-class fixtures.
 The ``Gillette Cup'' introduced a form of cricket wherein each team only has 1 innings, lasting 50 overs isntead of the prior method of no limit. The idea was 
 that this competition, coming to a conclusion within the space of a day, would increase spectator numbers and by extension,
 ticket sales.\\
 
 However, given the tournament-based nature of this new competition, we have the natural need for a definitive result.
 This is something that is not always guarenteed in first class cricket, where draws are common.\footnote{Note that 
-``draw'' and ``tie'' are not interchangable terminology in cricketing terms.} As such, in order to allow for a result to be
+``draw'' and ``tie'' are not interchangable terminology in cricket. A ``tie'' refers to achieving the exact same score, whereas a draw is where neither teams wins nor loses} As such, in order to allow for a result to be
 determined when a game is cut short, the idea of target-revision was introduced. This meant that a team could be set a
 roughly equivalent run target off of a reducded number of overs that would still classify them as the winners.
 This is where Duckworth and Lewis came in, proposing their D/L method \cite{duckworth}. As will be discussed in Chapter 3, the D/L method 
@@ -39,37 +40,49 @@ has been slighlty improved upon since it was published in the late 1990s, but th
 One extension was that of Stern in 2004, \cite{stern}, now  known as the DLS method. This allowed for better score resetting in Twenty-20 (T20) cricket- an even shorter 
 form of the game introduced to last only over the course of an afternoon instead of a day. 
 
+
 \section{Problems with DLS}
 In $\cite{phanse}$, the authors found that DLS has a bias towards not only the team batting first, but whoever won the coin toss at the start of the game.
 The winner of the toss chooses whether their side will bat or bowl in the first innings. They go onto to propose a simple extension to DLS for reducing
-these biases, but we won't cover that in this project. 
+these biases, but we won't cover that in this project. \\
+
+DLS can also be prone to setting targets that are too far-fetched. We will see an example of this in Chapter 7. This tendancy can kill the competition in a game, 
+and result in a game being very boring to the spectators due to knowing that the team batting doesn't stand a chance. \\
 
 \section{Project Aims}
 The main aim of this project is to look at methods for \textit{predicting} cricket scores. It is important to make the distinction between this 
-and \textit{projecting} the scores, which is commonplace in the game at the minute. Projecting scores assumes a constant runrate, which it will be seen 
+and \textit{projecting} the scores, which is commonplace in the game at the minute. Projecting scores assumes a constant run rate, which it will be seen 
 in later chapters is not really the case. However, we can make use of the patterns in run rates to try and extract a predictable score. At the lowest level,
 we are going to train a neural network with inputs being runrates and an output being scores. We can then pass the runrates of a game that gets cut short 
 to this network, and it will try to predict a score based on the patterns in the runrates of that game.
 
+The runrate is defined by the following handy formula, \\
+
+\[
+    \text{Run Rate}  = \frac{\text{Total Runs Scored}}{\text{Total Overs Bowled}}.
+\]\\
+
+This rate evolves as the game flows, and can skyrocket or plummet as one team or the other begins to outplay their opponent. To our knowledge, a run rate 
+based neural network does not exist in the literature, and so our model is somewhat novel.
+
 \section{Review of current Literature}
 We begin the look at literature on this topic with the paper published by F. Duckworth himself in 1998 \cite{duckworth}. In this paper, 
 Duckworth proposes the ``D/L'' method. However, there is an issue with the sentence that appears after defining the function $Z(u,w)$;
-``Comercial confidentiality prevents the disclosure of the mathematical definitions of these functions'' This means we can't access the actual parameters. 
+``Comercial confidentiality prevents the disclosure of the mathematical definitions of these functions'', whcih means we can't access the actual parameters 
 that they use for defining the model. This won't affect the development of our model, but it is unfortunate as it means getting a clear picture of DLS is slightly harder.
-The claim is that these functions have been defined via experimentation. This however gives rise to the first issue: the first T20 game of cricket was not played until 2003. 
+The claim is that these functions have been defined via experimentation, which gives rise to the first issue: the first T20 game of cricket was not played until 2003. 
 So clearly, D/L was not designed with T20 in mind, and so the functions derived from experementation and research will not be accurate for T20 cricket. \\
 
 In 2004, a year after the first T20 matches were played, Duckworth and Lewis published another paper \cite{duckworth2}, in which they report
 that the table used for calculating the method can be employed by anyone at all levels of the game- from grass-roots cricket up to the highest standard of 
-the professional game. 
+the professional game. The table is slightly updated as well due to the increased amount of data from which to calculate parameters. \\
 
-Another paper that is worth noting is by Saqlain et. al. \cite{saqlain}, looking at predicting scores from the 2019 Cricket World Cup, an ODI
+Another noteworthy paper is that of \cite{saqlain}, looking at predicting scores from the 2019 Cricket World Cup, an ODI
 tournament held across England. They used data after the previous world cup, held in Australia and New Zealand in 2015; all the way to $10^{th}$ November
 2018. The interesting thing about this paper, is they do not use data from individual matches, but instead on 10 meta-statics, including 
-``Number of series victories'', ``total wickets'', ``centuries'' and ``all out'', among others. They apply the TOPSIS method to this specific problem, using the 
-following algorithm. \\
+``Number of series victories'', ``total wickets'', ``centuries'' and ``all out'', among others. They apply the TOPSIS method to this specific problem, using Algorithm~\ref{TOPSIS}. \\
 
-\begin{algorithm}
+\begin{algorithm}[h]
 \caption{Modified TOPSIS Algorithm}\label{TOPSIS}
 \begin{algorithmic}[1]
     \Require $m,n \geq 0$
@@ -89,7 +102,11 @@ at the bottom. It's worth mentioning that this may not be an issue with the math
 than a team like England or Inida. This introduces a bias favouring teams who have played more games not only from a statistical point of view, but from a cricketing one too 
 since the teams that play less will have less match practice going into a big tournament like the World Cup. \\
 
-However, a paper by Kumar and Roy, \cite{kumar} takes an approach along the same lines of the aim of this project. It is not necessary to discuss the individual aspects
+However, the paper \cite{kumar} takes an approach along the same lines of the aim of this project. It is not necessary to discuss the individual aspects
 of their paper here, as it will be discussed when we dive into the methods themselves. However it is worth noting the results of this paper now to see how
 ours differ. They found their limited dataset to be a problem in classifying. This is something we have been aware of, but there isn't much that can be done
-given the nature of how mmany cricket games are played year on year. 
+given the nature of how mmany cricket games are played year on year. \\
+
+Machine learning is certainly not new to cricket, \cite{kampakis} managed to predict the winners in English T20 cricket in ``almost two thirds'' of their test cases. While this 
+is a fantastic result, in this dissertation we have not concerned ourselves with directly predicting winners, but actual scores. This is again something that is hard to find 
+in cricket specific literature, so we have taken inspiration from industries such as finance, as well as other sports in building our model. 

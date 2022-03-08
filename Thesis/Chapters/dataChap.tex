@@ -10,7 +10,7 @@ and stored locally on a private server. In total there are 2167 individual match
 covering matches ranging from the $3^{rd}$ of January 2004 to the $20^{th}$ of July 2021.
 
 \section{Attributes}
-Each JSON file contains a considerable amount of metadata surrounding the match in question. Along with 
+Each JSON file contains a considerable amount of metadata surrounding the match in question, along with 
 ball-by-ball data for the entire match. We have access to attributes such as the date, where the match was played,
 the entire teamsheet for both teams, who the officials were, who won- and by what margin, who won the toss; and many others.
 
@@ -18,10 +18,10 @@ We also have the ball-by-ball data. So for every ball bowled, it gives who were 
 were scored and how. It also details if a wicket was taken that ball, and how.
 
 \section{Pre-Processing}
-In order to clean data and make it usable, the Python programming language was used to take the original JSON files and turn them into CSV files on which analysis could 
+In order to clean data and make it usable, Python scripts were written to take the original JSON files and turn them into CSV files on which analysis could 
 be performed in R. These scripts made heavy use of the base-Python packages \verb|JSON| and \verb|CSV|.
 
 \section{Problems}
-When it comes to machine learning, the more data the better is a general rule. Now this can sometimes lead to sub-problems, such as overfitting. But on the whole.
+When it comes to machine learning, the more data the better is a general rule. Now this can sometimes lead to sub-problems, such as overfitting. But on the whole 
 it is much better to have as much data as possible. We will be training a neural network on 1435 data points. Stictly speaking, this isn't a lot of data, but there
 isn't much that can be done about this due to the cricketing calender only having a certain number of limited-overs matches each year.

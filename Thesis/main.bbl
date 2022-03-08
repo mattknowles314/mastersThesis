@@ -52,6 +52,12 @@ Huber, P.~J. (1992).
 \newblock Robust estimation of a location parameter.
 \newblock In {\em Breakthroughs in statistics}, pages 492--518. Springer.
 
+\bibitem[Kampakis and Thomas, 2015]{kampakis}
+Kampakis, S. and Thomas, W. (2015).
+\newblock Using machine learning to predict the outcome of english county
+  twenty over cricket matches.
+\newblock {\em arXiv preprint arXiv:1511.05837}.
+
 \bibitem[Kumar et~al., 2019]{kumar2}
 Kumar, R., Santhadevi, D., and Barnabas, J. (2019).
 \newblock Outcome classification in cricket using deep learning.
