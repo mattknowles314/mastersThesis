@@ -1,39 +1,41 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Graph showing how the rate at which runs are scored decays as a game progresses.\relax }}{11}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Plot of average runs scored at the fall of each wicket. Averages taken over 1437 innings.\relax }}{14}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Graph showing how the rate at which runs are scored decays as a game progresses.\relax }}{11}{}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Plot of average runs scored at the fall of each wicket. Averages taken over 1437 innings.\relax }}{14}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Density of all teams for first wicket falling\relax }}{16}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Overall density plot for FOW 1\relax }}{16}%
-\contentsline {figure}{\numberline {4.3}{\ignorespaces Density of all teams for fith wicket falling\relax }}{16}%
-\contentsline {figure}{\numberline {4.4}{\ignorespaces Overall density plot for FOW 5\relax }}{16}%
-\contentsline {figure}{\numberline {4.5}{\ignorespaces Density of all teams for ninth wicket falling\relax }}{16}%
-\contentsline {figure}{\numberline {4.6}{\ignorespaces Overall density plot for FOW 9\relax }}{16}%
-\contentsline {figure}{\numberline {4.7}{\ignorespaces Boxplot showing the spread of runs scored\relax }}{17}%
-\contentsline {figure}{\numberline {4.8}{\ignorespaces Q-Q plot for runs scored after 50 overs.\relax }}{18}%
-\contentsline {figure}{\numberline {4.9}{\ignorespaces Sample plot created from the derived distribution of $S_{50}$\relax }}{18}%
-\contentsline {figure}{\numberline {4.10}{\ignorespaces Error Density and QQ for 50-over Data\relax }}{19}%
-\contentsline {figure}{\numberline {4.11}{\ignorespaces Error distribution with Q-Q plot\relax }}{19}%
-\contentsline {figure}{\numberline {4.12}{\ignorespaces Powerplay Run Rate density\relax }}{20}%
-\contentsline {figure}{\numberline {4.13}{\ignorespaces Middle Overs Run Rate density\relax }}{20}%
-\contentsline {figure}{\numberline {4.14}{\ignorespaces Final Overs density\relax }}{20}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Density of all teams for first wicket falling\relax }}{16}{}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Overall density plot for FOW 1\relax }}{16}{}%
+\contentsline {figure}{\numberline {4.3}{\ignorespaces Density of all teams for fith wicket falling\relax }}{16}{}%
+\contentsline {figure}{\numberline {4.4}{\ignorespaces Overall density plot for FOW 5\relax }}{16}{}%
+\contentsline {figure}{\numberline {4.5}{\ignorespaces Density of all teams for ninth wicket falling\relax }}{16}{}%
+\contentsline {figure}{\numberline {4.6}{\ignorespaces Overall density plot for FOW 9\relax }}{16}{}%
+\contentsline {figure}{\numberline {4.7}{\ignorespaces Boxplot showing the spread of runs scored\relax }}{17}{}%
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Q-Q plot for runs scored after 50 overs.\relax }}{18}{}%
+\contentsline {figure}{\numberline {4.9}{\ignorespaces Sample plot created from the derived distribution of $S_{50}$\relax }}{18}{}%
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Error Density and QQ for 50-over Data\relax }}{19}{}%
+\contentsline {figure}{\numberline {4.11}{\ignorespaces Error distribution with Q-Q plot\relax }}{19}{}%
+\contentsline {figure}{\numberline {4.12}{\ignorespaces Powerplay Run Rate density\relax }}{20}{}%
+\contentsline {figure}{\numberline {4.13}{\ignorespaces Middle Overs Run Rate density\relax }}{20}{}%
+\contentsline {figure}{\numberline {4.14}{\ignorespaces Final Overs density\relax }}{20}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of a single hidden layer neural network, as in \cite {sprbk}. Inputs are inputted through the bottom layer, the final activity value in the top layers are taken as the prediction.\relax }}{22}%
-\contentsline {figure}{\numberline {5.2}{\ignorespaces Graph showing the shape of different activation functions.\relax }}{23}%
-\contentsline {figure}{\numberline {5.3}{\ignorespaces R code to implement the neural network\relax }}{27}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Example of a single hidden layer neural network, as in \cite {sprbk}. Inputs are inputted through the bottom layer, the final activity value in the top layers are taken as the prediction.\relax }}{22}{}%
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Graph showing the shape of different activation functions.\relax }}{23}{}%
+\contentsline {figure}{\numberline {5.3}{\ignorespaces R code to implement the neural network\relax }}{27}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Error distribution with Q-Q plot\relax }}{28}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Implementing a Monte-Carlo Simmulation fo Cricket Matches\relax }}{30}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces 50-Over simmulation of $n=5$ and $n=100$\relax }}{30}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Monte-Carlo Simmulation Error Density\relax }}{31}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Boxplot of prediction differences\relax }}{31}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces R function for unscaling data\relax }}{32}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Plot of predictions for all methods\relax }}{32}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Monte-Carlo Simmulation Error Density\relax }}{33}%
-\addvspace {10\p@ }
-\addvspace {10\p@ }
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Error distribution with Q-Q plot\relax }}{28}{}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Implementing a Monte-Carlo Simmulation fo Cricket Matches\relax }}{30}{}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces 50-Over simmulation of $n=5$ and $n=100$\relax }}{31}{}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Monte-Carlo Simmulation Error Density\relax }}{31}{}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Boxplot of prediction differences\relax }}{32}{}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces R function for unscaling data\relax }}{32}{}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Plot of predictions for all methods\relax }}{33}{}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Monte-Carlo Simmulation Error Density\relax }}{33}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Final trained network. \relax }}{40}%
 \addvspace {10\p@ }
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Final trained network. \relax }}{41}{}%
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Default File Structure for an R Package\relax }}{42}{}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces File structure for the CricNet package\relax }}{43}{}%
