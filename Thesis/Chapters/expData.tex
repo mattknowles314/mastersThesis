@@ -187,10 +187,10 @@ appear more normally distributed than it does at present. This is imporant, beca
 later on in the project.
 
 \subsection{Feature Selection}
-Feature selection is an important aspect in data science. Some experiments can have an overwhelming number of variables, which can lead to computational inefficiency. In this subsection, we will explore selecting the most important overs in the run rate data. Given the lack of data already available, this may seem unnecessary, however it is an interesting consideration for future work. When we build the network in the next chapter, the model has to be passed a formula, telling it how to treat the variables. By default, since we have 50 overs worth of data (V1 $\rightarrow$ V50) and a variable containing the final score, V51, we pass the R formula $V51 ~ V1 + \ldots + V50$. The purpose of this section is to see if it is worth reducing this somewhat combersome formula. \\
-
-\subsubsection{LASSO}
 \label{lassoSec}
+
+Feature selection is an important aspect in data science. Some experiments can have an overwhelming number of variables, which can lead to computational inefficiency. In this subsection, we will explore selecting the most important overs in the run rate data.
+Given the lack of data already available, this may seem unnecessary, however it is an interesting consideration for future work. When we build the network in the next chapter, the model has to be passed a formula, telling it how to treat the variables. By default, since we have 50 overs worth of data (V1 $\rightarrow$ V50) and a variable containing the final score, V51, we pass the R formula $V51 ~ V1 + \ldots + V50$. The purpose of this section is to see if it is worth reducing this somewhat combersome formula. 
 LASSO, \textbf{L}east \textbf{A}bsolute \textbf{S}hrinkage and \textbf{S}election \textbf{O}perator, is a regression method for performing both normalisation, and feature selection. The term LASSO was introduced by \cite{tib}. Before showing how we implement this in R, and what it means for our project, it is useful to discuss the mathematical foundation of the method, as in section 2.1 of Tibshirani's paper. \\
 
 For $i=1,\ldots,N$, we have a dataset $(\textbf{X}^i,y_i)$. For the training dataset we use, $N=1436$. Specifically, we define $\textbf{X}^i = (x_{i1},\ldots,x_{ip})$ to be the vector of predictor variables (for us, $p=50$). Further, $y_i$ is the response variable. The assumption that these variables are independent is immediately satistfied by the nature of our study, since the runs scored in one over does not depend at all on the runs scored in the prior over. In addition, our data is normalised when it is passed the neural network, and so the normalisation assumption is also satistfied by default. 
@@ -198,7 +198,7 @@ For $i=1,\ldots,N$, we have a dataset $(\textbf{X}^i,y_i)$. For the training dat
 \begin{definition}
     We begin by letting $\beta = (\hat{\beta_1},\ldots,\hat{\beta_p})^T$, then the \textbf{LASSO estimate} $(\hat{\alpha}, \hat{\beta})$, for a tuning parameter $t \geq 0$ is given by
     \[
-        (\hat{\alpha},\hat{\beta}) = \text{argmin}\left{ \sum_{i=1}^N \left(y_i - \alpha - \sum_j \beta_jx_{ij} \right)^2 \right} \\
+        (\hat{\alpha},\hat{\beta}) = \text{argmin} \left\{ \sum_{i=1}^N \left(y_i - \alpha - \sum_j \beta_j x_{ij} \right)^2 \right\} \\
     \]
     Suject to $\sum_j |\beta_j| \leq t$. 
 \end{definition}
@@ -208,7 +208,7 @@ We have that $\forall t$, $\hat{a} = \bar{y}$. However since the data is normali
 We use the function \textit{cv.glmnet()}. This can be seen in the following code snippet.
 
 \begin{figure}[h]
-    \lstinputlisting[language=R, firstline=6, lastline=7]{../Code/Rscipts/lasso.R}
+    \lstinputlisting[language=R, firstline=6, lastline=7]{../Code/Rscripts/lasso.R}
     \caption{Fitting a LASSO model}
     \label{lassoCode}
 \end{figure}
@@ -216,7 +216,8 @@ We use the function \textit{cv.glmnet()}. This can be seen in the following code
 The plot produced by this code can be seen in Figure~\ref{lassoFig}.
 
 \begin{figure}[h]
-    \includegraphics[scale=0.4\linewidth]{figures/lasso.png}
+    \centering
+    \includegraphics[width=0.5\linewidth]{figures/lasso.png}
     \caption{LASSO Model Plot}
     \label{lassoFig}
 \end{figure}
@@ -224,7 +225,7 @@ The plot produced by this code can be seen in Figure~\ref{lassoFig}.
 The red dots here show the mean absolute error when the number of variables used in the model. We can see from this plot that using all of the overs results in the lowest MAE. Seeing which variables contribute the most can be done using the code in Figure~\ref{lassoVals}. 
 
 \begin{figure}[h]
-    \lstinputlisting[language=R, firstline=12, lastline=13]{../Code/Rscipts/lasso.R}
+    \lstinputlisting[language=R, firstline=12, lastline=13]{../Code/Rscripts/lasso.R}
     \caption{Contributing Variables}
     \label{lassoVals}
 \end{figure}

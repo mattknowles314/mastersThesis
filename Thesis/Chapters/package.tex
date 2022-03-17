@@ -44,9 +44,9 @@ The CSV containg the run rates that the network was initially trained on exits i
 Adding documentation to each function is done using the \verb|roxygen2| package. It is a case of simply writing docstrings above the functions in their respective files, and using \textit{usethis::document()} to build the file. In the docstring, the ``export'' tag is what allows the functions to be used directly by anyone who installs the package.  
 These pieces of documentation create new ``.Rd'' files in the ``/man'' directory. Storing them here allows them to be viewed alone by running the command \textit{help(``function'')} or \textit{?``function''} in an R console. 
 
-The overall structure of the \verb|CricNet| package can be seen in the directory tree.\\
+The overall structure of the \verb|CricNet| package can be seen in the directory tree in Figure~\ref{cricnetstruct}.\\
 
-\begin{figure}[h]
+\begin{figure}[ht]
 \caption{File structure for the CricNet package}
 
     
@@ -70,7 +70,7 @@ The overall structure of the \verb|CricNet| package can be seen in the directory
 .2 readme.md.
 }
 
-
+\label{cricnetstruct}
 \end{figure}
 
 \section{Using The Package}

@@ -124,4 +124,10 @@ Stern, S.~E. (2016).
   methodology to deal with modern scoring rates.
 \newblock {\em Journal of the Operational Research Society}, 67(12):1469--1480.
 
+\bibitem[Tibshirani, 1996]{tib}
+Tibshirani, R. (1996).
+\newblock Regression shrinkage and selection via the lasso.
+\newblock {\em Journal of the Royal Statistical Society: Series B
+  (Methodological)}, 58(1):267--288.
+
 \end{thebibliography}
