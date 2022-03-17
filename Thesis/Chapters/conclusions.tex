@@ -19,8 +19,10 @@ area our model doesn't incorperate at all, let alone well. Yet, it is a key aspe
 Using team specific data rather than an average of all games could be interesting thing to look into, but the computational cost of this would be high, and the accessability of the 
 method would be poor as a result, defeating the point of making this a system easily employable across cricket. \\
 
-As mentioned before, the lack of data available is a shame, but this is something that can't be helped due to the nature of the cricketing calender. It would be interesting to revisit this topic in a couple of years when more games have been played to see how results differ. One other avenue would be to look at combining the international games that have been included with domestic 50 over matches from around the world. At present, this would have increased the number of games by 436. 
+As mentioned before, the lack of data available is a shame, but this is something that can't be helped due to the nature of the cricketing calender. It would be interesting to revisit this topic in a couple of years when more games have been played to see how results differ. One other avenue would be to look at combining the international games that have been included with domestic 50 over matches from around the world. At present, this would have increased the number of games by 436. \\ 
 
 In appendix C, we discuss how the code used for this project is turned into a publicly available R package. In future, this will allow for easily experimenting with different neural 
 network parameters such as the activation function and hidden layer arrangements. It goes without saying that this lends itself well to future work at building a much better neural network for predicting cricket scores.
-Naturally, a lot of this is trial and error and so it would require a considerable amount of computing time to find an acceptable one. 
+Naturally, a lot of this is trial and error and so it would require a considerable amount of computing time to find an acceptable one. \\
+
+In Section~\ref{lassoSec}, we saw how the order of ``most important'' variables was different, and so we could use the package to change the formula used by the network to take advantage of the more important overs only. Again this raises several more variables, since we would need to experiment with different numbers of important overs and such.
