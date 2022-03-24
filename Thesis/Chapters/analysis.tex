@@ -7,9 +7,9 @@ that is in exactly the same form as the training data. We then give a brief math
 to test the model on. Finally, we give the network actual DLS game data to see how it does. In each of the cases, we perform similar analysis to compare the performance of the model.
 The main metric is the corrolation between actual results and those predicted by the network.
 
-\section{Fully trained Neural Network}
+\section{Fully Trained Neural Network}
 The first thing to look for is the normality of the errors in the predicted values. If the errors are normally distrubted (and ideally around 0),
-then it means that our predictions are sufficiently accurate. We produce a density plot of the errors using the \textit{ggplot2} library in R.
+then it means that our predictions are sufficiently accurate. We produce a density plot of the errors using the \verb|ggplot2| package in R.
 
 \begin{figure}[h]
     \centering
@@ -20,7 +20,7 @@ then it means that our predictions are sufficiently accurate. We produce a densi
     \label{errDistAndQQ}
 \end{figure}
 
-As we can see in this figure, there is a general bell curve, but not quite perfect as we have a bump between -0.5 and -0.75, as well as between 0.125 and 0.5. This 
+As we can see in this figure, there is a general bell curve, but not quite perfect as we have a bump between $-0.5$ and $-0.75$, as well as between $0.125$ and $0.5$. This 
 non-normality is reflected in the Q-Q plot of the error. Measuring accuracy of the results is harder for these value prediction networks is harder than in classification 
 problems. This is because we can't construct a prediction matrix. We don't expect the network to predict values down to the exact run, this would require a lot more 
 data than is available, and a large amount of experimentation. One metric we can therefore use to see how accurate our model is, is to calculate 
@@ -128,7 +128,7 @@ as previously described, and then feeding this into the neural network we built 
 Up until an error of around 2, we see this was more normally distributed than the original predictions. It is worth noting that this could be a side-effect of the fact that during the monte-carlo 
 simmulation, all the games are being drawn directly from a normal distribution. To see definatively how the model compares to the neural network with full data, we take the corrolation of the actual results with those of the predicted values. 
 We find that $\rho_{Network} = 0.9382$ and $\rho_{Monte-Carlo} = -0.0636$. So we see that when filling in the gaps with monte-carlo methods, the performance drops significantly. To further see this difference in performance, 
-we calculate the difference of the monte-carlo method predictions and the original predictions, and take a boxplot.
+we calculate the difference of the monte-carlo method predictions and the original predictions, and take a boxplot. \\
 
 \begin{figure}[h]
     \centering
@@ -159,7 +159,7 @@ here as this is the column in which the runs scored are stored, but to make this
 
 The function allows us to then see the actual predicted runs from both the complete neural network, and the neural network with 
 gaps filled in via the Monte-Carlo method. Once this is done, for each game in the test set we plot the actual score, the score predicted by the full neural network and 
-the score as predicted via the monte-carlo method. 
+the score as predicted via the monte-carlo method. \\ 
 
 \begin{figure}[h]
     \label{fullPredDist}
@@ -178,7 +178,7 @@ by means of a website or mobile application.
 \section{Unseen DLS Game Data}
 Since using Monte-Carlo methods didn't work too well, the next step is to look at seeing if something simpler will work. To do this, we take games that were decided through DLS, and 
 feed them into the network to see how well it does. Rather than filling in the blanks of overs not played, we just set the runrate to 0 in these overs, and feed the resulting games into the neural network. 
-We took 51 games which were decided by DLS, and looked at what the target set by DLS was. 
+We took 51 games which were decided by DLS, and looked at what the target set by DLS was. \\
 
 The results for this were actually better than for the monte carlo gap filling method. We achieved a corrolation in the results of 0.4983. Which is naturally lower than we would like, but a large improvement 
 on the prior method. We can see in Figure~\ref{DLSError} how the spread of points isn't in a narrow band as it was with monte carlo predictions. We can also see the errors that came along with the predictions.

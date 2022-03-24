@@ -7,7 +7,12 @@ The purpose of this small chapter is to give an overview of the data that is use
 \section{Data Origin}
 The primary source of data for carrying out this project was downloaded from ``cricsheet''\footnote{https://cricsheet.org/}
 and stored locally on a private server. In total there are 2167 individual matches of data. Each in a JSON format, 
-covering matches ranging from the $3^{rd}$ of January 2004 to the $20^{th}$ of July 2021.
+covering matches ranging from the $3^{rd}$ of January 2004 to the $20^{th}$ of July 2021. \\
+
+There is actually an R package, \verb|cricketdata| that allows for the direct import of data from ESPNCricinfo\footnote{https://www.epsncricinfo.com}
+and Cricsheet. However this package was published in February 2022, several months after the bulk of work on this project started. In hindsight, using this package 
+would have been a lot easier and saved a considerable amount of time. With that in mind, future work on the \verb|CricNet| package (See Appendix C)
+will incrorperate this package to streamline the analysis pipeline as a whole. 
 
 \section{Attributes}
 Each JSON file contains a considerable amount of metadata surrounding the match in question, along with 
@@ -19,7 +24,7 @@ were scored and how. It also details if a wicket was taken that ball, and how.
 
 \section{Pre-Processing}
 In order to clean data and make it usable, Python scripts were written to take the original JSON files and turn them into CSV files on which analysis could 
-be performed in R. These scripts made heavy use of the base-Python packages \verb|JSON| and \verb|CSV|.
+be performed in R. These scripts made heavy use of the base-Python libraries \verb|JSON| and \verb|CSV|.
 
 \section{Problems}
 When it comes to machine learning, the more data the better is a general rule. Now this can sometimes lead to sub-problems, such as overfitting. But on the whole 

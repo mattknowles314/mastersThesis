@@ -156,11 +156,11 @@ and biases into the parameter $\theta$. Then we update the weights and biases ea
     \theta^{t+1} = \theta^t - \alpha\frac{\partial E(X,\theta)}{\partial \theta}.
 \end{equation}
 
-With this in mind, we can now start to go through the Backpropogation process. Firstly, we need to calculate the partial differential of E with respect to a given weight $w_{ij}$. This calculation is given as follows:
+With this in mind, we can now start to go through the Backpropogation process. Firstly, we need to calculate the partial differential of E with respect to a given weight $w^k_{ij}$. This calculation is given as follows:
 
 \begin{align}
     \frac{\partial E(X,\theta)}{\partial w_{ij}^k} &= \frac{1}{2N}\sum_{d=1}^N\frac{\partial (y'_d-y_d)^2}{\partial w_{ij}^k} \\
-                                                   &= \frac{1}{N}\sum^N_{d=1} \frac{\partial E_d(X,\theta)}{\partial w_{ij}^k}
+                                                   &= \frac{1}{N}\sum^N_{d=1} \frac{\partial E_d(X,\theta)}{\partial w_{ij}^k}.
 \end{align}
 
 In the above, we have $E_d = \frac{1}{2}(y'_d-y_d)^2$.  We must emply the chain rule to calculate the partial derivavtive of $E_d$ with respect to an individual weight. 
@@ -168,7 +168,7 @@ Let $a_j^k$ be the activation value of node j in layer k before it is put throug
 
 \begin{equation}
     \label{errorchain}
-    \frac{\partial E}{\partial w_{ij}^k} = \frac{\partial E}{\partial a_j^k}\frac{\partial a_j^k}{\partial w_{ij}^k}
+    \frac{\partial E}{\partial w_{ij}^k} = \frac{\partial E}{\partial a_j^k}\frac{\partial a_j^k}{\partial w_{ij}^k}.
 \end{equation}
 
 In \ref{errorchain}, the first derivative on the righthand side, is known as the \textit{error}, often denoted as $\delta_j^k$. The second derivative on that side
@@ -241,7 +241,8 @@ The equation \ref{backpropform} is known as the \textit{Backpropogation formula}
 
 \subsection{RPROP+}
 Backpropogation is a powerful and widely used algorithm, In implementing the neural network in this project, we used a variation of it, known as 
-the ``RPROP+'' algorithm \cite{rprop}, short for \textbf{R}esiliant back\textbf{PROP}ogation. The $+$ is notation for showing we include backtracking in the algorithm. In Algorithm~\ref{RPROPC}, 
+the ``RPROP+'' algorithm \newline 
+\cite{rprop}, short for ``\textbf{R}esiliant back\textbf{PROP}ogation''. The $+$ is notation for showing we include backtracking in the algorithm. In Algorithm~\ref{RPROPC}, 
 we give the algorithm in detail. 
 
 \begin{algorithm}[h]
@@ -287,14 +288,20 @@ As mentioned previously, the $+$ refers to having backtracking in the algorithm.
 \end{definition}
 
 \section{Implementing the Neural Netowk}
-It was decided to implement the neural network using the R programming language, and more specifically, the \verb|neuralnet| package \cite{gunther}. This package 
+It was decided to implement the neural network using the R programming language, and more specifically, the \verb|neuralnet| package by \cite{gunther}. This package 
 allows us to specify all the parameters we wish for, and automatically performs the Backpropogation algorithm to train a network. The whole aspect of this process is the encapsulated in line 4
-of Figure~\ref{nnRcode}. It was decided to use a prebuilt package for this rather than building it ourself for optimisation reasons. 
+of Figure~\ref{nnRcode}. It was decided to use a prebuilt package for this rather than building it ourself since the code for this package has already been optimised, and so will be more efficient 
+than an implementation we come up with. Since we would have to take time out to optimsie the code and this would detract from the purpose of this project. \\  
 
-Recall the logistic function, $$\sigma(x) = \frac{1}{1+exp(-x)}.$$ For large values of x, this function treats them all the same, we must normalise the data before training the neural 
-network. Several versions of the network were ran with varying parameters. The final parameters decided were a learning rate, $\alpha$ of 0.02, and a hidden network of layers consitsting of 
+Recall the logistic function, $\sigma : \mathbb{R} \to (0,1)$, defined by:
+\[
+    \sigma(x) = \frac{1}{1+exp(-x)}.
+\]
+
+For extremely positive or negative values of $x$, $\sigma$ will return $-1$ or $1$, so we must normalise the data before training the neural 
+network. Once the data were normalised, several versions of the network were ran with varying parameters. The final parameters decided were a learning rate, $\alpha = 0.02$, and a hidden network of layers consitsting of 
 25 neurons, two layers of 10 neurons, and a final hidden layer of 3 neurons. In total, 1000 iterations were ran, each randomly initialising neuron values by drawing from the $N(0,1)$ distribution. 
-The code for this can be seen below.
+The code for this can be seen in Figure~\ref{nnRcode}.
 
 \begin{figure}[h] %MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
     \lstinputlisting[language=R, firstline=29,lastline=35]{../Code/Rscripts/scoreNet.R}
@@ -303,7 +310,7 @@ The code for this can be seen below.
 \end{figure}
 
 A plot of this network can be seen in Figure~\ref{bestnet}. Implementing the network this way is fairly efficient, and does not cause any issues with time-complexity. Infact, Backpropogation 
-was found to have a median time complexity of $\mathcal{O}(N^4)$ in \cite{lister}. Running 1000 training iterations took ~10 hours on an \textit{AMD-Ryzen 5 1600 Six-Core Processer @ 3.20Ghz} with 16GB of available RAM.
+was found to have a median time complexity of $\mathcal{O}(N^4)$ in \cite{lister}. Running 1000 training iterations took ~10 hours on an \textit{AMD-Ryzen 5 1600 Six-Core Processer @ 3.20Ghz} with 16GB of available RAM. \\
 
 More details on the results of the network will be available in the next chapter, although to outline how we obtained the data there, it is first a case of selecting the training repitition 
 with the lowest error on the training data. This is done using the \textit{which.min()} function in R, which looks through all the data in the vector we give it, and returns the index of the minimum value.

@@ -732,6 +732,7 @@ INPUT .\figures\uoylogo.png
 INPUT C:\Users\iikno\AppData\Local\MiKTeX\pdftex\config\pdftex.map
 INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
 INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
 INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
 INPUT .\main.toc
@@ -1098,7 +1099,6 @@ INPUT Chapters\wc2019sim.tex
 INPUT .\Chapters\wc2019sim.tex
 INPUT .\Chapters\wc2019sim.tex
 INPUT Chapters\wc2019sim.tex
-INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\tfm\jknappen\ec\tcrm1095.tfm
 INPUT .\Chapters\conclusions.tex
 INPUT Chapters\conclusions.tex
 INPUT .\Chapters\conclusions.tex
@@ -1127,10 +1127,10 @@ INPUT main.bbl
 INPUT .\main.bbl
 INPUT main.bbl
 INPUT main.aux
-INPUT C:\Users\iikno\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
-INPUT C:\Users\iikno\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
 INPUT C:\Users\iikno\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tctt0900.pk
 INPUT C:\Users\iikno\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tctt0900.pk
+INPUT C:\Users\iikno\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
+INPUT C:\Users\iikno\AppData\Local\MiKTeX\fonts\pk\ljfour\jknappen\ec\dpi600\tcrm1095.pk
 INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx10.pfb
 INPUT C:\Users\iikno\AppData\Local\Programs\MiKTeX\fonts\type1\public\amsfonts\cm\cmbx12.pfb

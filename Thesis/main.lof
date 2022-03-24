@@ -26,19 +26,19 @@
 \contentsline {figure}{\numberline {5.2}{\ignorespaces Graph showing the shape of different activation functions.\relax }}{25}{}%
 \contentsline {figure}{\numberline {5.3}{\ignorespaces R code to implement the neural network\relax }}{29}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {6.1}{\ignorespaces Error distribution with Q-Q plot\relax }}{30}{}%
-\contentsline {figure}{\numberline {6.2}{\ignorespaces Implementing a Monte-Carlo Simmulation fo Cricket Matches\relax }}{32}{}%
-\contentsline {figure}{\numberline {6.3}{\ignorespaces 50-Over simmulation of $n=5$ and $n=100$\relax }}{33}{}%
-\contentsline {figure}{\numberline {6.4}{\ignorespaces Monte-Carlo Simmulation Error Density\relax }}{33}{}%
-\contentsline {figure}{\numberline {6.5}{\ignorespaces Boxplot of prediction differences\relax }}{34}{}%
-\contentsline {figure}{\numberline {6.6}{\ignorespaces R function for unscaling data\relax }}{34}{}%
-\contentsline {figure}{\numberline {6.7}{\ignorespaces Plot of predictions for all methods\relax }}{35}{}%
-\contentsline {figure}{\numberline {6.8}{\ignorespaces Monte-Carlo Simmulation Error Density\relax }}{35}{}%
+\contentsline {figure}{\numberline {6.1}{\ignorespaces Error distribution with Q-Q plot\relax }}{31}{}%
+\contentsline {figure}{\numberline {6.2}{\ignorespaces Implementing a Monte-Carlo Simmulation fo Cricket Matches\relax }}{33}{}%
+\contentsline {figure}{\numberline {6.3}{\ignorespaces 50-Over simmulation of $n=5$ and $n=100$\relax }}{34}{}%
+\contentsline {figure}{\numberline {6.4}{\ignorespaces Monte-Carlo Simmulation Error Density\relax }}{34}{}%
+\contentsline {figure}{\numberline {6.5}{\ignorespaces Boxplot of prediction differences\relax }}{35}{}%
+\contentsline {figure}{\numberline {6.6}{\ignorespaces R function for unscaling data\relax }}{35}{}%
+\contentsline {figure}{\numberline {6.7}{\ignorespaces Plot of predictions for all methods\relax }}{36}{}%
+\contentsline {figure}{\numberline {6.8}{\ignorespaces Monte-Carlo Simmulation Error Density\relax }}{36}{}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {B.1}{\ignorespaces Final trained network. \relax }}{43}{}%
+\contentsline {figure}{\numberline {B.1}{\ignorespaces Final trained network. \relax }}{44}{}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {C.1}{\ignorespaces Default File Structure for an R Package\relax }}{44}{}%
-\contentsline {figure}{\numberline {C.2}{\ignorespaces File structure for the CricNet package\relax }}{46}{}%
+\contentsline {figure}{\numberline {C.1}{\ignorespaces Default File Structure for an R Package\relax }}{45}{}%
+\contentsline {figure}{\numberline {C.2}{\ignorespaces File structure for the CricNet package\relax }}{47}{}%

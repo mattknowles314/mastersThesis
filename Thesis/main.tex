@@ -74,20 +74,31 @@
 \input{titlepage}
 
 \section*{Abstract}
-We present a Neural Network model for predicting scores in the game of cricket. This follows on from a discussion the current method employed by the International Cricket Council for resetting score targets when a match is cut short, known as the DLS system \cite{stern}.
-Some exploratory data analysis is performed prior to building the model, this is done in order to aid with making model deployment 
-decisions later on in the paper. When building the network, we present the mathematical theory accompanied by code snippets detailing the construction. The theory concerns not only the actual structure of a neural network, but the algorithms used for training it.
-We then analyse the model on three test sets of data to measure the performance of it in three scenarios. Finally, we deploy our model in place of the current DLS method on the games from the 2019 Cricket World Cup to see if the outcome of the tournament differs. 
+A Neural Network model for predicting scores in the sport of Cricket is presented. The aim is to use our model to improve upon the results of the method currently employed by 
+the International Cricket Council (ICC). We explore this current method, known as the DLS method \cite{stern} in 
+some detail before going on to develop our own model. This is followed by some exploratory data analysis, which is imperative in making certain assumptions that aid 
+in the building of the Neural Network. For the Neural Network, we take an in-depth look at the mathematical underpinning of building and training such a model. This 
+is accompanied by code snippets demonstrating how these methods are implemented in a high-level programming language. We then perform an analysis of the results 
+of our model before applying it to the data from the ICC 2019 Cricket World Cup, in order to see how it faired against the DLS. 
+We find that our method does not predict scores perfectly, but does produce slightly more attainable score targets than DLS- as illustrated by the World Cup simulation 
+study. 
 
 \section*{Acknowledgements}
 The author would like to thank Dr. Jessica Hargreaves for their invaluable supervision, encouragement and advice throughout this project. In addition,
-many thanks to Michael Najdan at Kent County Cricket Club for their insight into how data is used in the professional game of cricket, and to Harrison Allen at Yorkshire County Cricket Club for showing me how limited-overs data was put into practice in preperation for games. 
-I couldn't write a dissertation about cricket without mentioning the Uni of York Men's Cricket Club- it's been wonderful to share the playing field with you all over the past 4 years. Go well.
-Finally, I would like to dedicate this dissertation to my friends from Lindley G; there were times I thought I would never get to write a dissertation, but you all stood by me through some very trying times, and for that I will be forever grateful. 
+many thanks to Michael Najdan at Kent County Cricket Club for their insight into how data is used in the professional game of cricket, and to Harrison Allen at Yorkshire County Cricket Club for demonstrating how limited-overs data was put into practice in preperation for games. 
+I couldn't write a dissertation about cricket without mentioning the University of York Men's Cricket Club- it has been wonderful to share the playing field with you all over the past 4 years.
+Finally, I would like to dedicate this dissertation to my friends from Lindley G; thank you for being the most wonderful and supportive people I've ever met. You'll never know how much you mean to me.
+
+\section*{Statment of Originallity}
+The enclosed content is my own work. Any work taken from another source has been appropriately acknowledged and referenced. 
 
 \section*{Notes}
 All code written in support of this project can be found on GitHub at: \\
-\textit{https://github.com/mattknowles314/mastersThesis}.
+\begin{itemize}
+    \item \textit{https://github.com/mattknowles314/mmathThesis}. 
+    \item \textit{https://github.com/mattknowles314/CricNet}.
+\end{itemize}
+
 
 \setcounter{tocdepth}{3}
 \tableofcontents
