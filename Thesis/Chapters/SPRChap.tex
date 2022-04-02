@@ -12,7 +12,7 @@ time complexity of the algorithms used.
 \section{A Brief Introduction to Neural Networks}
 Neural networks (NNs) have been the subject to a lot of discussion and exploration in recent years. They are a machine learning method that is being applied to many problems
 in all sorts of fields, such as finance \cite{nnstock} and medicine \cite{nncancer}.  
-The network will be trained on runrate data, so for each game we have calculated the evolution of the runrate,
+The network will be trained on run rate data, so for each game we have calculated the evolution of the run rate,
 and then we have the overall score for that game in the final column of the matrix. An example of a network can be seen in Figure~\ref{nnexample1}. The first layer is the 
 input layer, and the last layer gives the predictions. The middle layers are hidden and where the work of the network is done. \\
 
@@ -38,10 +38,10 @@ is the better choice for predicting how stock values will change. With these mot
 
 \section{Builiding The Network}
 %Rewrite this bit
-Our input layer will have 50 nodes, one for the runrate at the end of each over. We will begin with 5 hidden layers, although this is subject to change. The output layer
+Our input layer will have 50 nodes, one for the run rate at the end of each over. We will begin with 5 hidden layers, although this is subject to change. The output layer
 will of course only have one node, the value of which will predict the score of the game. 
 
-We begin by looking at a single node. The proper name for each node is ``perceptron''. Each perceptron takes in the values of a vector, and an extra ``+1'' intercept term. The perceptron then outputs a value $h$ given by \ref{percepout}:
+We begin by looking at a single node. The proper name for each node is ``perceptron''. Each perceptron takes in the values of a vector, and an extra ``+1'' intercept term. The perceptron then outputs a value $h$ given by Equation~\ref{percepout}:
 
 \begin{equation}
     \label{percepout}
@@ -57,7 +57,7 @@ The two common choices are:
     f(z) &= tanh(z)
 \end{align}
 
-The comparrison of these two functions can be seen in \ref{actfig}.
+The comparrison of these two functions can be seen in Figure~\ref{actfig}.
 
 \begin{figure}[h]
     \centering
@@ -67,7 +67,7 @@ The comparrison of these two functions can be seen in \ref{actfig}.
 \end{figure}
 
 We will be using Equation~\ref{sigmoid_func} as our activation function. There is some leniancy over which activation function is used. The paper \cite{sibi} found that actually the more important aspect of 
-the network is the choice of training algorithm, along with other parameters such as learning rate $\alpha$. For now, lets look at the network we're going to use. The initial neural network that we're building. 
+the network is the choice of training algorithm, along with other parameters such as learning rate $\alpha$. For now, lets look at the network we're going to use. 
 
 We begin with getting from the input layer, denoted $L_0$. Each node in $L_0$ takes a value $a^{(0)_i}$ for $i \in \{1,2,\ldots,50\}$. We use $\textbf{a}^{(0)}$ to denote the vector
 containing these values. For every node in $L_0$, we have 25 connections coming away, one going to each of the nodes in $L_1$. 25 was an arbitraty choice for the size of $L_1$, and is

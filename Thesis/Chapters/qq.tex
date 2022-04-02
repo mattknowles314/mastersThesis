@@ -37,13 +37,13 @@ The following lemma will allow us to use a useful result in building Q-Q plots.
 \end{lemma}
 
 \begin{proof}
-    We have the standard result $\frac{d}{dx}\left(exp(-x)\right)$ = $-exp(-x)$. Now since $exp(x)$ is by definition strictly increasing, exp(-x) is strictly decreasing. It 
+    We have the standard result $\frac{d}{dx}\left(exp(-x)\right)$ = $-exp(-x)$. Now since $exp(x)$ is by definition strictly increasing, $exp(-x)$ is strictly decreasing. It 
     therefore follows that $-exp(-x)$ is strictly increasing. From the fact $\frac{1}{\sqrt{2\pi}}$, and the prior argument, it follows that $\Phi(x)$ is strictly increasing.
     The fact that this is the case on the entire domain of $exp(x)$, means that $\Phi(x)$ is also monotonic. 
 \end{proof}
 
-The reason we need to show $\Phi(x)$ fits this in particular property is that if for some distribution with CDF F, F is continuous and strictly monotonically increasing, then 
-the \textit{Quantile Function} Q is given by $Q = F^{-1}$. Infact, the standard normal distribution's quantile function, $\Phi^{-1}(p)$ $p \in (0,1)$, is called the \textit{Probit}
+The reason we need to show $\Phi(x)$ fits this in particular property is that if for some distribution with CDF $F$, $F$ is continuous and strictly monotonically increasing, then 
+the \textit{Quantile Function} $Q$ is given by $Q = F^{-1}$. Infact, the standard normal distribution's quantile function, $\Phi^{-1}(p)$ $p \in (0,1)$, is called the \textit{Probit}
 function. The Probit function is defined in terms of the relative error function. Formally, this is given by the following:
 
 \begin{definition}

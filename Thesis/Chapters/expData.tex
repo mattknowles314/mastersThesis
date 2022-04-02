@@ -7,7 +7,7 @@ in the world of statistics, making assumptions is dangerous, and so in order to 
 This chapter not only provides that evidence, but allows us to become more familiar with our dataset, and see how modern data fits in with the previous work done in this 
 field. \\
 We begin by looking at the probability densities in the Fall of Wicket variables. F.o.W is key in the DLS method, so we do this to get an idea of what lies underneath the
-surface. We are able to explain the way F.o.W distributions are shaped based onthe way cricket games unfold. This consistency allows us to make an assumption about Run Rates
+surface. We are able to explain the way F.o.W distributions are shaped based on the way cricket games unfold. This consistency allows us to make an assumption about Run Rates
 later in the chapter too. \\
 As with any dataset, there are outliers, and the number of such will have influence on the error function that we use in later models. For that reason, we give brief discussion 
 to this, before going on to look at whether or not scores in games of cricket are normally distributed around some mean. \\
@@ -24,13 +24,13 @@ individual team in the dataset, and in Figures~\ref{ovrdens1fow}-\ref{ovrdens9fo
     \centering
     \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[scale=0.3]{figures/fow1density.png}
+        \includegraphics[scale=0.28]{figures/fow1density.png}
         \caption{Density of all teams for first wicket falling}
         \label{alldens1fow}
     \end{minipage}
     \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[scale=0.3]{figures/fow1densFull.png}
+        \includegraphics[scale=0.28]{figures/fow1densFull.png}
         \caption{Overall density plot for FOW 1}
         \label{ovrdens1fow}
     \end{minipage}
@@ -40,13 +40,13 @@ individual team in the dataset, and in Figures~\ref{ovrdens1fow}-\ref{ovrdens9fo
     \centering
     \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[scale=0.3]{figures/fow1density.png}
+        \includegraphics[scale=0.28]{figures/fow1density.png}
         \caption{Density of all teams for fith wicket falling}
         \label{alldens5fow}
     \end{minipage}
     \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[scale=0.3]{figures/fow5densFull.png}
+        \includegraphics[scale=0.28]{figures/fow5densFull.png}
         \caption{Overall density plot for FOW 5}
         \label{ovrdens5fow}
     \end{minipage}
@@ -56,13 +56,13 @@ individual team in the dataset, and in Figures~\ref{ovrdens1fow}-\ref{ovrdens9fo
     \centering
     \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[scale=0.3]{figures/fow9density.png}
+        \includegraphics[scale=0.28]{figures/fow9density.png}
         \caption{Density of all teams for ninth wicket falling}
         \label{alldens9fow}
     \end{minipage}
     \begin{minipage}{0.4\textwidth}
         \centering
-        \includegraphics[scale=0.3]{figures/fow9densfull.png}
+        \includegraphics[scale=0.28]{figures/fow9densfull.png}
         \caption{Overall density plot for FOW 9}
         \label{ovrdens9fow}
     \end{minipage}
@@ -72,7 +72,7 @@ In Figure~\ref{ovrdens1fow}, we see the density is heavily skewed to the left. T
 their innings by using their best bowlers, who will be hunting to get wickets early on. In Figure~\ref{ovrdens5fow}, we see a much more normally distributed
 density function. But in actual fact, we see this interesting second, smaller peak appearing lower down in the score. Does this make sense? It's certainly 
 not suprising. What these two peaks exemplify is the fact games can go heavily in favour of the bowling team, which can be seen in the first small peak,
-wherein they have taken a lot of wickets in quick succession, meaning the later order batters are coming in earlier than usual. Secondly, it shows when the 
+wherein they have taken a lot of wickets in quick succession, meaning the lower order batters are coming in to bat earlier than usual. Secondly, it shows when the 
 batting team is having a good day, because we have this much larger peak around the 200 runs mark.\\
 
 Finally, in Figure~\ref{ovrdens9fow}, we can see that the earlier bowling advantage peak is much higer, because the lower order batters are traditionally less skilled 
@@ -81,7 +81,7 @@ This corresponds to the scenario in which the earlier batters have laid a good f
 
 \section{Outliers in Runs Data}
 \label{mse}
-In the next chapter, it will be necessary to choose a loss function for improving the neural network that we create. To aid in determining this, we need to look at the
+In the next chapter, it will be necessary to choose a loss function for improving the neural network that we create. To aid in determining which function to use, we need to look at the
 spread of runs scored in a full innings of data. This can be seen in Figure~\ref{runsbox}.
 
 \begin{figure}[h]
@@ -149,9 +149,9 @@ with the gaps filled, we can pass the simmulated run rates to the neural network
 
 \begin{figure}[h]
     \centering
-    \subfloat[\centering Average runnrate per over]{{\includegraphics[width=.4\linewidth]{figures/avgRR.png} }}
+    \subfloat[\centering Average run rate per over]{{\includegraphics[width=.4\linewidth]{figures/avgRR.png} }}
     \qquad
-    \subfloat[\centering Run Rate Standard deviation per over]{{\includegraphics[width=.4\linewidth]{figures/sdrr.png} }}
+    \subfloat[\centering Run rate Standard deviation per over]{{\includegraphics[width=.4\linewidth]{figures/sdrr.png} }}
     \caption{Error distribution with Q-Q plot}
     \label{errDistQQ3}
 \end{figure}
@@ -161,8 +161,8 @@ a wicket falls off due to the end of the innings coming closer. If we break the 
 from a tactical perspective\footnote{This is to do with different bowling options being used to be more effective as the pitch conditions change}, we can model the segments.
 A game of ODI-cricket can roughly be broken up to three segments, the first 10 overs, known as the ``powerplay'', where teams are slightly more conservative and look to build a 
 foundation on which the rest of the game is built. The middle overs are 11-35. The idea of this game is to continue building on the foundation, and save wickets. The last 
-15 overs are where more risks are taken, as the value of a wicket decreases. The mentality is to double your score from the first 35 in the last 15, that is why we see the massive 
-increase in Run Rate in these last overs. \\
+15 overs are where more risks are taken, as the value of a wicket decreases. The rule of thumb for the batting team is to double your score from the first 35 in the last 15, which is why we see the massive 
+increase in run rate in these last overs. \\
 
 Using this information, we can create density plots of the average Run Rate in these overs, as in figures 4.13-4.15. 
 
@@ -179,10 +179,10 @@ Using this information, we can create density plots of the average Run Rate in t
       \includegraphics[width=\linewidth]{figures/finaloversdens.png}
       \caption{Final Overs density}
     \endminipage
-    \label{rrDensities}
+    \label{rrDensitiesPlot}
 \end{figure}
 
-The run rates are  in different stages of the game roughly normally distributed, which can be seen in Figure~\ref{rrDensities}. It is reasonable that due to the Central Limit Theorem, with more observations, these distribiutions would be smoothed out and 
+The run rates are  in different stages of the game roughly normally distributed, which can be seen in Figure~\ref{rrDensitiesPlot}. It is reasonable that due to the Central Limit Theorem, with more observations, these distribiutions would be smoothed out and 
 appear more normally distributed than it does at present. This is imporant, because it allows us to investigate using a monte-carlo method to fill in gaps 
 later on in the project.
 
@@ -203,7 +203,7 @@ For $i=1,\ldots,N$, we have a dataset $(\textbf{X}^i,y_i)$. For the training dat
     Suject to $\sum_j |\beta_j| \leq t$. 
 \end{definition}
 
-We have that $\forall t$, $\hat{a} = \bar{y}$. However since the data is normalised, by defintion $\bar{y}=0$ and so we can ignore the parameter $\alpha$ altogether. Although not discussed directly here, the authors do go on to propose algorithms for computing solutions to this problem in chapter 6 of their paper. These algorithms are employed directly by the R package \verb|glmnet|, which we can now emply. \\
+We have that $\forall t$, $\hat{a} = \bar{y}$. However since the data is normalised, by defintion $\bar{y}=0$ and so we can ignore the parameter $\alpha$ altogether. Although not discussed directly here, the authors do go on to propose algorithms for computing solutions to this problem in chapter 6 of their paper. These algorithms are employed directly by the R package \verb|glmnet|, which we can now use. \\
 
 We use the function \textit{cv.glmnet()}. This can be seen in the following code snippet.
 

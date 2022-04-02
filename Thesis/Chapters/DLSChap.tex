@@ -22,7 +22,7 @@ average total score in first class cricket, but with one-day rules imposed.
 
 Because we don't have access to actual values for $Z_0$ or $b$, a plot to see what Equation~\ref{Zueq} looks 
 like was created by using 3 sample values for $Z_0$. For $b$, it was a process of trial and error to find a value
-that resulted in the graph having a similar shape to original figures in the D/L paper. Some intuition was required here 
+that resulted in the graph having a similar shape to original figures in the DL paper. Some intuition was required here 
 based on our own experience in cricket to find a reasonable starting value. In future, it may be worth taking the time to 
 mine through all available data and obtain a (possibly more accurate) estimate in a similar way to their method. 
 
@@ -34,7 +34,7 @@ mine through all available data and obtain a (possibly more accurate) estimate i
 \end{figure}
 
 However, we have not yet looked at what happens when wickets are lost. To introduce this metric, Equation~\ref{Zueq}
-is revised to incorperate the scenario that $w$ wickets have been lost, and that there are $u$ overs remaining
+is revised to incorperate the scenario that $w$ wickets have been lost, and that there are $u$ overs remaining.
 The revised equation is given as follows:
 
 \begin{equation}
@@ -71,23 +71,24 @@ practically.
     Assume there is a break in the second innings (due to rain or similar), which results in the second team missing some overs.
     Let $u_1, u_2$ be the number of overs played before the break and available after it respectively. We impose the condition
     that $u_2 < u_1$. Further assume that at the time of the break, the second team had lost $w$ wickets. The aim is to adjust the required score to account
-    for the $u_1 - u_2$ overs they have lost. The winning ``resources'' available are given by
+    for the $u_1 - u_2$ overs they have lost. The winning ``resources'' available are given by the following equation.
 
     \[
         R_2 = [1-P(u_1,w)+P(u_2,w)].
     \]  
 
-    Which means, if the first team batting scored S runs, then the new tartget is given by
+    The values for $P(u_1,w)$ and $P(u_2,w)$ can be looked up from the resource table.
+    Therefore, if the first team batting scored S runs, then the new tartget is given by
 
     \[
-        T = \ceil{SR_2}
+        T = \ceil{SR_2}.
     \]  
 \end{example}
 
 \section{Improvements by Stern}
-We now look at the DLS method, introduced in $\cite{stern}$ to extend the original D/L method. The motivation for DLS was that very high scoring
+We now look at the DLS method, introduced in $\cite{stern}$ to extend the original DL method. The motivation for DLS was that very high scoring
 cricket matches presented a pattern of straightening towards average run rate which is not uniform across the innings considered (around 500). To account for 
-this, Stern introduces an additional damping factor to the equation for D/L. The updated equation is now given by:
+this, Stern introduces an additional damping factor to the equation for DL. The updated equation is now given by:
 
 \begin{equation}
     \label{dls}
@@ -112,7 +113,7 @@ The constants $c_1,\ldots,c_4$ are based on what Stern describes as a ``detailed
 
 \section{Extension: Bayesian Modelling}
 This section will look at the work of $\cite{dlbayes}$. Bayesian modelling was used to try and improve the score predictions
-of the D/L method. The authors used the same dataset as we are using for this dissertation, although over a slightly smaller range of games.
+of the DL method. The authors used the same dataset as we are using for this dissertation, although over a slightly smaller range of games.
 Only games between 2005-2017 are used, whereas our dataset goes up to 2021. Note that to keep consistent with the fact we are talking about a different
 model now, we swich from using $Z(u,w)$, to using $R(u,w)$, as to keep consistency with the different papers being looked at.
 They start by introducing the following nonlinear regression model:
@@ -125,12 +126,12 @@ They start by introducing the following nonlinear regression model:
 Where $\bar{R}(u,w)$ is the sample average of runs scored by a team from the total number of matches in the data set. We have $m(u,w;\theta)$
 as the corresponding modeled population average of runs scored by a team when a considerable amount of games are taken into account. $\theta$ denotes 
 a vector of parameters that will be specified later on. Since $R(u,w)$ is not calculated in all games, the average score is taken over all matches where
-scores are present, this is given by $n_{uw}$. The sample mean $\bar{R}(u,w)$ is the calculated over this quantity. This is actually the point which motivates
-using Bayesian statistics to extend the D/L method. The authors report that approximately $26.8\%$ of values for $R(u,w)$ were missing in the dataset, so by 
+scores are present, this is given by $n_{uw}$. The sample mean, $\bar{R}(u,w)$ is then calculated over this quantity. This is actually the point which motivates
+using Bayesian statistics to extend the DL method. The authors report that approximately $26.8\%$ of values for $R(u,w)$ were missing in the dataset, so by 
 using a Bayesian inference model, we can use the posterior predictive distribution to account for missing values. Which in turn should increase the 
 predictive accuracy of this model. \\
 
-We return now to look at the $m(u,w;\theta)$ parameter that appears in \ref{dlRegress}. This mean function, based on the plots produced in the original D/L
+We return now to look at the $m(u,w;\theta)$ parameter that appears in Equation~\ref{dlRegress}. This mean function, based on the plots produced in the original DL
 paper, (see Figure~\ref{Zugraph} for an example), the authors adopted an exponential decay. We can see why this choice makes sense from Figure~\ref{Zugraph}.
 The resources considered by this method, namely runs and wickets, do decrease exponentially as a game progresses. $m(u,w;\theta)$ depends on the parameters
 $a_w = Z_0(w)$ and $b_w = b(w)$, each one depending on the number of wickets fallen at that given time, with u overs remaining. We therefore have:
