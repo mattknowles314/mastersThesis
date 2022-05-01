@@ -20,8 +20,11 @@
 \usepackage{algorithm}
 \usepackage{algpseudocode}
 \usepackage{tikz}
-\usepackage{dirtree}
-\usepackage[Conny]{fncychap}
+\usepackage{dirtree} %For directory tree in Appendix C
+\usepackage[Bjornstrup]{fncychap} %For fancy chapter headings
+\usepackage{mdframed}
+
+
 \usepackage{epigraph}
 \usetikzlibrary{positioning}
 \pagestyle{fancy}
@@ -38,11 +41,11 @@
 
 \DeclarePairedDelimiter{\ceil}{\lceil}{\rceil}
 
-\newtheorem{theorem}{Theorem}[section]
-\newtheorem{remark}[theorem]{Remark}
-\newtheorem{definition}[theorem]{Definition}
-\newtheorem{example}[theorem]{Example}
-\newtheorem{lemma}[theorem]{Lemma}
+\newmdtheoremenv{theorem}{Theorem}[section]
+\newmdtheoremenv{remark}[theorem]{Remark}
+\newmdtheoremenv{definition}[theorem]{Definition}
+\newmdtheoremenv{example}[theorem]{Example}
+\newmdtheoremenv{lemma}[theorem]{Lemma}
 
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
@@ -76,7 +79,7 @@
 
 \section*{Abstract}
 Cricket is a sport very sensitive to interruptions. Light rain or fading light can cause a game to be cut short. For this reason 
-the International Cricket Council (ICC) employ a method to reset score targets in such an event. In this dissertation, we explore this method 
+the International Cricket Council (ICC) employ a method to reset score targets in such an event to make a match still fair given the reduced playing time. In this dissertation, we explore this particular method 
 before proposing a new method by using Neural Networks to predict scores. The development of the score prediction model is discussed through 
 both mathematics and computer code to demonstrate the implementation of the model. We then compare several variations of this Neural Network method 
 on an unseen set of cricket match data, before employing it on data from the 2019 Cricket World Cup, to see how the tournament would have differed in 
@@ -84,11 +87,11 @@ light of the new method. We found that our method didn't change the outcome of t
 
 \section*{Acknowledgements}
 I would like to thank Dr. Jessica Hargreaves for their invaluable supervision, encouragement and advice throughout this project. In addition,
-many thanks to Michael Najdan at Kent County Cricket Club for their insight into how data is used in the professional game of cricket, and to Harrison Allen at Yorkshire County Cricket Club for demonstrating how limited-overs data was put into practice in preperation for games. 
+many thanks to Michael Najdan at Kent County Cricket Club for their insight into how data is used in the professional game of cricket, and to Harrison Allen at Yorkshire County Cricket Club for demonstrating how limited-overs data was put into practice in preparation for games. 
 I couldn't write a dissertation about cricket without mentioning the University of York Men's Cricket Club- it has been wonderful to share the playing field with you all over the past 4 years.
 Finally, I would like to dedicate this dissertation to my friends from Lindley G; thank you for being the most wonderful and supportive people I've ever met. You'll never know how much you mean to me.
 
-\section*{Statment of Originallity}
+\section*{Statement of Originality}
 The enclosed content is my own work. Any work taken from another source has been appropriately acknowledged and referenced. 
 
 \section*{Notes}
@@ -128,6 +131,7 @@ All code written in support of this project can be found on GitHub at: \\
 \input{Chapters/net.tex}
 
 \input{Chapters/package.tex}
+
 
 \bibliographystyle{apalike}
 \bibliography{refs}{}

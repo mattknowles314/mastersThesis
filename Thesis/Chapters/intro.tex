@@ -37,10 +37,10 @@ To illustrate this, an abstract version of a cricket field can be seen in Figure
 and gets one run by running to the opposite box. 
 
 \begin{figure}[h]
-    \label{pitch}
     \centering
     \includegraphics[width=0.7\linewidth]{figures/ptich.png}
     \caption{A basic cricket field}
+    \label{pitch}
 \end{figure}
 
 The game of cricket itself has two main forms. In this project we will only look at ``limited-overs cricket''. Cricket is played in ``overs'', each one consisting of 6 individual bowls delivered consecutively by the same bowler from one end of the pitch.
@@ -88,13 +88,11 @@ The main aim of this project is to look at methods for \textit{predicting} crick
 and \textit{projecting} the scores, which is commonplace in the game at the minute. Projecting scores assumes a constant run rate, which it will be seen 
 in later chapters is not really the case. However, we can make use of the patterns in run rates to try and extract a predictable score. At the lowest level,
 we are going to train a neural network with inputs being run rates and an output being score. We can then pass the run rates of a game that gets cut short 
-to this network, and it will try to predict a score based on the patterns in the runrates of that game.
+to this network, and it will try to predict a score based on the patterns in the run rates of that game.
 
-The runrate is defined by the following formula, \\
-
-\[
-    \text{Run Rate}  = \frac{\text{Total Runs Scored}}{\text{Total Overs Bowled}}.
-\]\\
+\begin{definition}
+    Run Rate  = $\frac{\text{Total Runs Scored}}{\text{Total Overs Bowled}}$.
+\end{definition}
 
 This rate evolves as the game flows, and can skyrocket or plummet as one team or the other begins to outplay their opponent. To our knowledge, a run rate 
 based neural network does not exist in the literature, and so our model is somewhat novel.
@@ -145,3 +143,28 @@ will more than likely lead to more accurate and refined predictions. \\
 Machine learning is certainly not new to cricket, \cite{kampakis} managed to predict the winners in English T20 cricket in ``almost two thirds'' of their test cases. While this 
 is a fantastic result, in this dissertation we have not concerned ourselves with directly predicting winners, but actual scores. This is again something that is hard to find 
 in cricket specific literature, so we have taken inspiration from industries such as finance, as well as other sports in building our model. 
+
+\section{Process Outline}
+
+In Chapter~\ref{modelAnalysis}, we employ the model by predicting cricket scores on unseen data. However, the aim of this project is to 
+reduce a score to a fair target. Here, we outline how the process our model takes to reduce a target. \\
+
+\begin{figure}[h]
+    \includegraphics[scale=0.6]{figures/procchart.png}
+    \caption{Flow chart outlining new process for reducing score targets}
+    \label{chart}
+\end{figure}
+
+The process box ``pass run rates to neural network model'' has several variations discussed in Sections~\ref{matchSim} and \ref{unsGame}. Since not a full innings 
+has been completed, there will be gaps remaining overs which don't have a run rate to input. Initially in Section~\ref{matchSim}, we try to use Monte-Carlo simulation to simulate a full innings 
+by drawing sample run rates from distributions discussed in Section~\ref{exprr}. In Section~\ref{unsGame} we pass games that were decided by Duckworth-Lewis-Method 
+to the network without any simulation to see how well the network predicts scores in those games. As it turns out, the network performs better doing the latter of these two 
+sub-methods, and so when it comes to deploying the method, we don't use simulation to input missing values- we just pass the run rates reduce the score 
+given by the number of overs achieved. 
+
+\begin{example}
+    \label{redEx}
+    Suppose 27 overs are played in the second innings. Play is interrupted and our method gives a value $R$ for the number of 
+    runs the team would have scored in 50 overs. When play is resumed, there is time for 8 overs to be played, meaning the batting team 
+    will have a total of 35 overs. As a proportion, this is $\frac{35}{50}=0.7$ of a full game, so we set the score target as $T = 0.7R$.
+\end{example}

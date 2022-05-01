@@ -188,8 +188,8 @@ Using this information, we can create density plots of the average Run Rate in t
     \label{rrDensitiesPlot}
 \end{figure}
 
-The run rates are  in different stages of the game roughly normally distributed, which can be seen in Figure~\ref{rrDensitiesPlot}. It is reasonable that due to the Central Limit Theorem, with more observations, these distributions would be smoothed out and 
-appear more normally distributed than it does at present. This is imporant, because it allows us to investigate using a monte-carlo method to fill in gaps 
+The run rates are  in different stages of the game roughly normally distributed, which can be seen in Figure 4.12-4.14. It is reasonable that due to the Central Limit Theorem, with more observations, these distributions would be smoothed out and 
+appear more normally distributed than it does at present. This is important, because it allows us to investigate using a monte-carlo method to fill in gaps 
 later on in the project.
 
 \subsection{Feature Selection}
@@ -200,8 +200,8 @@ Given the lack of data already available, this may seem unnecessary, however it 
 LASSO, \textbf{L}east \textbf{A}bsolute \textbf{S}hrinkage and \textbf{S}election \textbf{O}perator, is a regression method for performing both normalisation, and feature selection. The term LASSO was introduced by \cite{tib}. Before showing how we implement this in R, and what it means for our project, it is useful to discuss the mathematical foundation of the method, as in section 2.1 of \cite{tib}. \\
 
 For $i=1,\ldots,N$, we have a dataset $(\textbf{X}^i,y_i)$. For the training dataset we use, $N=1436$. Specifically, we define $\textbf{X}^i = (x_{i1},\ldots,x_{ip})$ to be the vector of predictor variables (for us, $p=50$). Further, $y_i$ is the response variable. The assumption that these variables are independent is immediately satistfied by the nature of our study, since the runs scored in one over does not depend at all on the runs scored in the previous over. This is because a lot changes from over-to-over and even ball-to-ball;
-for example, the fileing positions change, the bowler will never bowl the ball exactly on the same spot twice in a row and the ends from which the balls are being bowled changes.  
-In addition, our data is normalised when it is passed the neural network, and so the normalisation assumption is also satistfied by default. 
+for example, the fielding positions change, the bowler will never bowl the ball exactly on the same spot twice in a row and the ends from which the balls are being bowled changes.  
+In addition, our data is normalised when it is passed the neural network, and so the normalisation assumption is also satisfied by default. 
 
 \begin{definition}
     We begin by letting $\beta = (\hat{\beta_1},\ldots,\hat{\beta_p})^T$, then the \textbf{LASSO estimate} $(\hat{\alpha}, \hat{\beta})$, for a tuning parameter $t \geq 0$ is given by

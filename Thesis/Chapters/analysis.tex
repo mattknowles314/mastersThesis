@@ -1,4 +1,5 @@
 \chapter{Model Analysis}
+\label{modelAnalysis}
 
 \epigraph{The more we play cricket, the more players will learn from it}{Inzamam-ul-Haq}
 
@@ -7,7 +8,7 @@ that is in exactly the same form as the training data. We then give a brief math
 to test the model on. Finally, we give the network actual DLS game data to see how it does. In each of the cases, we perform similar analysis to compare the performance of the model.
 The main metric is the correlation between actual results and those predicted by the network.
 
-\section{Fully Trained Neural Network}
+\section{Predicting Games with a Complete Innings of Data}
 The first thing to look for is the normality of the errors in the predicted values. If the errors are normally distributed (and ideally around 0),
 then it means that our predictions are sufficiently accurate. We produce a density plot of the errors using the \verb|ggplot2| package in R.
 
@@ -63,6 +64,7 @@ It follows from Theorem \ref{slln} that
 \end{align}
 
 \section{Match Simulation}
+\label{matchSim}
 With the theoretical framework for Monte-Carlo simulation established, we can now look to build an algorithm for simulating cricket matches. Based on our own work in Chapter 4, 
 we begin by defining three random variables, $R_{\text{powerplay}} \sim N(\mu_{\text{powerplay}},\sigma_\text{powerplay})$, $R_{\text{middle}} \sim N(\mu_{\text{middle}},\sigma_{\text{middle}})$
 and $R_{\text{final}} \sim N(\mu_{\text{final}},\sigma_{\text{final}})$.
@@ -85,14 +87,14 @@ The numerical values for these are given in the Table~\ref{valTable}.
 The code for doing this simulation was not hard to write, and after a few small performance enhancements ran almost instantaneously. The code can be seen in Figure~\ref{mcecode}.
 
 \begin{figure}[h] %MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!
-    \label{mcecode}
     \lstinputlisting[language=R, firstline=5,lastline=25]{../code/PyScripts/monteCarlo.py}
-    \caption{Implementing a Monte-Carlo Simmulation fo Cricket Matches}
+    \caption{Implementing a Monte-Carlo Simulation fo Cricket Matches}
+    \label{mcecode}
 \end{figure}
 
 It is best to think of $n$ as a sort of fine-tuning parameter. If we have $n$ too large, we would simply be simmulating the average cricket game. But if we have $n$ too low and 
 we are open to having an outlier. As for the other parameters, we have \textit{overs} being the number of overs in the game, and \textit{state} determines the over to start 
-simmulating from. So if we want to simmulate the whole game, set $state=1$ and $overs=50$. The array \textit{runrates} just holds the data.\\
+simulating from. So if we want to simulate the whole game, set $state=1$ and $overs=50$. The array \textit{run rates} just holds the data.\\
 
 We then have the function \textit{MCE(n,state)}. The first line of this is a ``Ternary Operator'' to determine a parameter $t$. The job of $t$ is to be an index which obtains 
 the correct parameters from the arrays in lines 2 and 3. This is then fed into the next line, uses the \textit{random.normalvariate()} function to populate an empty list with random 
@@ -113,20 +115,20 @@ To give an idea of how the value of $n$ affects the resulting simulation, we ran
 If we compare these figues with (a) in Figure \ref{MeanAndSDRR}, we see that with large $n$, we have fallen victim to the ``Central-Limit Theorem'', and it looks as if the three 
 sections of the game are unrelated. In the end, $n=20$ was the chosen value as it provided an appropriate middle ground. \\
 
-Testing if Monte-Carlo simmulation works was done in R by first cutting off each game in the original test set and random points, filling the rest in using the Monte-Carlo algorithm 
+Testing if Monte-Carlo simulation works was done in R by first cutting off each game in the original test set and random points, filling the rest in using the Monte-Carlo algorithm 
 as previously described, and then feeding this into the neural network we built in the prior chapters. 
 
 \begin{figure}[h]
     \centering
-    \subfloat[\centering Error in Predictions from Monte-Carlo Simmulation]{{\includegraphics[width=.4\linewidth]{figures/monteCarloSimError.png} }}
+    \subfloat[\centering Error in Predictions from Monte-Carlo Simulation]{{\includegraphics[width=.4\linewidth]{figures/monteCarloSimError.png} }}
     \qquad
     \subfloat[\centering Q-Q Plot of Monte-Carlo Prediction Errors]{{\includegraphics[width=.4\linewidth]{figures/monteCarloErrorQQ.png} }}
-    \caption{Monte-Carlo Simmulation Error Density}
+    \caption{Monte-Carlo Simulation Error Density}
     \label{mcerror}
 \end{figure}
 
 Up until an error of around 2, we see this was more normally distributed than the original predictions. It is worth noting that this could be a side-effect of the fact that during the monte-carlo 
-simmulation, all the games are being drawn directly from a normal distribution. To see definitively how the model compares to the neural network with full data, we take the correlation of the actual results with those of the predicted values. 
+simulation, all the games are being drawn directly from a normal distribution. To see definitively how the model compares to the neural network with full data, we take the correlation of the actual results with those of the predicted values. 
 We find that $\rho_{Network} = 0.9382$ and $\rho_{Monte-Carlo} = -0.0636$. So we see that when filling in the gaps with monte-carlo methods, the performance drops significantly. To further see this difference in performance, 
 we calculate the difference of the monte-carlo method predictions and the original predictions, and take a box plot. \\
 
@@ -176,23 +178,24 @@ While this may be more beneficial, the primary problem with this is it would be 
 by means of a website or mobile application. 
 
 \section{Unseen DLS Game Data}
+\label{unsGame}
 Since using Monte-Carlo methods didn't work too well, the next step is to look at seeing if something simpler will work. To do this, we take games that were decided through DLS, and 
-feed them into the network to see how well it does. Rather than filling in the blanks of overs not played, we just set the runrate to 0 in these overs, and feed the resulting games into the neural network. 
+feed them into the network to see how well it does. Rather than filling in the blanks of overs not played, we just set the run rate to 0 in these overs, and feed the resulting games into the neural network. 
 We took 51 games which were decided by DLS, and looked at what the target set by DLS was. \\
 
-The results for this were actually better than for the monte carlo gap filling method. We achieved a correlation in the results of 0.4983. Which is naturally lower than we would like, but a large improvement 
-on the prior method. We can see in Figure~\ref{DLSError} how the spread of points isn't in a narrow band as it was with monte carlo predictions. We can also see the errors that came along with the predictions.
+The results for this were actually better than for the monte-carlo gap filling method. We achieved a correlation in the results of 0.4983. Which is naturally lower than we would like, but a large improvement 
+on the prior method. We can see in Figure~\ref{DLSError} how the spread of points isn't in a narrow band as it was with monte-carlo predictions. We can also see the errors that came along with the predictions.
 
 \begin{figure}[h]
     \centering
     \subfloat[\centering Network predictions for DLS games]{{\includegraphics[width=.4\linewidth]{figures/dlsPreds.png} }}
     \qquad
     \subfloat[\centering DLS Prediction Errors]{{\includegraphics[width=.4\linewidth]{figures/dlsErrorDist.png} }}
-    \caption{Monte-Carlo Simmulation Error Density}
+    \caption{Monte-Carlo Simulation Error Density}
     \label{DLSError}
 \end{figure}
 
 
-These errors follow a rough bell-curve shape, however we must remember that there aren't many datapoints here, so it may well be that with more datapoints, we would see more of a normal distribution. The downside however is 
+These errors follow a rough bell-curve shape, however we must remember that there aren't many data points here, so it may well be that with more datapoints, we would see more of a normal distribution. The downside however is 
 that this curve is not centered around an error of 0, but around -58.22. This means that on average, the model sets teams a target of a much higher score. 
 

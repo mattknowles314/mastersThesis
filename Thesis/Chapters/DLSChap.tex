@@ -26,14 +26,14 @@ average total score in first class cricket, but with one-day rules imposed.
 Because we don't have access to actual values for $Z_0$ or $b$, Figure~\ref{Zugraph} shows what Equation~\ref{Zueq} looks 
 like using 3 sample values for $Z_0$. For $b$, it was a process of trial and error to find a value
 that resulted in the graph having a similar shape to original figures in the DL paper. Some intuition was required here 
-based on our own experience in cricket to find a reasonable starting value. In future, it would be worth taking the time to 
+based on our own experience in cricket to find a reasonable starting value. In the future, it would be worth taking the time to 
 mine through all available data and obtain a (possibly more accurate) estimate for these values. 
 
 \begin{figure}[h]
-    \label{Zugraph}
     \centering
     \includegraphics[scale=0.6]{figures/z(u).png}
     \caption{Graph showing how the rate at which runs are scored decays as a game progresses.}
+    \label{Zugraph}
 \end{figure}
 
 However, we have not yet looked at what happens when wickets are lost. To introduce this metric, Equation~\ref{Zueq}
@@ -94,16 +94,16 @@ cricket matches presented a pattern of tending towards average run rate which is
 this, Stern introduces an additional damping factor to the equation for DL. The updated equation is now given by:
 
 \begin{equation}
-    \label{dls}
     Z_{dls}(u,w,\lambda) = Z_0F_w\lambda^{n_w+1} \left\{ 1-e^{-ubg(u,\lambda)/F_w\lambda^n_w} \right\}.
+    \label{dls}
 \end{equation}
 
 Where the parameter $\lambda$ has been introduced as the damping factor.
 This equation assumes there are $u$ overs remaining, with $w$ wickets lost by the batting team in an $M$-over match with a final run total of $S$. Here, we have:
 
 \begin{equation}
-    \label{gfunc}
     g(u,\lambda) = \left (\frac{u}{50} \right)^{-(1+\alpha_\lambda+\beta_\lambda u)}
+    \label{gfunc}
 \end{equation}
 
 In the above, we define 
@@ -178,10 +178,10 @@ One thing briefly mentioned in chapter 3 of their paper is the average score at 
 So we take a brief detour to look at it. This can be seen in Figure~\ref{avgrunsfow}.
 
 \begin{figure}[h]
-    \label{avgrunsfow}
     \centering
     \includegraphics[scale=0.6]{figures/avgrunsfow.png}
     \caption{Plot of average runs scored at the fall of each wicket. Averages taken over 1437 innings.}
+    \label{avgrunsfow}
 \end{figure}
 
 Initially, one may think that this is Normally distributed, indeed it certainly holds a bell-curve-like shape. However, a Kolmogorov-Smirnov test $\cite{kolm}$ was
