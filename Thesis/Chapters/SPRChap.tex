@@ -29,17 +29,17 @@ and a ``bias''. These properties will be discussed in more detail shortly. The n
 It's important to note how we will measure the success of the model. The main dataset, consisting of 1438 games of 50 overs is split into two subsets, one 
 containing 70\% of the games, and one containing 30\%. We use the larger of the two to ``train'' the model, and the smaller one as a test set. Not doing this could 
 lead to a phenomenom known as ``overfitting''; where the network learns how to predict patterns in the dataset it was trained on really well, but then isn't so good 
-at predicting unseen values. We use corrolation as the main metric of success in this model, which will be discussed later on.
+at predicting unseen values. We use correlation as the main metric of success in this model, which will be discussed later on.
 
-As mentioned, NNs have been used extensivelly in finance- more specifically, in predicting future stock price behaviour. Naturally if one can predict how the value of a stock
-will change over some time period, then one can protect themself from a bad investment, or profit heavily from a good one. We will use similar
-methods here for building our neural network.  In \cite{nnstock}, the authors test two different Neural Netowrks, and find that using a ``Multi-Layer Feed Forward Nerual Network''
+As mentioned, NNs have been used extensively in finance- more specifically, in predicting future stock price behaviour. Naturally if one can predict how the value of a stock
+will change over some time period, then one can protect themselfes from a bad investment, or profit heavily from a good one. We will use similar
+methods here for building our neural network.  In \cite{nnstock}, the authors test two different Neural Networks, and find that using a ``Multi-Layer Feed Forward Nerual Network''
 is the better choice for predicting how stock values will change. With these motivations in mind, we can begin to construct the networks.
 
-\section{Builiding The Network}
-%Rewrite this bit
+\section{Building The Network}
 Our input layer will have 50 nodes, one for the run rate at the end of each over. We will begin with 5 hidden layers, although this is subject to change. The output layer
-will of course only have one node, the value of which will predict the score of the game. 
+will of course only have one node, the value of which will predict the score of the game. There will be three hidden layers, with 25, 10 and 3 nodes respectively. 
+The ideas is that the prediction is refined over time down to a single value. In the future, more work is needed to experiment with different hidden layer topologies. 
 
 We begin by looking at a single node. The proper name for each node is ``perceptron''. Each perceptron takes in the values of a vector, and an extra ``+1'' intercept term. The perceptron then outputs a value $h$ given by Equation~\ref{percepout}:
 
@@ -73,7 +73,7 @@ We begin with getting from the input layer, denoted $L_0$. Each node in $L_0$ ta
 containing these values. For every node in $L_0$, we have 25 connections coming away, one going to each of the nodes in $L_1$. 25 was an arbitraty choice for the size of $L_1$, and is
 subject to change based on results from initial testing. So that means we have $50 \times 25 = 1250$ weights for just the first layer alone. Some linear algebra is to be done here to get 
 values for the vector $\textbf{a}^{(1)}$. We use $w_{ij}$ to denote the weight from node j in one layer to node i in the prior layer. We can then construct a matrix containing the weights
-between $L_0$ and $L_1$, which we denote $W^{(1)}$. This matrix is given by \ref{weights1}.
+between $L_0$ and $L_1$, which we denote $W^{(1)}$. This matrix is given by Equation~\ref{weights1}.
 
 \begin{equation}
     W^{(1)} =
@@ -86,7 +86,7 @@ between $L_0$ and $L_1$, which we denote $W^{(1)}$. This matrix is given by \ref
     \label{weights1}
 \end{equation}
 
-Using \ref{weights1}, and combining with $a^{(0)}$, we can get the following:
+Using Equation~\ref{weights1}, and combining with $a^{(0)}$, we can get the following:
 
 \begin{align}
     A^{(1)} &= \left[ {\begin{array}{cccc}
@@ -120,17 +120,16 @@ Which gives us values for all the nodes in the first hidden layer. This process 
 These matrices are naturally of different sizes, but the principle is exactly the same. When we start the training process for this network, we will only have random variables for the weights and biases. 
 To gain better values that can predict accurate results in the future, we need to train the network by feeding it feature vectors and their associated outputs. \\
 
-To allow the netowrk to be trained, we first must define a ``cost function''. The way we do this is to input a vector to the input layer, let the network produce a result, say $y'$, which
-initially is likely to be quite wrong, and square the difference between this and the true value $y$ for that particluar training vector. Put more precisely,
+To allow the network to be trained, we first must define a ``cost function''. The way we do this is to input a vector to the input layer, let the network produce a result, say $y'$, which
+initially is likely to be quite wrong, and square the difference between this and the true value $y$ for that particular training vector. Put more precisely,
 let \textbf{X} be a feature vector containing 50 elements, and $y$ the corresponding output. Then define the cost function, $C(X,y) := (y'-y)^2$. The lower the value of $C(X,y)$, the 
 better the network has done at predicting. The average value of $C(X,y)$ for each X and y in our training set, is then a good measure of the network's performance. \\
 
 The cost function is at the heart of how these networks ``learn''. All we're doing is minimising a cost function, to give matrices of weights and biases that
-produce the best output. The algorithm for minimising this cost function is called ``gradient descent'' \cite{cauchy}. Suppose we take every single weight and bias of our network,
-and turn it into a giant column vector. 
+produce the best output. The algorithm for minimising this cost function is called ``gradient descent'' \cite{cauchy}.
 
 \begin{example}
-    In this first example, we initialise four random weights matrices, four bias vectors, and we run through the process outlined above. We know going into this that 
+    In this example, we initialise four random weights matrices, four bias vectors, and we run through the process outlined above. We know going into this that 
     the cost is going to be high. Initialising the weights as random values $w_{ij} \in [-1000,1000]$, we get an initial cost function for our full dataset of a huge
     3098.4. 
 \end{example}
@@ -140,7 +139,7 @@ and turn it into a giant column vector.
 We discussed in section \ref{mse} the need to use a MSE loss function based on our data. Let us now define this function, as in \cite{huber}.
 
 \begin{definition}
-    Let N be the number of datapoints, $y_i'$ be the prediceted value from the $i^{th}$ datapoint, and $y_i$ be the true value. Then for the input vector X, and a parameter $\theta$,
+    Let N be the number of datapoints, $y_i'$ be the predicted value from the $i^{th}$ datapoint, and $y_i$ be the true value. Then for the input vector X, and a parameter $\theta$,
     define the \textbf{Mean Square Error} by
     \begin{equation}
         E(X,\theta) = \frac{1}{2N}\sum^N_{i=1}(y_i'-y_i)^2
@@ -171,7 +170,7 @@ Let $a_j^k$ be the activation value of node j in layer k before it is put throug
     \frac{\partial E}{\partial w_{ij}^k} = \frac{\partial E}{\partial a_j^k}\frac{\partial a_j^k}{\partial w_{ij}^k}.
 \end{equation}
 
-In \ref{errorchain}, the first derivative on the righthand side, is known as the \textit{error}, often denoted as $\delta_j^k$. The second derivative on that side
+In Equation~\ref{errorchain}, the first derivative on the righthand side, is known as the \textit{error}, often denoted as $\delta_j^k$. The second derivative on that side
 is the \textit{output} of node i in layer $k-1$, denoted $o_i^{k-1}$. So we can simplify \ref{errorchain} to be written as
 
 \begin{equation}
@@ -197,7 +196,7 @@ So in the final layer, we have:
                                            &= (y_d'-y_d)f'(a_1^m)o_i^{m-1}.
 \end{align}
 
-The above is all well and good for the final layer, but we now must consider the hidden layers. We will consider the general case here, and then plug in the relevant
+The above works well for the final layer, but we now must consider the hidden layers. We will consider the general case here, and then plug in the relevant
 numbers for our model when it comes to the implementation later on. For a layer k such that $1 \leq k < m$, the error term $\delta^k_j$ is given by:
 
 \begin{align}
@@ -225,14 +224,14 @@ Therefore,
     \frac{\partial a_l^{k+1}}{\partial a_j^k} = w_{jl}^{k+1}f'(a_j^k).
 \end{equation}
 
-Plugging the above in \ref{deltajk}, we obtain the following:
+Plugging the above into Equation~\ref{deltajk}, we obtain the following:
 
 \begin{equation}
     \label{backpropform}
     \delta_j^k = f'(a_j^k)\sum^{r^{k+1}}_{l=1}w_{jl}^{k+1}\delta_l^{k+1}.
 \end{equation}
 
-The equation \ref{backpropform} is known as the \textit{Backpropogation formula}. The final step is to calculate, $\frac{\partial E_d}{\partial w_{ij}^k}$, which is given by:
+The Equation~\ref{backpropform} is known as the \textit{Backpropogation formula}. The final step is to calculate, $\frac{\partial E_d}{\partial w_{ij}^k}$, which is given by:
 
 \begin{align}
         \frac{\partial E}{\partial w_{ij}^k} &= \delta^k_jo_i^{k-1} \\
@@ -300,7 +299,7 @@ Recall the logistic function, $\sigma : \mathbb{R} \to (0,1)$, defined by:
 
 For extremely positive or negative values of $x$, $\sigma$ will return $-1$ or $1$, so we must normalise the data before training the neural 
 network. Once the data were normalised, several versions of the network were ran with varying parameters. The final parameters decided were a learning rate, $\alpha = 0.02$, and a hidden network of layers consitsting of 
-25 neurons, two layers of 10 neurons, and a final hidden layer of 3 neurons. In total, 1000 iterations were ran, each randomly initialising neuron values by drawing from the $N(0,1)$ distribution. 
+25 neurons, two layers of 10 neurons, and a final hidden layer of 3 neurons. In total, we ran 1000 iterations, each randomly initialising neuron values by drawing from the $N(0,1)$ distribution. 
 The code for this can be seen in Figure~\ref{nnRcode}.
 
 \begin{figure}[h] %MAKE SURE THESE ARE THE RIGHT LINES OF CODE!!

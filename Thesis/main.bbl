@@ -12,6 +12,12 @@ Cauchy, A. et~al. (1847).
   d’{\'e}quations simultan{\'e}es.
 \newblock {\em Comp. Rend. Sci. Paris}, 25(1847):536--538.
 
+\bibitem[Chakravarti et~al., 1967]{ks}
+Chakravarti, I.~M., Laha, R.~G., and Roy, J. (1967).
+\newblock Handbook of methods of applied statistics.
+\newblock {\em Wiley Series in Probability and Mathematical Statistics (USA)
+  eng}.
+
 \bibitem[Duckworth and Lewis, 2004]{duckworth2}
 Duckworth, F. and Lewis, A. (2004).
 \newblock A successful operational research intervention in one-day cricket.
@@ -22,6 +28,11 @@ Duckworth, F.~C. and Lewis, A.~J. (1998).
 \newblock A fair method for resetting the target in interrupted one-day cricket
   matches.
 \newblock {\em Journal of the Operational Research Society}, 49(3):220--227.
+
+\bibitem[Forrest and Dorsey, 2008]{tosseffect}
+Forrest, D. and Dorsey, R. (2008).
+\newblock Effect of toss and weather on county cricket championship outcomes.
+\newblock {\em Journal of sports sciences}, 26(1):3--13.
 
 \bibitem[Foysal et~al., 2018]{foysal}
 Foysal, M., Ahmed, F., Islam, M.~S., Karim, A., and Neehal, N. (2018).
@@ -89,6 +100,11 @@ Naeini, M.~P., Taremian, H., and Hashemi, H.~B. (2010).
 \newblock Stock market value prediction using neural networks.
 \newblock In {\em 2010 international conference on computer information systems
   and industrial management applications (CISIM)}, pages 132--136. IEEE.
+
+\bibitem[O'Donoghue and Holmes, 2014]{spdata}
+O'Donoghue, P. and Holmes, L. (2014).
+\newblock {\em Data analysis in sport}.
+\newblock Routledge.
 
 \bibitem[Phanse and Deorah, 2011]{phanse}
 Phanse, V. and Deorah, S. (2011).

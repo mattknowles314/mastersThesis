@@ -6,13 +6,13 @@ The purpose of this chapter is to explore the obtained dataset in more detail, w
 in the world of statistics, making assumptions is dangerous, and so in order to make the assumptions we do in later chapters, we must have the evidence to back it up.
 This chapter not only provides that evidence, but allows us to become more familiar with our dataset, and see how modern data fits in with the previous work done in this 
 field. \\
-We begin by looking at the probability densities in the Fall of Wicket variables. F.o.W is key in the DLS method, so we do this to get an idea of what lies underneath the
-surface. We are able to explain the way F.o.W distributions are shaped based on the way cricket games unfold. This consistency allows us to make an assumption about Run Rates
-later in the chapter too. \\
+We begin by looking at the probability densities in the Fall of Wicket (FOW) variables. FOW is key in the DLS method, so we do this to get an idea of what lies underneath the
+surface. We are able to explain the way FOW distributions are shaped based on the way cricket games unfold. This consistency allows us to make an assumption about Run Rates
+later in Section 4.4. \\
 As with any dataset, there are outliers, and the number of such will have influence on the error function that we use in later models. For that reason, we give brief discussion 
 to this, before going on to look at whether or not scores in games of cricket are normally distributed around some mean. \\
-Run Rates are the discussed in more detail, looking at whether or not the runrates in certain periods of the game also follow a normal distribution. Finding this out is imperative
-for using Monte-Carlo simmulation later on in the paper.
+Run Rates are the discussed in more detail, looking at whether or not the run rates in certain periods of the game also follow a normal distribution. Finding this out is imperative
+for using Monte-Carlo simulation later on in the paper.
 
 \section{Fall of Wicket Densities}
 
@@ -93,13 +93,17 @@ spread of runs scored in a full innings of data. This can be seen in Figure~\ref
 
 There are 363 data points greater than the third quartile, while 671 are below the first quartile. So $25.3\%$ of our data lies above the third quartile, and
 $46.7\%$ below the first. For that reason, we make the decision to use the Mean-Squared-Error (MSE) loss function, which is commonplace in regression problems.
+This follows from the fact that the MSE loss function is sensitive to outliers, and will weight the outliers appropriately among the dataset. In some applications 
+this would be a disadvantage, however since our dataset is bounded (i.e, only 20 games have ever scored above 400, and none have gone above 500), the squared error 
+is not likely to exceed a large amount, thus giving it a dissproportionate weighting. If in a few years scores start exceeding 500 or even 600, it would likely 
+be appropriate to look at using a different loss function, but the MSE works well here for the afforementioned reasons.
 
 \section{On the Normality of Run Totals}
 It will be useful in later parts of this dissertation to know whether or not scores are normally distributed. To test whether or not 
 they are, we use a Q-Q plot to check. This is a graphical way for checking normality, by comparing the quantiles of a dataset (in this case, scores) to quantiles
 drawn from a theoretical distribution. If the resulting points follow a straight line, it is likely that the data came from the distribution.
 In this case, we use the R function \textit{qqnorm()} to test if the runs from the 1436 games of a full 50 overs follow a normal distribution. See Appendix A for 
-a more detailed discussion of this method.
+a more detailed discussion of this method. \\
 
 \begin{figure}[h]
     \centering
@@ -108,8 +112,10 @@ a more detailed discussion of this method.
     \label{qqplot50}
 \end{figure}
 
-We can see from Figure~\ref{qqplot50} that the plot follows along the straight line and so we can conclude that the scores are infact normally distributed. 
-Further, we can calculate the parameters of this distribution using the R functions \textit{mean()} and \textit{var()}. Doing so gives that the distribution
+We can see from Figure~\ref{qqplot50} that the plot follows along the straight line, and so we can conclude that the scores are infact normally distributed. Note however 
+in the top right we see normality starts to trail off sligthly. As previously mentioned, only 20 games have gone above a socre of 400 in ODI cricket, and so 
+there is a distinct lack of data in this range. That is why the curve trails off slightly. 
+Further, we can estimate the parameters of this distribution using the R functions \textit{mean()} and \textit{var()}. Doing so gives that the distribution
 of scores in 50 overs, $S_{50}$, can be given as $S_{50} \sim \mathcal{N}(270.56,51.34^2)$. \\ 
 
 To further test that this is indeed the case, we can create a sample plot based on this distribution, which can be seen in Figure~\ref{samplenorm}
@@ -121,7 +127,7 @@ To further test that this is indeed the case, we can create a sample plot based 
     \label{samplenorm}
 \end{figure}
 
-With this in mind, we can now look at a density plot for the actual data. This is given in Figure~\ref{errDistAndQQRunsScored}.
+With this in mind, we can now look at a density plot for the actual data. This is given in Figure~\ref{errDistAndQQRunsScored} (a).
 
 \begin{figure}[h]
     \centering
@@ -182,7 +188,7 @@ Using this information, we can create density plots of the average Run Rate in t
     \label{rrDensitiesPlot}
 \end{figure}
 
-The run rates are  in different stages of the game roughly normally distributed, which can be seen in Figure~\ref{rrDensitiesPlot}. It is reasonable that due to the Central Limit Theorem, with more observations, these distribiutions would be smoothed out and 
+The run rates are  in different stages of the game roughly normally distributed, which can be seen in Figure~\ref{rrDensitiesPlot}. It is reasonable that due to the Central Limit Theorem, with more observations, these distributions would be smoothed out and 
 appear more normally distributed than it does at present. This is imporant, because it allows us to investigate using a monte-carlo method to fill in gaps 
 later on in the project.
 
@@ -190,10 +196,12 @@ later on in the project.
 \label{lassoSec}
 
 Feature selection is an important aspect in data science. Some experiments can have an overwhelming number of variables, which can lead to computational inefficiency. In this subsection, we will explore selecting the most important overs in the run rate data.
-Given the lack of data already available, this may seem unnecessary, however it is an interesting consideration for future work. When we build the network in the next chapter, the model has to be passed a formula, telling it how to treat the variables. By default, since we have 50 overs worth of data (V1 $\rightarrow$ V50) and a variable containing the final score, V51, we pass the R formula $V51 ~ V1 + \ldots + V50$. The purpose of this section is to see if it is worth reducing this somewhat combersome formula. 
-LASSO, \textbf{L}east \textbf{A}bsolute \textbf{S}hrinkage and \textbf{S}election \textbf{O}perator, is a regression method for performing both normalisation, and feature selection. The term LASSO was introduced by \cite{tib}. Before showing how we implement this in R, and what it means for our project, it is useful to discuss the mathematical foundation of the method, as in section 2.1 of Tibshirani's paper. \\
+Given the lack of data already available, this may seem unnecessary, however it is an interesting consideration for future work. When we build the network in the next chapter, the model has to be passed a formula, telling it how to treat the variables. By default, since we have 50 overs worth of data (V1 $\rightarrow$ V50) and a variable containing the final score, V51, we pass the R formula $V51 \sim V1 + \ldots + V50$. The purpose of this section is to see if it is worth reducing this somewhat combersome formula. 
+LASSO, \textbf{L}east \textbf{A}bsolute \textbf{S}hrinkage and \textbf{S}election \textbf{O}perator, is a regression method for performing both normalisation, and feature selection. The term LASSO was introduced by \cite{tib}. Before showing how we implement this in R, and what it means for our project, it is useful to discuss the mathematical foundation of the method, as in section 2.1 of \cite{tib}. \\
 
-For $i=1,\ldots,N$, we have a dataset $(\textbf{X}^i,y_i)$. For the training dataset we use, $N=1436$. Specifically, we define $\textbf{X}^i = (x_{i1},\ldots,x_{ip})$ to be the vector of predictor variables (for us, $p=50$). Further, $y_i$ is the response variable. The assumption that these variables are independent is immediately satistfied by the nature of our study, since the runs scored in one over does not depend at all on the runs scored in the prior over. In addition, our data is normalised when it is passed the neural network, and so the normalisation assumption is also satistfied by default. 
+For $i=1,\ldots,N$, we have a dataset $(\textbf{X}^i,y_i)$. For the training dataset we use, $N=1436$. Specifically, we define $\textbf{X}^i = (x_{i1},\ldots,x_{ip})$ to be the vector of predictor variables (for us, $p=50$). Further, $y_i$ is the response variable. The assumption that these variables are independent is immediately satistfied by the nature of our study, since the runs scored in one over does not depend at all on the runs scored in the previous over. This is because a lot changes from over-to-over and even ball-to-ball;
+for example, the fileing positions change, the bowler will never bowl the ball exactly on the same spot twice in a row and the ends from which the balls are being bowled changes.  
+In addition, our data is normalised when it is passed the neural network, and so the normalisation assumption is also satistfied by default. 
 
 \begin{definition}
     We begin by letting $\beta = (\hat{\beta_1},\ldots,\hat{\beta_p})^T$, then the \textbf{LASSO estimate} $(\hat{\alpha}, \hat{\beta})$, for a tuning parameter $t \geq 0$ is given by
@@ -205,7 +213,7 @@ For $i=1,\ldots,N$, we have a dataset $(\textbf{X}^i,y_i)$. For the training dat
 
 We have that $\forall t$, $\hat{a} = \bar{y}$. However since the data is normalised, by defintion $\bar{y}=0$ and so we can ignore the parameter $\alpha$ altogether. Although not discussed directly here, the authors do go on to propose algorithms for computing solutions to this problem in chapter 6 of their paper. These algorithms are employed directly by the R package \verb|glmnet|, which we can now use. \\
 
-We use the function \textit{cv.glmnet()}. This can be seen in the following code snippet.
+We use the function \textit{cv.glmnet()}. This can be seen in Figure~\ref{lassoCode}.
 
 \begin{figure}[h]
     \lstinputlisting[language=R, firstline=6, lastline=7]{../Code/Rscripts/lasso.R}
@@ -213,7 +221,7 @@ We use the function \textit{cv.glmnet()}. This can be seen in the following code
     \label{lassoCode}
 \end{figure}
 
-The plot produced by this code can be seen in Figure~\ref{lassoFig}.
+The plot produced by this code can be seen in Figure~\ref{lassoFig}. Note the numbers at the top are the overs- although now relabeled from 0 $\to$ 49. 
 
 \begin{figure}[h]
     \centering

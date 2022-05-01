@@ -21,6 +21,7 @@
 \usepackage{algpseudocode}
 \usepackage{tikz}
 \usepackage{dirtree}
+\usepackage[Conny]{fncychap}
 \usepackage{epigraph}
 \usetikzlibrary{positioning}
 \pagestyle{fancy}
@@ -74,14 +75,12 @@
 \input{titlepage}
 
 \section*{Abstract}
-A Neural Network model for predicting scores in the sport of Cricket is presented. The aim is to use our model to improve upon the results of the method currently employed by 
-the International Cricket Council (ICC). We explore this current method, known as the DLS method \cite{stern} in 
-some detail before going on to develop our own model. This is followed by some exploratory data analysis, which is imperative in making certain assumptions that aid 
-in the building of the Neural Network. For the Neural Network, we take an in-depth look at the mathematical underpinning of building and training such a model. This 
-is accompanied by code snippets demonstrating how these methods are implemented in a high-level programming language. We then perform an analysis of the results 
-of our model before applying it to the data from the ICC 2019 Cricket World Cup, in order to see how it faired against the DLS method. 
-We find that our method does not predict scores perfectly, but does produce slightly more attainable score targets than DLS- as illustrated by the World Cup simulation 
-study. 
+Cricket is a sport very sensitive to interruptions. Light rain or fading light can cause a game to be cut short. For this reason 
+the International Cricket Council (ICC) employ a method to reset score targets in such an event. In this dissertation, we explore this method 
+before proposing a new method by using Neural Networks to predict scores. The development of the score prediction model is discussed through 
+both mathematics and computer code to demonstrate the implementation of the model. We then compare several variations of this Neural Network method 
+on an unseen set of cricket match data, before employing it on data from the 2019 Cricket World Cup, to see how the tournament would have differed in 
+light of the new method. We found that our method didn't change the outcome of the tournament, but improved on the score targets set by the ICC's method.
 
 \section*{Acknowledgements}
 I would like to thank Dr. Jessica Hargreaves for their invaluable supervision, encouragement and advice throughout this project. In addition,
