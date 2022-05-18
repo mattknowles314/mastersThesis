@@ -32,12 +32,56 @@ University of York \\
 \section{Background}
 \begin{frame}
 \frametitle{Cricket}
-foo
+
+\begin{itemize}
+    \item 2 teams of 11 players. One team bats, the other fields. \\
+    \pause
+    \item Score measured in runs. Aim: Score as many as you can before losing 10 wickets. \\
+    \pause
+    \item Focus in this project is limited overs cricket. Games last 50 overs, which takes about 3 hours.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Setting the scene: The need for score resetting}
+
+\begin{itemize}
+    \item Cricket is very sensitive to external factors, such as rain and daylight. \\
+    \item If it gets too dark, the ball becomes very hard to see and so the game is stopped. \\
+    \item Similarly, if it rains, the game is stopped due to the adverse affect this has on the pitch. \\
+\end{itemize}
+    
+\end{frame}
+
+\begin{frame}
+    \frametitle{A motivating example}
+    \begin{itemize}
+        \item To illustrate the issue, consider the following example. \\
+        \begin{example}
+            Team A scores 320 runs in their 50 overs, losing 8 wickets in the process. While team B is batting, 
+            it begins to rain, and the umpires call the game off with team B on 118-2 from 34 overs. After the rain stops,
+            there is only time for 6 overs of play. 
+        \end{example}
+        \item Clearly, at this point it is unfair to expect team B to chase down 222 runs in 6 overs instead of the 16 they should 
+            have had. So for this reason, score target adjustment is needed to keep the game fair, despite the loss of time.
+\end{itemize}
+        
 \end{frame}
 
 \begin{frame}
 \frametitle{Duckworth, Lewis and Stern}
-bar
+
+\begin{itemize}
+    \item Statisticians Frank Duckworth and Tony Lewis set about a way to reduce score targets appropriately to overcome challenges
+        like the one in the last example. \\
+    \item They introduce the following formula
+        \[
+            Z(u,w) =  Z_0(w)(1e^{-b(w)u})
+        .\] 
+        Which gives the runs scored with $u$ overs remaining and $w$ wickets lost. Note that the actual value of $Z_0$ and $b$, the decay constant are not given due to commercial agreements.
+\end{itemize}
+
 \end{frame}
 
 \begin{frame}

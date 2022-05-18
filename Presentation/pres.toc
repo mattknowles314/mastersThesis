@@ -1,3 +1,3 @@
-\beamer@sectionintoc {1}{Background}{4}{0}{1}
-\beamer@sectionintoc {2}{Verse 2}{7}{0}{2}
-\beamer@sectionintoc {3}{Conclusions}{8}{0}{3}
+\beamer@sectionintoc {1}{Background}{3}{0}{1}
+\beamer@sectionintoc {2}{Verse 2}{10}{0}{2}
+\beamer@sectionintoc {3}{Conclusions}{11}{0}{3}
