@@ -1,3 +1,4 @@
 \beamer@sectionintoc {1}{Background}{3}{0}{1}
-\beamer@sectionintoc {2}{Verse 2}{10}{0}{2}
-\beamer@sectionintoc {3}{Conclusions}{11}{0}{3}
+\beamer@sectionintoc {2}{Neural Networks in Cricket}{22}{0}{2}
+\beamer@sectionintoc {3}{Resetting Score Targets}{36}{0}{3}
+\beamer@sectionintoc {4}{Conclusions}{44}{0}{4}
